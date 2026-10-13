@@ -1,0 +1,50 @@
+TU AMIGO INVERSOR · WEB NUEVA (VERSIÓN DE PRUEBAS PARA SUBDOMINIO)
+==================================================================
+
+CONTENIDO
+  index.html                            Home
+  inversion-tactica-geda/index.html     Página de la estrategia GEDA
+  inversion-tematica-gen-z/index.html  Página de la estrategia GEN-Z
+  assets/                               Estilos de tipografía, tipografías, Chart.js e imágenes (todo propio)
+  favicon.svg, robots.txt
+
+No hace falta instalar nada: son archivos estáticos. No usa ningún servicio externo
+(sin Google Fonts, sin CDN, sin Unsplash), así que funciona igual en cualquier hosting.
+
+CÓMO SUBIRLO A IONOS
+  1. Crea el subdominio (por ejemplo nueva.tuamigoinversor.com) y asígnale una carpeta
+     propia del espacio web. No uses la carpeta donde está WordPress.
+  2. Sube el CONTENIDO de esta carpeta (no la carpeta madre) a la carpeta del subdominio,
+     respetando la estructura: index.html debe quedar en la raíz del subdominio.
+  3. Activa el certificado SSL del subdominio.
+  4. Abre https://tu-subdominio/ y comprueba: la home, el botón "Ficha completa" de GEDA
+     (abre la página nueva), el logo de la página de GEDA (vuelve a la home) y el modo claro/oscuro.
+
+ESTÁ MARCADO COMO NO INDEXABLE (para que Google no lo confunda con tu web actual)
+  - Cada página lleva <meta name="robots" content="noindex, nofollow">
+  - robots.txt contiene "Disallow: /"
+
+ENLACES
+  - GEDA y GEN-Z se enlazan a las páginas nuevas. ROCA, IMPULSO, HORIZONTE y CRYPTO apuntan a las
+    URLs actuales de tu WordPress (tuamigoinversor.com), que siguen funcionando.
+  - El botón de suscripción de las páginas de GEDA y GEN-Z lleva a tuamigoinversor.com/suscripcion/.
+  - El formulario de suscripción de la home es una simulación: NO envía datos a ningún sitio.
+
+ANTES DE PUBLICARLO DE VERDAD
+  1. Quitar la etiqueta noindex de cada página y borrar (o cambiar) robots.txt.
+  2. Añadir la etiqueta canonical y la imagen para compartir (og:image) con la URL definitiva.
+  3. Sustituir los textos marcados [PLACEHOLDER]: testimonios, precio tras los 3 meses,
+     enlaces de aviso legal, política de privacidad y cookies, y la divisa del S&P 500.
+  4. Conectar el formulario de suscripción con tu sistema real.
+  5. El aviso de cookies es solo visual: no bloquea nada. Hoy no hace falta, porque la web no carga
+     servicios de terceros; si añades analítica o publicidad, habrá que conectarlo.
+
+ACTUALIZAR CIFRAS CADA MES
+  - Home (index.html): bloque STRATEGIES (rentabilidad media, caída máxima, 2025 y 2026).
+  - GEDA y GEN-Z (carpetas de cada estrategia): bloque GEDA (rentabilidades mensuales; se llama
+    igual en las dos páginas), POS (posiciones), cifras del encabezado, métricas y tabla de caídas.
+  - Cambia también las fechas "30 sep 2026" por la del nuevo cierre.
+
+LICENCIAS
+  Ilustraciones: propias (SVG). Tipografías Inter y JetBrains Mono: licencia OFL.
+  Chart.js: licencia MIT.

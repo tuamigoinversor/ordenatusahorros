@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu Amigo Inversor · Estrategias de inversión sistemáticas con método y transparencia</title>
+<meta name="description" content="Estrategias de inversión reales basadas en reglas: cartera permanente, inversión momentum, asignación táctica de activos e inversión temática. Recibe las posiciones el día 1 de cada mes. Prueba 3 meses gratis.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a0f1e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Tu Amigo Inversor">
+<meta property="og:title" content="Tu Amigo Inversor · Invierte con método, no con predicciones">
+<meta property="og:description" content="Carteras permanentes, momentum e inversión temática basadas en reglas. Posiciones el día 1 de cada mes. 3 meses gratis.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tu Amigo Inversor · Invierte con método, no con predicciones">
+<meta name="twitter:description" content="Estrategias de inversión sistemáticas. Posiciones el día 1 de cada mes. 3 meses gratis.">
+
+<!-- Tema sin parpadeo: se aplica antes de pintar -->
+<script>
+(function(){try{var t=localStorage.getItem('tai-theme-v3');if(!t){t='light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+</script>
+
+<!-- Fuentes -->
+<link rel="stylesheet" href="assets/css/fonts.css">
+
+<!-- Única librería externa: Chart.js (diferida) -->
+<script defer src="assets/js/chart.umd.js"></script>
+
+<!-- Datos estructurados -->
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@graph":[
+  {"@type":"Organization","@id":"https://tuamigoinversor.com/#org","name":"Tu Amigo Inversor","url":"https://tuamigoinversor.com/","email":"info@tuamigoinversor.com","description":"Estrategias de inversión sistemáticas basadas en reglas: cartera permanente, inversión momentum, asignación táctica de activos e inversión temática."},
+  {"@type":"Product","name":"Suscripción Tu Amigo Inversor","description":"Acceso a las 6 estrategias de inversión y al informe mensual con las posiciones, enviado el día 1 de cada mes.","brand":{"@id":"https://tuamigoinversor.com/#org"},
+   "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Oferta de lanzamiento: 3 meses gratis","url":"https://tuamigoinversor.com/suscripcion/","availability":"https://schema.org/InStock"}},
+  {"@type":"FAQPage","mainEntity":[
+   {"@type":"Question","name":"¿Necesito experiencia previa para seguir las estrategias?","acceptedAnswer":{"@type":"Answer","text":"No. Recibes las posiciones el día 1 de cada mes y decides si replicarlas en tu bróker. Todo se basa en reglas, sin decisiones discrecionales."}},
+   {"@type":"Question","name":"¿Cada cuánto tengo que revisar mi cartera?","acceptedAnswer":{"@type":"Answer","text":"Las carteras permanentes (ROCA, IMPULSO, HORIZONTE) se rebalancean semestralmente. Las estrategias de asignación táctica (GEDA, GEN-Z, CRYPTO) se revisan cada mes."}},
+   {"@type":"Question","name":"¿Puedo combinar varias estrategias?","acceptedAnswer":{"@type":"Answer","text":"Sí. Combinar una cartera permanente con una estrategia táctica permite equilibrar estabilidad y potencial de crecimiento."}},
+   {"@type":"Question","name":"¿Es asesoramiento financiero?","acceptedAnswer":{"@type":"Answer","text":"No. La información es meramente informativa y no constituye asesoramiento financiero. Cada inversor debe hacer su propio análisis."}},
+   {"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"Con la oferta de lanzamiento tienes 3 meses gratis con acceso a todas las estrategias, sin compromiso."}}
+  ]}
+ ]
+}
+</script>
+
+<style>
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
+:root{
+  --font-sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --fs-xs:clamp(.72rem,.70rem + .1vw,.78rem);
+  --fs-sm:clamp(.85rem,.82rem + .15vw,.92rem);
+  --fs-base:clamp(.98rem,.95rem + .15vw,1.05rem);
+  --fs-lg:clamp(1.1rem,1rem + .4vw,1.25rem);
+  --fs-xl:clamp(1.35rem,1.1rem + 1vw,1.75rem);
+  --fs-2xl:clamp(1.9rem,1.4rem + 2.2vw,2.9rem);
+  --fs-3xl:clamp(2.4rem,1.6rem + 3.8vw,4.3rem);
+  --sp-1:.25rem;--sp-2:.5rem;--sp-3:.75rem;--sp-4:1rem;--sp-5:1.5rem;--sp-6:2rem;--sp-7:3rem;--sp-8:clamp(4rem,3rem + 4vw,7rem);
+  --r-sm:10px;--r-md:16px;--r-lg:24px;--r-pill:999px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --c-roca:#0ea5e9;--c-impulso:#10b981;--c-horizonte:#7c3aed;--c-geda:#f59e00;--c-genz:#ec4899;--c-crypto:#ef4444;
+}
+[data-theme="dark"]{
+  --bg:#07122b;--bg-2:#0b1838;--surface:#0f1f46;--surface-2:#14295a;--line:#213a73;--line-2:#2f4d90;
+  --text:#eef3ff;--muted:#a9b8de;--accent:#5b8cff;--accent-ink:#06122e;--accent-2:#ff8a4c;
+  --pos:#2ee6a6;--neg:#ff6b8b;--warn:#fbbf24;--pos-rgb:46,230,166;--neg-rgb:255,107,139;--c-geda:#ffb02e;
+  --tl-h0:170;--tl-hr:200;--tl-s:70;--tl-l:42;
+  --shadow-sm:0 2px 10px rgba(0,0,0,.25);--shadow-lg:0 30px 80px rgba(0,0,0,.5);
+  --glow:rgba(91,140,255,.2);color-scheme:dark;
+}
+[data-theme="light"]{
+  --bg:#ffffff;--bg-2:#eef4ff;--surface:#ffffff;--surface-2:#e9f1ff;--line:#d9e5fb;--line-2:#bfd2f5;
+  --text:#0a1a3a;--muted:#475b84;--accent:#1f5bff;--accent-ink:#ffffff;--accent-2:#ff6a1f;
+  --pos:#00a36c;--neg:#ff2e63;--warn:#d97706;--pos-rgb:0,163,108;--neg-rgb:255,46,99;--c-geda:#f59e00;
+  --tl-h0:170;--tl-hr:200;--tl-s:70;--tl-l:42;
+  --shadow-sm:0 2px 10px rgba(20,60,160,.08);--shadow-lg:0 30px 70px rgba(31,91,255,.18);
+  --glow:rgba(31,91,255,.12);color-scheme:light;
+}
+
+/* =========================================================
+   2. BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-sans);font-size:var(--fs-base);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent-2);outline-offset:3px;border-radius:6px}
+.container{width:100%;max-width:1240px;margin-inline:auto;padding-inline:clamp(1rem,4vw,2rem)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.pos{color:var(--pos)}.neg{color:var(--neg)}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:1rem;top:-100px;z-index:999;background:var(--accent);color:var(--accent-ink);padding:.7rem 1rem;border-radius:var(--r-sm);font-weight:700}
+.skip:focus{top:1rem}
+.icon{width:1.15em;height:1.15em;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* =========================================================
+   3. COMPONENTES
+   ========================================================= */
+.btn{--mx:0px;--my:0px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.4rem;border-radius:var(--r-pill);font-weight:600;font-size:var(--fs-sm);border:1px solid transparent;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s,background .2s,border-color .2s;transform:translate(var(--mx),var(--my));min-height:44px}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{box-shadow:0 12px 32px color-mix(in srgb,var(--accent) 40%,transparent)}
+.btn-ghost{background:transparent;border-color:var(--line-2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent)}
+.btn-sm{padding:.55rem 1rem;min-height:38px}
+.chip{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:var(--r-pill);border:1px solid var(--line);background:var(--surface);color:var(--muted);font-weight:600;font-size:var(--fs-sm);cursor:pointer;transition:.2s;min-height:40px}
+.chip:hover{color:var(--text);border-color:var(--line-2)}
+.chip[aria-pressed="true"],.chip[aria-checked="true"],.chip[aria-selected="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.chip .sw{width:10px;height:10px;border-radius:50%}
+.eyebrow{display:inline-block;color:var(--accent);font-weight:700;font-size:var(--fs-xs);letter-spacing:.16em;text-transform:uppercase}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(1.2rem,2.5vw,2rem);box-shadow:var(--shadow-sm)}
+.spot{position:relative;overflow:hidden}
+.spot::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(420px circle at var(--x,50%) var(--y,50%),var(--glow),transparent 45%)}
+.spot:hover::after{opacity:1}
+
+/* =========================================================
+   4. HEADER / NAV
+   ========================================================= */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform-origin:0 50%;transform:scaleX(0);z-index:120}
+.site-header{position:fixed;inset:0 0 auto;z-index:100;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+.site-header.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.08rem;letter-spacing:-.01em}
+.logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#06101f;font-weight:800;font-size:.9rem}
+.nav-links{display:none;list-style:none}
+.nav-links a{color:var(--muted);font-size:var(--fs-sm);font-weight:500;padding:.5rem .2rem;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-actions{display:flex;align-items:center;gap:.5rem}
+.icon-btn{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer;transition:.2s}
+.icon-btn:hover{border-color:var(--accent)}
+.nav-cta{display:none}
+.mobile-menu{display:none;position:absolute;top:72px;inset-inline:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:1rem clamp(1rem,4vw,2rem) 1.5rem}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;display:grid;gap:.25rem}
+.mobile-menu a{display:block;padding:.8rem .5rem;border-radius:10px;font-weight:600}
+.mobile-menu a:hover{background:var(--surface)}
+[data-theme="dark"] .i-sun{display:block}[data-theme="dark"] .i-moon{display:none}
+[data-theme="light"] .i-sun{display:none}[data-theme="light"] .i-moon{display:block}
+
+/* =========================================================
+   5. HERO
+   ========================================================= */
+.hero{position:relative;padding:calc(72px + clamp(2.5rem,6vw,5rem)) 0 clamp(3rem,6vw,5rem);overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(10px)}
+.hero::before{width:760px;height:760px;top:-320px;right:-260px;background:radial-gradient(circle,color-mix(in srgb,var(--accent-2) 26%,transparent),transparent 65%)}
+.hero::after{width:560px;height:560px;bottom:-280px;left:-200px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 16%,transparent),transparent 65%)}
+.hero-grid{position:relative;z-index:1;display:grid;gap:clamp(2rem,5vw,4rem);align-items:center}
+.badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:var(--r-pill);background:color-mix(in srgb,var(--accent) 12%,transparent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);color:var(--accent);font-size:var(--fs-xs);font-weight:700;margin-bottom:1.3rem}
+.live{width:8px;height:8px;border-radius:50%;background:currentColor;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.25}}
+h1{font-size:var(--fs-3xl);line-height:1.04;font-weight:800;letter-spacing:-.035em;margin-bottom:1.3rem}
+.grad{background:linear-gradient(95deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:var(--fs-lg);color:var(--muted);max-width:36rem;margin-bottom:2rem}
+.cta-row{display:flex;gap:.75rem;flex-wrap:wrap}
+.hero-trust{display:flex;gap:1.6rem;margin-top:2.2rem;flex-wrap:wrap;color:var(--muted);font-size:var(--fs-sm)}
+.hero-trust span{display:inline-flex;align-items:center;gap:.45rem}
+.hero-trust .icon{color:var(--accent)}
+.hero-panel{background:linear-gradient(165deg,var(--surface),var(--bg-2));border:1px solid var(--line);border-radius:28px;padding:clamp(1.1rem,2.5vw,1.6rem);box-shadow:var(--shadow-lg)}
+.hp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.hp-head small{color:var(--muted);font-size:var(--fs-xs)}
+.hp-value{font-size:clamp(2rem,1.6rem + 2vw,2.8rem);font-weight:800;line-height:1.1}
+.hp-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:1rem 0 .6rem}
+.kpi{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:.55rem .7rem}
+.kpi span{display:block;font-size:var(--fs-xs);color:var(--muted)}
+.kpi b{font-size:1rem}
+.chart-box{position:relative;height:220px}
+.chart-note{font-size:var(--fs-xs);color:var(--muted);margin-top:.4rem}
+.hp-tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.9rem}
+.hp-tabs .chip{flex:1 1 30%;justify-content:center;padding:.45rem .5rem;font-size:var(--fs-xs);min-height:36px}
+
+/* Stats strip */
+.stats{border-block:1px solid var(--line);background:var(--bg-2)}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;padding-block:2rem;text-align:center}
+.stat b{display:block;font-size:var(--fs-2xl);font-weight:800;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:var(--fs-sm)}
+
+/* =========================================================
+   6. SECCIONES
+   ========================================================= */
+.section{padding-block:var(--sp-8)}
+.section.alt{background:var(--bg-2)}
+.sec-head{max-width:46rem;margin:0 auto clamp(2rem,5vw,3.5rem);text-align:center}
+h2{font-size:var(--fs-2xl);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin:.6rem 0 .9rem}
+h3{font-size:var(--fs-xl);font-weight:800;letter-spacing:-.015em;line-height:1.2}
+.sec-head p{color:var(--muted);font-size:var(--fs-lg)}
+
+/* Estrategias */
+.filters{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.cards{display:grid;gap:1.25rem}
+.s-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
+.s-card:hover{transform:translateY(-6px);border-color:var(--c);box-shadow:var(--shadow-lg)}
+.s-card[hidden]{display:none}
+.s-media{position:relative;aspect-ratio:16/8;background:linear-gradient(135deg,var(--c),var(--surface-2));overflow:hidden}
+.s-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.s-card:hover .s-media img{transform:scale(1.06)}
+.s-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,color-mix(in srgb,var(--surface) 92%,transparent))}
+.s-pill{position:absolute;top:.8rem;left:.8rem;z-index:1;background:rgba(6,10,22,.72);color:#fff;backdrop-filter:blur(6px);font-size:var(--fs-xs);font-weight:700;padding:.3rem .7rem;border-radius:var(--r-pill);display:inline-flex;gap:.4rem;align-items:center}
+.s-pill i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.s-body{padding:1.3rem 1.4rem 1.4rem;display:flex;flex-direction:column;flex:1}
+.s-profile{font-size:var(--fs-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.s-body h3{margin:.2rem 0 .5rem;font-size:1.6rem}
+.s-body p{color:var(--muted);font-size:var(--fs-sm)}
+.risk{display:flex;align-items:center;gap:.6rem;margin:1rem 0 .9rem;font-size:var(--fs-xs);color:var(--muted)}
+.risk-bars{display:flex;gap:3px;flex:1}
+.risk-bars i{flex:1;height:6px;border-radius:4px;background:var(--line)}
+.risk-bars i.on{background:var(--c)}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.metric{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:.6rem .75rem}
+.metric span{display:block;font-size:var(--fs-xs);color:var(--muted)}
+.metric b{font-size:1.05rem}
+.s-actions{display:flex;gap:.5rem;margin-top:1.1rem}
+.s-actions .btn{flex:1}
+
+/* Cómo funciona */
+.how{display:grid;gap:clamp(2rem,5vw,4rem);align-items:center}
+.steps{list-style:none;display:grid;gap:1rem;counter-reset:s}
+.step{display:flex;gap:1rem;padding:1.2rem;border-radius:var(--r-md);border:1px solid var(--line);background:var(--surface);transition:border-color .25s}
+.step:hover{border-color:var(--accent)}
+.step-n{width:44px;height:44px;flex-shrink:0;border-radius:12px;display:grid;place-items:center;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#06101f}
+.step h3{font-size:1.05rem;margin-bottom:.2rem}
+.step p{color:var(--muted);font-size:var(--fs-sm)}
+.phone-wrap{display:flex;justify-content:center;position:relative}
+.phone-wrap::before{content:"";position:absolute;width:80%;height:80%;top:10%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%)}
+.phone{position:relative;width:min(300px,82vw);aspect-ratio:9/19;border-radius:46px;background:#05080f;padding:12px;box-shadow:0 40px 90px rgba(0,0,0,.45),inset 0 0 0 2px #2a3352}
+.phone::before{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);width:96px;height:26px;border-radius:20px;background:#05080f;z-index:2}
+.screen{height:100%;border-radius:36px;background:#f7f9fd;color:#0d1630;overflow:hidden;display:flex;flex-direction:column;font-size:.72rem}
+.mail-top{padding:50px 16px 12px;background:linear-gradient(135deg,#0f1a3a,#1d2f6b);color:#fff}
+.mail-top small{opacity:.75;font-size:.62rem}
+.mail-top b{display:block;font-size:.88rem;margin-top:2px}
+.mail-body{padding:12px 14px;display:grid;gap:8px;overflow:hidden}
+.mail-row{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid #e3e8f3;border-radius:10px;padding:8px 10px}
+.mail-row span{font-weight:700}
+.tag-buy{background:#d1fae5;color:#065f46;font-weight:700;border-radius:6px;padding:2px 6px;font-size:.62rem}
+.tag-sell{background:#fee2e2;color:#991b1b;font-weight:700;border-radius:6px;padding:2px 6px;font-size:.62rem}
+.tag-hold{background:#e0e7ff;color:#3730a3;font-weight:700;border-radius:6px;padding:2px 6px;font-size:.62rem}
+.mail-foot{margin-top:auto;padding:12px 14px 22px;font-size:.6rem;color:#5a6785}
+
+/* Test de perfil */
+.quiz{max-width:760px;margin-inline:auto}
+.q-progress{height:8px;background:var(--surface-2);border-radius:8px;overflow:hidden;margin-bottom:1.4rem}
+.q-progress div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width .5s var(--ease)}
+.q-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:var(--fs-sm);margin-bottom:.6rem}
+.q-title{font-size:var(--fs-xl);font-weight:800;margin-bottom:1.2rem}
+.q-opts{display:grid;gap:.6rem}
+.q-opt{text-align:left;padding:1rem 1.1rem;border-radius:14px;border:1px solid var(--line);background:var(--surface-2);cursor:pointer;transition:.2s;display:flex;gap:.8rem;align-items:center;min-height:52px}
+.q-opt:hover{border-color:var(--accent)}
+.q-opt[aria-checked="true"]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface-2))}
+.q-opt .rd{width:18px;height:18px;border-radius:50%;border:2px solid var(--line-2);flex-shrink:0}
+.q-opt[aria-checked="true"] .rd{border-color:var(--accent);background:radial-gradient(circle,var(--accent) 45%,transparent 50%)}
+.q-nav{display:flex;justify-content:space-between;margin-top:1.4rem}
+.q-result{text-align:center;animation:rise .6s var(--ease)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+.alloc{display:flex;height:16px;border-radius:10px;overflow:hidden;margin:1.2rem 0 .8rem}
+.alloc div{height:100%;transition:width 1s var(--ease)}
+.alloc-legend{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;font-size:var(--fs-sm)}
+.alloc-legend span{display:inline-flex;align-items:center;gap:.4rem}
+.alloc-legend i{width:10px;height:10px;border-radius:3px}
+.fineprint{font-size:var(--fs-xs);color:var(--muted);margin-top:1rem}
+
+/* Comparador */
+.cmp-grid{display:grid;gap:1.25rem}
+.cmp-select{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.table-wrap{overflow-x:auto}
+table.data{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
+table.data th,table.data td{padding:.75rem .6rem;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+table.data th:first-child,table.data td:first-child{text-align:left}
+table.data thead th{color:var(--muted);font-weight:600;font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em}
+table.data td.best{font-weight:800}
+.radar-box{position:relative;height:340px}
+
+/* Simulador */
+.sim{display:grid;gap:1.25rem}
+.field{margin-bottom:1.25rem}
+.field label,.field .lbl{display:flex;justify-content:space-between;gap:1rem;font-size:var(--fs-sm);color:var(--muted);margin-bottom:.5rem}
+.field output,.field b{color:var(--text);font-family:var(--font-mono);font-weight:700}
+input[type=range]{width:100%;accent-color:var(--accent);height:28px;cursor:pointer}
+select{width:100%;padding:.75rem .9rem;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);min-height:46px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+.seg .chip{justify-content:center}
+.sim-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin-bottom:1rem}
+.sim-out div{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:.85rem}
+.sim-out span{font-size:var(--fs-xs);color:var(--muted)}
+.sim-out b{display:block;font-size:clamp(1.15rem,1rem + .6vw,1.45rem)}
+.sim-chart{position:relative;height:290px}
+details.yt{margin-top:1rem;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+details.yt summary{cursor:pointer;padding:.9rem 1rem;font-weight:600;display:flex;justify-content:space-between;list-style:none}
+details.yt summary::-webkit-details-marker{display:none}
+details.yt[open] summary .icon{transform:rotate(180deg)}
+details.yt .table-wrap{max-height:320px;overflow:auto;padding:0 .8rem .8rem}
+
+/* Metodología */
+.method{display:grid;gap:1.25rem}
+.m-card{padding:1.5rem;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--surface)}
+.m-ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent-2) 14%,transparent);color:var(--accent-2);margin-bottom:1rem}
+.m-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.m-card p,.m-card li{color:var(--muted);font-size:var(--fs-sm)}
+.m-card ul{padding-left:1.1rem;display:grid;gap:.3rem;margin-top:.4rem}
+.ph{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn);font-weight:700;padding:0 .3rem;border-radius:4px;font-size:.85em}
+
+/* Para quién */
+.fit{display:grid;gap:1.25rem}
+.fit .panel h3{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;font-size:1.25rem}
+.fit ul{list-style:none;display:grid;gap:.75rem}
+.fit li{display:flex;gap:.7rem;color:var(--muted)}
+.fit .yes .icon{color:var(--pos)}.fit .no .icon{color:var(--neg)}
+.fit .yes{border-top:4px solid var(--pos)}.fit .no{border-top:4px solid var(--neg)}
+
+/* Testimonios */
+.carousel{position:relative;max-width:820px;margin-inline:auto}
+.slides{overflow:hidden;border-radius:var(--r-lg)}
+.track{display:flex;transition:transform .6s var(--ease)}
+.slide{min-width:100%;padding:clamp(1.5rem,4vw,2.6rem);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg)}
+.slide blockquote{font-size:var(--fs-lg);line-height:1.55;margin-bottom:1.4rem}
+.who{display:flex;align-items:center;gap:.8rem}
+.avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#06101f;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+.who small{display:block;color:var(--muted);font-size:var(--fs-xs)}
+.car-ctrl{display:flex;justify-content:center;align-items:center;gap:1rem;margin-top:1.2rem}
+.dots{display:flex;gap:.4rem}
+.dots button{width:10px;height:10px;border-radius:50%;border:none;background:var(--line-2);cursor:pointer;padding:0;transition:.3s}
+.dots button[aria-current="true"]{background:var(--accent);width:28px;border-radius:6px}
+
+/* Blog */
+.blog{display:grid;gap:1.25rem}
+.post{display:flex;flex-direction:column;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:var(--surface);transition:transform .3s var(--ease),border-color .3s}
+.post:hover{transform:translateY(-5px);border-color:var(--accent-2)}
+.post-media{aspect-ratio:16/9;overflow:hidden;background:var(--surface-2)}
+.post-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.post:hover .post-media img{transform:scale(1.05)}
+.post-body{padding:1.3rem;display:flex;flex-direction:column;flex:1}
+.post-body small{color:var(--accent);font-weight:700;font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase}
+.post-body h3{font-size:1.08rem;margin:.5rem 0;line-height:1.35}
+.post-body p{color:var(--muted);font-size:var(--fs-sm);flex:1}
+.more{display:inline-flex;align-items:center;gap:.35rem;margin-top:1rem;font-weight:600;font-size:var(--fs-sm);color:var(--accent-2)}
+
+/* FAQ */
+.faq{max-width:840px;margin-inline:auto;display:grid;gap:.7rem}
+.qa{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.qa h3{font-size:1rem}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;text-align:left;padding:1.1rem 1.25rem;background:none;border:none;cursor:pointer;font-weight:600;min-height:56px}
+.qa .icon{transition:transform .3s;color:var(--accent)}
+.qa button[aria-expanded="true"] .icon{transform:rotate(45deg)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}
+.qa .ans>div{overflow:hidden;color:var(--muted);padding-inline:1.25rem}
+.qa button[aria-expanded="true"]+.ans{grid-template-rows:1fr}
+.qa button[aria-expanded="true"]+.ans>div{padding-bottom:1.2rem}
+
+/* CTA / Formulario */
+.cta{position:relative;overflow:hidden;border-radius:32px;border:1px solid var(--line);padding:clamp(2rem,5vw,4rem);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--surface)),color-mix(in srgb,var(--accent-2) 18%,var(--surface)))}
+.cta-grid{display:grid;gap:2rem;align-items:center}
+.offer{display:inline-block;background:var(--warn);color:#1a1200;font-weight:800;padding:.35rem .9rem;border-radius:var(--r-pill);font-size:var(--fs-xs);letter-spacing:.06em}
+.cta p{color:var(--muted)}
+.form{display:grid;gap:.9rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:1.5rem;box-shadow:var(--shadow-lg)}
+.form label{font-size:var(--fs-sm);font-weight:600;display:block;margin-bottom:.35rem}
+.form input[type=text],.form input[type=email]{width:100%;padding:.85rem 1rem;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);min-height:48px;transition:border-color .2s}
+.form input[aria-invalid="true"]{border-color:var(--neg)}
+.form input.valid{border-color:var(--pos)}
+.err{color:var(--neg);font-size:var(--fs-xs);min-height:1em;margin-top:.3rem}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-size:var(--fs-xs);color:var(--muted)}
+.check input{margin-top:.2rem;width:18px;height:18px;accent-color:var(--accent)}
+.form-status{font-size:var(--fs-sm);font-weight:600;min-height:1.4em}
+.form-status.ok{color:var(--pos)}.form-status.ko{color:var(--neg)}
+.spinner{width:18px;height:18px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:spin .7s linear infinite;display:none}
+.loading .spinner{display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);padding:3.5rem 0 6rem;background:var(--bg-2)}
+.foot-grid{display:grid;gap:2rem}
+.site-footer p,.site-footer a{color:var(--muted);font-size:var(--fs-sm)}
+.site-footer h2{font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase;margin:0 0 .9rem}
+.site-footer ul{list-style:none;display:grid;gap:.5rem}
+.site-footer a:hover{color:var(--accent)}
+.legal{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:var(--fs-xs);color:var(--muted)}
+.disclaimer-bar{display:flex;gap:.6rem;align-items:flex-start;margin-top:2rem;padding:1rem 1.2rem;border-radius:14px;background:color-mix(in srgb,var(--warn) 10%,transparent);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent);font-size:var(--fs-sm);color:var(--text)}
+.disclaimer-bar .icon{color:var(--warn);margin-top:.15rem}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(4,7,16,.72);backdrop-filter:blur(6px)}
+.modal.open{display:flex}
+.modal-box{position:relative;width:100%;max-width:720px;max-height:92vh;overflow:auto;background:var(--bg-2);border:1px solid var(--line);border-radius:28px;animation:pop .3s var(--ease)}
+@keyframes pop{from{opacity:0;transform:scale(.96)}}
+.modal-media{height:180px;background:var(--surface-2);position:relative}
+.modal-media img{width:100%;height:100%;object-fit:cover}
+.modal-content{padding:1.6rem}
+.modal-close{position:absolute;top:.8rem;right:.8rem;z-index:2;background:rgba(6,10,22,.7);color:#fff;border:none}
+.modal-content .metrics{grid-template-columns:repeat(2,1fr);margin:1.2rem 0}
+
+/* Cookies */
+.cookie{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:150;max-width:520px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.2rem;box-shadow:var(--shadow-lg);display:none}
+.cookie.show{display:block;animation:rise .4s var(--ease)}
+.cookie p{font-size:var(--fs-sm);color:var(--muted);margin:.4rem 0 1rem}
+.cookie .cta-row .btn{flex:1}
+
+/* Flotantes */
+.to-top{position:fixed;right:1rem;bottom:5.5rem;z-index:90;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s}
+.to-top.show{opacity:1;pointer-events:auto;transform:none}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:95;padding:.75rem 1rem calc(.75rem + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;gap:.75rem;align-items:center;transform:translateY(110%);transition:transform .35s var(--ease)}
+.sticky-cta.show{transform:none}
+.sticky-cta small{color:var(--muted);font-size:var(--fs-xs);line-height:1.3}
+.sticky-cta .btn{margin-left:auto;white-space:nowrap}
+
+/* Fallback sin Chart.js: se muestran las tablas */
+.no-chart .chart-box,.no-chart .radar-box,.no-chart .sim-chart{display:none}
+.no-chart .chart-fallback{position:static!important;width:auto!important;height:auto!important;clip:auto!important;margin:0!important;overflow:visible!important;white-space:normal!important}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* =========================================================
+   7. RESPONSIVE (mobile-first)
+   ========================================================= */
+@media (min-width:640px){
+  .cards,.blog,.method{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(4,1fr)}
+  .fit{grid-template-columns:1fr 1fr}
+  .cookie{left:1.5rem;bottom:1.5rem}
+}
+@media (min-width:980px){
+  .nav-links{display:flex;gap:1.6rem}
+  .nav-cta{display:inline-flex}
+  .burger{display:none}
+  .hero-grid{grid-template-columns:1.05fr .95fr}
+  .cards,.blog{grid-template-columns:repeat(3,1fr)}
+  .method{grid-template-columns:repeat(3,1fr)}
+  .how{grid-template-columns:1.1fr .9fr}
+  .cmp-grid{grid-template-columns:1.15fr .85fr}
+  .sim{grid-template-columns:.85fr 1.15fr}
+  .cta-grid{grid-template-columns:1.1fr .9fr}
+  .foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}
+  .sticky-cta{display:none}
+  .to-top{bottom:1.5rem;right:1.5rem}
+  .site-footer{padding-bottom:2.5rem}
+}
+@media (min-width:1600px){.container{max-width:1360px}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* =========================================================
+   V2 · CORRECCIONES DE USABILIDAD (sin cambios de cifras ni textos)
+   ========================================================= */
+/* 1. Desbordes horizontales: las columnas de los grids pueden encogerse (minmax(0,1fr)) */
+.cmp-grid,.sim,.hero-grid,.how,.cta-grid{grid-template-columns:minmax(0,1fr)}
+.cmp-grid>*,.sim>*,.hero-grid>*,.how>*,.cta-grid>*{min-width:0}
+@media (min-width:980px){
+  .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+  .how{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+  .cmp-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+  .sim{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+  .cta-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+}
+/* Tabla del comparador compacta en móvil (con scroll interno solo como último recurso) */
+.table-wrap{max-width:100%;-webkit-overflow-scrolling:touch}
+@media (max-width:639px){
+  table.data{font-size:.8rem}
+  table.data th,table.data td{padding:.65rem .3rem;white-space:normal;vertical-align:top}
+  table.data thead th{font-size:.66rem;letter-spacing:.02em}
+  table.data th:first-child,table.data td:first-child{min-width:5.2rem;padding-left:0}
+  table.data th:last-child,table.data td:last-child{padding-right:0}
+  .cmp-select .chip{padding:.5rem .8rem}
+}
+
+/* 2. Banner de cookies: franja baja y fina que no tapa el hero ni el CTA */
+.cookie{left:0;right:0;bottom:0;max-width:none;border-radius:0;border-width:1px 0 0;
+  padding:.8rem clamp(1rem,4vw,2rem) calc(.8rem + env(safe-area-inset-bottom));box-shadow:0 -10px 30px rgba(0,0,0,.22)}
+.cookie strong{font-size:var(--fs-sm)}
+.cookie p{font-size:var(--fs-xs);line-height:1.45;margin:.15rem 0 .65rem}
+.cookie .cta-row{gap:.5rem}
+.cookie .cta-row .btn{flex:1;min-height:40px}
+@media (min-width:760px){
+  .cookie.show{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:2rem;align-items:center;
+    padding-inline:max(1.5rem,calc((100vw - 1240px)/2 + 2rem))}
+  .cookie strong{grid-column:1;grid-row:1}
+  .cookie p{grid-column:1;grid-row:2;margin:.1rem 0 0}
+  .cookie .cta-row{grid-column:2;grid-row:1 / span 2;flex-wrap:nowrap}
+  .cookie .cta-row .btn{flex:none;min-width:7.5rem}
+}
+
+/* 3. Tarjetas de estrategias: carrusel con scroll lateral en móvil (la página era de ~19.800 px) */
+.s-actions .btn:first-child{flex:1.35}
+.s-actions .btn:last-child{flex:1}
+@media (max-width:639px){
+  .cards{display:flex;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:clamp(1rem,4vw,2rem);
+    margin-inline:calc(-1 * clamp(1rem,4vw,2rem));padding:.2rem clamp(1rem,4vw,2rem) 1rem;scrollbar-width:none;overscroll-behavior-x:contain}
+  .cards::-webkit-scrollbar{display:none}
+  .cards .s-card{flex:0 0 86%;scroll-snap-align:start}
+  .cards .s-card[hidden]{display:none}
+  .s-media{aspect-ratio:16/6}
+  .s-body{padding:1.1rem 1.15rem 1.2rem}
+}
+
+/* 4. Simulador: selects legibles y resultados en rejilla 2x2 (antes 3+1) */
+.two{grid-template-columns:minmax(0,1fr)}
+.sim-out{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sim-out div{min-width:0}
+.sim-out b{overflow-wrap:anywhere}
+
+/* 5. Formulario: casilla de consentimiento alineada y con zona táctil mayor */
+.check,.field .check,.form label.check{display:flex;justify-content:flex-start;align-items:flex-start;gap:.7rem;line-height:1.5;margin-bottom:0;font-weight:500;cursor:pointer}
+.check input{flex:0 0 22px;width:22px;height:22px;margin-top:.1rem}
+
+/* Tabla del comparador: las celdas pueden saltar de línea en todos los anchos (sin scroll interno) */
+table.data th,table.data td{white-space:normal}
+table.data td,table.data th[scope=col]{overflow-wrap:break-word}
+table.data th:first-child,table.data td:first-child{min-width:6rem}
+@media (max-width:420px){
+  table.data{font-size:.76rem}
+  table.data thead th{font-size:.62rem;letter-spacing:0}
+  table.data th:first-child,table.data td:first-child{min-width:4.4rem}
+  table.data th,table.data td{padding-inline:.22rem}
+}
+
+/* Filtros de estrategias: una sola fila con scroll lateral en móvil (antes ocupaban 3 filas) */
+@media (max-width:639px){
+  .filters{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;margin-bottom:1.2rem;
+    margin-inline:calc(-1 * clamp(1rem,4vw,2rem));padding:.1rem clamp(1rem,4vw,2rem)}
+  .filters::-webkit-scrollbar{display:none}
+  .filters .chip{flex:0 0 auto;white-space:nowrap}
+}
+
+/* Cabecera: nada se parte en dos líneas; entre 980 y 1139 px se usa el menú hamburguesa */
+.logo,.nav-links a,.nav-cta{white-space:nowrap}
+@media (min-width:980px) and (max-width:1139px){
+  .nav-links{display:none}
+  .burger{display:grid}
+}
+
+/* Fecha de actualización de los datos */
+.asof{display:flex;align-items:center;gap:.5rem;font-size:var(--fs-xs);color:var(--muted);margin:.1rem 0 .7rem;line-height:1.4}
+.asof strong{color:var(--text);font-weight:700}
+.asof-dot{flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.asof-center{justify-content:center;text-align:center;margin:.2rem 0 1.2rem}
+@media (max-width:420px){.kpi span{font-size:.68rem;white-space:nowrap}}
+
+/* FAQ: el botón está dentro del h3, así que el selector hermano no alcanzaba a .ans; se usa una clase en .qa */
+.qa.open .ans{grid-template-rows:1fr}
+.qa.open .ans>div{padding-bottom:1.2rem}
+
+/* ===== Paleta E · cobalto y naranja, estilo alegre ===== */
+.logo-mark{color:#fff}
+.hero::before{background:radial-gradient(circle,color-mix(in srgb,var(--accent-2) 30%,transparent),transparent 65%)}
+.hero::after{background:radial-gradient(circle,color-mix(in srgb,var(--accent) 24%,transparent),transparent 65%)}
+.section.alt{background:linear-gradient(180deg,var(--bg-2),color-mix(in srgb,var(--bg-2) 50%,var(--bg)))}
+.stats{background:var(--bg-2)}
+.btn-primary{box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 38%,transparent)}
+.btn-ghost{border-width:2px;border-color:var(--accent);color:var(--accent);font-weight:700}
+.btn-ghost:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.step-n{background:var(--accent);color:var(--accent-ink)}
+.m-ic{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.stat:nth-child(1) b{color:var(--accent)}.stat:nth-child(2) b{color:var(--accent-2)}.stat:nth-child(3) b{color:var(--pos)}.stat:nth-child(4) b{color:var(--neg)}
+.s-card{border-top:4px solid var(--c)}
+.s-card:hover{box-shadow:0 22px 50px color-mix(in srgb,var(--c) 22%,transparent)}
+.panel,.m-card,.s-card,.hero-panel,.qa,.kpi{box-shadow:0 10px 28px color-mix(in srgb,var(--accent) 9%,transparent)}
+.eyebrow{color:var(--accent)}
+.cmp-select .chip[aria-pressed="true"]{box-shadow:0 6px 16px color-mix(in srgb,var(--accent) 30%,transparent)}
+</style>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- SVG sprite (iconos estilo Lucide) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0L5 7zM19 7l-3 7a4 4 0 0 0 6 0l-3-7z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4 20a1 1 0 0 0 .9 1.5h14.2A1 1 0 0 0 20 20l-6-11V3"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+</svg>
+
+<!-- =========================== HEADER =========================== -->
+<header class="site-header" id="header">
+  <nav class="container nav" aria-label="Navegación principal">
+    <a href="#main" class="logo" aria-label="Tu Amigo Inversor, inicio"><span class="logo-mark" aria-hidden="true">TA</span>Tu Amigo Inversor</a>
+    <ul class="nav-links">
+      <li><a href="#estrategias">Estrategias</a></li>
+      <li><a href="#perfil">Test de perfil</a></li>
+      <li><a href="#comparador">Comparador</a></li>
+      <li><a href="#simulador">Simulador</a></li>
+      <li><a href="#metodologia">Metodología</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar a modo claro">
+        <svg class="icon i-sun"><use href="#i-sun"/></svg><svg class="icon i-moon"><use href="#i-moon"/></svg>
+      </button>
+      <a href="#suscripcion" class="btn btn-primary btn-sm nav-cta magnetic">Empieza gratis</a>
+      <button class="icon-btn burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#estrategias">Estrategias</a></li>
+      <li><a href="#perfil">Test de perfil</a></li>
+      <li><a href="#comparador">Comparador</a></li>
+      <li><a href="#simulador">Simulador</a></li>
+      <li><a href="#metodologia">Metodología</a></li>
+      <li><a href="#faq">Preguntas frecuentes</a></li>
+      <li><a href="#suscripcion" class="btn btn-primary" style="margin-top:.5rem">Empieza gratis · 3 meses</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- =========================== HERO =========================== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <p class="badge"><span class="live" aria-hidden="true"></span>Nuevas posiciones el día 1 de cada mes</p>
+      <h1 id="hero-title">Estrategias de inversión con <span class="grad">método</span>, no con predicciones.</h1>
+      <p class="lead">Comparto las estrategias que aplico con mi propio dinero: cartera permanente, inversión momentum, asignación táctica de activos e inversión temática. Reglas claras, datos publicados y unos minutos al mes.</p>
+      <div class="cta-row">
+        <a href="#suscripcion" class="btn btn-primary magnetic">Prueba 3 meses gratis <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a href="#perfil" class="btn btn-ghost">Descubre tu perfil</a>
+      </div>
+      <div class="hero-trust">
+        <span><svg class="icon"><use href="#i-check"/></svg>Sin compromiso</span>
+        <span><svg class="icon"><use href="#i-check"/></svg>Con tu propio bróker</span>
+        <span><svg class="icon"><use href="#i-check"/></svg>Basado en reglas</span>
+      </div>
+    </div>
+
+    <div class="hero-panel reveal" aria-labelledby="hp-label">
+      <div class="hp-head">
+        <div><small id="hp-label">Rentabilidad anual media</small><div class="hp-value mono pos" id="hpValue" aria-live="polite">+40,3%</div></div>
+        <small class="mono" id="hpName" style="font-weight:700;color:var(--text)">GEDA</small>
+      </div>
+      <div class="hp-kpis">
+        <div class="kpi"><span>Máx. caída</span><b class="mono neg" id="hpDD">-19,6%</b></div>
+        <div class="kpi"><span>2025</span><b class="mono" id="hp25">+56,6%</b></div>
+        <div class="kpi"><span>2026 (ene–sep)</span><b class="mono" id="hp26">+100,2%</b></div>
+      </div>
+      <p class="asof"><span class="asof-dot" aria-hidden="true"></span><span>Datos actualizados a <strong>30 sep 2026</strong> · 2026 solo incluye de enero a septiembre</span></p>
+      <div class="chart-box"><canvas id="heroChart" role="img" aria-label="Evolución acumulada de la estrategia seleccionada (base 100) con la zona de caída sombreada"></canvas></div>
+      <p class="chart-note">Evolución acumulada con las rentabilidades mensuales de la estrategia (base 100, escala logarítmica), de <span id="hpFrom">ene 2016</span> a <span id="hpTo">sep 2026</span>. Rentabilidades en euros, sin comisiones ni impuestos. Rentabilidades pasadas no garantizan rentabilidades futuras.</p>
+      <div class="hp-tabs" role="radiogroup" aria-label="Seleccionar estrategia" id="hpTabs"></div>
+      <table class="sr-only chart-fallback data" id="heroTable"><caption>Métricas de las estrategias</caption></table>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats" aria-label="Cifras clave">
+  <div class="container stats-grid">
+    <div class="stat reveal"><b class="mono" data-count="6">0</b><span>estrategias activas</span></div>
+    <div class="stat reveal"><b class="mono" data-count="1" data-prefix="Día ">0</b><span>de cada mes, nuevas posiciones</span></div>
+    <div class="stat reveal"><b class="mono" data-count="3">0</b><span>meses gratis de prueba</span></div>
+    <div class="stat reveal"><b class="mono" data-count="0">0</b><span>predicciones: solo datos</span></div>
+  </div>
+</section>
+
+<!-- =========================== ESTRATEGIAS =========================== -->
+<section class="section" id="estrategias" aria-labelledby="est-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Estrategias</span>
+      <h2 id="est-title">Una estrategia de inversión para cada perfil de riesgo</h2>
+      <p>De la cartera permanente que aguanta cualquier ciclo económico a la asignación táctica de activos que rota para seguir las tendencias.</p>
+      <p class="asof asof-center"><span class="asof-dot" aria-hidden="true"></span><span>Datos actualizados a <strong>30 sep 2026</strong> · 2026 solo incluye de enero a septiembre</span></p>
+    </div>
+    <div class="filters reveal" role="group" aria-label="Filtrar estrategias">
+      <button class="chip" type="button" aria-pressed="true" data-filter="all">Todas</button>
+      <button class="chip" type="button" aria-pressed="false" data-filter="permanente">Cartera permanente · semestral</button>
+      <button class="chip" type="button" aria-pressed="false" data-filter="tactica">Asignación táctica · mensual</button>
+    </div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<!-- =========================== CÓMO FUNCIONA =========================== -->
+<section class="section alt" id="como-funciona" aria-labelledby="how-title">
+  <div class="container how">
+    <div>
+      <div class="reveal" style="margin-bottom:2rem">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2 id="how-title">Cinco minutos al mes. Cero decisiones emocionales.</h2>
+        <p style="color:var(--muted);font-size:var(--fs-lg)">Tú mantienes el control de tu dinero en tu bróker. Nosotros te damos el sistema.</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal"><span class="step-n" aria-hidden="true">1</span><div><h3>Suscríbete gratis</h3><p>Accede a las 6 estrategias con la oferta de lanzamiento de 3 meses gratis.</p></div></li>
+        <li class="step reveal"><span class="step-n" aria-hidden="true">2</span><div><h3>Recibe el informe el día 1</h3><p>Un correo claro con las posiciones de cada estrategia y los cambios del mes.</p></div></li>
+        <li class="step reveal"><span class="step-n" aria-hidden="true">3</span><div><h3>Decide con libertad</h3><p>Tú eliges si replicas las posiciones. Sin obligaciones, sin presión.</p></div></li>
+        <li class="step reveal"><span class="step-n" aria-hidden="true">4</span><div><h3>Ejecuta en tu bróker</h3><p>Aplica los cambios propuestos en unos minutos y olvídate hasta el mes siguiente.</p></div></li>
+      </ol>
+    </div>
+    <div class="phone-wrap reveal" aria-label="Ejemplo de correo mensual con posiciones" role="img">
+      <div class="phone">
+        <div class="screen">
+          <div class="mail-top"><small>De: Tu Amigo Inversor · 1 de cada mes</small><b>Tus posiciones del mes</b></div>
+          <div class="mail-body">
+            <div class="mail-row"><span>GEDA</span><em class="tag-buy">COMPRAR · Activo A</em></div>
+            <div class="mail-row"><span>GEDA</span><em class="tag-sell">VENDER · Activo B</em></div>
+            <div class="mail-row"><span>IMPULSO</span><em class="tag-hold">MANTENER</em></div>
+            <div class="mail-row"><span>ROCA</span><em class="tag-hold">MANTENER</em></div>
+            <div class="mail-row"><span>GEN-Z</span><em class="tag-buy">COMPRAR · Activo C</em></div>
+          </div>
+          <div class="mail-foot">Ejemplo ilustrativo [PLACEHOLDER]. No es una recomendación de inversión.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== TEST DE PERFIL =========================== -->
+<section class="section" id="perfil" aria-labelledby="quiz-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Test de perfil</span>
+      <h2 id="quiz-title">¿Qué estrategia encaja contigo?</h2>
+      <p>Cinco preguntas, un minuto. Te proponemos una estrategia o una combinación orientativa.</p>
+    </div>
+    <div class="panel quiz reveal" id="quiz" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- =========================== COMPARADOR =========================== -->
+<section class="section alt" id="comparador" aria-labelledby="cmp-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Comparador</span>
+      <h2 id="cmp-title">Compara hasta 3 estrategias lado a lado</h2>
+      <p>Rentabilidad, riesgo, frecuencia de revisión y volatilidad en una sola vista.</p>
+    </div>
+    <div class="cmp-grid">
+      <div class="panel reveal">
+        <h3 style="font-size:1.1rem;margin-bottom:.3rem">Selecciona de 2 a 3 estrategias</h3>
+        <p style="color:var(--muted);font-size:var(--fs-sm);margin-bottom:1rem" id="cmpHint">Seleccionadas: 3 de 3</p>
+        <div class="cmp-select" id="cmpSelect" role="group" aria-describedby="cmpHint"></div>
+        <div class="table-wrap"><table class="data" id="cmpTable"><caption class="sr-only">Comparación de estrategias seleccionadas</caption></table></div>
+        <p class="fineprint">Datos actualizados a 30 sep 2026. La fila de 2026 recoge solo de enero a septiembre, no un año completo.</p>
+      </div>
+      <div class="panel reveal">
+        <h3 style="font-size:1.1rem;margin-bottom:.3rem">Perfil radar</h3>
+        <p style="color:var(--muted);font-size:var(--fs-sm);margin-bottom:.6rem">Escala 0-100 normalizada sobre las 6 estrategias. En "Control de caídas", más es mejor.</p>
+        <div class="radar-box"><canvas id="radarChart" role="img" aria-label="Gráfico radar comparando las estrategias seleccionadas"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== SIMULADOR =========================== -->
+<section class="section" id="simulador" aria-labelledby="sim-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Simulador</span>
+      <h2 id="sim-title">Visualiza el efecto del interés compuesto</h2>
+      <p>Combina dos estrategias, ajusta tus aportaciones y compara escenarios. Simulación ilustrativa a partir de la rentabilidad media histórica.</p>
+    </div>
+    <div class="sim">
+      <form class="panel reveal" id="simForm" onsubmit="return false" aria-label="Parámetros de la simulación">
+        <div class="two">
+          <div class="field"><label for="sA">Estrategia A</label><select id="sA"></select></div>
+          <div class="field"><label for="sB">Estrategia B</label><select id="sB"></select></div>
+        </div>
+        <div class="field"><label for="sMix">Peso A / B <output id="oMix" for="sMix">70% / 30%</output></label><input type="range" id="sMix" min="0" max="100" step="5" value="70"></div>
+        <div class="field"><label for="sCap">Capital inicial <output id="oCap" for="sCap"></output></label><input type="range" id="sCap" min="0" max="200000" step="1000" value="10000"></div>
+        <div class="field"><label for="sMon">Aportación mensual <output id="oMon" for="sMon"></output></label><input type="range" id="sMon" min="0" max="3000" step="50" value="300"></div>
+        <div class="field"><label for="sYrs">Horizonte <output id="oYrs" for="sYrs"></output></label><input type="range" id="sYrs" min="1" max="30" step="1" value="15"></div>
+        <div class="field">
+          <span class="lbl" id="scLbl">Escenario</span>
+          <div class="seg" role="radiogroup" aria-labelledby="scLbl" id="scSeg">
+            <button type="button" class="chip" role="radio" aria-checked="false" data-sc="0.5">Prudente</button>
+            <button type="button" class="chip" role="radio" aria-checked="true" data-sc="0.75">Base</button>
+            <button type="button" class="chip" role="radio" aria-checked="false" data-sc="1">Optimista</button>
+          </div>
+        </div>
+        <p class="fineprint">Prudente = 50%, base = 75% y optimista = 100% de la rentabilidad media ponderada. Capitalización mensual.</p>
+      </form>
+      <div class="panel reveal">
+        <div class="sim-out" aria-live="polite">
+          <div><span>Capital aportado</span><b class="mono" id="rIn">0 €</b></div>
+          <div><span>Valor final estimado</span><b class="mono pos" id="rOut">0 €</b></div>
+          <div><span>Rendimiento estimado</span><b class="mono" id="rGain">0 €</b></div>
+          <div><span>Rent. anual aplicada</span><b class="mono" id="rRate">0%</b></div>
+        </div>
+        <div class="sim-chart"><canvas id="simChart" role="img" aria-label="Gráfico de áreas del capital aportado y el rendimiento acumulado por año"></canvas></div>
+        <details class="yt">
+          <summary>Tabla año a año <svg class="icon"><use href="#i-down"/></svg></summary>
+          <div class="table-wrap"><table class="data chart-fallback-keep" id="simTable"><caption class="sr-only">Evolución año a año de la simulación</caption></table></div>
+        </details>
+        <div class="cta-row" style="margin-top:1rem">
+          <button type="button" class="btn btn-ghost btn-sm" id="csvBtn"><svg class="icon"><use href="#i-download"/></svg>Exportar CSV</button>
+        </div>
+        <p class="fineprint">Rentabilidades pasadas no garantizan rentabilidades futuras. Esta simulación no incluye comisiones, impuestos ni la secuencia real de caídas, y no es asesoramiento financiero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== METODOLOGÍA =========================== -->
+<section class="section alt" id="metodologia" aria-labelledby="met-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Transparencia</span>
+      <h2 id="met-title">Metodología: qué hay detrás de cada cifra</h2>
+      <p>Creemos que un inversor informado es un inversor que no abandona su sistema. Por eso explicamos cómo medimos y qué riesgos asumes.</p>
+    </div>
+    <div class="method">
+      <article class="m-card reveal spot">
+        <div class="m-ic"><svg class="icon"><use href="#i-chart"/></svg></div>
+        <h3>Cómo se calculan las rentabilidades</h3>
+        <p>La rentabilidad anual media es la media del periodo publicado para cada estrategia. La caída máxima es la mayor pérdida desde un máximo previo hasta el mínimo posterior.</p>
+        <ul><li>Periodo analizado: datos mensuales hasta el 30 sep 2026 (2026 incluye solo enero–septiembre).</li><li>Divisa: todas las rentabilidades están expresadas en euros (EUR). Los activos denominados en USD se convierten a euros con el tipo de cambio del día, de modo que las cifras incluyen el efecto divisa.</li><li>Fuente de precios: Yahoo Finance.</li><li>Comisiones e impuestos: no incluidos.</li></ul>
+      </article>
+      <article class="m-card reveal spot">
+        <div class="m-ic"><svg class="icon"><use href="#i-flask"/></svg></div>
+        <h3>Cómo se construyen GEDA, GEN-Z y CRYPTO</h3>
+        <p>GEDA, GEN-Z y CRYPTO se basan en una estrategia propia de tipo momentum, con parámetros propios y actualizaciones mensuales.</p>
+      </article>
+      <article class="m-card reveal spot">
+        <div class="m-ic"><svg class="icon"><use href="#i-alert"/></svg></div>
+        <h3>Riesgos que debes conocer</h3>
+        <ul><li>Puedes perder parte o la totalidad del capital invertido.</li><li>Las caídas pasadas no limitan las futuras: pueden ser mayores.</li><li>Las estrategias de momentum pueden sufrir en mercados laterales.</li><li>Las criptomonedas presentan volatilidad extrema.</li><li>Replicar con retraso o con otros activos altera los resultados.</li></ul>
+      </article>
+    </div>
+    <div class="disclaimer-bar reveal" role="note"><svg class="icon"><use href="#i-alert"/></svg><p><strong>Importante:</strong> la información de esta web no constituye asesoramiento financiero. Las rentabilidades pasadas no garantizan rentabilidades futuras.</p></div>
+  </div>
+</section>
+
+<!-- =========================== PARA QUIÉN =========================== -->
+<section class="section" id="para-quien" aria-labelledby="fit-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Encaje</span>
+      <h2 id="fit-title">¿Es para ti?</h2>
+      <p>Preferimos ser honestos: este servicio no es para todo el mundo.</p>
+    </div>
+    <div class="fit">
+      <div class="panel yes reveal">
+        <h3><svg class="icon" style="color:var(--pos)"><use href="#i-check"/></svg>Es para ti si…</h3>
+        <ul>
+          <li><svg class="icon"><use href="#i-check"/></svg>Quieres invertir con reglas claras y no por intuición.</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Tienes un horizonte de medio o largo plazo.</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Aceptas que habrá caídas y estás dispuesto a mantener el sistema.</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Prefieres dedicar unos minutos al mes en vez de horas cada día.</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>Quieres mantener el control de tu dinero en tu propio bróker.</li>
+        </ul>
+      </div>
+      <div class="panel no reveal">
+        <h3><svg class="icon" style="color:var(--neg)"><use href="#i-x"/></svg>No es para ti si…</h3>
+        <ul>
+          <li><svg class="icon"><use href="#i-x"/></svg>Buscas rentabilidades garantizadas o dinero rápido.</li>
+          <li><svg class="icon"><use href="#i-x"/></svg>Vas a necesitar el dinero a corto plazo.</li>
+          <li><svg class="icon"><use href="#i-x"/></svg>No toleras ver tu cartera en negativo durante meses.</li>
+          <li><svg class="icon"><use href="#i-x"/></svg>Quieres que alguien gestione tu dinero por ti.</li>
+          <li><svg class="icon"><use href="#i-x"/></svg>Buscas asesoramiento financiero personalizado.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== TESTIMONIOS =========================== -->
+<section class="section alt" id="testimonios" aria-labelledby="tst-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Comunidad</span>
+      <h2 id="tst-title">Lo que dicen los suscriptores</h2>
+    </div>
+    <div class="carousel reveal" role="region" aria-roledescription="carrusel" aria-label="Testimonios">
+      <div class="slides"><div class="track" id="track" aria-live="polite"></div></div>
+      <div class="car-ctrl">
+        <button class="icon-btn" type="button" id="prev" aria-label="Testimonio anterior"><svg class="icon"><use href="#i-left"/></svg></button>
+        <div class="dots" id="dots" role="group" aria-label="Seleccionar testimonio"></div>
+        <button class="icon-btn" type="button" id="next" aria-label="Testimonio siguiente"><svg class="icon"><use href="#i-right"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== BLOG =========================== -->
+<section class="section" id="blog" aria-labelledby="blog-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Aprende</span>
+      <h2 id="blog-title">La disciplina es tu mayor ventaja</h2>
+      <p>Artículos para entender los sistemas, gestionar las caídas y no abandonar la estrategia en el peor momento.</p>
+    </div>
+    <div class="blog">
+      <article class="post reveal">
+        <div class="post-media"><img src="assets/img/post-1.svg" width="800" height="450" loading="lazy" decoding="async" alt="Ilustración de tres círculos de colores que se solapan, símbolo de combinar estrategias"></div>
+        <div class="post-body"><small>Asignación</small><h3>Cómo combinar las estrategias: no tienes que elegir solo una</h3><p>¿ROCA o GEDA? No es un dilema de bandos: combinar sistemas puede equilibrar estabilidad y crecimiento.</p><a class="more" href="https://tuamigoinversor.com/aprende/combinar-estrategias-inversion/" target="_blank" rel="noopener">Leer artículo <svg class="icon"><use href="#i-arrow"/></svg><span class="sr-only">sobre cómo combinar estrategias</span></a></div>
+      </article>
+      <article class="post reveal">
+        <div class="post-media"><img src="assets/img/post-2.svg" width="800" height="450" loading="lazy" decoding="async" alt="Ilustración de ondas de colores, símbolo de las emociones del inversor"></div>
+        <div class="post-body"><small>Psicología</small><h3>Por qué la mayoría de inversores pierde dinero aunque su estrategia funcione</h3><p>Una caída no es un fallo del sistema. El verdadero riesgo es abandonarlo en el peor momento.</p><a class="more" href="https://tuamigoinversor.com/aprende/por-que-los-inversores-abandonan-su-estrategia-en-un-drawdown/" target="_blank" rel="noopener">Leer artículo <svg class="icon"><use href="#i-arrow"/></svg><span class="sr-only">sobre por qué los inversores pierden dinero</span></a></div>
+      </article>
+      <article class="post reveal">
+        <div class="post-media"><img src="assets/img/post-3.svg" width="800" height="450" loading="lazy" decoding="async" alt="Ilustración de una línea que sube, cae y se recupera, símbolo de una caída máxima"></div>
+        <div class="post-body"><small>Gestión del riesgo</small><h3>Drawdowns en inversión: la clave para no abandonar tu sistema en caídas</h3><p>Cuando la rentabilidad marca máximos y llega la corrección: cómo prepararte para mantener el rumbo.</p><a class="more" href="https://tuamigoinversor.com/aprende/drawdowns-en-inversion-sin-saltarte-el-sistema/" target="_blank" rel="noopener">Leer artículo <svg class="icon"><use href="#i-arrow"/></svg><span class="sr-only">sobre drawdowns en inversión</span></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== FAQ =========================== -->
+<section class="section alt" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Preguntas frecuentes</span><h2 id="faq-title">Resolvemos tus dudas</h2></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<!-- =========================== SUSCRIPCIÓN =========================== -->
+<section class="section" id="suscripcion" aria-labelledby="sub-title">
+  <div class="container">
+    <div class="cta reveal">
+      <div class="cta-grid">
+        <div>
+          <span class="offer">OFERTA DE LANZAMIENTO</span>
+          <h2 id="sub-title">Empieza gratis: 3 meses con acceso a todo</h2>
+          <p style="font-size:var(--fs-lg)">La mejor forma de saber si una estrategia es para ti es verla en directo. Recibe el informe, revisa las posiciones y decide. Si no te convence, no haces nada.</p>
+          <div class="hero-trust">
+            <span><svg class="icon"><use href="#i-mail"/></svg>Informe el día 1</span>
+            <span><svg class="icon"><use href="#i-shield"/></svg>Sin compromiso</span>
+            <span><svg class="icon"><use href="#i-clock"/></svg>Cancela cuando quieras</span>
+          </div>
+        </div>
+        <form class="form" id="subForm" novalidate aria-labelledby="sub-title">
+          <div>
+            <label for="fName">Nombre</label>
+            <input type="text" id="fName" name="name" autocomplete="given-name" required aria-describedby="eName">
+            <p class="err" id="eName" aria-live="polite"></p>
+          </div>
+          <div>
+            <label for="fEmail">Correo electrónico</label>
+            <input type="email" id="fEmail" name="email" autocomplete="email" inputmode="email" required aria-describedby="eEmail">
+            <p class="err" id="eEmail" aria-live="polite"></p>
+          </div>
+          <label class="check"><input type="checkbox" id="fConsent" required aria-describedby="eConsent"><span>Acepto la <a href="#" style="text-decoration:underline">política de privacidad</a> <span class="ph">[PLACEHOLDER: enlace]</span> y recibir el informe mensual.</span></label>
+          <p class="err" id="eConsent" aria-live="polite"></p>
+          <button class="btn btn-primary magnetic" type="submit" id="fBtn"><span class="spinner" aria-hidden="true"></span><span id="fBtnTxt">Quiero empezar gratis</span></button>
+          <p class="form-status" id="fStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =========================== FOOTER =========================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="#main" class="logo" style="margin-bottom:1rem"><span class="logo-mark" aria-hidden="true">TA</span>Tu Amigo Inversor</a>
+        <p>Comparto las estrategias que utilizo para gestionar mi propio dinero, basadas en reglas claras y sin predicciones.</p>
+        <p style="margin-top:.8rem"><a href="mailto:info@tuamigoinversor.com">info@tuamigoinversor.com</a></p>
+      </div>
+      <nav aria-label="Carteras permanentes"><h2>Cartera permanente</h2><ul><li><a href="https://tuamigoinversor.com/cartera-permanente-conservadora-roca/" target="_blank" rel="noopener">ROCA</a></li><li><a href="https://tuamigoinversor.com/cartera-inversion-crecimiento-impulso/" target="_blank" rel="noopener">IMPULSO</a></li><li><a href="https://tuamigoinversor.com/plan-pensiones-moderado-horizonte/" target="_blank" rel="noopener">HORIZONTE</a></li></ul></nav>
+      <nav aria-label="Asignación táctica"><h2>Asignación táctica</h2><ul><li><a href="inversion-tactica-geda/index.html">GEDA</a></li><li><a href="inversion-tematica-gen-z/index.html">GEN-Z</a></li><li><a href="https://tuamigoinversor.com/inversion-criptomonedas-crypto/" target="_blank" rel="noopener">CRYPTO</a></li></ul></nav>
+      <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="#">Aviso legal <span class="ph">[PLACEHOLDER]</span></a></li><li><a href="#">Política de privacidad <span class="ph">[PLACEHOLDER]</span></a></li><li><a href="#" id="cookieSettings">Configurar cookies</a></li></ul></nav>
+    </div>
+    <div class="legal">
+      <p><strong>Aviso:</strong> la información publicada en esta web tiene carácter meramente informativo y no constituye asesoramiento financiero ni una recomendación personalizada de inversión. Las inversiones conllevan riesgo y pueden implicar la pérdida total o parcial del capital. Las rentabilidades pasadas no garantizan rentabilidades futuras. Cada inversor debe realizar su propio análisis y tomar decisiones en función de su situación personal.</p>
+      <p style="margin-top:.8rem">© 2026 Tu Amigo Inversor. Imágenes: Unsplash.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle" id="modalBox">
+    <button class="icon-btn modal-close" type="button" id="mClose" aria-label="Cerrar detalle"><svg class="icon"><use href="#i-x"/></svg></button>
+    <div id="mContent"></div>
+  </div>
+</div>
+
+<!-- Cookies -->
+<div class="cookie" id="cookie" role="dialog" aria-labelledby="ckTitle" aria-describedby="ckText">
+  <strong id="ckTitle">Tu privacidad</strong>
+  <p id="ckText">Usamos solo cookies técnicas necesarias. Con tu consentimiento, usaríamos cookies analíticas para mejorar la web. Puedes cambiar tu elección en cualquier momento desde el pie de página.</p>
+  <div class="cta-row">
+    <button class="btn btn-ghost btn-sm" type="button" id="ckReject">Rechazar</button>
+    <button class="btn btn-primary btn-sm" type="button" id="ckAccept">Aceptar</button>
+  </div>
+</div>
+
+<button class="icon-btn to-top" id="toTop" type="button" aria-label="Volver arriba"><svg class="icon"><use href="#i-up"/></svg></button>
+<div class="sticky-cta" id="stickyCta"><small><strong>3 meses gratis</strong><br>Acceso a las 6 estrategias</small><a href="#suscripcion" class="btn btn-primary btn-sm">Empezar</a></div>
+
+<script>
+/* =========================================================
+   APP · Tu Amigo Inversor
+   Todo el JS se ejecuta tras cargar el DOM y Chart.js (defer).
+   ========================================================= */
+document.addEventListener('DOMContentLoaded', function () {
+'use strict';
+
+/* ---------- 1. FUENTE DE VERDAD: ESTRATEGIAS (no modificar cifras) ---------- */
+const IMG = id => ({ src:`assets/img/${id}.svg` });
+const STRATEGIES = [
+  {id:'ROCA',     slug:'roca',     type:'permanente', profile:'Perfil conservador',  color:'#0ea5e9', risk:1, review:'Semestral',
+   desc:'Cartera permanente conservadora diseñada para proteger el capital en cualquier entorno de mercado.',
+   feats:['Baja volatilidad','Diversificación','Rebalanceo semestral'], avg:7.5, dd:-9.2, y25:5.6, y26:4.7,
+   img:IMG('roca'), alt:'Ilustración de montañas azules bajo un sol brillante, símbolo de solidez y calma',
+   url:'https://tuamigoinversor.com/cartera-permanente-conservadora-roca/'},
+  {id:'IMPULSO',  slug:'impulso',  type:'permanente', profile:'Perfil tolerante',    color:'#10b981', risk:2, review:'Semestral',
+   desc:'Cartera permanente de crecimiento moderado que combina estabilidad y exposición a mercado.',
+   feats:['Riesgo medio','Elimina renta fija','Rebalanceo semestral'], avg:13.6, dd:-16.5, y25:22.6, y26:8.2,
+   img:IMG('impulso'), alt:'Ilustración de barras que crecen con monedas y una línea ascendente, símbolo de crecimiento',
+   url:'https://tuamigoinversor.com/cartera-inversion-crecimiento-impulso/'},
+  {id:'HORIZONTE',slug:'horizonte',type:'permanente', profile:'Plan de pensiones',   color:'#7c3aed', risk:2, review:'Semestral',
+   desc:'Enfoque a largo plazo orientado a la acumulación de capital con reglas simples y consistentes.',
+   feats:['Muy largo plazo','Baja rotación','Simplicidad operativa'], avg:12.1, dd:-19.3, y25:17.4, y26:17.6,
+   img:IMG('horizonte'), alt:'Ilustración de un amanecer sobre colinas violetas, símbolo de largo plazo',
+   url:'https://tuamigoinversor.com/plan-pensiones-moderado-horizonte/'},
+  {id:'GEDA',     slug:'geda',     type:'tactica',    profile:'Perfil agresivo',     color:'#f59e00', risk:4, review:'Mensual',
+   desc:'Estrategia táctica de inversión momentum que rota entre activos buscando maximizar la rentabilidad.',
+   feats:['Alta rotación','Señales cuantitativas','Enfoque dinámico'], avg:40.3, dd:-19.6, y25:56.6, y26:100.2,
+   img:IMG('geda'), alt:'Ilustración de velas de cotización y una línea de tendencia alcista',
+   url:'inversion-tactica-geda/index.html'},
+  {id:'GEN-Z',    slug:'genz',     type:'tactica',    profile:'Perfil muy agresivo', color:'#ec4899', risk:5, review:'Mensual',
+   desc:'Inversión temática en sectores disruptivos y tendencias de futuro con alto potencial de crecimiento.',
+   feats:['Alta volatilidad','Temáticas innovadoras','Largo plazo'], avg:68.1, dd:-44.9, y25:159.2, y26:16.2,
+   img:IMG('genz'), alt:'Ilustración de un chip con circuitos, símbolo de tecnología disruptiva',
+   url:'inversion-tematica-gen-z/index.html'},
+  {id:'CRYPTO',   slug:'crypto',   type:'tactica',    profile:'Perfil especulativo', color:'#ef4444', risk:5, review:'Mensual',
+   desc:'Estrategia de alto riesgo en criptomonedas, con fuerte volatilidad y potencial de revalorización.',
+   feats:['Volatilidad extrema','Ciclos de mercado','Alto riesgo'], avg:44.5, dd:-73, y25:-23.6, y26:20.8,
+   img:IMG('crypto'), alt:'Ilustración de una red de nodos conectados y hexágonos, símbolo del mundo cripto',
+   url:'https://tuamigoinversor.com/inversion-criptomonedas-crypto/'}
+];
+const byId = id => STRATEGIES.find(s=>s.id===id);
+
+/* ---------- 2. UTILIDADES ---------- */
+const $ = (s,c=document)=>c.querySelector(s);
+const $$ = (s,c=document)=>[...c.querySelectorAll(s)];
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pct = v => (v>0?'+':'')+String(v).replace('.',',')+'%';
+const eur = v => new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);
+const cls = v => v<0?'neg':'pos';
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const debounce = (fn,ms=150)=>{let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms)}};
+const hasChart = typeof window.Chart !== 'undefined';
+if(!hasChart) document.documentElement.classList.add('no-chart');
+const alpha = (hex,a)=>{const n=parseInt(hex.slice(1),16);return `rgba(${n>>16},${(n>>8)&255},${n&255},${a})`};
+
+/* ---------- 3. TEMA CLARO / OSCURO ---------- */
+const themeBtn = $('#themeToggle');
+function setThemeLabel(){const t=document.documentElement.dataset.theme;themeBtn.setAttribute('aria-label',t==='dark'?'Cambiar a modo claro':'Cambiar a modo oscuro')}
+setThemeLabel();
+themeBtn.addEventListener('click',()=>{
+  const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+  document.documentElement.dataset.theme=next;
+  try{localStorage.setItem('tai-theme-v3',next)}catch(e){}
+  setThemeLabel(); refreshChartsTheme();
+});
+
+/* ---------- 4. NAV, PROGRESO, FLOTANTES ---------- */
+const header=$('#header'),progress=$('#progress'),toTop=$('#toTop'),sticky=$('#stickyCta');
+const onScroll=()=>{
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  header.classList.toggle('scrolled',y>10);
+  progress.style.transform=`scaleX(${h>0?y/h:0})`;
+  toTop.classList.toggle('show',y>900);
+  const sub=$('#suscripcion').getBoundingClientRect();
+  sticky.classList.toggle('show',y>600 && !(sub.top<innerHeight && sub.bottom>0));
+};
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+toTop.addEventListener('click',()=>{scrollTo({top:0,behavior:reduced?'auto':'smooth'});$('#main').focus({preventScroll:true})});
+
+const burger=$('#burger'),mm=$('#mobileMenu');
+burger.addEventListener('click',()=>{const o=mm.classList.toggle('open');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')});
+$$('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>{mm.classList.remove('open');burger.setAttribute('aria-expanded','false')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mm.classList.contains('open')){mm.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.focus()}});
+
+/* ---------- 5. MICROINTERACCIONES: botones magnéticos + spotlight ---------- */
+if(!reduced && matchMedia('(hover:hover)').matches){
+  $$('.magnetic').forEach(b=>{
+    b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.setProperty('--mx',((e.clientX-r.left-r.width/2)*.18)+'px');b.style.setProperty('--my',((e.clientY-r.top-r.height/2)*.25)+'px')});
+    b.addEventListener('mouseleave',()=>{b.style.setProperty('--mx','0px');b.style.setProperty('--my','0px')});
+  });
+  document.addEventListener('pointermove',e=>{const el=e.target.closest('.spot');if(!el)return;const r=el.getBoundingClientRect();el.style.setProperty('--x',(e.clientX-r.left)+'px');el.style.setProperty('--y',(e.clientY-r.top)+'px')},{passive:true});
+}
+
+/* ---------- 6. REVEAL + CONTADORES ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');
+  $$('[data-count]',e.target).concat(e.target.matches('[data-count]')?[e.target]:[]).forEach(countUp);
+  io.unobserve(e.target);
+}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+function countUp(el){
+  if(el.dataset.done)return;el.dataset.done=1;
+  const to=+el.dataset.count,pre=el.dataset.prefix||'';
+  if(reduced||to===0){el.textContent=pre+to;return}
+  const t0=performance.now(),dur=1100;
+  (function f(t){const p=Math.min(1,(t-t0)/dur),v=Math.round(to*(1-Math.pow(1-p,3)));el.textContent=pre+v;if(p<1)requestAnimationFrame(f)})(t0);
+}
+const observeReveal=()=>$$('.reveal:not(.in)').forEach(el=>io.observe(el));
+
+/* ---------- 7. TARJETAS DE ESTRATEGIA ---------- */
+const cardsEl=$('#cards');
+cardsEl.innerHTML=STRATEGIES.map(s=>`
+<article class="s-card spot reveal" data-type="${s.type}" style="--c:${s.color}" aria-labelledby="t-${s.slug}">
+  <div class="s-media">
+    <span class="s-pill"><i></i>${s.type==='permanente'?'Cartera permanente':'Asignación táctica'}</span>
+    <img src="${s.img.src}" width="800" height="400" loading="lazy" decoding="async" alt="${s.alt}">
+  </div>
+  <div class="s-body">
+    <span class="s-profile">${s.profile}</span>
+    <h3 id="t-${s.slug}">${s.id}</h3>
+    <p>${s.desc}</p>
+    <div class="risk"><span>Riesgo</span><div class="risk-bars" role="img" aria-label="Nivel de riesgo ${s.risk} de 5">${[1,2,3,4,5].map(i=>`<i class="${i<=s.risk?'on':''}"></i>`).join('')}</div><span class="mono">${s.risk}/5</span></div>
+    <div class="metrics">
+      <div class="metric"><span>Rent. anual media</span><b class="mono pos">${pct(s.avg)}</b></div>
+      <div class="metric"><span>Máx. caída</span><b class="mono neg">${pct(s.dd)}</b></div>
+      <div class="metric"><span>2025</span><b class="mono ${cls(s.y25)}">${pct(s.y25)}</b></div>
+      <div class="metric"><span>2026 (ene–sep)</span><b class="mono ${cls(s.y26)}">${pct(s.y26)}</b></div>
+    </div>
+    <div class="s-actions">
+      <button class="btn btn-primary btn-sm" type="button" data-detail="${s.id}" aria-haspopup="dialog">Ver detalle</button>
+      <button class="btn btn-ghost btn-sm" type="button" data-simulate="${s.id}">Simular</button>
+    </div>
+  </div>
+</article>`).join('');
+
+$$('.filters .chip').forEach(b=>b.addEventListener('click',()=>{
+  $$('.filters .chip').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');
+  $$('.s-card').forEach(c=>c.hidden=!(b.dataset.filter==='all'||c.dataset.type===b.dataset.filter));
+}));
+cardsEl.addEventListener('click',e=>{
+  const d=e.target.closest('[data-detail]'),s=e.target.closest('[data-simulate]');
+  if(d)openModal(byId(d.dataset.detail),d);
+  if(s){$('#sA').value=s.dataset.simulate;$('#sMix').value=100;runSim();$('#simulador').scrollIntoView({behavior:reduced?'auto':'smooth'})}
+});
+
+/* ---------- 8. MODAL ACCESIBLE (focus trap + ESC) ---------- */
+const modal=$('#modal'),mBox=$('#modalBox');let lastFocus=null;
+function openModal(s,trigger){
+  lastFocus=trigger||document.activeElement;
+  $('#mContent').innerHTML=`
+  <div class="modal-media"><img src="${s.img.src}" width="800" height="400" alt="${s.alt}" decoding="async"></div>
+  <div class="modal-content">
+    <span class="s-profile" style="color:${s.color}">${s.profile} · ${s.type==='permanente'?'Cartera permanente':'Asignación táctica de activos'}</span>
+    <h3 id="mTitle" style="font-size:2rem;margin:.3rem 0 .5rem">${s.id}</h3>
+    <p style="color:var(--muted)">${s.desc}</p>
+    <div class="metrics">
+      <div class="metric"><span>Rentabilidad anual media</span><b class="mono pos">${pct(s.avg)}</b></div>
+      <div class="metric"><span>Caída máxima</span><b class="mono neg">${pct(s.dd)}</b></div>
+      <div class="metric"><span>Rentabilidad 2025</span><b class="mono ${cls(s.y25)}">${pct(s.y25)}</b></div>
+      <div class="metric"><span>Rentabilidad 2026 (ene–sep)</span><b class="mono ${cls(s.y26)}">${pct(s.y26)}</b></div>
+      <div class="metric"><span>Ratio rentabilidad / caída</span><b class="mono">${(s.avg/Math.abs(s.dd)).toFixed(2).replace('.',',')}x</b></div>
+      <div class="metric"><span>Revisión</span><b>${s.review}</b></div>
+    </div>
+    <p style="font-size:var(--fs-sm);color:var(--muted);margin-bottom:1.2rem">${s.feats.join(' · ')}</p>
+    <div class="cta-row"><a class="btn btn-primary" href="#suscripcion" data-close>Seguir ${s.id} gratis</a><a class="btn btn-ghost" href="${s.url}" ${s.url.startsWith('http')?'target="_blank" rel="noopener"':''}>Ficha completa</a></div>
+  </div>`;
+  modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  $('#mClose').focus();
+}
+function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
+$('#mClose').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('[data-close]'))closeModal()});
+document.addEventListener('keydown',e=>{
+  if(!modal.classList.contains('open'))return;
+  if(e.key==='Escape'){closeModal();return}
+  if(e.key==='Tab'){
+    const f=$$('a[href],button:not([disabled]),input,select,[tabindex]:not([tabindex="-1"])',mBox);
+    const first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+  }
+});
+
+/* ---------- 9. CHART.JS: ajustes globales ---------- */
+const charts={};
+function chartDefaults(){
+  if(!hasChart)return;
+  Chart.defaults.font.family="Inter, system-ui, sans-serif";
+  Chart.defaults.color=css('--muted');
+  Chart.defaults.borderColor=css('--line');
+  Chart.defaults.animation.duration=reduced?0:900;
+}
+function tooltipStyle(){return{backgroundColor:css('--surface'),titleColor:css('--text'),bodyColor:css('--text'),borderColor:css('--line-2'),borderWidth:1,padding:10,cornerRadius:10,boxPadding:4}}
+chartDefaults();
+
+/* ---------- 10. HERO: serie ilustrativa con zona de caída ---------- */
+/* Series mensuales reales (rentabilidad mensual en %). Fuente: resumen_estrategias.xlsx, datos a 30-sep-2026.
+   Regenerar al actualizar los datos; el último mes de cada serie es sep-2026. */
+const SERIES={"HORIZONTE":{"from":"2018-01","r":[2.033,-1.0,-4.811,-0.144,-0.997,0.956,2.585,3.676,0.625,-4.414,0.172,0.266,0.439,3.987,2.737,3.615,-5.051,0.946,5.283,-2.131,2.697,-0.592,5.063,0.783,1.486,-9.336,-1.678,0.084,0.907,0.778,0.345,5.93,-1.47,-2.59,7.377,0.629,1.129,3.136,6.714,2.513,-1.022,5.104,2.251,3.527,-2.169,5.922,0.454,4.837,-3.992,-1.324,-1.462,-3.577,-0.828,-1.005,2.828,-2.456,-2.61,0.211,0.823,-7.451,1.343,-0.8,1.383,0.716,3.802,3.091,1.12,-0.015,-2.292,0.717,1.615,2.71,5.225,4.98,3.196,-2.813,2.801,5.378,-0.402,0.898,0.697,1.167,8.497,-0.853,3.358,-2.358,-0.471,1.261,0.049,2.711,5.807,-1.978,3.236,5.807,-0.248,-0.621,0.127,-1.43,-2.89,10.04,6.4,1.52,-1.76,2.42,2.6]},"ROCA":{"from":"2016-01","r":[-0.431,2.105,-0.434,1.332,0.824,2.571,2.344,-0.954,-0.081,0.791,1.733,1.146,0.571,2.542,-0.674,-0.594,-2.26,-2.422,-1.409,-0.194,0.995,1.618,-1.129,0.21,-2.55,-0.596,-0.218,1.164,4.351,0.285,-0.747,0.495,-0.294,-0.093,0.442,-0.077,3.27,1.784,2.173,1.424,-0.182,1.523,2.354,2.184,0.897,-0.781,1.504,1.152,2.427,-1.621,-7.678,7.465,0.815,0.556,-1.463,1.216,-0.15,0.477,1.24,3.256,1.199,-0.267,4.134,-1.301,1.343,1.637,0.934,1.273,0.002,0.854,2.286,3.116,-0.977,-0.104,-0.134,2.635,-2.728,-0.852,5.424,-0.463,-3.37,0.647,0.944,-2.618,2.921,-0.308,-0.655,-0.854,1.805,0.386,0.371,-0.567,0.595,-0.873,1.232,2.739,1.636,0.929,2.933,-0.58,1.012,1.345,1.926,-1.022,1.224,2.077,4.188,-0.378,2.78,0.645,-3.675,-4.056,1.51,-0.982,2.772,0.222,2.217,2.377,0.775,1.22,1.061,3.462,-1.062,0.419,0.758,0.617,-0.859,1.375,-1.062]},"IMPULSO":{"from":"2016-01","r":[-1.652,4.727,0.785,2.666,0.049,3.481,3.934,-1.624,0.267,-0.678,3.176,1.238,2.201,3.6,-0.772,-0.044,-2.605,-2.256,-0.653,0.248,1.674,2.027,-0.292,0.64,-0.23,-2.128,-0.451,1.297,5.128,-0.635,-0.548,0.524,-0.617,-1.835,1.079,-1.951,6.518,2.813,0.549,2.397,-2.859,4.87,2.356,1.658,1.371,0.382,1.716,2.89,1.904,-4.984,-12.111,11.455,2.141,1.559,1.551,2.575,-2.141,0.724,4.391,4.272,0.718,0.983,5.305,0.495,3.53,-0.38,0.656,1.954,-1.661,2.868,0.836,6.667,-2.528,1.64,1.517,0.512,-3.027,-3.114,6.218,-1.493,-5.34,3.179,4.148,-2.196,6.609,-2.014,-0.489,-1.01,1.094,2.628,2.217,-1.892,-1.789,-0.252,3.419,4.451,0.579,3.094,6.28,-0.814,1.97,0.609,4.146,-0.728,2.393,3.675,5.527,-1.859,5.359,-0.793,-3.515,-3.642,3.707,0.025,3.188,2.087,5.343,3.172,2.155,4.026,5.069,5.561,-5.056,2.452,0.899,-1.535,-0.157,4.102,-2.878]},"GEDA":{"from":"2016-01","r":[-6.171,-0.957,2.101,1.35,4.339,5.723,8.816,-3.086,2.111,1.83,8.339,5.919,2.35,6.216,-0.777,-0.999,5.547,-5.867,4.696,2.427,8.953,4.336,4.126,-2.33,5.337,1.814,-0.794,-0.419,15.546,10.736,-3.741,7.841,-2.721,-14.406,5.581,-8.489,12.097,5.077,2.02,4.519,-2.143,4.909,3.969,2.209,-0.171,-0.671,4.274,0.891,14.074,-4.193,-9.61,19.673,3.793,7.161,7.034,22.306,-1.833,-4.239,14.251,8.464,-0.484,-3.907,0.857,3.656,1.419,1.373,3.937,4.461,-1.576,3.179,-0.936,-0.499,-5.013,1.113,3.517,6.281,7.3,-10.256,5.421,3.176,-6.916,11.797,-0.959,-8.929,4.111,-1.746,4.274,-2.829,5.374,4.163,5.83,-0.876,-2.839,-0.441,10.634,4.043,6.244,10.267,0.69,-5.823,7.366,6.019,-5.764,-1.566,5.171,6.226,8.509,-0.713,10.541,-0.793,-9.569,8.046,17.346,-0.23,5.777,0.719,16.176,0.943,-3.929,3.981,30.267,9.51,-0.011,23.731,11.159,6.103,-13.616,3.446,7.654]},"GEN-Z":{"from":"2020-01","r":[-3.178,-1.415,-8.298,22.302,22.983,6.117,14.153,9.89,-0.927,-3.647,6.135,15.565,5.312,4.683,-3.51,-4.74,1.672,2.19,10.013,10.398,-5.36,25.64,3.42,2.173,23.52,-3.815,13.878,-3.487,-3.462,-13.852,0.035,-4.853,2.665,-0.2,5.61,-11.043,10.6,-2.928,1.005,-0.902,9.328,6.527,13.432,-1.375,-0.903,-12.59,17.438,-0.6,6.005,30.317,1.22,-6.417,10.92,5.228,-11.76,15.227,0.25,1.235,15.068,34.855,-0.737,-4.64,4.755,16.223,40.01,-7.558,27.287,10.18,47.97,36.51,-33.445,-7.835,7.16,-4.548,-5.572,25.898,-4.12,16.19,-31.95,-2.552,29.38]},"CRYPTO":{"from":"2018-01","r":[-5.374,-8.389,-40.614,83.994,-23.132,-19.797,8.511,-22.024,-7.696,-9.609,-29.336,3.063,-3.73,13.194,5.213,16.84,67.786,44.92,-16.457,-17.826,-6.804,14.24,-17.561,-10.167,36.622,7.228,-35.516,44.876,11.691,-0.685,38.12,25.966,-13.365,16.74,35.739,16.859,72.36,24.951,26.08,87.495,-9.699,-16.176,8.484,48.287,-9.006,37.712,-3.871,-6.566,-28.332,9.026,10.115,-20.885,-26.616,-34.51,20.717,-9.206,-9.431,7.301,-6.104,-8.211,45.651,4.699,6.958,9.652,-4.425,-1.788,-0.789,-14.35,4.866,22.025,39.551,14.833,4.915,64.61,15.584,-23.329,14.641,-11.598,-7.54,-19.831,9.873,-2.167,57.565,3.159,5.436,-28.554,-12.099,4.198,14.146,-3.227,34.447,0.699,-0.404,-8.117,-15.693,-3.966,-15.883,-17.569,7.715,9.917,3.414,-18.884,8.461,34.233,20.524]}};
+const MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+function realSeries(s){
+  const S=SERIES[s.id];let [y,m]=S.from.split('-').map(Number);m-=1;
+  // punto inicial = cierre del mes anterior (base 100)
+  let yy=m===0?y-1:y,mm=m===0?11:m-1;
+  const labels=[MES[mm]+' '+yy],values=[100],rets=[null];let v=100;
+  S.r.forEach(r=>{mm++;if(mm>11){mm=0;yy++}v*=1+r/100;labels.push(MES[mm]+' '+yy);values.push(+v.toFixed(2));rets.push(r)});
+  let p=-Infinity;const peaks=values.map(x=>p=Math.max(p,x));
+  return{labels,values,peaks,rets,from:labels[1],to:labels[labels.length-1]};
+}
+let heroId='GEDA';
+const hpTabs=$('#hpTabs');
+hpTabs.innerHTML=STRATEGIES.map(s=>`<button type="button" class="chip" role="radio" aria-checked="${s.id===heroId}" tabindex="${s.id===heroId?0:-1}" data-id="${s.id}"><span class="sw" style="background:${s.color}"></span>${s.id}</button>`).join('');
+hpTabs.addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(b)selectHero(b.dataset.id,true)});
+hpTabs.addEventListener('keydown',e=>{
+  if(!['ArrowRight','ArrowLeft','ArrowDown','ArrowUp'].includes(e.key))return;e.preventDefault();
+  const i=STRATEGIES.findIndex(s=>s.id===heroId),d=(e.key==='ArrowRight'||e.key==='ArrowDown')?1:-1;
+  selectHero(STRATEGIES[(i+d+STRATEGIES.length)%STRATEGIES.length].id,true);
+});
+function selectHero(id,focus){
+  heroId=id;const s=byId(id);
+  $$('#hpTabs .chip').forEach(b=>{const on=b.dataset.id===id;b.setAttribute('aria-checked',on);b.tabIndex=on?0:-1;if(on&&focus)b.focus()});
+  $('#hpName').textContent=s.id;$('#hpValue').textContent=pct(s.avg);
+  $('#hpDD').textContent=pct(s.dd);
+  const a=$('#hp25');a.textContent=pct(s.y25);a.className='mono '+cls(s.y25);
+  const b=$('#hp26');b.textContent=pct(s.y26);b.className='mono '+cls(s.y26);
+  if(!hasChart)return;
+  const d=realSeries(s),c=charts.hero;
+  c.data.labels=d.labels;
+  c.data.datasets[0].data=d.peaks;
+  c.data.datasets[1].data=d.values;
+  c.data.datasets[2].data=d.values;c.data.datasets[2].borderColor=s.color;
+  c.data.datasets[2].backgroundColor=ctx=>gradient(ctx,s.color);
+  heroNote(d,s);
+  c.update();
+}
+function heroNote(d,s){
+  $('#hpFrom').textContent=d.from;$('#hpTo').textContent=d.to;
+  $('#heroChart').setAttribute('aria-label','Evolución acumulada de '+s.id+' (base 100) de '+d.from+' a '+d.to+', con la zona de caída sombreada');
+}
+function gradient(ctx,color){const {chart}=ctx;const {ctx:c,chartArea:a}=chart;if(!a)return alpha(color,.15);const g=c.createLinearGradient(0,a.top,0,a.bottom);g.addColorStop(0,alpha(color,.35));g.addColorStop(1,alpha(color,0));return g}
+$('#heroTable').innerHTML='<thead><tr><th scope="col">Estrategia</th><th scope="col">Rent. media</th><th scope="col">Máx. caída</th><th scope="col">2025</th><th scope="col">2026 (ene–sep)</th></tr></thead><tbody>'+STRATEGIES.map(s=>`<tr><th scope="row">${s.id}</th><td>${pct(s.avg)}</td><td>${pct(s.dd)}</td><td>${pct(s.y25)}</td><td>${pct(s.y26)}</td></tr>`).join('')+'</tbody>';
+
+if(hasChart){
+  const s=byId(heroId),d=realSeries(s);
+  const fmtN=(v,dec=1)=>v.toLocaleString('es-ES',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+  charts.hero=new Chart($('#heroChart'),{
+    type:'line',
+    data:{labels:d.labels,datasets:[
+      {label:'Máximo previo',data:d.peaks,borderWidth:0,pointRadius:0,fill:false,borderColor:'transparent'},
+      {label:'Zona de caída',data:d.values,borderWidth:0,pointRadius:0,borderColor:'transparent',backgroundColor:`rgba(${css('--neg-rgb')},.28)`,fill:{target:0,above:'rgba(0,0,0,0)',below:`rgba(${css('--neg-rgb')},.28)`}},
+      {label:'Evolución acumulada (base 100)',data:d.values,borderColor:s.color,borderWidth:2.25,tension:0,pointHoverRadius:5,
+        pointRadius:ctx=>ctx.dataIndex===ctx.dataset.data.length-1?4:0,pointBackgroundColor:ctx=>byId(heroId).color,
+        fill:'start',backgroundColor:ctx=>gradient(ctx,byId(heroId).color)}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,layout:{padding:{right:8}},interaction:{mode:'index',intersect:false},
+      scales:{
+        x:{display:true,grid:{display:false},ticks:{autoSkip:false,maxRotation:0,font:{size:11},
+          callback:function(v){const l=this.getLabelForValue(v);if(!l.startsWith('ene'))return '';
+            const yr=+l.slice(-4),n=this.chart.data.labels.length,step=n>84?2:1;return yr%step===0?String(yr):''}}},
+        y:{type:'logarithmic',grid:{color:alpha('#8899bb',.12)},
+          afterBuildTicks:ax=>{const wide=ax.max/ax.min>8;
+            const nice=wide?[10,20,50,100,200,500,1000,2000,5000,10000]:[50,70,100,150,200,300,500,700,1000];
+            ax.ticks=ax.ticks.filter(t=>nice.includes(Math.round(t.value)));},
+          ticks:{callback:v=>fmtN(v,0)}}},
+      plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:10,boxHeight:10,usePointStyle:true,filter:i=>i.datasetIndex!==0}},
+        tooltip:{...tooltipStyle(),filter:i=>i.datasetIndex===2,callbacks:{
+          title:c=>c[0].label,
+          label:c=>' Valor: '+fmtN(c.parsed.y),
+          afterLabel:c=>{const dd=charts.hero.data,i=c.dataIndex,r=SERIES[heroId].r[i-1],pk=dd.datasets[0].data[i],lines=[];
+            if(r!==undefined)lines.push(' Mes: '+(r>0?'+':'')+fmtN(r,2)+'%');
+            const cur=c.parsed.y/pk-1;if(cur<-0.0005)lines.push(' Desde máximo: '+fmtN(cur*100)+'%');return lines}}}}}
+  });
+  heroNote(d,s);
+}
+
+/* ---------- 11. TEST DE PERFIL ---------- */
+const QUIZ=[
+  {q:'¿Cuál es tu horizonte de inversión?',o:['Menos de 2 años','2 a 5 años','5 a 10 años','Más de 10 años']},
+  {q:'Si tu cartera cayera un 25% en pocos meses, ¿qué harías?',o:['Vendería todo','Vendería una parte','Mantendría el sistema','Aprovecharía para aportar más']},
+  {q:'¿Qué experiencia tienes invirtiendo?',o:['Ninguna','Algo: fondos o depósitos','Invierto de forma habitual','Mucha: acciones, ETF y estrategias']},
+  {q:'¿Cuál es tu objetivo principal?',o:['Proteger mi capital','Crecer de forma estable','Ahorrar para la jubilación','Maximizar el crecimiento']},
+  {q:'¿Qué parte de este dinero podrías necesitar a corto plazo?',o:['Buena parte','Una parte pequeña','Casi nada','Nada en absoluto']}
+];
+const answers=new Array(QUIZ.length).fill(null);let qi=0;
+const quizEl=$('#quiz');
+function renderQuiz(){
+  if(qi>=QUIZ.length)return renderResult();
+  const q=QUIZ[qi];
+  quizEl.innerHTML=`
+    <div class="q-meta"><span>Pregunta ${qi+1} de ${QUIZ.length}</span><span>${Math.round(qi/QUIZ.length*100)}%</span></div>
+    <div class="q-progress" role="progressbar" aria-valuemin="0" aria-valuemax="${QUIZ.length}" aria-valuenow="${qi}" aria-label="Progreso del test"><div style="width:${qi/QUIZ.length*100}%"></div></div>
+    <h3 class="q-title" id="qT">${q.q}</h3>
+    <div class="q-opts" role="radiogroup" aria-labelledby="qT">
+      ${q.o.map((t,i)=>`<button type="button" class="q-opt" role="radio" aria-checked="${answers[qi]===i}" data-i="${i}"><span class="rd" aria-hidden="true"></span>${t}</button>`).join('')}
+    </div>
+    <div class="q-nav">
+      <button type="button" class="btn btn-ghost btn-sm" id="qBack" ${qi===0?'disabled':''}><svg class="icon"><use href="#i-left"/></svg>Atrás</button>
+      <button type="button" class="btn btn-primary btn-sm" id="qNext" ${answers[qi]===null?'disabled':''}>${qi===QUIZ.length-1?'Ver resultado':'Siguiente'}<svg class="icon"><use href="#i-arrow"/></svg></button>
+    </div>`;
+  $$('.q-opt',quizEl).forEach(b=>b.addEventListener('click',()=>{answers[qi]=+b.dataset.i;$$('.q-opt',quizEl).forEach(x=>x.setAttribute('aria-checked',x===b));$('#qNext').disabled=false}));
+  $('#qBack').addEventListener('click',()=>{qi--;renderQuiz();$('.q-opt',quizEl).focus()});
+  $('#qNext').addEventListener('click',()=>{qi++;renderQuiz();const f=$('.q-opt',quizEl)||$('h3',quizEl);if(f)f.focus()});
+}
+function recommend(){
+  const score=answers.reduce((a,b)=>a+b,0);   // 0 – 15
+  const retirement=answers[3]===2;
+  if(answers[0]===0||answers[4]===0) return {title:'Prudencia primero',mix:[['ROCA',100]],text:'Con un horizonte corto o necesidad de liquidez, lo más coherente es una cartera conservadora o no invertir aún ese dinero.'};
+  if(score<=4)  return {title:'Perfil conservador',mix:[['ROCA',100]],text:'Priorizas proteger el capital. ROCA está diseñada para baja volatilidad en cualquier entorno.'};
+  if(retirement&&score<=11) return {title:'Perfil largo plazo',mix:[['HORIZONTE',70],['ROCA',30]],text:'Tu objetivo es la jubilación: HORIZONTE como núcleo, con ROCA como estabilizador.'};
+  if(score<=7)  return {title:'Perfil moderado',mix:[['ROCA',50],['IMPULSO',50]],text:'Equilibrio entre estabilidad y crecimiento combinando dos carteras permanentes.'};
+  if(score<=10) return {title:'Perfil tolerante',mix:[['IMPULSO',70],['GEDA',30]],text:'Núcleo de cartera permanente con un satélite de inversión momentum.'};
+  if(score<=13) return {title:'Perfil dinámico',mix:[['GEDA',60],['IMPULSO',40]],text:'Mayor peso en asignación táctica, manteniendo una base permanente.'};
+  return {title:'Perfil agresivo',mix:[['GEDA',60],['GEN-Z',40]],text:'Buscas crecimiento y toleras caídas profundas. CRYPTO, si la usas, solo como satélite pequeño.'};
+}
+function renderResult(){
+  const r=recommend();
+  const avg=r.mix.reduce((a,[id,w])=>a+byId(id).avg*w/100,0);
+  quizEl.innerHTML=`<div class="q-result">
+    <div class="q-progress" aria-hidden="true"><div style="width:100%"></div></div>
+    <span class="eyebrow">Tu resultado</span>
+    <h3 style="font-size:var(--fs-2xl);margin:.4rem 0">${r.title}</h3>
+    <p style="color:var(--muted);max-width:34rem;margin:0 auto">${r.text}</p>
+    <div class="alloc" role="img" aria-label="Asignación propuesta: ${r.mix.map(([id,w])=>id+' '+w+'%').join(', ')}">${r.mix.map(([id,w])=>`<div style="width:0;background:${byId(id).color}" data-w="${w}"></div>`).join('')}</div>
+    <div class="alloc-legend">${r.mix.map(([id,w])=>`<span><i style="background:${byId(id).color}"></i><strong>${id}</strong> ${w}%</span>`).join('')}</div>
+    <p style="margin-top:1rem">Rentabilidad media ponderada histórica: <b class="mono pos">${pct(+avg.toFixed(1))}</b></p>
+    <div class="cta-row" style="justify-content:center;margin-top:1.4rem">
+      <button type="button" class="btn btn-primary" id="qSim">Simular esta combinación</button>
+      <button type="button" class="btn btn-ghost" id="qRetry"><svg class="icon"><use href="#i-refresh"/></svg>Repetir test</button>
+    </div>
+    <p class="fineprint">Resultado orientativo y educativo. No sustituye a un test de idoneidad (MiFID) ni constituye asesoramiento financiero.</p>
+  </div>`;
+  requestAnimationFrame(()=>$$('.alloc div',quizEl).forEach(d=>d.style.width=d.dataset.w+'%'));
+  $('#qRetry').addEventListener('click',()=>{answers.fill(null);qi=0;renderQuiz()});
+  $('#qSim').addEventListener('click',()=>{
+    $('#sA').value=r.mix[0][0];$('#sB').value=(r.mix[1]||r.mix[0])[0];$('#sMix').value=r.mix[0][1];runSim();
+    $('#simulador').scrollIntoView({behavior:reduced?'auto':'smooth'});
+  });
+  $('h3',quizEl).setAttribute('tabindex','-1');$('h3',quizEl).focus();
+}
+renderQuiz();
+
+/* ---------- 12. COMPARADOR ---------- */
+let selected=['ROCA','IMPULSO','GEDA'];
+const cmpSel=$('#cmpSelect');
+cmpSel.innerHTML=STRATEGIES.map(s=>`<button type="button" class="chip" aria-pressed="${selected.includes(s.id)}" data-id="${s.id}"><span class="sw" style="background:${s.color}"></span>${s.id}</button>`).join('');
+cmpSel.addEventListener('click',e=>{
+  const b=e.target.closest('[data-id]');if(!b)return;const id=b.dataset.id;
+  if(selected.includes(id)){if(selected.length<=2)return flashHint('Mínimo 2 estrategias');selected=selected.filter(x=>x!==id)}
+  else{if(selected.length>=3)return flashHint('Máximo 3 estrategias: deselecciona una primero');selected.push(id)}
+  $$('.chip',cmpSel).forEach(c=>c.setAttribute('aria-pressed',selected.includes(c.dataset.id)));
+  renderCompare();
+});
+function flashHint(msg){const h=$('#cmpHint');h.textContent=msg;h.style.color=css('--warn');setTimeout(()=>{h.style.color='';h.textContent=`Seleccionadas: ${selected.length} de 3`},1800)}
+const radarAxes=['Rentabilidad media','Control de caídas','Rentabilidad 2025','Frecuencia de revisión','Volatilidad (nivel)'];
+const maxAvg=Math.max(...STRATEGIES.map(s=>s.avg)),maxDD=Math.max(...STRATEGIES.map(s=>Math.abs(s.dd)));
+const min25=Math.min(...STRATEGIES.map(s=>s.y25)),max25=Math.max(...STRATEGIES.map(s=>s.y25));
+const radarVals=s=>[s.avg/maxAvg*100,100-Math.abs(s.dd)/maxDD*100+5,(s.y25-min25)/(max25-min25)*100,s.review==='Mensual'?100:35,s.risk*20].map(v=>+v.toFixed(0));
+function renderCompare(){
+  $('#cmpHint').textContent=`Seleccionadas: ${selected.length} de 3`;
+  const list=selected.map(byId);
+  const rows=[
+    ['Perfil',s=>s.profile,null],
+    ['Rent. anual media',s=>pct(s.avg),'max',s=>s.avg],
+    ['Máx. caída',s=>pct(s.dd),'max',s=>s.dd],
+    ['Rentabilidad 2025',s=>pct(s.y25),'max',s=>s.y25],
+    ['Rentabilidad 2026 (ene–sep)',s=>pct(s.y26),'max',s=>s.y26],
+    ['Ratio rent. / caída',s=>(s.avg/Math.abs(s.dd)).toFixed(2).replace('.',',')+'x','max',s=>s.avg/Math.abs(s.dd)],
+    ['Revisión',s=>s.review,null],
+    ['Riesgo',s=>s.risk+'/5',null]
+  ];
+  $('#cmpTable').innerHTML=`<caption class="sr-only">Comparación de ${list.map(s=>s.id).join(', ')}</caption><thead><tr><th scope="col">Métrica</th>${list.map(s=>`<th scope="col" style="color:${s.color}">${s.id}</th>`).join('')}</tr></thead><tbody>`+
+    rows.map(([lab,f,mode,num])=>{
+      const best=mode?Math.max(...list.map(num)):null;
+      return `<tr><th scope="row">${lab}</th>${list.map(s=>{const v=f(s),isBest=mode&&num(s)===best;const c=/^[+-]/.test(v)?cls(parseFloat(v)):'';return `<td class="mono ${c} ${isBest?'best':''}">${v}${isBest?' <span class="sr-only">(mejor)</span>':''}</td>`}).join('')}</tr>`}).join('')+'</tbody>';
+  if(!hasChart)return;
+  const ds=list.map(s=>({label:s.id,data:radarVals(s),borderColor:s.color,backgroundColor:alpha(s.color,.18),pointBackgroundColor:s.color,borderWidth:2}));
+  if(charts.radar){charts.radar.data.datasets=ds;charts.radar.update();return}
+  charts.radar=new Chart($('#radarChart'),{type:'radar',data:{labels:radarAxes,datasets:ds},
+    options:{responsive:true,maintainAspectRatio:false,
+      scales:{r:{min:0,max:100,ticks:{display:false,stepSize:25},grid:{color:alpha('#8899bb',.2)},angleLines:{color:alpha('#8899bb',.2)},pointLabels:{color:css('--muted'),font:{size:11,weight:'600'}}}},
+      plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:10}},tooltip:{...tooltipStyle(),callbacks:{label:c=>` ${c.dataset.label}: ${c.parsed.r}/100`}}}}});
+}
+renderCompare();
+
+/* ---------- 13. SIMULADOR ---------- */
+const sA=$('#sA'),sB=$('#sB');
+const opts=STRATEGIES.map(s=>`<option value="${s.id}">${s.id} · ${pct(s.avg)} media</option>`).join('');
+sA.innerHTML=opts;sB.innerHTML=opts;sA.value='IMPULSO';sB.value='GEDA';
+let scenario=.75,lastSim=[];
+$$('#scSeg .chip').forEach(b=>b.addEventListener('click',()=>{
+  scenario=+b.dataset.sc;$$('#scSeg .chip').forEach(x=>x.setAttribute('aria-checked',x===b));runSim();
+}));
+$('#scSeg').addEventListener('keydown',e=>{
+  if(!['ArrowRight','ArrowLeft'].includes(e.key))return;e.preventDefault();
+  const bs=$$('#scSeg .chip'),i=bs.findIndex(b=>b.getAttribute('aria-checked')==='true'),n=bs[(i+(e.key==='ArrowRight'?1:-1)+3)%3];n.click();n.focus();
+});
+['sA','sB','sMix','sCap','sMon','sYrs'].forEach(id=>$('#'+id).addEventListener('input',runSim));
+function runSim(){
+  const a=byId(sA.value),b=byId(sB.value),w=+$('#sMix').value/100;
+  const cap=+$('#sCap').value,mon=+$('#sMon').value,yrs=+$('#sYrs').value;
+  $('#oMix').textContent=`${Math.round(w*100)}% ${a.id} / ${Math.round((1-w)*100)}% ${b.id}`;
+  $('#oCap').textContent=eur(cap);$('#oMon').textContent=eur(mon);$('#oYrs').textContent=yrs+(yrs>1?' años':' año');
+  const annual=(w*a.avg+(1-w)*b.avg)*scenario;
+  const r=Math.pow(1+annual/100,1/12)-1;
+  let v=cap,inv=cap;lastSim=[{y:0,inv,val:v}];
+  for(let m=1;m<=yrs*12;m++){v=v*(1+r)+mon;inv+=mon;if(m%12===0)lastSim.push({y:m/12,inv,val:v})}
+  $('#rIn').textContent=eur(inv);$('#rOut').textContent=eur(v);
+  const g=$('#rGain');g.textContent=eur(v-inv);g.className='mono '+cls(v-inv);
+  $('#rRate').textContent=pct(+annual.toFixed(1));
+  $('#simTable').innerHTML='<caption class="sr-only">Evolución año a año</caption><thead><tr><th scope="col">Año</th><th scope="col">Aportado</th><th scope="col">Rendimiento</th><th scope="col">Valor</th></tr></thead><tbody>'+
+    lastSim.map(r=>`<tr><th scope="row">${r.y}</th><td class="mono">${eur(r.inv)}</td><td class="mono ${cls(r.val-r.inv)}">${eur(r.val-r.inv)}</td><td class="mono">${eur(r.val)}</td></tr>`).join('')+'</tbody>';
+  if(!hasChart)return;
+  const labels=lastSim.map(r=>'Año '+r.y),dInv=lastSim.map(r=>Math.round(r.inv)),dGain=lastSim.map(r=>Math.round(r.val-r.inv));
+  if(charts.sim){const c=charts.sim;c.data.labels=labels;c.data.datasets[0].data=dInv;c.data.datasets[1].data=dGain;c.data.datasets[1].borderColor=a.color;c.data.datasets[1].backgroundColor=alpha(a.color,.35);c.update();return}
+  charts.sim=new Chart($('#simChart'),{type:'line',
+    data:{labels,datasets:[
+      {label:'Capital aportado',data:dInv,fill:'origin',borderColor:css('--accent'),backgroundColor:alpha(css('--accent'),.3),pointRadius:0,tension:.3,borderWidth:2},
+      {label:'Rendimiento acumulado',data:dGain,fill:'-1',borderColor:a.color,backgroundColor:alpha(a.color,.35),pointRadius:0,tension:.3,borderWidth:2}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+      scales:{x:{grid:{display:false},ticks:{maxTicksLimit:8}},y:{stacked:true,grid:{color:alpha('#8899bb',.12)},ticks:{callback:v=>new Intl.NumberFormat('es-ES',{notation:'compact'}).format(v)+' €'}}},
+      plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:10}},
+        tooltip:{...tooltipStyle(),callbacks:{label:c=>` ${c.dataset.label}: ${eur(c.parsed.y)}`,footer:it=>'Valor total: '+eur(it.reduce((a,b)=>a+b.parsed.y,0))}}}}});
+}
+$('#csvBtn').addEventListener('click',()=>{
+  const a=sA.value,b=sB.value,w=$('#sMix').value;
+  const head=`# Simulación ilustrativa Tu Amigo Inversor;${a} ${w}% / ${b} ${100-w}%;escenario ${scenario*100}%\nAño;Aportado (EUR);Rendimiento (EUR);Valor (EUR)\n`;
+  const body=lastSim.map(r=>[r.y,r.inv.toFixed(2),(r.val-r.inv).toFixed(2),r.val.toFixed(2)].join(';')).join('\n');
+  const blob=new Blob(['\ufeff'+head+body],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob),l=document.createElement('a');l.href=url;l.download='simulacion_tu_amigo_inversor.csv';document.body.appendChild(l);l.click();l.remove();URL.revokeObjectURL(url);
+});
+runSim();
+
+/* ---------- 14. TEMA EN GRÁFICOS ---------- */
+function refreshChartsTheme(){
+  if(!hasChart)return;chartDefaults();
+  Object.values(charts).forEach(c=>{
+    if(c.options.plugins.tooltip)Object.assign(c.options.plugins.tooltip,tooltipStyle());
+    if(c.options.scales.r)c.options.scales.r.pointLabels.color=css('--muted');
+    Object.values(c.options.scales).forEach(s=>{if(s.ticks)s.ticks.color=css('--muted')});
+    if(c.options.plugins.legend&&c.options.plugins.legend.labels)c.options.plugins.legend.labels.color=css('--muted');
+    c.update('none');
+  });
+}
+// Chart.js ya usa ResizeObserver internamente; reforzamos con debounce en cambios de viewport
+addEventListener('resize',debounce(()=>Object.values(charts).forEach(c=>c.resize()),200));
+
+/* ---------- 15. TESTIMONIOS ---------- */
+const TESTI=[
+  {t:'[PLACEHOLDER] Por fin invierto con un sistema y no con titulares. Dedico diez minutos al mes y duermo tranquilo.',n:'[PLACEHOLDER] Nombre A.',r:'Suscriptor · Perfil moderado'},
+  {t:'[PLACEHOLDER] Lo que más valoro es la transparencia: veo las caídas antes de entrar y sé qué esperar.',n:'[PLACEHOLDER] Nombre B.',r:'Suscriptora · Perfil tolerante'},
+  {t:'[PLACEHOLDER] Combino una cartera permanente con una táctica. El informe del día 1 es claro y directo.',n:'[PLACEHOLDER] Nombre C.',r:'Suscriptor · Perfil dinámico'}
+];
+let ti=0,timer=null;
+$('#track').innerHTML=TESTI.map((x,i)=>`<figure class="slide" role="group" aria-roledescription="diapositiva" aria-label="${i+1} de ${TESTI.length}" ${i?'aria-hidden="true"':''}><blockquote>“${x.t}”</blockquote><figcaption class="who"><span class="avatar" aria-hidden="true">${x.n.replace('[PLACEHOLDER] ','').charAt(0)}</span><span><strong>${x.n}</strong><small>${x.r}</small></span></figcaption></figure>`).join('');
+$('#dots').innerHTML=TESTI.map((_,i)=>`<button type="button" aria-label="Ir al testimonio ${i+1}" ${i===0?'aria-current="true"':''} data-i="${i}"></button>`).join('');
+function goSlide(i){
+  ti=(i+TESTI.length)%TESTI.length;$('#track').style.transform=`translateX(-${ti*100}%)`;
+  $$('.slide').forEach((s,k)=>s.setAttribute('aria-hidden',k!==ti));
+  $$('#dots button').forEach((d,k)=>{if(k===ti)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')});
+}
+$('#prev').addEventListener('click',()=>goSlide(ti-1));$('#next').addEventListener('click',()=>goSlide(ti+1));
+$('#dots').addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b)goSlide(+b.dataset.i)});
+const car=$('.carousel');
+const play=()=>{if(!reduced){stop();timer=setInterval(()=>goSlide(ti+1),6500)}};const stop=()=>clearInterval(timer);
+car.addEventListener('mouseenter',stop);car.addEventListener('mouseleave',play);car.addEventListener('focusin',stop);car.addEventListener('focusout',play);
+play();
+
+/* ---------- 16. FAQ ---------- */
+const FAQ=[
+  ['¿Necesito experiencia previa para seguir las estrategias?','No. Recibes las posiciones el día 1 de cada mes y decides si replicarlas en tu bróker. Todo se basa en reglas, sin decisiones discrecionales.'],
+  ['¿Cada cuánto tengo que revisar mi cartera?','Las carteras permanentes (ROCA, IMPULSO, HORIZONTE) se rebalancean semestralmente. Las estrategias de asignación táctica (GEDA, GEN-Z, CRYPTO) se revisan cada mes.'],
+  ['¿Puedo combinar varias estrategias?','Sí. Combinar una cartera permanente con una estrategia táctica permite equilibrar estabilidad y potencial de crecimiento. Prueba el test de perfil o el simulador.'],
+  ['¿Qué pasa si una estrategia entra en pérdidas?','Las caídas (drawdowns) son parte normal de cualquier sistema. Publicamos la caída máxima de cada estrategia para que sepas qué esperar, aunque las futuras podrían ser mayores.'],
+  ['¿Gestionáis mi dinero?','No. Tu dinero permanece siempre en tu bróker y tú ejecutas las operaciones. Solo compartimos las posiciones de cada estrategia.'],
+  ['¿Es asesoramiento financiero?','No. La información es meramente informativa y no constituye asesoramiento financiero. Cada inversor debe hacer su propio análisis.'],
+  ['¿Cuánto cuesta?','Con la oferta de lanzamiento tienes 3 meses gratis con acceso a todas las estrategias, sin compromiso. Precio posterior: [PLACEHOLDER].']
+];
+$('#faqList').innerHTML=FAQ.map((f,i)=>`<div class="qa reveal"><h3><button type="button" aria-expanded="false" aria-controls="fa${i}" id="fq${i}">${f[0]}<svg class="icon"><use href="#i-plus"/></svg></button></h3><div class="ans" id="fa${i}" role="region" aria-labelledby="fq${i}"><div><p>${f[1]}</p></div></div></div>`).join('');
+$$('.qa button').forEach(b=>b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);b.closest('.qa').classList.toggle('open',o)}));
+
+/* ---------- 17. FORMULARIO DE SUSCRIPCIÓN ---------- */
+const form=$('#subForm'),fName=$('#fName'),fEmail=$('#fEmail'),fConsent=$('#fConsent');
+const rules={
+  fName:v=>v.trim().length>=2?'':'Introduce tu nombre (mínimo 2 caracteres).',
+  fEmail:v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())?'':'Introduce un correo electrónico válido.',
+};
+function validate(el){
+  const msg=rules[el.id](el.value);
+  $('#e'+el.id.slice(1)).textContent=msg;el.setAttribute('aria-invalid',!!msg);el.classList.toggle('valid',!msg);return !msg;
+}
+[fName,fEmail].forEach(el=>{el.addEventListener('input',()=>{if(el.value)validate(el)});el.addEventListener('blur',()=>validate(el))});
+fConsent.addEventListener('change',()=>$('#eConsent').textContent='');
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const ok=[validate(fName),validate(fEmail)].every(Boolean);
+  if(!fConsent.checked){$('#eConsent').textContent='Necesitamos tu consentimiento para enviarte el informe.'}
+  if(!ok||!fConsent.checked){(form.querySelector('[aria-invalid="true"]')||fConsent).focus();return}
+  const btn=$('#fBtn'),st=$('#fStatus');
+  btn.classList.add('loading');btn.disabled=true;$('#fBtnTxt').textContent='Enviando…';st.className='form-status';st.textContent='';
+  try{
+    /* ===== CONECTAR PROVEEDOR DE EMAIL =====
+       BREVO (recomendado: usar un endpoint propio/serverless para NO exponer la API key):
+         await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},
+           body:JSON.stringify({email:fEmail.value,attributes:{FIRSTNAME:fName.value},listIds:[ID_LISTA]})});
+         // El endpoint llama a https://api.brevo.com/v3/contacts con la cabecera 'api-key'.
+       MAILCHIMP: sustituye este bloque por el <form action> del formulario embebido de Mailchimp
+         (https://<dc>.list-manage.com/subscribe/post?u=XXXX&id=YYYY) o llama a tu endpoint que use /3.0/lists/{list_id}/members.
+       ======================================== */
+    await new Promise(r=>setTimeout(r,1200)); // Simulación
+    st.classList.add('ok');st.textContent='¡Listo! Revisa tu correo para confirmar la suscripción.';form.reset();$$('.valid',form).forEach(x=>x.classList.remove('valid'));
+  }catch(err){
+    st.classList.add('ko');st.textContent='No hemos podido completar la suscripción. Inténtalo de nuevo o escríbenos a info@tuamigoinversor.com.';
+  }finally{
+    btn.classList.remove('loading');btn.disabled=false;$('#fBtnTxt').textContent='Quiero empezar gratis';
+  }
+});
+
+/* ---------- 18. COOKIES (RGPD) ---------- */
+const ck=$('#cookie');
+let consent=null;try{consent=localStorage.getItem('tai-cookies')}catch(e){}
+if(!consent)setTimeout(()=>ck.classList.add('show'),800);
+function setConsent(v){try{localStorage.setItem('tai-cookies',v)}catch(e){}ck.classList.remove('show');
+  if(v==='accepted'){/* Cargar aquí analítica solo tras consentimiento [PLACEHOLDER] */}}
+$('#ckAccept').addEventListener('click',()=>setConsent('accepted'));
+$('#ckReject').addEventListener('click',()=>setConsent('rejected'));
+$('#cookieSettings').addEventListener('click',e=>{e.preventDefault();ck.classList.add('show');$('#ckAccept').focus()});
+
+/* ---------- 19. INICIO ---------- */
+observeReveal();
+});
+</script>
+</body>
+</html>
