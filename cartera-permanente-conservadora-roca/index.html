@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark" data-base="../">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROCA · Cartera permanente conservadora | Tu Amigo Inversor</title>
+<meta name="description" content="ROCA: cartera permanente conservadora de baja volatilidad, con 6 componentes y rebalanceo una o dos veces al año. Resultados reales desde 2016.">
+<meta name="theme-color" content="#0a0f1e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Tu Amigo Inversor">
+<meta property="og:title" content="ROCA · Tu Amigo Inversor">
+<meta property="og:description" content="ROCA: cartera permanente conservadora de baja volatilidad, con 6 componentes y rebalanceo una o dos veces al año. Resultados reales desde 2016.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ROCA · Tu Amigo Inversor">
+<meta name="twitter:description" content="ROCA: cartera permanente conservadora de baja volatilidad, con 6 componentes y rebalanceo una o dos veces al año. Resultados reales desde 2016.">
+
+<!-- Tema sin parpadeo: se aplica antes de pintar -->
+<script>
+(function(){try{var t=localStorage.getItem('tai-theme-v3');if(!t){t='light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+</script>
+
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/ficha.css">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+<!-- Única librería externa: Chart.js (diferida) -->
+<script defer src="../assets/js/chart.umd.js"></script>
+<script defer src="../assets/js/tai.js"></script>
+<script defer src="../assets/js/ficha.js"></script>
+
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- SVG sprite (iconos estilo Lucide) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0L5 7zM19 7l-3 7a4 4 0 0 0 6 0l-3-7z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4 20a1 1 0 0 0 .9 1.5h14.2A1 1 0 0 0 20 20l-6-11V3"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+</svg>
+
+<!-- =========================== CABECERA =========================== -->
+<header class="site-header" id="header">
+  <nav class="container nav" aria-label="Navegación principal">
+    <a href="../index.html" class="logo" aria-label="Tu Amigo Inversor, inicio"><span class="logo-mark" aria-hidden="true">TA</span>Tu Amigo Inversor</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#estrategias" aria-current="page">Estrategias</a></li>
+      <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
+      <li><a href="../index.html#test" data-quiz>Test de perfil</a></li>
+      <li><a href="../comparador/index.html">Comparador</a></li>
+      <li><a href="../simulador/index.html">Simulador</a></li>
+      <li><a href="../metodologia/index.html">Metodología</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar a modo claro">
+        <svg class="icon i-sun"><use href="#i-sun"/></svg><svg class="icon i-moon"><use href="#i-moon"/></svg>
+      </button>
+      <a href="../index.html#suscripcion" class="btn btn-primary btn-sm nav-cta magnetic">Empieza gratis</a>
+      <button class="icon-btn burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="../index.html#estrategias" aria-current="page">Estrategias</a></li>
+      <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
+      <li><a href="../index.html#test" data-quiz>Test de perfil</a></li>
+      <li><a href="../comparador/index.html">Comparador</a></li>
+      <li><a href="../simulador/index.html">Simulador</a></li>
+      <li><a href="../metodologia/index.html">Metodología</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../index.html#suscripcion" class="btn btn-primary" style="margin-top:.5rem">Empieza gratis · 3 meses</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<section class="hero strat-hero" aria-labelledby="hero-title" style="--c:#0ea5e9"><div class="container hero-grid">
+<div class="reveal">
+<nav class="crumbs" aria-label="Migas de pan"><a href="../index.html">Inicio</a><span aria-hidden="true">/</span><a href="../index.html#estrategias">Estrategias</a><span aria-hidden="true">/</span><span aria-current="page">ROCA</span></nav>
+<p class="badge"><span class="live" aria-hidden="true"></span>Cartera permanente · Baja rotación · Revisión semestral</p>
+<h1 id="hero-title">ROCA</h1>
+<p class="lead">Cartera permanente conservadora para quienes buscan rentabilidad estable con baja volatilidad, sin necesidad de seguimiento constante.</p>
+<div class="risk risk-lg" style="--c:#0ea5e9"><span>Riesgo</span><div class="risk-bars" role="img" aria-label="Nivel de riesgo 1 de 5"><i class="on"></i><i></i><i></i><i></i><i></i></div><span class="mono">1/5 · Perfil conservador</span></div>
+<div class="cta-row"><a href="#suscripcion" class="btn btn-primary magnetic">Quiero replicarla <svg class="icon"><use href="#i-arrow"/></svg></a><a href="#resultados" class="btn btn-ghost">Ver resultados</a></div>
+<blockquote class="pull">«Te cuento la estrategia real que uso con mi dinero, fruto de la experiencia de varios años en el mercado. Con total transparencia.»</blockquote>
+</div>
+<div class="hero-panel reveal" aria-labelledby="hp-label">
+<div class="hp-head"><div><small id="hp-label">Rentabilidad anual media</small><div class="hp-value mono pos">+7,5%</div></div><small class="mono" style="font-weight:700;color:var(--text)">ROCA</small></div>
+<div class="hp-kpis"><div class="kpi"><span>Máx. caída</span><b class="mono neg">-9,2%</b></div><div class="kpi"><span>2025</span><b class="mono pos">+5,6%</b></div><div class="kpi"><span>2026 (ene–sep)</span><b class="mono pos">+4,7%</b></div></div><div class="hp-kpis hp-kpis-2"><div class="kpi"><span>Sharpe</span><b class="mono ">1,13</b></div><div class="kpi"><span>Volatilidad</span><b class="mono ">6,6%</b></div><div class="kpi"><span>Meses positivos</span><b class="mono ">63%</b></div></div>
+<p class="asof"><span class="asof-dot" aria-hidden="true"></span><span>Datos actualizados a <strong>30 sep 2026</strong> · 2026 solo incluye de enero a septiembre</span></p>
+<div class="chart-box"><canvas id="fichaChart" role="img" aria-label="Evolución acumulada de ROCA (base 100) de ene 2016 a sep 2026, con la zona de caída sombreada"></canvas></div>
+<p class="chart-note">Evolución acumulada con las rentabilidades mensuales de ROCA (base 100, escala logarítmica), de ene 2016 a sep 2026. Rentabilidades en euros, sin comisiones ni impuestos. Rentabilidades pasadas no garantizan rentabilidades futuras.</p>
+</div></div></section><section class="section" id="que-es" aria-labelledby="que-es-t"><div class="container narrow">
+<div class="sec-head reveal"><span class="eyebrow">Qué es</span><h2 id="que-es-t">¿Qué es una cartera permanente conservadora?</h2></div>
+<div class="prose wp reveal"><p>Si tu perfil es conservador y buscas proteger tu capital mientras lo haces crecer de forma estable, esta cartera puede ser tu aliada. La disciplina, la diversificación y la paciencia son tus mejores armas en el camino financiero.</p><p>Una cartera permanente conservadora es una estrategia de inversión diseñada para mantener estabilidad en cualquier entorno económico, combinando activos descorrelacionados y con baja volatilidad.</p></div>
+</div></section>
+<section class="section" id="consiste" aria-labelledby="consiste-t"><div class="container narrow">
+<div class="sec-head reveal"><span class="eyebrow">La estrategia</span><h2 id="consiste-t">Un sistema sencillo, de baja rotación</h2></div>
+<div class="prose wp reveal"><p>Cuando empecé a invertir, tomaba decisiones guiado por intuición, emociones y pequeños trucos de análisis técnico que encontraba en redes y publicaciones de supuestos “expertos”.</p>
+<p>El resultado fue el esperable: algunos aciertos muy buenos… y errores que costaban dinero de verdad.</p>
+<p>Con el tiempo entendí algo clave:</p>
+<p>sin un método claro y consistente, inviertes a merced del mercado… y de tus propias emociones.</p>
+<p>También aprendí a desconfiar del ruido: titulares alarmistas, opiniones interesadas y recomendaciones que muchas veces llegan justo en el peor momento —cuando alguien quiere que tú vendas o compres por él—.</p>
+<p>Buscaba algo distinto, así que decidí cambiar el enfoque por:</p>
+<ul><li>Un sistema sencillo</li><li>Fácil de mantener en el tiempo</li><li>Sin necesidad de estar pendiente del mercado cada día</li><li>Y con un objetivo claro: batir la inflación con una volatilidad contenida</li></ul>
+<p>Y entonces llegué a las carteras diversificadas de baja rotación: Cartera Permanente, All Seasons, Bogleheads…</p>
+<p>Todas comparten una misma filosofía: no intentar adivinar el mercado, sino estar preparado para cualquier escenario.</p>
+<p>La lógica es simple:</p>
+<ul><li>Combinar activos que se comportan de forma diferente</li><li>Asignarles un peso fijo</li><li>Y dejar que se equilibren entre ellos</li></ul>
+<p>Cuando unos caen, otros compensan.</p>
+<p>El resultado:</p>
+<p>crecimiento moderado, pero mucho más estable, evitando grandes sobresaltos.</p>
+<p>La gestión es mínima: un rebalanceo una o dos veces al año.</p>
+<p>Ahora bien, aunque esta estrategia se inspira en carteras ampliamente conocidas, no replica exactamente ninguna de ellas.</p>
+<p>Cada modelo (Cartera Permanente, All Seasons, Bogleheads, etc.) propone combinaciones de activos y pesos diferentes, en función de cómo prioriza la protección, el crecimiento o la respuesta a distintos entornos económicos.</p>
+<p>Mi aportación ha sido analizar estos enfoques, entender qué hay detrás de cada uno y construir una versión propia, ajustando tanto la selección de activos como sus porcentajes.</p>
+<p>El objetivo:</p>
+<p>encontrar un equilibrio que maximice la estabilidad sin renunciar a una rentabilidad razonable, adaptado además a mi forma de invertir y al contexto fiscal del inversor en España.</p>
+<p>Lo que presento a continuación es, por tanto, una síntesis práctica de estos modelos, optimizada para ser fácil de implementar, mantener y replicar en el tiempo.</p>
+<h3 class="wp-h">Cómo está construida la cartera</h3>
+<h3 class="wp-h">Diversificación</h3>
+<ul><li>Renta fija (60%) → Estabilidad y protección del capital</li><li>Oro (15%) → Cobertura frente a inflación y crisis</li><li>Renta variable (25%) → Motor de crecimiento</li></ul>
+<p>Esta cartera permanente conservadora destaca por su equilibrio con una combinación de activos defensivos, anticíclicos y de crecimiento.</p>
+<h3 class="wp-h">Riesgo</h3>
+<ul><li>Volatilidad estimada: ~6%</li><li>Caídas máximas esperadas: ~ -10%</li><li>Recuperación habitual: 1–2 años</li></ul>
+<p>Muy por debajo del riesgo de una cartera tradicional.</p>
+<h3 class="wp-h">Correlación</h3>
+<ul><li>Bonos y TIPS → baja o negativa con la bolsa</li><li>Oro → especialmente útil en crisis</li><li>Renta variable → correlacionada entre sí, pero con peso reducido</li></ul>
+<p>Esto es lo que permite que la cartera sea estable.</p>
+<h3 class="wp-h">Comportamiento según el entorno</h3>
+<ul><li>Mercados alcistas → subidas moderadas</li><li>Caídas bursátiles → impacto limitado</li><li>Inflación → oro y TIPS compensan</li><li>Bajada de tipos → los bonos impulsan la cartera</li><li>Recesión → activos refugio protegen</li><li>Dólar débil → apoyo del oro y la renta variable global</li></ul>
+<h3 class="wp-h">Fortalezas</h3>
+<ul><li>Excelente equilibrio entre rentabilidad y riesgo</li><li>Como toda cartera permanente conservadora bien construida es muy resistente en entornos complicados</li><li>Baja volatilidad → ideal para invertir con tranquilidad</li></ul>
+<h3 class="wp-h">Debilidades</h3>
+<ul><li>Se queda atrás en mercados muy alcistas</li><li>Dependencia parcial de la renta fija (especialmente USA)</li></ul>
+<p>ROCA cartera permanente conservadora que NO busca maximizar la rentabilidad.</p>
+<p>Busca algo más difícil: invertir de forma constante, sin sobresaltos y sin depender de acertar el momento del mercado.</p>
+<p>Porque en inversión, muchas veces, ganar más no viene de asumir más riesgo… sino de evitar errores grandes.</p>
+<h3 class="wp-h">Diversificación</h3>
+<ul><li>Renta fija (60%) → Estabilidad y protección del capital</li><li>Oro (15%) → Cobertura frente a inflación y crisis</li><li>Renta variable (25%) → Motor de crecimiento</li></ul>
+<p>Esta cartera permanente conservadora destaca por su equilibrio con una combinación de activos defensivos, anticíclicos y de crecimiento.</p>
+<h3 class="wp-h">Riesgo</h3>
+<ul><li>Volatilidad estimada: ~6%</li><li>Caídas máximas esperadas: ~ -10%</li><li>Recuperación habitual: 1–2 años</li></ul>
+<p>Muy por debajo del riesgo de una cartera tradicional.</p>
+<h3 class="wp-h">Correlación</h3>
+<ul><li>Bonos y TIPS → baja o negativa con la bolsa</li><li>Oro → especialmente útil en crisis</li><li>Renta variable → correlacionada entre sí, pero con peso reducido</li></ul>
+<p>Esto es lo que permite que la cartera sea estable.</p>
+<h3 class="wp-h">Comportamiento según el entorno</h3>
+<ul><li>Mercados alcistas → subidas moderadas</li><li>Caídas bursátiles → impacto limitado</li><li>Inflación → oro y TIPS compensan</li><li>Bajada de tipos → los bonos impulsan la cartera</li><li>Recesión → activos refugio protegen</li><li>Dólar débil → apoyo del oro y la renta variable global</li></ul>
+<h3 class="wp-h">Fortalezas</h3>
+<ul><li>Excelente equilibrio entre rentabilidad y riesgo</li><li>Como toda cartera permanente conservadora bien construida es muy resistente en entornos complicados</li><li>Baja volatilidad → ideal para invertir con tranquilidad</li></ul>
+<h3 class="wp-h">Debilidades</h3>
+<ul><li>Se queda atrás en mercados muy alcistas</li><li>Dependencia parcial de la renta fija (especialmente USA)</li></ul>
+<p>ROCA cartera permanente conservadora que NO busca maximizar la rentabilidad.</p>
+<p>Busca algo más difícil: invertir de forma constante, sin sobresaltos y sin depender de acertar el momento del mercado.</p>
+<p>Porque en inversión, muchas veces, ganar más no viene de asumir más riesgo… sino de evitar errores grandes.</p></div>
+</div></section>
+<section class="section alt" id="composicion" aria-labelledby="composicion-t"><div class="container">
+<div class="sec-head reveal"><span class="eyebrow">Composición</span><h2 id="composicion-t">Cómo está compuesta ROCA</h2></div>
+<div class="reveal" style="margin-bottom:1.5rem"><div class="alloc" role="img" aria-label="Composición de la cartera"><div style="width:15%;background:#0ea5e9"></div><div style="width:15%;background:#f59e0b"></div><div style="width:25%;background:#10b981"></div><div style="width:15%;background:#7c3aed"></div><div style="width:20%;background:#ec4899"></div><div style="width:10%;background:#64748b"></div></div><div class="alloc-legend"><span><i style="background:#0ea5e9"></i><strong>RF Global</strong> 15%</span><span><i style="background:#f59e0b"></i><strong>Oro</strong> 15%</span><span><i style="background:#10b981"></i><strong>RF Corto Plazo</strong> 25%</span><span><i style="background:#7c3aed"></i><strong>RV Global</strong> 15%</span><span><i style="background:#ec4899"></i><strong>RF Ligada a Inflación</strong> 20%</span><span><i style="background:#64748b"></i><strong>RV Americana</strong> 10%</span></div></div><div class="table-wrap reveal"><table class="data"><caption class="sr-only">Composición de ROCA</caption><thead><tr><th scope="col">Componente</th><th scope="col">Peso</th><th scope="col">Fondo que utilizo</th><th scope="col">Función</th></tr></thead><tbody><tr><th scope="row">RF Global</th><td class="mono">15%</td><td>Dodge &amp; Cox Global Bond Fund (DODLX)</td><td>Bonos globales y corporativos: diversificación y mayor rentabilidad por cupón.</td></tr><tr><th scope="row">Oro</th><td class="mono">15%</td><td>iShares Gold Trust (IAU)</td><td>Oro físico como cobertura frente a inflación y crisis.</td></tr><tr><th scope="row">RF Corto Plazo</th><td class="mono">25%</td><td>NYLI Short Term Bond Class A (MIXAX)</td><td>Bonos a corto plazo: muy baja volatilidad y escasa sensibilidad a tipos.</td></tr><tr><th scope="row">RV Global</th><td class="mono">15%</td><td>Vanguard Global Equity Fund – Investor Shares (VHGEX)</td><td>Renta variable global diversificada para captar crecimiento.</td></tr><tr><th scope="row">RF Ligada a Inflación</th><td class="mono">20%</td><td>Vanguard Inflation-Protected Securities Fund (VIPS)</td><td>Bonos ligados a inflación: protegen el poder adquisitivo.</td></tr><tr><th scope="row">RV Americana</th><td class="mono">10%</td><td>Vanguard Small Cap Value Index Admiral (VSIAX)</td><td>Acciones de pequeña capitalización con sesgo valor.</td></tr></tbody></table></div><p class="fineprint reveal">Utilizo fondos de inversión por su ventaja fiscal en España (permiten traspasos sin tributar), lo que hace el rebalanceo más eficiente. Los ETFs también serían válidos. No todos los brókers ofrecen estos fondos; si alguno no está disponible, puedes utilizar alternativas equivalentes.</p>
+</div></section>
+<section class="section" id="replicar" aria-labelledby="replicar-t"><div class="container narrow">
+<div class="sec-head reveal"><span class="eyebrow">Replicar ROCA</span><h2 id="replicar-t">¿Cómo puedo replicarla?</h2></div>
+<div class="prose wp reveal"><p>ROCA está diseñada para que cualquier inversor pueda aplicarla de forma sencilla, sin conocimientos avanzados ni necesidad de seguimiento diario.</p>
+<p>Se trata de una cartera de baja rotación:</p>
+<ul><li>Defines la asignación inicial</li><li>Mantienes la cartera en el tiempo</li><li>Y realizas pequeños ajustes solo cuando es necesario</li></ul>
+<p>En condiciones normales, basta con revisar la cartera una o dos veces al año para comprobar que los pesos se mantienen dentro de un rango razonable al inicialmente definido.</p>
+<p>Aunque la estrategia es muy estable, el entorno de mercado puede cambiar.</p>
+<p>Si quieres despreocuparte por completo:</p>
+<p>puedes suscribirte y recibirás avisos cuando sea necesario actuar, ya sea para rebalancear o ajustar algún componente de la cartera.</p>
+<p>En mi caso, utilizo fondos de inversión por su ventaja fiscal en España (permiten traspasos sin tributar), lo que hace el rebalanceo más eficiente. Los ETFs también serían válidos, pero menos ágiles en este aspecto. En la práctica, la diferencia de rentabilidad es poco significativa.</p>
+<p>Importante</p>
+<p>No todos los brókers ofrecen estos fondos.</p>
+<p>Si alguno no está disponible en tu plataforma, puedes utilizar alternativas equivalentes.</p>
+<p>Si tienes dudas, puedes consultarme y te ayudaré a encontrar la mejor opción en tu caso.</p></div>
+<ol class="steps reveal" style="margin-top:2rem">
+<li class="step"><span class="step-n" aria-hidden="true">1</span><div><h3>Te suscribes al servicio</h3><p>Accedes a todas las estrategias activas y a sus actualizaciones mensuales.</p></div></li>
+<li class="step"><span class="step-n" aria-hidden="true">2</span><div><h3>Recibes un email el día 1 de cada mes</h3><p>Con las posiciones exactas de la cartera y los cambios a realizar.</p></div></li>
+<li class="step"><span class="step-n" aria-hidden="true">3</span><div><h3>Accedes a tu bróker y ajustas tu cartera</h3><p>Compras y vendes los activos indicados siguiendo los pesos recomendados.</p></div></li>
+<li class="step"><span class="step-n" aria-hidden="true">4</span><div><h3>Mantienes la cartera hasta la siguiente actualización</h3><p>Sin necesidad de intervenir ni tomar decisiones adicionales.</p></div></li></ol>
+</div></section>
+<section class="section" id="resultados" aria-labelledby="resultados-t"><div class="container">
+<div class="sec-head reveal"><span class="eyebrow">Resultados históricos</span><h2 id="resultados-t">Mes a mes desde 2016</h2><p><span class="asof"><span class="asof-dot" aria-hidden="true"></span><span>Datos actualizados a <strong>30 sep 2026</strong> · 2026 solo incluye de enero a septiembre · Rentabilidades en euros, sin comisiones ni impuestos</span></span></p></div>
+<div class="table-wrap heat-wrap reveal"><table class="heat" id="heat"><caption class="sr-only">Rentabilidades mensuales de ROCA por año</caption></table></div>
+<p class="fineprint centered" style="margin-top:.8rem">*2026 incluye solo enero–septiembre. Todo el historial corresponde a una operativa real con mi propio dinero, aunque con importes distintos a lo largo del tiempo.</p>
+<div class="metrics-grid reveal">
+  <div class="panel"><h3>Métricas (ene 2016 – sep 2026)</h3><table class="data cmp-mini"><thead><tr><th scope="col">Métrica</th><th scope="col" style="color:#0ea5e9">ROCA</th></tr></thead><tbody><tr><th scope="row">Rentabilidad anual media</th><td class="mono pos best">+7,5%</td></tr><tr><th scope="row">Volatilidad</th><td class="mono ">6,6%</td></tr><tr><th scope="row">Ratio de Sharpe</th><td class="mono ">1,13</td></tr><tr><th scope="row">Máx. caída</th><td class="mono neg">-9,2%</td></tr></tbody></table><p class="fineprint">ROCA es una cartera de baja volatilidad (6,6% anualizada), pensada para perfiles conservadores. El ratio de Sharpe mide la rentabilidad obtenida por cada unidad de volatilidad asumida (calculado con rentabilidades mensuales, sin tasa libre de riesgo).</p></div>
+  <div class="panel"><h3>Cómo se ha comportado</h3><ul class="facts"><li><b class="mono">81 de 129</b><span>meses con rentabilidad positiva (63%)</span></li><li><b class="mono pos">+7,5%</b><span>mejor mes (abr 2020)</span></li><li><b class="mono neg">-7,7%</b><span>peor mes (mar 2020)</span></li><li><b class="mono">0</b><span>meses con caídas superiores al 10% en 129</span></li></ul></div>
+</div>
+<h3 class="sub-h reveal">Cómo ha rendido cada componente, año a año</h3><p class="prose reveal" style="margin:0 0 1rem">Rentabilidad de cada componente por separado, sin rebalanceo. La cartera combina los pesos de la tabla anterior.</p><div class="table-wrap reveal"><table class="data"><caption class="sr-only">Rentabilidad anual por componente</caption><thead><tr><th scope="col">Componente</th><th scope="col">2016</th><th scope="col">2017</th><th scope="col">2018</th><th scope="col">2019</th><th scope="col">2020</th><th scope="col">2021</th><th scope="col">2022</th><th scope="col">2023</th><th scope="col">2024</th><th scope="col">2025</th><th scope="col">2026*</th></tr></thead><tbody><tr><th scope="row">RF Global</th><td class="mono pos">+12,3%</td><td class="mono neg">-4,0%</td><td class="mono pos">+3,9%</td><td class="mono pos">+14,6%</td><td class="mono pos">+2,4%</td><td class="mono pos">+9,2%</td><td class="mono neg">-2,5%</td><td class="mono pos">+8,2%</td><td class="mono pos">+6,9%</td><td class="mono neg">-1,2%</td><td class="mono pos">+0,7%</td></tr><tr><th scope="row">Oro</th><td class="mono pos">+12,0%</td><td class="mono neg">-0,0%</td><td class="mono pos">+2,5%</td><td class="mono pos">+20,5%</td><td class="mono pos">+13,9%</td><td class="mono pos">+4,3%</td><td class="mono pos">+5,6%</td><td class="mono pos">+8,7%</td><td class="mono pos">+34,9%</td><td class="mono pos">+45,2%</td><td class="mono neg">-0,3%</td></tr><tr><th scope="row">RF Corto Plazo</th><td class="mono pos">+6,6%</td><td class="mono neg">-8,6%</td><td class="mono pos">+3,5%</td><td class="mono pos">+12,8%</td><td class="mono pos">+3,5%</td><td class="mono pos">+8,2%</td><td class="mono pos">+1,4%</td><td class="mono pos">+0,6%</td><td class="mono pos">+11,4%</td><td class="mono neg">-7,0%</td><td class="mono pos">+3,5%</td></tr><tr><th scope="row">RV Global</th><td class="mono pos">+10,2%</td><td class="mono pos">+13,2%</td><td class="mono pos">+1,8%</td><td class="mono pos">+36,8%</td><td class="mono pos">+14,0%</td><td class="mono pos">+36,7%</td><td class="mono neg">-9,2%</td><td class="mono pos">+19,0%</td><td class="mono pos">+24,3%</td><td class="mono pos">+21,1%</td><td class="mono pos">+11,8%</td></tr><tr><th scope="row">RF Ligada a Inflación</th><td class="mono pos">+6,9%</td><td class="mono neg">-8,9%</td><td class="mono pos">+2,8%</td><td class="mono pos">+10,3%</td><td class="mono pos">+1,0%</td><td class="mono pos">+14,7%</td><td class="mono neg">-6,6%</td><td class="mono neg">-0,1%</td><td class="mono pos">+8,2%</td><td class="mono neg">-5,4%</td><td class="mono pos">+1,3%</td></tr><tr><th scope="row">RV Americana</th><td class="mono pos">+29,0%</td><td class="mono neg">-1,0%</td><td class="mono neg">-8,4%</td><td class="mono pos">+25,4%</td><td class="mono neg">-3,6%</td><td class="mono pos">+39,2%</td><td class="mono neg">-3,7%</td><td class="mono pos">+11,7%</td><td class="mono pos">+19,5%</td><td class="mono neg">-3,4%</td><td class="mono pos">+14,1%</td></tr><tr><th scope="row"><strong>ROCA</strong></th><td class="mono pos"><strong>+11,4%</strong></td><td class="mono neg"><strong>-2,8%</strong></td><td class="mono pos"><strong>+2,0%</strong></td><td class="mono pos"><strong>+18,7%</strong></td><td class="mono pos"><strong>+6,0%</strong></td><td class="mono pos"><strong>+16,2%</strong></td><td class="mono neg"><strong>-1,9%</strong></td><td class="mono pos"><strong>+6,9%</strong></td><td class="mono pos"><strong>+16,3%</strong></td><td class="mono pos"><strong>+5,6%</strong></td><td class="mono pos"><strong>+4,7%</strong></td></tr></tbody></table></div><p class="fineprint reveal">*2026 incluye solo enero–septiembre.</p>
+<h3 class="sub-h reveal">Anatomía de las caídas</h3>
+<p class="prose reveal" style="margin:0 0 1rem">Las mayores caídas desde un máximo previo, medidas con cierres mensuales. Las caídas pasadas no limitan las futuras: pueden ser mayores.</p>
+<div class="table-wrap reveal"><table class="data dd-table"><thead><tr><th scope="col">Caída</th><th scope="col">Máximo previo</th><th scope="col">Mínimo</th><th scope="col">Duración de la caída</th><th scope="col">Recuperación del máximo</th></tr></thead><tbody><tr><td class='mono neg'>-9,2%</td><td>ene 2020</td><td>mar 2020</td><td>2 meses</td><td>nov 2020 (10 meses)</td></tr><tr><td class='mono neg'>-8,9%</td><td>feb 2017</td><td>mar 2018</td><td>13 meses</td><td>feb 2019 (24 meses)</td></tr><tr><td class='mono neg'>-7,6%</td><td>feb 2025</td><td>abr 2025</td><td>2 meses</td><td>oct 2025 (8 meses)</td></tr><tr><td class='mono neg'>-4,8%</td><td>jul 2022</td><td>dic 2022</td><td>5 meses</td><td>dic 2023 (17 meses)</td></tr><tr><td class='mono neg'>-3,6%</td><td>abr 2022</td><td>jun 2022</td><td>2 meses</td><td>jul 2022 (3 meses)</td></tr></tbody></table></div>
+<p class="fineprint reveal">A 30 sep 2026, ROCA se encuentra un 1,1 por debajo del máximo de ago 2026.</p>
+</div></section>
+<section class="section" id="limites" aria-labelledby="limites-t"><div class="container">
+<div class="sec-head reveal"><span class="eyebrow">Límites del sistema</span><h2 id="limites-t">Cuándo funciona y cuándo sufre</h2></div>
+<div class="fit reveal">
+<div class="fit-col yes"><h3><svg class="icon"><use href="#i-check"/></svg>Donde suele funcionar mejor</h3><ul><li>Años de mayor rentabilidad: 2019 (+18,7%) y 2024 (+16,3%).</li><li>Muy resistente en entornos complicados.</li><li>Baja volatilidad: ideal para invertir con tranquilidad.</li></ul></div>
+<div class="fit-col no"><h3><svg class="icon"><use href="#i-x"/></svg>Donde suele sufrir</h3><ul><li>Peores meses: mar 2020 (-7,7%) y abr 2025 (-4,1%).</li><li>Año más flojo: 2017 (-2,8%).</li><li>Se queda atrás en mercados muy alcistas.</li><li>Dependencia parcial de la renta fija (especialmente USA).</li><li>A 30 sep 2026 está un 1,1 por debajo de su máximo de ago 2026.</li></ul></div></div>
+</div></section>
+<section class="section alt" id="comportamiento" aria-labelledby="comportamiento-t"><div class="container narrow">
+<div class="sec-head reveal"><span class="eyebrow">Comentario</span><h2 id="comportamiento-t">Comportamiento en 2026 (hasta septiembre)</h2></div>
+<div class="prose reveal"><p>ROCA acumula un <strong>+4,7%</strong> en lo que va de 2026 (enero–septiembre) y cerró 2025 con un <strong>+5,6%</strong>.</p><p>Comienzo de año en positiva en todos los componentes,</p>
+<ul><li>Renta Fija: recuperando la senda alcista dentro de sus posibilidades.</li><li>Oro: buen principio de año, aunque empieza a dar signos de agotamiento.</li><li>Renta Variable: Buen comportamiento a pesar de las tensiones geopolíticas.</li></ul>
+<p>De momento sin necesidad de rebalanceo, manteniéndose la distribución dentro de los márgenes de tolerancia.</p><p class="fineprint">Comentario escrito a principios de mayo de 2026. <span class="ph">[PLACEHOLDER: actualizar con la evolución hasta septiembre]</span></p></div>
+<details class="more reveal"><summary>Comportamiento en 2025</summary><div class="prose"><p>2025 fue un año muy pobre para la Renta Fija, donde la mayoría de activos se devaluaron por la bajada de tipos de interés,</p>
+<ul><li>La Renta Fija, que es la parte de mayor peso en la cartera, sufrió importantes pérdidas</li><li>Oro: actuó como estabilizador compensando la cartera</li><li>Renta Variable: Buen comportamiento en general ayudando a sacar la rentabilidad este año</li></ul>
+<p>Debido a la muy diferente evolución de los activos, se realizaron ajustes por rebalanceo a los largo del año, que fueron debidamente avisados a los suscriptores.</p></div></details>
+</div></section>
+<section class="section alt" id="faq" aria-labelledby="faq-title"><div class="container narrow"><div class="sec-head reveal"><span class="eyebrow">Preguntas frecuentes</span><h2 id="faq-title">Sobre ROCA</h2></div><div class="faq" id="faqList"></div><p class="fineprint centered reveal" style="margin-top:1.5rem">Cómo se calculan las cifras: rentabilidades en euros (los activos en USD se convierten con el tipo de cambio del día), precios de Yahoo Finance, sin comisiones ni impuestos. Más detalle en la <a href="../metodologia/index.html" style="text-decoration:underline">metodología</a>.</p></div></section><figure class="name-note container narrow reveal" style="margin:2.5rem auto"><blockquote>«Cada estrategia tiene un nombre con significado. ROCA hace referencia a la resistencia de la estrategia ante cualquier situación adversa, capaz de ganar dinero de forma consistente en cualquier escenario.»</blockquote></figure><section class="section alt tight" aria-labelledby="otras-title"><div class="container"><h2 id="otras-title" class="small-h reveal">Otras estrategias</h2><ul class="others reveal"><li><a href="../inversion-tactica-geda/index.html"><b>GEDA</b><span>Asignación táctica · momentum</span></a></li><li><a href="../cartera-inversion-crecimiento-impulso/index.html"><b>IMPULSO</b><span>Cartera permanente de crecimiento</span></a></li><li><a href="../plan-pensiones-moderado-horizonte/index.html"><b>HORIZONTE</b><span>Plan de pensiones moderado</span></a></li><li><a href="../inversion-tematica-gen-z/index.html"><b>GEN-Z</b><span>Inversión temática</span></a></li><li><a href="../inversion-criptomonedas-crypto/index.html"><b>CRYPTO</b><span>Criptomonedas</span></a></li></ul></div></section><section class="section" id="suscripcion" aria-labelledby="sub-title">
+  <div class="container">
+    <div class="cta reveal">
+      <div class="cta-grid">
+        <div>
+          <span class="offer">OFERTA DE LANZAMIENTO</span>
+          <h2 id="sub-title">Empieza gratis: 3 meses con acceso a todo</h2>
+          <p style="font-size:var(--fs-lg)">La mejor forma de saber si una estrategia es para ti es verla en directo. Recibe el informe, revisa las posiciones y decide. Si no te convence, no haces nada.</p>
+          <div class="hero-trust">
+            <span><svg class="icon"><use href="#i-mail"/></svg>Informe el día 1</span>
+            <span><svg class="icon"><use href="#i-shield"/></svg>Sin compromiso</span>
+            <span><svg class="icon"><use href="#i-clock"/></svg>Cancela cuando quieras</span>
+          </div>
+        </div>
+        <form class="form" id="subForm" novalidate aria-labelledby="sub-title">
+          <div>
+            <label for="fName">Nombre</label>
+            <input type="text" id="fName" name="name" autocomplete="given-name" required aria-describedby="eName">
+            <p class="err" id="eName" aria-live="polite"></p>
+          </div>
+          <div>
+            <label for="fEmail">Correo electrónico</label>
+            <input type="email" id="fEmail" name="email" autocomplete="email" inputmode="email" required aria-describedby="eEmail">
+            <p class="err" id="eEmail" aria-live="polite"></p>
+          </div>
+          <label class="check"><input type="checkbox" id="fConsent" required aria-describedby="eConsent"><span>Acepto la <a href="#" style="text-decoration:underline">política de privacidad</a> <span class="ph">[PLACEHOLDER: enlace]</span> y recibir el informe mensual.</span></label>
+          <p class="err" id="eConsent" aria-live="polite"></p>
+          <button class="btn btn-primary magnetic" type="submit" id="fBtn"><span class="spinner" aria-hidden="true"></span><span id="fBtnTxt">Quiero empezar gratis</span></button>
+          <p class="form-status" id="fStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =========================== PIE =========================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="../index.html" class="logo" style="margin-bottom:1rem"><span class="logo-mark" aria-hidden="true">TA</span>Tu Amigo Inversor</a>
+        <p>Comparto las estrategias que utilizo para gestionar mi propio dinero, basadas en reglas claras y sin predicciones.</p>
+        <p style="margin-top:.8rem"><a href="mailto:info@tuamigoinversor.com">info@tuamigoinversor.com</a></p>
+      </div>
+      <nav aria-label="Carteras permanentes"><h2>Cartera permanente</h2><ul><li><a href="../cartera-permanente-conservadora-roca/index.html">ROCA</a></li><li><a href="../cartera-inversion-crecimiento-impulso/index.html">IMPULSO</a></li><li><a href="../plan-pensiones-moderado-horizonte/index.html">HORIZONTE</a></li></ul></nav>
+      <nav aria-label="Asignación táctica"><h2>Asignación táctica</h2><ul><li><a href="../inversion-tactica-geda/index.html">GEDA</a></li><li><a href="../inversion-tematica-gen-z/index.html">GEN-Z</a></li><li><a href="../inversion-criptomonedas-crypto/index.html">CRYPTO</a></li></ul></nav>
+      <nav aria-label="Herramientas y proyecto"><h2>Herramientas</h2><ul><li><a href="../index.html#test" data-quiz>Test de perfil</a></li><li><a href="../comparador/index.html">Comparador</a></li><li><a href="../simulador/index.html">Simulador</a></li><li><a href="../metodologia/index.html">Metodología</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../sobre-mi/index.html">Sobre mí</a></li></ul></nav>
+      <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="#">Aviso legal <span class="ph">[PLACEHOLDER]</span></a></li><li><a href="#">Política de privacidad <span class="ph">[PLACEHOLDER]</span></a></li><li><a href="#" id="cookieSettings">Configurar cookies</a></li></ul></nav>
+    </div>
+    <div class="legal">
+      <p><strong>Aviso:</strong> la información publicada en esta web tiene carácter meramente informativo y no constituye asesoramiento financiero ni una recomendación personalizada de inversión. Las inversiones conllevan riesgo y pueden implicar la pérdida total o parcial del capital. Las rentabilidades pasadas no garantizan rentabilidades futuras. Cada inversor debe realizar su propio análisis y tomar decisiones en función de su situación personal.</p>
+      <p style="margin-top:.8rem">© 2026 Tu Amigo Inversor.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Test de perfil (ventana emergente) -->
+<script>window.FICHA={"id":"ROCA","color":"#0ea5e9","months":{"2016":[-0.43,2.1,-0.43,1.33,0.82,2.57,2.34,-0.95,-0.08,0.79,1.73,1.15],"2017":[0.57,2.54,-0.67,-0.59,-2.26,-2.42,-1.41,-0.19,1.0,1.62,-1.13,0.21],"2018":[-2.55,-0.6,-0.22,1.16,4.35,0.29,-0.75,0.5,-0.29,-0.09,0.44,-0.08],"2019":[3.27,1.78,2.17,1.42,-0.18,1.52,2.35,2.18,0.9,-0.78,1.5,1.15],"2020":[2.43,-1.62,-7.68,7.46,0.82,0.56,-1.46,1.22,-0.15,0.48,1.24,3.26],"2021":[1.2,-0.27,4.13,-1.3,1.34,1.64,0.93,1.27,0.0,0.85,2.29,3.12],"2022":[-0.98,-0.1,-0.13,2.63,-2.73,-0.85,5.42,-0.46,-3.37,0.65,0.94,-2.62],"2023":[2.92,-0.31,-0.65,-0.85,1.8,0.39,0.37,-0.57,0.6,-0.87,1.23,2.74],"2024":[1.64,0.93,2.93,-0.58,1.01,1.34,1.93,-1.02,1.22,2.08,4.19,-0.38],"2025":[2.78,0.64,-3.68,-4.06,1.51,-0.98,2.77,0.22,2.22,2.38,0.78,1.22],"2026":[1.06,3.46,-1.06,0.42,0.76,0.62,-0.86,1.38,-1.06]},"realFrom":null,"scale":8,"scaleNeg":6,"faq":[["¿Cada cuánto tengo que revisar la cartera?","En condiciones normales, basta con revisarla una o dos veces al año para comprobar que los pesos se mantienen dentro de un rango razonable. Si te suscribes, recibes avisos cuando haya que rebalancear o ajustar algún componente."],["¿Puedo usar ETFs en lugar de fondos de inversión?","Sí, los ETFs también son válidos. Utilizo fondos por su ventaja fiscal en España (los traspasos no tributan), lo que hace el rebalanceo más eficiente; en la práctica la diferencia de rentabilidad es poco significativa."],["¿Qué hago si mi bróker no tiene estos fondos?","Puedes utilizar alternativas equivalentes. Lo importante es replicar la misma exposición con comisiones bajas. Si tienes dudas, escríbeme y te ayudo a encontrar la mejor opción en tu caso."],["¿ROCA garantiza rentabilidad?","No. Es una cartera de baja volatilidad, pero ha tenido caídas y puede tenerlas mayores. La caída máxima histórica ha sido del -9,2%."]]};</script>
+<div class="modal" id="quizModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+    <button class="icon-btn modal-close" type="button" aria-label="Cerrar test"><svg class="icon"><use href="#i-x"/></svg></button>
+    <div class="modal-content">
+      <span class="eyebrow">Test de perfil</span>
+      <h2 id="quizTitle" style="font-size:var(--fs-xl);margin:.3rem 0 .4rem">¿Qué estrategia encaja contigo?</h2>
+      <p style="color:var(--muted);margin-bottom:1.4rem">Cinco preguntas, un minuto. Te propongo una estrategia o una combinación orientativa.</p>
+      <div class="quiz" id="quiz" aria-live="polite"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Cookies -->
+<div class="cookie" id="cookie" role="dialog" aria-labelledby="ckTitle" aria-describedby="ckText">
+  <strong id="ckTitle">Tu privacidad</strong>
+  <p id="ckText">Uso solo cookies técnicas necesarias. Con tu consentimiento, usaría cookies analíticas para mejorar la web. Puedes cambiar tu elección en cualquier momento desde el pie de página.</p>
+  <div class="cta-row">
+    <button class="btn btn-ghost btn-sm" type="button" id="ckReject">Rechazar</button>
+    <button class="btn btn-primary btn-sm" type="button" id="ckAccept">Aceptar</button>
+  </div>
+</div>
+
+<button class="icon-btn to-top" id="toTop" type="button" aria-label="Volver arriba"><svg class="icon"><use href="#i-up"/></svg></button>
+<div class="sticky-cta" id="stickyCta"><small><strong>3 meses gratis</strong><br>Acceso a las 6 estrategias</small><a href="../index.html#suscripcion" class="btn btn-primary btn-sm">Empezar</a></div>
+</body>
+</html>
