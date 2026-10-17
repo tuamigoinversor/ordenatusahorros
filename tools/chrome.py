@@ -94,7 +94,7 @@ def body_open(base, home, current):
   <div class="mobile-menu" id="mobileMenu">
     <ul>
 %(links)s
-      <li><a href="%(sub)s" class="btn btn-primary" style="margin-top:.5rem">Empieza gratis · 3 meses</a></li>
+      <li><a href="%(sub)s" class="btn btn-primary" style="margin-top:.5rem">Empieza gratis</a></li>
     </ul>
   </div>
 </header>
@@ -150,7 +150,7 @@ def footer_and_floating(base, home):
 </div>
 
 <button class="icon-btn to-top" id="toTop" type="button" aria-label="Volver arriba"><svg class="icon"><use href="#i-up"/></svg></button>
-<div class="sticky-cta" id="stickyCta"><small><strong>3 meses gratis</strong><br>Acceso a las 6 estrategias</small><a href="%(sub)s" class="btn btn-primary btn-sm">Empezar</a></div>
+<div class="sticky-cta" id="stickyCta"><small><strong>Gratis hasta final de año</strong><br>Acceso a las 6 estrategias</small><a href="%(sub)s" class="btn btn-primary btn-sm">Empezar</a></div>
 </body>
 </html>
 ''' % dict(base=base, logo=('#main' if home else base + 'index.html'), test=test, sub=sub, sobre=SOBRE_MI)

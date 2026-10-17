@@ -105,7 +105,7 @@ def write(rel, content):
 
 
 def cta_band(base):
-    return '''<div class="cta-band reveal" style="margin-top:2.5rem"><div><h2>¿Quieres ver las estrategias en directo?</h2><p>Prueba 3 meses gratis: recibes el informe el día 1 de cada mes, ves las posiciones y decides. Sin compromiso.</p></div>
+    return '''<div class="cta-band reveal" style="margin-top:2.5rem"><div><h2>¿Quieres ver las estrategias en directo?</h2><p>Es gratis hasta final de año: recibes el informe el día 1 de cada mes, ves las posiciones y decides. Sin compromiso.</p></div>
 <div class="cta-row"><a href="%sindex.html#suscripcion" class="btn btn-primary magnetic">Empezar gratis %s</a></div></div>''' % (base, ARROW)
 
 

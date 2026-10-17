@@ -1,5 +1,11 @@
-TU AMIGO INVERSOR · WEB V15
+TU AMIGO INVERSOR · WEB V16
 ===========================
+
+CAMBIOS V16
+  - Oferta: ya no hay "3 meses gratis". Todo es gratis hasta el 31 de diciembre de 2026; después 30 EUR/semestre o 50 EUR/año
+    para seguir recibiendo el informe mensual con las posiciones el día 1 y poder replicar las estrategias (home, FAQ, avisos, JSON-LD).
+  - Certificación MiFID II (UC3M, avalada por la CNMV): en la home (línea del autor y datos estructurados), en Sobre mí y en el aviso legal
+    (aclarando que la web no da asesoramiento personalizado).
 
 CAMBIOS V15
   - Perfiles unificados en toda la web y en el test: Conservador (ROCA), Moderado (IMPULSO y HORIZONTE), Agresivo (GEDA), Muy agresivo (GEN-Z), Especulativo (CRYPTO).

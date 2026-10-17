@@ -691,3 +691,8 @@ table.cmp-table td .more{margin-top:0;justify-content:center}
 @media (max-width:520px){.q-areas{grid-template-columns:1fr 1fr 1fr;font-size:.8rem}}
 .fit-list{margin-bottom:.9rem}
 .fit-card .fit-note{color:var(--warn)!important;font-weight:600}
+
+.price-note{font-size:var(--fs-sm)!important;margin-top:.8rem;padding:.7rem .9rem;border-left:3px solid var(--accent);background:color-mix(in srgb,var(--accent) 7%,transparent);border-radius:0 10px 10px 0}
+.cred{display:flex;gap:.8rem;align-items:flex-start;margin-top:1.2rem;padding:.9rem 1rem;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;background:var(--surface-2)}
+.cred .icon{width:26px;height:26px;color:var(--accent);flex:none;margin-top:.1rem}
+.cred strong{display:block;line-height:1.35}.cred span{display:block;font-size:var(--fs-sm);color:var(--muted);margin-top:.2rem}

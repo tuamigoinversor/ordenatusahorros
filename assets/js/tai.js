@@ -290,7 +290,7 @@ function renderResult() {
       <a class="btn btn-primary" href="${cmpUrl}">Comparar mis estrategias</a>
       <button type="button" class="btn btn-ghost" id="qRetry"><svg class="icon"><use href="#i-refresh"/></svg>Repetir test</button>
     </div>
-    <p style="margin-top:1rem;font-size:var(--fs-sm)"><a class="more" href="${$('#suscripcion') ? '#suscripcion' : BASE + 'index.html#suscripcion'}" data-close>Probar 3 meses gratis <svg class="icon"><use href="#i-arrow"/></svg></a></p>
+    <p style="margin-top:1rem;font-size:var(--fs-sm)"><a class="more" href="${$('#suscripcion') ? '#suscripcion' : BASE + 'index.html#suscripcion'}" data-close>Probar gratis hasta final de año <svg class="icon"><use href="#i-arrow"/></svg></a></p>
     <p class="fineprint">Resultado orientativo y educativo, calculado en tu navegador (tus respuestas no se envían a ningún sitio). No es un test de idoneidad regulado (MiFID) ni asesoramiento financiero personalizado. Las rentabilidades pasadas no garantizan rentabilidades futuras.</p>
   </div>`;
   $('#qRetry').addEventListener('click', () => { answers.fill(null); qi = 0; renderQuiz(); $('.q-opt', quizEl).focus(); });

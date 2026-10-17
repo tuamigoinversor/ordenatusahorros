@@ -40,7 +40,7 @@ T.renderFaq($('#faqList'), [
   ['¿Necesito experiencia previa para seguir las estrategias?', 'No. Recibes las posiciones el día 1 de cada mes y decides si replicarlas en tu bróker. Todo se basa en reglas, sin decisiones discrecionales.'],
   ['¿Gestionas mi dinero?', 'No. Tu dinero permanece siempre en tu bróker y tú ejecutas las operaciones. Solo comparto las posiciones de cada estrategia.'],
   ['¿Es asesoramiento financiero?', 'No. La información es meramente informativa y no constituye asesoramiento financiero. Cada inversor debe hacer su propio análisis.'],
-  ['¿Cuánto cuesta?', 'Con la oferta de lanzamiento tienes 3 meses gratis con acceso a todas las estrategias, sin compromiso. Después, la suscripción cuesta 30 € al semestre o 50 € al año. Antes de que termine el periodo gratuito decides si continúas.']
+  ['¿Cuánto cuesta?', 'Con la oferta de lanzamiento, el acceso a todas las estrategias es gratis hasta el 31 de diciembre de 2026, sin compromiso. Después, para seguir recibiendo el informe mensual con las posiciones actualizadas el día 1 de cada mes y poder replicar las estrategias: 30 € al semestre o 50 € al año.']
 ]);
 
 T.initForm();
