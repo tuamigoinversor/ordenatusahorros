@@ -1,98 +1,50 @@
-TU AMIGO INVERSOR · WEB NUEVA V7 (VERSIÓN DE PRUEBAS PARA SUBDOMINIO)
-=====================================================================
+TU AMIGO INVERSOR · WEB V13
+===========================
 
-QUÉ HA CAMBIADO RESPECTO A LA VERSIÓN ANTERIOR
-  Home reorganizada en 9 bloques:
-    1 Hero (con tu firma y foto) · 2 Quién soy · 3 Estrategias · 4 Cómo funciona · 5 ¿Es para ti?
-    6 Herramientas · 7 Transparencia (resumen) · 8 Blog + FAQ · 9 Suscripción
-  Fuera de la home:
-    - Test de perfil  -> VENTANA EMERGENTE (se abre desde la cabecera, el hero, la franja de herramientas,
-                         el pie y la FAQ, en cualquier página). index.html#test lo abre al llegar.
-    - Comparador      -> comparador/index.html   (admite ?s=ROCA,GEDA para llegar con estrategias elegidas)
-    - Simulador       -> simulador/index.html    (admite ?a=GEDA&b=ROCA&w=60)
-    - Metodología     -> metodologia/index.html  (la home solo lleva un resumen) + guía de lectura de métricas
-  Cada tarjeta de estrategia tiene ahora: Ver detalle · Simular · Comparar.
-  El resultado del test enlaza al simulador y al comparador ya con la combinación recomendada.
-  Quitados de la home: testimonios (hasta tener reales), franja de 4 cifras, metodología completa.
-  Texto en primera persona (yo / mi) en toda la web. Corregida la etiqueta robots duplicada.
-  No se ha modificado ninguna cifra ni serie de datos.
+CAMBIOS V13 (+ ajustes finales)
+  - Imagen nueva de IMPULSO, precio en la FAQ (30 €/semestre o 50 €/año) y Brevo como proveedor de correo en la política de privacidad.
+  - Nombre: "José Manuel García" en toda la web (antes "José M. García").
+  - Test de perfil: 10 preguntas (situación, conocimientos, riesgo y objetivos, puntúan 1-4; máx. 40). Perfil Conservador/Moderado/Dinámico/Agresivo
+    con reglas de prudencia (p. ej. dinero necesario en <2 años = máx. Conservador) y explicación en lenguaje natural.
+    Muestra las estrategias que encajan (sin porcentajes) y las que no, con el motivo. Todo se calcula en el navegador.
+    Código en assets/js/tai.js (QUIZ, evaluate, STRAT_WHY). Umbrales: <=18 Conservador, <=26 Moderado, <=34 Dinámico, resto Agresivo.
+  - Páginas nuevas: aviso-legal/ y privacidad/ (enlazadas desde el pie). Quitados todos los [PLACEHOLDER].
 
+CAMBIOS V12
+  - Sobre mí: texto nuevo (cómo empezó todo, de la experiencia a las estrategias, qué encontrarás, gracias) con viñetas y espaciado correctos.
+  - Imágenes de los dos posts que faltaban: estrategias-momentum y rentabilidad-en-euros-tipo-cambio (assets/img/posts/).
+  - Listas de los posts: las líneas con ✔ ✅ ❌ eran párrafos sueltos; ahora son listas reales (estrategias-momentum, planes-de-pensiones-vs-fondos, dollar-cost-averaging).
+  - Viñetas visibles también en las fichas de las estrategias (el texto corrido no tenía estilo de lista).
 
-NOVEDADES V7: PÁGINA "SOBRE MÍ" PROPIA
-  sobre-mi/index.html con tu texto de WordPress (intro, por qué nace el proyecto, estrategias con enlace a cada ficha, filosofía, aviso y contacto).
-  El menú pasa de "Quién soy" a "Sobre mí" (apunta a esta página) y el pie y la home enlazan a ella en vez de a WordPress.
-  Foto: usa assets/img/jose.jpg si existe (si no, el retrato provisional).
-
-NOVEDADES V6: BLOG EN LA WEB (11 ARTÍCULOS MIGRADOS, SIN IMÁGENES)
-  - Los 11 artículos publicados de WordPress están en articulos/ como archivos de texto (Markdown); los 3 borradores, en articulos/borradores/ (no se publican).
-  - Cada artículo se publica en /aprende/<nombre>/ (mismas direcciones que en WordPress). El listado está en /blog/ y la home muestra los 3 últimos.
-  - Los enlaces internos entre artículos y hacia las fichas ya apuntan a las páginas nuevas. feed.xml es el RSS del blog.
-  - Imágenes: aún no están. Lista exacta en articulos/_imagenes-pendientes.md. Copia wp-content/uploads a assets/uploads/ y salen solas.
-
-CÓMO PUBLICAR UN ARTÍCULO NUEVO
-  1. En GitHub, entra en la carpeta articulos/, copia _plantilla.md con un nombre como 2026-11-03-titulo-del-articulo.md y edítala (título, fecha, categoría, resumen, imagen y texto).
-  2. Pulsa "Commit". En 1-2 minutos GitHub regenera la web: página del artículo, listado del blog, los 3 últimos de la home y el RSS.
-  3. Para programar un artículo, pon una fecha futura: se publica solo ese día (la web se reconstruye cada mañana).
-  4. Para guardar un borrador sin publicar, déjalo en articulos/borradores/.
-  Los enlaces dentro de un artículo se escriben así: [texto](/inversion-tactica-geda/) o [texto](/aprende/otro-articulo/).
-  Una vez, en GitHub: Settings > Pages > Source: "GitHub Actions". El flujo está en .github/workflows/publicar.yml.
-  Si prefieres no usar GitHub Actions: instala Python, ejecuta "pip install markdown pyyaml" y "python tools/build_blog.py", y sube el resultado.
-  Esto no está probado en GitHub: el script sí se ha probado aquí; el flujo de GitHub Actions, no.
-
-NOVEDADES V5: HOME MÁS SIMPLE
-  La home pasa a 8 bloques: Hero · Quién soy (más corto) · Estrategias · Cómo funciona · Herramientas · Blog · FAQ (4 preguntas) · Suscripción.
-  Cada tarjeta de estrategia enlaza directamente a su página (título y botón "Ver estrategia"); ya no hay ventana de detalle.
-  "¿Es para ti?" y el resumen de transparencia pasan a la página de metodología. La franja de herramientas enlaza a test, comparador, simulador y metodología.
-
-NOVEDADES V4: FICHAS DE LAS 5 ESTRATEGIAS RESTANTES
-  cartera-permanente-conservadora-roca/   cartera-inversion-crecimiento-impulso/   plan-pensiones-moderado-horizonte/
-  inversion-tematica-gen-z/               inversion-criptomonedas-crypto/
-  Mismas direcciones que en WordPress. Misma estructura que la ficha de GEDA: resultados mes a mes, métricas,
-  anatomía de las caídas, límites del sistema, comportamiento 2026/2025, FAQ y suscripción.
-  Textos: los de tu WordPress (sin tocar el sentido). Cifras: calculadas con estrategias_limpias.xlsx hasta sep 2026.
-  Las tácticas (GEN-Z, CRYPTO) y HORIZONTE llevan línea de tiempo de posiciones; ROCA e IMPULSO, composición y
-  rentabilidad de cada componente año a año. Todas las fichas enlazan ya a las páginas locales (home, pie, GEDA).
-  assets/css/ficha.css y assets/js/ficha.js son comunes a las fichas.
-
-PENDIENTE DE TU REVISIÓN (incoherencias de los textos antiguos; ver el mensaje de entrega)
-  - Comentarios de 2026 de las fichas: escritos a principios de mayo. Marcados con [PLACEHOLDER: actualizar ...].
-  - HORIZONTE: la home lo marca como "revisión semestral" y cartera permanente; su texto dice revisión mensual y estrategia de tendencia.
-  - CRYPTO: la tarjeta antigua de posiciones (BTC 40 / ETH 30 / 10-10-10) no cuadra con el texto (30/30 + 40% de altcoins).
-  - GEN-Z: el texto decía "5-6 cambios al año"; los datos dan unos 8 (la ficha usa el dato).
+CAMBIOS V11
+  - Logo: nueva imagen (assets/img/logo-tai.jpg) en cabecera y pie de todas las páginas, y como favicon / icono de Apple.
+  - Comparador: tabla única con las 6 estrategias (ya no hay selector). ?s=ROCA,GEDA resalta esas columnas.
+  - Informe mensual: informe-ejemplo/index.html es ahora el informe del 1 de octubre de 2026 (cierre de septiembre), con el aspecto de la web.
+    Estilos en assets/css/informe.css.
+  - Eliminados archivos que ya no se usaban: favicon.svg, favicon2.jpg, logoTAI-150x150.jpg (duplicados del logo),
+    assets/js/series.js (no lo leía ningún script) y articulos/_imagenes-pendientes.md (ya hay imágenes).
 
 CONTENIDO
-  index.html                      Home
-  comparador/  simulador/  metodologia/   Páginas auxiliares
-  inversion-tactica-geda/         Página de GEDA (solo se ha actualizado la navegación y el pie)
-  assets/css/site.css             Estilos comunes (antes estaban dentro de la home)
-  assets/js/                      tai.js (común), home.js, comparador.js, simulador.js, series.js, chart.umd.js
-  assets/img/jose.svg             Retrato PROVISIONAL (iniciales JG)
+  index.html                         Home
+  comparador/ simulador/ metodologia/ sobre-mi/ blog/ informe-ejemplo/
+  6 fichas de estrategia             (carpetas de cada una, mismas URL que en WordPress)
+  aprende/                           Artículos del blog (se generan solos desde /articulos)
+  assets/                            css, js, img, fonts
+  articulos/                         Artículos en Markdown (+ borradores/ sin publicar, + _plantilla.md)
+  tools/                             build_blog.py y chrome.py (cabecera/pie comunes), sprite.txt (iconos)
+  .github/workflows/publicar.yml     Publicación en GitHub Pages
+
+PUBLICAR UN ARTÍCULO
+  1. En articulos/, copia _plantilla.md como AAAA-MM-DD-titulo.md y edítala.
+  2. Commit. En 1-2 minutos GitHub regenera la web (artículo, listado, 3 últimos de la home y RSS).
+  3. Fecha futura = se publica ese día. Borradores: carpeta articulos/borradores/.
+  Una vez en GitHub: Settings > Pages > Source: "GitHub Actions".
 
 TU FOTO
-  Guarda tu foto como assets/img/jose.jpg (vertical, 800x1000 aprox.). No hay que tocar código:
-  si existe jose.jpg se usa; si no, se muestra jose.svg. Sale en el hero y en "Quién soy".
+  assets/img/jose.jpg (vertical, ~800x1000). Si no existe se muestra jose.svg (provisional).
 
-CÓMO SUBIRLO A IONOS
-  1. Crea el subdominio (por ejemplo nueva.tuamigoinversor.com) con una carpeta propia. No uses la de WordPress.
-  2. Sube el CONTENIDO de esta carpeta respetando la estructura (index.html en la raíz del subdominio).
-  3. Activa el certificado SSL del subdominio.
-  4. Comprueba: home, test emergente, "Comparar" y "Simular" en una tarjeta, GEDA y su menú, modo claro/oscuro.
-  Si lo abres haciendo doble clic en index.html desde el disco, todo funciona salvo que algunos navegadores
-  no cargan bien la foto/fuentes locales; para probar, mejor usa el subdominio.
-
-ESTÁ MARCADO COMO NO INDEXABLE
-  Cada página lleva <meta name="robots" content="noindex, nofollow"> y robots.txt contiene "Disallow: /".
-
-ENLACES
-  GEDA, comparador, simulador y metodología apuntan a las páginas nuevas. ROCA, IMPULSO, HORIZONTE, GEN-Z
-  y CRYPTO, el blog y "Sobre mí" apuntan a tu WordPress actual (siguen funcionando).
-  El formulario de suscripción de la home es una simulación: NO envía datos.
-
-ANTES DE PUBLICARLO DE VERDAD
-  1. Quitar noindex de cada página (index, comparador, simulador, metodologia, GEDA) y cambiar/borrar robots.txt.
-  2. Añadir canonical y og:image con la URL definitiva.
-  3. Sustituir los [PLACEHOLDER]: precio tras los 3 meses (FAQ), ejemplo del correo, aviso legal, privacidad,
-     cookies y el enlace de privacidad del formulario.
-  4. Conectar el formulario con tu sistema real (Brevo/Mailchimp: hay instrucciones en assets/js/tai.js).
-  5. Cuando tengas testimonios reales, decidir si se vuelven a mostrar (el código ya no está en la home).
-  6. El aviso de cookies es solo visual: hoy no hace falta bloquear nada porque no se cargan servicios de terceros.
+PENDIENTE ANTES DE PUBLICAR DE VERDAD
+  - Quitar noindex de las páginas y cambiar robots.txt.
+  - Aviso legal y privacidad: añadir NIF y domicilio (busca "AÑADIR AQUÍ" en aviso-legal/ y privacidad/) y revisarlos con un abogado.
+  - Conectar el formulario de suscripción (hoy simula el envío).
+  - La imagen del tipo de cambio es pequeña (547x365): conviene una de 1200x800.

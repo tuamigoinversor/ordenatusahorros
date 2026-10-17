@@ -26,7 +26,8 @@
 
 <link rel="stylesheet" href="../assets/css/fonts.css">
 <link rel="stylesheet" href="../assets/css/site.css">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/img/logo-tai.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="../assets/img/logo-tai.jpg">
 
 <!-- Única librería externa: Chart.js (diferida) -->
 <script defer src="../assets/js/chart.umd.js"></script>
@@ -66,7 +67,7 @@
 <!-- =========================== CABECERA =========================== -->
 <header class="site-header" id="header">
   <nav class="container nav" aria-label="Navegación principal">
-    <a href="../index.html" class="logo" aria-label="Tu Amigo Inversor, inicio"><span class="logo-mark" aria-hidden="true">TA</span>Tu Amigo Inversor</a>
+    <a href="../index.html" class="logo" aria-label="Tu Amigo Inversor, inicio"><img class="logo-mark" src="../assets/img/logo-tai.jpg" width="40" height="40" alt="">Tu Amigo Inversor</a>
     <ul class="nav-links">
       <li><a href="../index.html#estrategias">Estrategias</a></li>
       <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
@@ -107,6 +108,14 @@
     <p class="lead">Combina dos estrategias, ajusta tus aportaciones y compara escenarios. Simulación ilustrativa a partir de la rentabilidad media histórica.</p>
   </div>
 </section>
+<aside class="data-notice" aria-label="Frecuencia de actualización de los datos">
+  <div class="container"><div class="data-notice-in">
+    <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+    <p><strong>Los datos de esta web se actualizan con el cierre de cada trimestre.</strong> Si quieres recibir las posiciones de cada mes puntualmente el día 1, suscríbete y las tendrás en tu correo.</p>
+    <a class="btn btn-primary btn-sm" href="../index.html#suscripcion">Suscríbete gratis</a>
+  </div></div>
+</aside>
+
 
 <section class="page-body" aria-label="Simulador de interés compuesto">
   <div class="container">
@@ -168,14 +177,14 @@
   <div class="container">
     <div class="foot-grid">
       <div>
-        <a href="../index.html" class="logo" style="margin-bottom:1rem"><span class="logo-mark" aria-hidden="true">TA</span>Tu Amigo Inversor</a>
+        <a href="../index.html" class="logo" style="margin-bottom:1rem"><img class="logo-mark" src="../assets/img/logo-tai.jpg" width="40" height="40" alt="">Tu Amigo Inversor</a>
         <p>Comparto las estrategias que utilizo para gestionar mi propio dinero, basadas en reglas claras y sin predicciones.</p>
         <p style="margin-top:.8rem"><a href="mailto:info@tuamigoinversor.com">info@tuamigoinversor.com</a></p>
       </div>
       <nav aria-label="Carteras permanentes"><h2>Cartera permanente</h2><ul><li><a href="../cartera-permanente-conservadora-roca/index.html">ROCA</a></li><li><a href="../cartera-inversion-crecimiento-impulso/index.html">IMPULSO</a></li><li><a href="../plan-pensiones-moderado-horizonte/index.html">HORIZONTE</a></li></ul></nav>
       <nav aria-label="Asignación táctica"><h2>Asignación táctica</h2><ul><li><a href="../inversion-tactica-geda/index.html">GEDA</a></li><li><a href="../inversion-tematica-gen-z/index.html">GEN-Z</a></li><li><a href="../inversion-criptomonedas-crypto/index.html">CRYPTO</a></li></ul></nav>
       <nav aria-label="Herramientas y proyecto"><h2>Herramientas</h2><ul><li><a href="../index.html#test" data-quiz>Test de perfil</a></li><li><a href="../comparador/index.html">Comparador</a></li><li><a href="../simulador/index.html">Simulador</a></li><li><a href="../metodologia/index.html">Metodología</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../sobre-mi/index.html">Sobre mí</a></li></ul></nav>
-      <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="#">Aviso legal <span class="ph">[PLACEHOLDER]</span></a></li><li><a href="#">Política de privacidad <span class="ph">[PLACEHOLDER]</span></a></li><li><a href="#" id="cookieSettings">Configurar cookies</a></li></ul></nav>
+      <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="../aviso-legal/index.html">Aviso legal</a></li><li><a href="../privacidad/index.html">Política de privacidad</a></li><li><a href="#" id="cookieSettings">Configurar cookies</a></li></ul></nav>
     </div>
     <div class="legal">
       <p><strong>Aviso:</strong> la información publicada en esta web tiene carácter meramente informativo y no constituye asesoramiento financiero ni una recomendación personalizada de inversión. Las inversiones conllevan riesgo y pueden implicar la pérdida total o parcial del capital. Las rentabilidades pasadas no garantizan rentabilidades futuras. Cada inversor debe realizar su propio análisis y tomar decisiones en función de su situación personal.</p>
@@ -191,7 +200,7 @@
     <div class="modal-content">
       <span class="eyebrow">Test de perfil</span>
       <h2 id="quizTitle" style="font-size:var(--fs-xl);margin:.3rem 0 .4rem">¿Qué estrategia encaja contigo?</h2>
-      <p style="color:var(--muted);margin-bottom:1.4rem">Cinco preguntas, un minuto. Te propongo una estrategia o una combinación orientativa.</p>
+      <p style="color:var(--muted);margin-bottom:1.4rem">Diez preguntas, unos 3 minutos. Te explico tu perfil y qué estrategias encajan con él.</p>
       <div class="quiz" id="quiz" aria-live="polite"></div>
     </div>
   </div>

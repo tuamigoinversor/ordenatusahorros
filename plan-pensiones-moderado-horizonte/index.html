@@ -5,36 +5,165 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HORIZONTE · Plan de pensiones moderado | Tu Amigo Inversor</title>
-<meta name="description" content="HORIZONTE: estrategia para planes de pensiones que alterna entre renta variable americana y renta fija según la tendencia del S&P 500. Una revisión al mes.">
+<meta name="description" content="HORIZONTE alterna un plan de pensiones de renta variable americana y uno de renta fija según la tendencia del S&P 500. Método, señales históricas, resultados y riesgos.">
 <meta name="theme-color" content="#0a0f1e" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 
 <!-- Open Graph / Twitter -->
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Tu Amigo Inversor">
-<meta property="og:title" content="HORIZONTE · Tu Amigo Inversor">
-<meta property="og:description" content="HORIZONTE: estrategia para planes de pensiones que alterna entre renta variable americana y renta fija según la tendencia del S&P 500. Una revisión al mes.">
+<meta property="og:title" content="HORIZONTE · Plan de pensiones moderado | Tu Amigo Inversor">
+<meta property="og:description" content="HORIZONTE alterna un plan de pensiones de renta variable americana y uno de renta fija según la tendencia del S&P 500. Método, señales históricas, resultados y riesgos.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="HORIZONTE · Tu Amigo Inversor">
-<meta name="twitter:description" content="HORIZONTE: estrategia para planes de pensiones que alterna entre renta variable americana y renta fija según la tendencia del S&P 500. Una revisión al mes.">
+<meta name="twitter:title" content="HORIZONTE · Plan de pensiones moderado | Tu Amigo Inversor">
+<meta name="twitter:description" content="HORIZONTE alterna un plan de pensiones de renta variable americana y uno de renta fija según la tendencia del S&P 500. Método, señales históricas, resultados y riesgos.">
 
 <!-- Tema sin parpadeo: se aplica antes de pintar -->
 <script>
 (function(){try{var t=localStorage.getItem('tai-theme-v3');if(!t){t='light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
 </script>
 
+<!-- Fuentes -->
 <link rel="stylesheet" href="../assets/css/fonts.css">
-<link rel="stylesheet" href="../assets/css/site.css">
-<link rel="stylesheet" href="../assets/css/ficha.css">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
 <!-- Única librería externa: Chart.js (diferida) -->
 <script defer src="../assets/js/chart.umd.js"></script>
 <script defer src="../assets/js/tai.js"></script>
-<script defer src="../assets/js/ficha.js"></script>
 
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "headline": "HORIZONTE · Plan de pensiones moderado | Tu Amigo Inversor",
+   "inLanguage": "es-ES",
+   "author": {
+    "@type": "Person",
+    "name": "Tu Amigo Inversor"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Cuántos traspasos hace al año?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "En los 8,8 años analizados ha habido 20 cambios de señal, unos 2,3 al año, aunque no se reparten por igual: 2022 tuvo 6. Cada uno implica un traspaso entre planes de pensiones."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué regla usa exactamente?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Compara el cierre mensual del S&P 500 con su media móvil ponderada de 150 sesiones. Por encima, se invierte todo en el plan de renta variable americana; por debajo, todo en el plan de renta fija. Se revisa una vez al mes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué planes utilizo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Actualmente utilizo en Openbank el P.P. Santander Renta Variable USA y el P.P. Santander Renta Fija. Cualquier entidad con planes equivalentes puede servir. Si tienes dudas sobre qué alternativa usar, escríbeme."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Puede perder más que mantener renta variable?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí. En 2022 perdió un 19,3%, frente a un 12,0% de mantener siempre el plan de renta variable, y su caída máxima es del -19,3%. Son datos pasados."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Es asesoramiento financiero?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. La información es meramente informativa y no constituye asesoramiento financiero ni una recomendación personalizada. Cada inversor debe hacer su propio análisis y decidir según su situación personal."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/ficha.css">
+<style>
+/* ===== Estilo alegre ===== */
+.hero::before{background:radial-gradient(circle,color-mix(in srgb,var(--accent-2) 30%,transparent),transparent 65%)}
+.hero::after{background:radial-gradient(circle,color-mix(in srgb,var(--accent) 24%,transparent),transparent 65%)}
+.strat-hero h1{background:linear-gradient(95deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.section.alt{background:linear-gradient(180deg,var(--bg-2),color-mix(in srgb,var(--bg-2) 50%,var(--bg)))}
+.btn-primary{box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 38%,transparent)}
+.btn-ghost{border-width:2px;border-color:var(--accent);color:var(--accent);font-weight:700}
+.btn-ghost:hover{background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.tech-step .step-n{background:var(--accent);color:var(--accent-ink)}
+.tile{background:var(--c-geda);color:#1a1200}
+.stat{border-top:4px solid var(--accent)}.stat:nth-child(2){border-top-color:var(--accent-2)}.stat:nth-child(3){border-top-color:var(--c-geda)}.stat:nth-child(4){border-top-color:var(--pos)}
+.top-col h4{color:var(--accent)}.top-col:nth-child(2) h4{color:var(--accent-2)}.top-col:nth-child(3) h4{color:var(--c-geda)}.top-col:nth-child(4) h4{color:var(--pos)}
+.pcard{border-top:4px solid var(--c-geda)}
+.m-card .m-ic{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.panel,.m-card,.stat,.tech-step,.top-col,.pcard,.slot-group,.not-do,.hero-panel{box-shadow:0 10px 28px color-mix(in srgb,var(--accent) 9%,transparent)}
+.tl-bar{box-shadow:none}
+.callout .icon{color:var(--accent-2)}
+</style>
+<link rel="icon" href="../assets/img/logo-tai.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="../assets/img/logo-tai.jpg">
+<style>
+[data-theme="light"]{--c-geda:#6d28d9}
+[data-theme="dark"]{--c-geda:#a78bfa}
+/* ---- Página GEN-Z ---- */
+.kicker{margin:0 0 .6rem;font-size:var(--fs-xs);font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c-geda)}
+.story{max-width:70ch;margin:2.2rem auto 1.4rem;padding:1.4rem 1.6rem;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c-geda);border-radius:var(--r-lg)}
+.story h3{margin:0 0 .6rem;font-size:1.1rem}.story p{margin:0 0 .7rem;color:var(--muted);line-height:1.7}.story p:last-child{margin:0}.story em{color:var(--text)}
+.themes{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+@media(min-width:760px){.themes{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.themes li{display:flex;flex-direction:column;gap:.3rem;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c-geda);border-radius:var(--r-lg);padding:1rem 1.1rem}
+.themes li:nth-child(2n){border-top-color:var(--accent)}.themes li:nth-child(3n){border-top-color:var(--accent-2)}
+.themes b{font-size:1rem}.themes span{font-size:var(--fs-sm);color:var(--muted);line-height:1.5}
+.slots-4{grid-template-columns:repeat(4,minmax(0,1fr)) !important;margin-top:1rem}
+.slots-4 .slot-group{text-align:center;padding:.8rem}.slots-4 .slot-tiles{justify-content:center}.slots-4 h4{margin:.5rem 0 0;font-size:1.1rem}
+.tops-1{grid-template-columns:minmax(0,1fr) !important}.tops-1 .top-col ol{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem 1.6rem}
+.tl-row h4{display:none}
+
+/* ---- Páginas de cartera permanente, señal y cripto ---- */
+:root{--s1:#1f5bff;--s2:#ff6a1f;--s3:#00a36c;--s4:#f59e00;--s5:#7c3aed;--s6:#ec4899}
+.wbar{display:flex;height:2.6rem;border-radius:14px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--line);margin:1.6rem 0 1rem}
+.wbar span{display:grid;place-items:center;font-size:.78rem;font-weight:800;color:#fff;font-family:var(--font-mono);min-width:0;overflow:hidden}
+.comp-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+@media(min-width:900px){.comp-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.comp{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--s);border-radius:var(--r-lg);padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.25rem}
+.comp b.w{font-size:1.8rem;font-family:var(--font-mono);color:var(--s)}
+.comp h4{margin:.1rem 0 0;font-size:1rem}.comp .tk{font-size:var(--fs-xs);color:var(--muted);font-family:var(--font-mono)}.comp p{margin:.3rem 0 0;font-size:var(--fs-sm);color:var(--muted);line-height:1.5}
+.div-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin-top:1rem}
+.div-row div{background:var(--surface-2);border-radius:var(--r-lg);padding:.9rem 1rem;font-size:var(--fs-sm);color:var(--muted);line-height:1.5}.div-row b{display:block;color:var(--text);font-size:1.05rem;margin-bottom:.15rem}
+table.cmp-wide{width:100%;border-collapse:collapse;font-size:var(--fs-sm);min-width:640px}
+table.cmp-wide th,table.cmp-wide td{padding:.65rem .5rem;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+table.cmp-wide th:first-child,table.cmp-wide td:first-child{text-align:left;white-space:normal}
+table.cmp-wide thead th{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+table.cmp-wide tr.tot td,table.cmp-wide tr.tot th{font-weight:800;border-top:2px solid var(--line-2)}
+.dot{display:inline-block;width:.7rem;height:.7rem;border-radius:3px;margin-right:.45rem;vertical-align:baseline;background:var(--s)}
+.vs-row{display:grid;grid-template-columns:minmax(0,1fr);gap:.7rem;margin-top:1rem}
+@media(min-width:760px){.vs-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vs{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:1rem 1.2rem}
+.vs h4{margin:0 0 .5rem;font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}.vs b{font-size:1.5rem;font-family:var(--font-mono)}.vs p{margin:.3rem 0 0;font-size:var(--fs-sm);color:var(--muted)}
+.rule{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin-top:1.5rem}
+@media(min-width:760px){.rule{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.rule .r{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--s);border-radius:var(--r-lg);padding:1.3rem 1.4rem}
+.rule .r h3{margin:0 0 .5rem;font-size:1.1rem}.rule .r p{margin:0;color:var(--muted);line-height:1.65}.rule .r b.big{display:block;font-size:1.6rem;font-family:var(--font-mono);color:var(--s);margin-bottom:.3rem}
+.expect{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
+.expect th,.expect td{padding:.7rem .6rem;text-align:left;border-bottom:1px solid var(--line)}
+.expect thead th{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.expect td.mono{font-weight:700}
+</style>
 </head>
+
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -67,7 +196,7 @@
 <!-- =========================== CABECERA =========================== -->
 <header class="site-header" id="header">
   <nav class="container nav" aria-label="Navegación principal">
-    <a href="../index.html" class="logo" aria-label="Tu Amigo Inversor, inicio"><span class="logo-mark" aria-hidden="true">TA</span>Tu Amigo Inversor</a>
+    <a href="../index.html" class="logo" aria-label="Tu Amigo Inversor, inicio"><img class="logo-mark" src="../assets/img/logo-tai.jpg" width="40" height="40" alt="">Tu Amigo Inversor</a>
     <ul class="nav-links">
       <li><a href="../index.html#estrategias" aria-current="page">Estrategias</a></li>
       <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
@@ -100,175 +229,135 @@
 </header>
 
 <main id="main" tabindex="-1">
-<section class="hero strat-hero" aria-labelledby="hero-title" style="--c:#7c3aed"><div class="container hero-grid">
-<div class="reveal">
-<nav class="crumbs" aria-label="Migas de pan"><a href="../index.html">Inicio</a><span aria-hidden="true">/</span><a href="../index.html#estrategias">Estrategias</a><span aria-hidden="true">/</span><span aria-current="page">HORIZONTE</span></nav>
-<p class="badge"><span class="live" aria-hidden="true"></span>Plan de pensiones · Tendencia · Revisión mensual</p>
-<h1 id="hero-title">HORIZONTE</h1>
-<p class="lead">Estrategia para planes de pensiones que alterna entre renta variable y renta fija según la tendencia del mercado, buscando equilibrio entre crecimiento y protección.</p>
-<div class="risk risk-lg" style="--c:#7c3aed"><span>Riesgo</span><div class="risk-bars" role="img" aria-label="Nivel de riesgo 2 de 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><span class="mono">2/5 · Perfil tolerante</span></div>
-<div class="cta-row"><a href="#suscripcion" class="btn btn-primary magnetic">Quiero replicarla <svg class="icon"><use href="#i-arrow"/></svg></a><a href="#resultados" class="btn btn-ghost">Ver resultados</a></div>
-<blockquote class="pull">«Te cuento la estrategia real que uso con mi dinero, fruto de la experiencia de varios años en el mercado. Con total transparencia.»</blockquote>
-</div>
-<div class="hero-panel reveal" aria-labelledby="hp-label">
-<div class="hp-head"><div><small id="hp-label">Rentabilidad anual media</small><div class="hp-value mono pos">+12,1%</div></div><small class="mono" style="font-weight:700;color:var(--text)">HORIZONTE</small></div>
-<div class="hp-kpis"><div class="kpi"><span>Máx. caída</span><b class="mono neg">-19,3%</b></div><div class="kpi"><span>2025</span><b class="mono pos">+17,4%</b></div><div class="kpi"><span>2026 (ene–sep)</span><b class="mono pos">+17,6%</b></div></div><div class="hp-kpis hp-kpis-2"><div class="kpi"><span>Sharpe</span><b class="mono ">1,09</b></div><div class="kpi"><span>Volatilidad</span><b class="mono ">11,1%</b></div><div class="kpi"><span>Meses positivos</span><b class="mono ">65%</b></div></div>
-<p class="asof"><span class="asof-dot" aria-hidden="true"></span><span>Datos actualizados a <strong>30 sep 2026</strong> · 2026 solo incluye de enero a septiembre</span></p>
-<div class="chart-box"><canvas id="fichaChart" role="img" aria-label="Evolución acumulada de HORIZONTE (base 100) de ene 2018 a sep 2026, con la zona de caída sombreada"></canvas></div>
-<p class="chart-note">Evolución acumulada con las rentabilidades mensuales de HORIZONTE (base 100, escala logarítmica), de ene 2018 a sep 2026. Rentabilidades en euros, sin comisiones ni impuestos. Rentabilidades pasadas no garantizan rentabilidades futuras.</p>
-</div></div></section><section class="section" id="que-es" aria-labelledby="que-es-t"><div class="container narrow">
-<div class="sec-head reveal"><span class="eyebrow">Qué es</span><h2 id="que-es-t">¿Qué es un plan de pensiones moderado?</h2></div>
-<div class="prose wp reveal"><p>Un plan de pensiones moderado busca combinar crecimiento y protección del capital mediante una exposición equilibrada entre renta variable y renta fija, adaptándose al perfil de riesgo del inversor.</p></div><div class="method reveal" style="margin-top:2rem">
-<article class="m-card spot"><div class="m-ic"><svg class="icon"><use href="#i-chart"/></svg></div><h3>Tendencia alcista</h3><p>Si el cierre mensual del S&amp;P 500 está por encima de su media móvil ponderada de 150 sesiones, se invierte el 100% en el plan de renta variable americana.</p></article>
-<article class="m-card spot"><div class="m-ic"><svg class="icon"><use href="#i-alert"/></svg></div><h3>Tendencia bajista</h3><p>Si el cierre mensual cae por debajo de esa media, se traspasa todo el capital al plan de renta fija. El sistema se revisa solo una vez al mes.</p></article></div>
-</div></section>
-<section class="section alt" id="consiste" aria-labelledby="consiste-t"><div class="container narrow">
-<div class="sec-head reveal"><span class="eyebrow">La estrategia</span><h2 id="consiste-t">Alternar entre renta variable y renta fija</h2></div>
-<div class="prose wp reveal"><p>Los planes de pensiones suelen ofrecer pocas alternativas de inversión y, en la mayoría de los casos, se limitan a perfiles estáticos:</p>
-<ul><li>conservador</li><li>moderado</li><li>agresivo</li></ul>
-<p>Sin embargo, incluso dentro de estas limitaciones, es posible aplicar una metodología sencilla basada en reglas objetivas que permita adaptarse al comportamiento del mercado.</p>
-<p>A diferencia de ROCA e IMPULSO, que mantienen una composición prácticamente estable en el tiempo, plan de pensiones moderado HORIZONTE utiliza un enfoque dinámico muy simple:</p>
-<p>alternar entre renta variable y renta fija según la tendencia principal del mercado.</p>
-<p>El objetivo es:</p>
-<ul><li>aprovechar las fases alcistas de la bolsa</li><li>y proteger el capital durante grandes mercados bajistas</li></ul>
-<p>Todo ello:</p>
-<ul><li>sin complicaciones</li><li>sin análisis complejos</li><li>y con muy pocos movimientos al año</li></ul>
-<h3 class="wp-h">Objetivo de la estrategia</h3>
-<p>Esta estrategia busca lograr dos metas claras:</p>
-<ul><li>Estar invertido al máximo en renta variable cuando el mercado es favorable.</li><li>Proteger el capital en grandes periodos bajistas.</li></ul>
-<p>Para ello, toda la cartera rota únicamente entre dos tipos de planes:</p>
-<ul><li>Plan de Pensiones de Renta Variable Americana → motor principal de crecimiento.</li><li>Plan de Pensiones de Renta Fija o Monetario → refugio en periodos bajistas.</li></ul>
-<p>La estrategia solo tiene dos posibles escenarios::</p>
-<ul><li>Tendencia alcista:</li></ul>
-<p>Si el cierre mensual del S&amp;P 500 está por encima de la Media Móvil Ponderada de 150 sesiones, se invierte el 100 % en el plan de renta variable americana.</p>
-<ul><li>Tendencia bajista:</li></ul>
-<p>Si el cierre mensual cae por debajo de esa media, se traspasa todo el capital al plan de renta fija.</p>
-<p>El sistema se revisa únicamente una vez al mes.</p>
-<p>Solo cuando se produce una señal clara:</p>
-<ul><li>se realiza el traspaso</li><li>y los suscriptores reciben la notificación correspondiente</li></ul>
-<p>Esto convierte al plan de pensiones moderado HORIZONTE en una estrategia:</p>
-<ul><li>muy sencilla de seguir</li><li>eficiente fiscalmente</li><li>y especialmente adecuada para planes de pensiones</li></ul>
-<h3 class="wp-h">Análisis histórico</h3>
-<p>En la gráfica pueden observarse las señales del sistema durante los últimos 20 años, donde puede observarse cómo la estrategia ha conseguido evitar gran parte de las grandes crisis de mercado de las últimas décadas.</p>
-<p>Evita los grandes desplomes del mercado, como:</p>
-<ul><li>La crisis financiera de 2008</li><li>La caída del COVID en 2020</li><li>Las fuertes correcciones derivadas de tensiones geopolíticas e inflación en años recientes</li></ul>
-<p>La clave del sistema no es predecir el mercado, sino:</p>
-<p>reaccionar cuando la tendencia cambia de forma objetiva.</p>
-<h3 class="wp-h">Riesgo y perfil del inversor</h3>
-<p>El plan de pensiones moderado HORIZONTE está pensada para inversores con un perfil moderado o tolerante al riesgo.</p>
-<p>Aunque gran parte del tiempo permanece invertida en renta variable, la posibilidad de rotar hacia activos defensivos ayuda a reducir significativamente la volatilidad respecto a una inversión estática.</p>
-<h3 class="wp-h">Características principales</h3>
-<ul><li>Riesgo: moderado</li><li>Horizonte temporal: muy largo plazo</li><li>Rotación: baja</li><li>Gestión: sencilla</li><li>Volatilidad: inferior a mantener siempre renta variable</li></ul>
-<h3 class="wp-h">Filosofía general</h3>
-<p>La filosofía de HORIZONTE es muy simple:</p>
-<p>participar en las grandes subidas del mercado evitando, en la medida de lo posible, las grandes caídas estructurales.</p>
-<p>No intenta adivinar techos ni suelos.</p>
-<p>Simplemente:</p>
-<ul><li>sigue la tendencia principal</li><li>y ajusta la exposición cuando el mercado cambia</li></ul>
-<p>Con ello se consigue:</p>
-<ul><li>reducir el estrés emocional</li><li>mejorar la consistencia</li><li>y facilitar enormemente mantener la estrategia durante décadas</li></ul></div>
-</div></section>
-<section class="section" id="historial" aria-labelledby="historial-t"><div class="container">
-<div class="sec-head reveal"><span class="eyebrow">Historial de posiciones</span><h2 id="historial-t">Cuándo ha estado en renta variable y cuándo en renta fija</h2><p>Cada barra es un periodo seguido en la misma posición. Se ve cómo el sistema pasa a renta fija en los grandes mercados bajistas y vuelve a renta variable cuando la tendencia se recupera.</p></div>
-<div class="tl-wrap reveal"><div class="tl" id="timeline" aria-label="Línea de tiempo de posiciones"></div></div>
-<p class="fineprint centered hint-m">Desliza horizontalmente para recorrer los años.</p>
-<div class="stat-row reveal"><div class="stat"><b class="mono">78%</b><span>de los meses invertida en renta variable (82 de 105)</span></div><div class="stat"><b class="mono">20</b><span>cambios entre renta variable y renta fija desde ene 2018 (≈ 2,3 al año)</span></div><div class="stat"><b class="mono">20</b><span>meses seguidos, la permanencia más larga en una misma posición</span></div><div class="stat"><b class="mono">Renta variable</b><span>posición a sep 2026 (último cambio: jun 2025)</span></div></div><p class="fineprint centered reveal">Cada barra es el periodo seguido en una misma posición. La señal se revisa una vez al mes.</p>
-</div></section>
-<section class="section" id="replicar" aria-labelledby="replicar-t"><div class="container narrow">
-<div class="sec-head reveal"><span class="eyebrow">Replicar HORIZONTE</span><h2 id="replicar-t">¿Cómo puedo replicarla?</h2></div>
-<div class="prose wp reveal"><p>El plan de pensiones moderado HORIZONTE está diseñada para que cualquier inversor pueda seguirla de forma sencilla, sin conocimientos avanzados ni dedicación diaria.</p>
-<p>Genera muy pocos movimientos y únicamente rota hacia renta fija cuando el sistema detecta mercados bajistas relevantes.</p>
-<p>Suscríbete al servicio y yo te avisaré cuando sea necesario realizar algún cambio</p>
-<p>Sin necesidad de seguimiento constante.</p>
-<h3 class="wp-h">Instrumentos utilizados</h3>
-<p>Actualmente gestiono esta parte de la cartera en Openbank, utilizando:</p>
-<ul><li>Renta Variable Americana: P.P. Santander Renta Variable USA</li><li>Renta Fija Largo Plazo: P.P. Santander Renta Fija</li></ul>
-<p>No obstante, cualquier entidad financiera con planes equivalentes puede servir para replicar la estrategia correctamente.</p>
-<p>Lo importante no es el nombre exacto del plan, sino:</p>
-<ul><li>la categoría</li><li>las comisiones</li><li>y que replique adecuadamente la exposición buscada.</li></ul>
-<p>Si tienes dudas sobre qué alternativa utilizar en tu entidad, puedes escribirme y estaré encantado de ayudarte.</p></div>
-<ol class="steps reveal" style="margin-top:2rem">
-<li class="step"><span class="step-n" aria-hidden="true">1</span><div><h3>Te suscribes al servicio</h3><p>Accedes a todas las estrategias activas y a sus actualizaciones mensuales.</p></div></li>
-<li class="step"><span class="step-n" aria-hidden="true">2</span><div><h3>Recibes un email el día 1 de cada mes</h3><p>Con las posiciones exactas y posibles cambios.</p></div></li>
-<li class="step"><span class="step-n" aria-hidden="true">3</span><div><h3>Accedes a tu banco o plataforma</h3><p>Y realizas el traspaso correspondiente entre planes.</p></div></li>
-<li class="step"><span class="step-n" aria-hidden="true">4</span><div><h3>Mantienes la cartera hasta la siguiente actualización</h3><p>Sin necesidad de intervenir ni tomar decisiones adicionales.</p></div></li></ol>
-</div></section>
-<section class="section alt" id="resultados" aria-labelledby="resultados-t"><div class="container">
-<div class="sec-head reveal"><span class="eyebrow">Resultados históricos</span><h2 id="resultados-t">Mes a mes desde 2018</h2><p><span class="asof"><span class="asof-dot" aria-hidden="true"></span><span>Datos actualizados a <strong>30 sep 2026</strong> · 2026 solo incluye de enero a septiembre · Rentabilidades en euros, sin comisiones ni impuestos</span></span></p></div>
-<div class="table-wrap heat-wrap reveal"><table class="heat" id="heat"><caption class="sr-only">Rentabilidades mensuales de HORIZONTE por año</caption></table></div>
-<p class="fineprint centered" style="margin-top:.8rem">*2026 incluye solo enero–septiembre. Resultados históricos desde 2018 sobre un capital real.</p>
-<div class="metrics-grid reveal">
-  <div class="panel"><h3>Métricas (ene 2018 – sep 2026)</h3><table class="data cmp-mini"><thead><tr><th scope="col">Métrica</th><th scope="col" style="color:#7c3aed">HORIZONTE</th></tr></thead><tbody><tr><th scope="row">Rentabilidad anual media</th><td class="mono pos best">+12,1%</td></tr><tr><th scope="row">Volatilidad</th><td class="mono ">11,1%</td></tr><tr><th scope="row">Ratio de Sharpe</th><td class="mono ">1,09</td></tr><tr><th scope="row">Máx. caída</th><td class="mono neg">-19,3%</td></tr></tbody></table><p class="fineprint">HORIZONTE tiene menos volatilidad (11,1% anualizada) que mantener siempre renta variable, según su objetivo de reducir las caídas. El ratio de Sharpe mide la rentabilidad obtenida por cada unidad de volatilidad asumida (calculado con rentabilidades mensuales, sin tasa libre de riesgo).</p></div>
-  <div class="panel"><h3>Cómo se ha comportado</h3><ul class="facts"><li><b class="mono">68 de 105</b><span>meses con rentabilidad positiva (65%)</span></li><li><b class="mono pos">+10,0%</b><span>mejor mes (abr 2026)</span></li><li><b class="mono neg">-9,3%</b><span>peor mes (feb 2020)</span></li><li><b class="mono">0</b><span>meses con caídas superiores al 10% en 105</span></li></ul></div>
-</div>
-
-<h3 class="sub-h reveal">Anatomía de las caídas</h3>
-<p class="prose reveal" style="margin:0 0 1rem">Las mayores caídas desde un máximo previo, medidas con cierres mensuales. Las caídas pasadas no limitan las futuras: pueden ser mayores.</p>
-<div class="table-wrap reveal"><table class="data dd-table"><thead><tr><th scope="col">Caída</th><th scope="col">Máximo previo</th><th scope="col">Mínimo</th><th scope="col">Duración de la caída</th><th scope="col">Recuperación del máximo</th></tr></thead><tbody><tr><td class='mono neg'>-19,3%</td><td>dic 2021</td><td>dic 2022</td><td>12 meses</td><td>feb 2024 (26 meses)</td></tr><tr><td class='mono neg'>-10,9%</td><td>ene 2020</td><td>mar 2020</td><td>2 meses</td><td>dic 2020 (11 meses)</td></tr><tr><td class='mono neg'>-6,8%</td><td>ene 2018</td><td>may 2018</td><td>4 meses</td><td>ago 2018 (7 meses)</td></tr><tr><td class='mono neg'>-5,1%</td><td>abr 2019</td><td>may 2019</td><td>1 mes</td><td>jul 2019 (3 meses)</td></tr><tr><td class='mono neg'>-5,0%</td><td>oct 2025</td><td>mar 2026</td><td>5 meses</td><td>abr 2026 (6 meses)</td></tr></tbody></table></div>
-<p class="fineprint reveal">A 30 sep 2026, HORIZONTE está en máximos.</p>
-</div></section>
-<section class="section" id="limites" aria-labelledby="limites-t"><div class="container">
-<div class="sec-head reveal"><span class="eyebrow">Límites del sistema</span><h2 id="limites-t">Cuándo funciona y cuándo sufre</h2></div>
-<div class="fit reveal">
-<div class="fit-col yes"><h3><svg class="icon"><use href="#i-check"/></svg>Donde suele funcionar mejor</h3><ul><li>Años de mayor rentabilidad: 2021 (+37,1%) y 2024 (+32,2%).</li><li>Mercados con tendencia alcista sostenida: se mantiene invertida al 100% en renta variable.</li><li>Grandes mercados bajistas: el paso a renta fija protege parte del capital.</li></ul></div>
-<div class="fit-col no"><h3><svg class="icon"><use href="#i-x"/></svg>Donde suele sufrir</h3><ul><li>Peores meses: feb 2020 (-9,3%) y dic 2022 (-7,5%).</li><li>Año más flojo: 2022 (-19,3%).</li><li>Giros bruscos del mercado: la señal es mensual y puede llegar tarde.</li><li>Mercados laterales, con cambios frecuentes de señal.</li></ul></div></div>
-</div></section>
-<section class="section" id="comportamiento" aria-labelledby="comportamiento-t"><div class="container narrow">
-<div class="sec-head reveal"><span class="eyebrow">Comentario</span><h2 id="comportamiento-t">Comportamiento en 2026 (hasta septiembre)</h2></div>
-<div class="prose reveal"><p>HORIZONTE acumula un <strong>+17,6%</strong> en lo que va de 2026 (enero–septiembre) y cerró 2025 con un <strong>+17,4%</strong>.</p><p>La estrategia comenzó el año posicionada en renta variable.</p>
-<p>Tras un inicio algo dubitativo debido a la incertidumbre geopolítica y al impacto del tipo de cambio, durante el mes de abril volvió a recuperar fuerza junto al mercado americano.</p><p class="fineprint">Comentario escrito a principios de mayo de 2026. <span class="ph">[PLACEHOLDER: actualizar con la evolución hasta septiembre]</span></p></div>
-<details class="more reveal"><summary>Comportamiento en 2025</summary><div class="prose"><p>2025 fue un año positivo para HORIZONTE.</p>
-<p>La estrategia consiguió proteger parcialmente la cartera durante algunos episodios de volatilidad gracias a su paso temporal hacia activos defensivos, evitando parte de las caídas más bruscas del mercado.</p></div></details>
-</div></section>
-<section class="section alt" id="faq" aria-labelledby="faq-title"><div class="container narrow"><div class="sec-head reveal"><span class="eyebrow">Preguntas frecuentes</span><h2 id="faq-title">Sobre HORIZONTE</h2></div><div class="faq" id="faqList"></div><p class="fineprint centered reveal" style="margin-top:1.5rem">Cómo se calculan las cifras: rentabilidades en euros (los activos en USD se convierten con el tipo de cambio del día), precios de Yahoo Finance, sin comisiones ni impuestos. Más detalle en la <a href="../metodologia/index.html" style="text-decoration:underline">metodología</a>.</p></div></section><figure class="name-note container narrow reveal" style="margin:2.5rem auto"><blockquote>«Cada estrategia tiene un nombre con significado. HORIZONTE es la estrategia que dedico a gestionar el plan de pensiones con el Horizonte fijado en la jubilación.»</blockquote></figure><section class="section alt tight" aria-labelledby="otras-title"><div class="container"><h2 id="otras-title" class="small-h reveal">Otras estrategias</h2><ul class="others reveal"><li><a href="../inversion-tactica-geda/index.html"><b>GEDA</b><span>Asignación táctica · momentum</span></a></li><li><a href="../cartera-permanente-conservadora-roca/index.html"><b>ROCA</b><span>Cartera permanente conservadora</span></a></li><li><a href="../cartera-inversion-crecimiento-impulso/index.html"><b>IMPULSO</b><span>Cartera permanente de crecimiento</span></a></li><li><a href="../inversion-tematica-gen-z/index.html"><b>GEN-Z</b><span>Inversión temática</span></a></li><li><a href="../inversion-criptomonedas-crypto/index.html"><b>CRYPTO</b><span>Criptomonedas</span></a></li></ul></div></section><section class="section" id="suscripcion" aria-labelledby="sub-title">
-  <div class="container">
-    <div class="cta reveal">
-      <div class="cta-grid">
-        <div>
-          <span class="offer">OFERTA DE LANZAMIENTO</span>
-          <h2 id="sub-title">Empieza gratis: 3 meses con acceso a todo</h2>
-          <p style="font-size:var(--fs-lg)">La mejor forma de saber si una estrategia es para ti es verla en directo. Recibe el informe, revisa las posiciones y decide. Si no te convence, no haces nada.</p>
-          <div class="hero-trust">
-            <span><svg class="icon"><use href="#i-mail"/></svg>Informe el día 1</span>
-            <span><svg class="icon"><use href="#i-shield"/></svg>Sin compromiso</span>
-            <span><svg class="icon"><use href="#i-clock"/></svg>Cancela cuando quieras</span>
-          </div>
-        </div>
-        <form class="form" id="subForm" novalidate aria-labelledby="sub-title">
-          <div>
-            <label for="fName">Nombre</label>
-            <input type="text" id="fName" name="name" autocomplete="given-name" required aria-describedby="eName">
-            <p class="err" id="eName" aria-live="polite"></p>
-          </div>
-          <div>
-            <label for="fEmail">Correo electrónico</label>
-            <input type="email" id="fEmail" name="email" autocomplete="email" inputmode="email" required aria-describedby="eEmail">
-            <p class="err" id="eEmail" aria-live="polite"></p>
-          </div>
-          <label class="check"><input type="checkbox" id="fConsent" required aria-describedby="eConsent"><span>Acepto la <a href="#" style="text-decoration:underline">política de privacidad</a> <span class="ph">[PLACEHOLDER: enlace]</span> y recibir el informe mensual.</span></label>
-          <p class="err" id="eConsent" aria-live="polite"></p>
-          <button class="btn btn-primary magnetic" type="submit" id="fBtn"><span class="spinner" aria-hidden="true"></span><span id="fBtnTxt">Quiero empezar gratis</span></button>
-          <p class="form-status" id="fStatus" role="status" aria-live="polite"></p>
-        </form>
-      </div>
+<section class="hero strat-hero" aria-labelledby="hero-title" style="--c:var(--c-geda)">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <nav class="crumbs" aria-label="Migas de pan"><a href="../index.html">Inicio</a><span aria-hidden="true">/</span><a href="../index.html#estrategias">Estrategias</a><span aria-hidden="true">/</span><span aria-current="page">HORIZONTE</span></nav>
+      <p class="badge"><span class="live" aria-hidden="true"></span>Plan de pensiones · Perfil moderado · Revisión mensual</p>
+      <h1 id="hero-title">HORIZONTE</h1>
+      <p class="kicker">Plan de pensiones con un riesgo moderado</p>
+      <p class="lead">Una estrategia pensada para planes de pensiones: toda la cartera alterna entre un plan de renta variable americana y un plan de renta fija según la tendencia principal del mercado, con reglas simples y muy pocos movimientos.</p>
+      <div class="risk risk-lg" style="--c:var(--c-geda)"><span>Riesgo</span><div class="risk-bars" role="img" aria-label="Nivel de riesgo 2 de 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><span class="mono">2/5 · Perfil moderado</span></div>
+      <div class="cta-row"><a href="../index.html#suscripcion" class="btn btn-primary magnetic">Quiero replicarla <svg class="icon"><use href="#i-arrow"/></svg></a><a href="#metodo" class="btn btn-ghost">Ver cómo funciona</a></div>
+      <blockquote class="pull">«Te cuento la estrategia real que uso con mi dinero, fruto de la experiencia de varios años en el mercado. Con total transparencia.»</blockquote>
+    </div>
+    <div class="hero-panel reveal" aria-labelledby="hp-label">
+      <div class="hp-head"><div><small id="hp-label">Rentabilidad anual media</small><div class="hp-value mono pos">+12,2%</div></div><small class="mono" style="font-weight:700;color:var(--text)">HORIZONTE</small></div>
+      <div class="hp-kpis"><div class="kpi"><span>Máx. caída</span><b class="mono neg">-19,3%</b></div><div class="kpi"><span>2025</span><b class="mono pos">+17,4%</b></div><div class="kpi"><span>2026 (ene–sep)</span><b class="mono pos">+17,6%</b></div></div>
+      <div class="hp-kpis hp-kpis-2"><div class="kpi"><span>Sharpe</span><b class="mono">1,09</b></div><div class="kpi"><span>Volatilidad</span><b class="mono">11,1%</b></div><div class="kpi"><span>Meses positivos</span><b class="mono">65%</b></div></div>
+      <p class="asof"><span class="asof-dot" aria-hidden="true"></span><span>Datos actualizados a <strong>30 sep 2026</strong> · 2026 solo incluye de enero a septiembre</span></p>
+      <div class="chart-box"><canvas id="gedaChart" role="img" aria-label="Evolución acumulada de HORIZONTE (base 100) de ene 2018 a sep 2026, con la zona de caída sombreada"></canvas></div>
+      <p class="chart-note">Evolución acumulada con las rentabilidades mensuales de HORIZONTE (base 100, escala logarítmica), de ene 2018 a sep 2026. Rentabilidades en euros, sin comisiones ni impuestos. Rentabilidades pasadas no garantizan rentabilidades futuras.</p>
     </div>
   </div>
 </section>
+<div class="container ficha-cover-wrap"><figure class="ficha-cover reveal"><img src="../assets/img/estrategias/horizonte-banner.webp" width="1600" height="600" alt="Valle de montaña con el horizonte azul al fondo" style="object-position:center 45%" decoding="async"></figure></div>
+<aside class="data-notice" aria-label="Frecuencia de actualización de los datos">
+  <div class="container"><div class="data-notice-in">
+    <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+    <p><strong>Los datos de esta web se actualizan con el cierre de cada trimestre.</strong> Si quieres recibir las posiciones de cada mes puntualmente el día 1, suscríbete y las tendrás en tu correo.</p>
+    <a class="btn btn-primary btn-sm" href="../index.html#suscripcion">Suscríbete gratis</a>
+  </div></div>
+</aside>
+
+
+<section class="section" id="metodo" aria-labelledby="met-title"><div class="container">
+  <div class="sec-head reveal"><span class="eyebrow">El método</span><h2 id="met-title">Alternar entre renta variable y renta fija según la tendencia</h2>
+    <p>Los planes de pensiones suelen ofrecer pocas alternativas y perfiles estáticos (conservador, moderado, agresivo). HORIZONTE aplica, dentro de esas limitaciones, una metodología sencilla basada en reglas objetivas. A diferencia de <a href="../cartera-permanente-conservadora-roca/index.html" style="text-decoration:underline">ROCA</a> e <a href="../cartera-inversion-crecimiento-impulso/index.html" style="text-decoration:underline">IMPULSO</a>, no mantiene una composición estable: toda la cartera está siempre en uno de los dos planes.</p></div>
+  <div class="rule">
+    <article class="r reveal" style="--s:var(--pos)"><b class="big">Tendencia alcista</b><h3>100% en renta variable americana</h3><p>Si el cierre mensual del S&amp;P 500 está por encima de su media móvil ponderada de 150 sesiones, se invierte todo en el plan de pensiones de renta variable americana: el motor de crecimiento.</p></article>
+    <article class="r reveal" style="--s:var(--neg)"><b class="big">Tendencia bajista</b><h3>100% en renta fija</h3><p>Si el cierre mensual cae por debajo de esa media, se traspasa todo el capital al plan de renta fija: el refugio en los periodos bajistas.</p></article>
+  </div>
+  <p class="lede-note reveal">El sistema se revisa una vez al mes. Solo cuando se produce una señal clara se realiza el traspaso, y los suscriptores reciben la notificación. La clave no es predecir el mercado, sino reaccionar cuando la tendencia cambia de forma objetiva.</p>
+  <div class="callout reveal" role="note"><svg class="icon"><use href="#i-alert"/></svg><p><strong>Instrumentos.</strong> Actualmente gestiono esta parte de la cartera en Openbank: P.P. Santander Renta Variable USA y P.P. Santander Renta Fija. Cualquier entidad con planes equivalentes puede servir; lo importante es la categoría, las comisiones y que replique adecuadamente la exposición buscada. Los traspasos entre planes de pensiones son eficientes fiscalmente, pero conviene que consultes tu situación personal.</p></div>
+</div></section>
+
+<section class="section alt" id="senales" aria-labelledby="sen-title"><div class="container">
+  <div class="sec-head reveal"><span class="eyebrow">Historial de señales</span><h2 id="sen-title">Cuándo ha estado en renta variable y cuándo en renta fija</h2>
+    <p>Cada barra indica en qué plan ha estado la cartera cada mes desde 2018, con operativa real.</p>
+    <p class="asof asof-center"><span class="asof-dot" aria-hidden="true"></span><span>Datos actualizados a <strong>30 sep 2026</strong> · hoy la señal es de renta variable</span></p></div>
+  <div class="tl-wrap reveal"><div class="tl" id="timeline" aria-label="Línea de tiempo de señales"></div></div>
+  <p class="fineprint centered hint-m">Desliza horizontalmente para recorrer los años.</p>
+  <div class="stat-row reveal">
+    <div class="stat"><b class="mono">78%</b><span>de los meses en renta variable (82 de 105)</span></div>
+    <div class="stat"><b class="mono">20</b><span>cambios de señal en 8,8 años (unos 2,3 al año)</span></div>
+    <div class="stat"><b class="mono">10</b><span>periodos en renta fija; el más largo, de 3 meses (nov 2018 – ene 2019)</span></div>
+    <div class="stat"><b class="mono">12 y 7</b><span>de los 23 meses en renta fija, en 12 la renta variable subió más de un 2% y en 7 cayó más de un 2%</span></div>
+  </div>
+  <div class="callout reveal" role="note"><svg class="icon"><use href="#i-alert"/></svg><p><strong>Cada cambio es un traspaso entre planes.</strong> La señal se calcula con el cierre mensual, así que reacciona con retraso: protege cuando la caída es larga, pero puede dejar fuera parte de las subidas posteriores.</p></div>
+</div></section>
+<section class="section alt" id="resultados" aria-labelledby="res-title"><div class="container">
+  <div class="sec-head reveal"><span class="eyebrow">Resultados históricos</span><h2 id="res-title">Mes a mes desde 2018</h2>
+    <p class="asof asof-center"><span class="asof-dot" aria-hidden="true"></span><span>Datos actualizados a <strong>30 sep 2026</strong> · 2026 solo incluye de enero a septiembre · Rentabilidades en euros, sin comisiones ni impuestos</span></p></div>
+  <div class="table-wrap heat-wrap reveal"><table class="heat" id="heat"><caption class="sr-only">Rentabilidades mensuales de HORIZONTE por año</caption></table></div>
+  <div id="realNote"></div>
+  <div class="metrics-grid reveal">
+    <div class="panel"><h3>Métricas (ene 2018 – sep 2026)</h3>
+      <table class="data cmp-mini"><thead><tr><th scope="col">Métrica</th><th scope="col" style="color:var(--c-geda)">HORIZONTE</th><th scope="col">Siempre RV</th></tr></thead><tbody>
+        <tr><th scope="row">Rentabilidad anual media</th><td class="mono pos">+12,2%</td><td class="mono best">+14,2%</td></tr>
+        <tr><th scope="row">Volatilidad</th><td class="mono best">11,1%</td><td class="mono">14,9%</td></tr>
+        <tr><th scope="row">Ratio de Sharpe</th><td class="mono best">1,09</td><td class="mono">0,97</td></tr>
+        <tr><th scope="row">Máx. caída</th><td class="mono neg">-19,3%</td><td class="mono neg best">-17,9%</td></tr></tbody></table>
+      <p class="fineprint">La comparación con «siempre renta variable» usa el mismo plan de renta variable que la estrategia. El ratio de Sharpe mide la rentabilidad obtenida por cada unidad de volatilidad asumida.</p></div>
+    <div class="panel"><h3>Cómo se ha comportado</h3><ul class="facts">
+      <li><b class="mono">68 de 105</b><span>meses con rentabilidad positiva (65%)</span></li>
+      <li><b class="mono pos">+10,0%</b><span>mejor mes (abr 2026)</span></li>
+      <li><b class="mono neg">-9,3%</b><span>peor mes (feb 2020)</span></li>
+      <li><b class="mono">0</b><span>meses con caídas superiores al 10% en 105</span></li></ul></div></div>
+  <h3 class="sub-h reveal">Año a año: la estrategia frente a mantener siempre un plan</h3><p class="prose reveal" style="margin:0 0 1rem">Rentabilidad anual de la estrategia, de mantener siempre el plan de renta variable y de mantener siempre el plan de renta fija (en euros).</p><div class="table-wrap heat-wrap reveal"><table class="heat comp-year" style="min-width:520px"><thead><tr><th scope="col" style="text-align:left;padding-left:.8rem">Año</th><th scope="col">HORIZONTE</th><th scope="col">Siempre renta variable</th><th scope="col">Siempre renta fija</th></tr></thead><tbody><tr><th scope='row'>2018</th><td class='mono yr' style='background:rgba(var(--neg-rgb),0.14)'>-1,4%</td><td class='mono' style='background:rgba(var(--neg-rgb),0.16)'>-2,2</td><td class='mono' style='background:rgba(var(--neg-rgb),0.10)'>-0,1</td></tr><tr><th scope='row'>2019</th><td class='mono yr' style='background:rgba(var(--pos-rgb),0.32)'>+18,7%</td><td class='mono' style='background:rgba(var(--pos-rgb),0.49)'>31,7</td><td class='mono' style='background:rgba(var(--pos-rgb),0.11)'>2,3</td></tr><tr><th scope='row'>2020</th><td class='mono yr' style='background:rgba(var(--pos-rgb),0.10)'>+1,5%</td><td class='mono' style='background:rgba(var(--pos-rgb),0.14)'>4,5</td><td class='mono' style='background:rgba(var(--pos-rgb),0.10)'>1,5</td></tr><tr><th scope='row'>2021</th><td class='mono yr' style='background:rgba(var(--pos-rgb),0.56)'>+37,1%</td><td class='mono' style='background:rgba(var(--pos-rgb),0.56)'>37,1</td><td class='mono' style='background:rgba(var(--neg-rgb),0.16)'>-2,3</td></tr><tr><th scope='row'>2022</th><td class='mono yr' style='background:rgba(var(--neg-rgb),0.63)'>-19,3%</td><td class='mono' style='background:rgba(var(--neg-rgb),0.43)'>-12,0</td><td class='mono' style='background:rgba(var(--neg-rgb),0.44)'>-12,2</td></tr><tr><th scope='row'>2023</th><td class='mono yr' style='background:rgba(var(--pos-rgb),0.26)'>+14,1%</td><td class='mono' style='background:rgba(var(--pos-rgb),0.32)'>18,8</td><td class='mono' style='background:rgba(var(--pos-rgb),0.14)'>5,0</td></tr><tr><th scope='row'>2024</th><td class='mono yr' style='background:rgba(var(--pos-rgb),0.50)'>+32,2%</td><td class='mono' style='background:rgba(var(--pos-rgb),0.50)'>32,2</td><td class='mono' style='background:rgba(var(--pos-rgb),0.11)'>2,3</td></tr><tr><th scope='row'>2025</th><td class='mono yr' style='background:rgba(var(--pos-rgb),0.31)'>+17,4%</td><td class='mono' style='background:rgba(var(--pos-rgb),0.16)'>6,2</td><td class='mono' style='background:rgba(var(--pos-rgb),0.10)'>1,6</td></tr><tr><th scope='row'>2026*</th><td class='mono yr' style='background:rgba(var(--pos-rgb),0.31)'>+17,6%</td><td class='mono' style='background:rgba(var(--pos-rgb),0.31)'>17,6</td><td class='mono' style='background:rgba(var(--neg-rgb),0.11)'>-0,5</td></tr></tbody></table></div><p class="fineprint">*2026 incluye solo enero–septiembre.</p>
+  <h3 class="sub-h reveal">Anatomía de las caídas</h3>
+  <p class="prose reveal" style="margin:0 0 1rem">Las mayores caídas desde un máximo previo, medidas con cierres mensuales. Las caídas pasadas no limitan las futuras: pueden ser mayores.</p>
+  <div class="table-wrap reveal"><table class="data dd-table"><thead><tr><th scope="col">Caída</th><th scope="col">Máximo previo</th><th scope="col">Mínimo</th><th scope="col">Duración de la caída</th><th scope="col">Recuperación del máximo</th></tr></thead><tbody><tr><td class='mono neg'>-19,3%</td><td>dic 2021</td><td>dic 2022</td><td>12 meses</td><td>feb 2024 (26 meses)</td></tr><tr><td class='mono neg'>-10,9%</td><td>ene 2020</td><td>mar 2020</td><td>2 meses</td><td>dic 2020 (11 meses)</td></tr><tr><td class='mono neg'>-6,8%</td><td>ene 2018</td><td>may 2018</td><td>4 meses</td><td>ago 2018 (7 meses)</td></tr><tr><td class='mono neg'>-5,1%</td><td>abr 2019</td><td>may 2019</td><td>1 mes</td><td>jul 2019 (3 meses)</td></tr><tr><td class='mono neg'>-5,0%</td><td>oct 2025</td><td>mar 2026</td><td>5 meses</td><td>abr 2026 (6 meses)</td></tr><tr><td class='mono neg'>-4,4%</td><td>sep 2018</td><td>oct 2018</td><td>1 mes</td><td>feb 2019 (5 meses)</td></tr></tbody></table></div>
+  <p class="fineprint reveal">A 30 sep 2026, HORIZONTE se encuentra en máximos históricos.</p>
+</div></section>
+
+<section class="section" id="limites" aria-labelledby="lim-title"><div class="container">
+  <div class="sec-head reveal"><span class="eyebrow">Qué muestran los datos</span><h2 id="lim-title">Menos volatilidad, pero no menos caída máxima</h2>
+    <p>En los datos de 2018 a 2026 la estrategia reduce la volatilidad y mejora el ratio de Sharpe frente a mantener siempre renta variable, a cambio de menos rentabilidad. Su caída máxima no ha sido menor.</p></div>
+  <div class="fit reveal">
+    <div class="fit-col yes"><h3><svg class="icon"><use href="#i-check"/></svg>Donde suele funcionar mejor</h3><ul><li>Tendencias alcistas largas: en 2021 (+37,1%) y 2024 (+32,2%) rindió lo mismo que mantener la renta variable.</li><li>Caídas largas y claras: en 2025 pasó a renta fija de marzo a mayo y terminó con un +17,4%, frente a un +6,2% de mantener la renta variable.</li><li>Reglas simples y objetivas, que reducen el estrés emocional.</li></ul></div>
+    <div class="fit-col no"><h3><svg class="icon"><use href="#i-x"/></svg>Donde suele sufrir</h3><ul><li>Mercados laterales o con giros rápidos: en 2022 hubo 6 cambios de señal y la estrategia perdió un 19,3%, frente a un 12,0% de mantener la renta variable y un 12,2% de mantener la renta fija.</li><li>Señales tardías: en 12 de los 23 meses en renta fija, la renta variable subió más de un 2%.</li><li>La renta fija no siempre protege: en 2022 cayó casi lo mismo que la renta variable.</li><li>Menos rentabilidad: +12,2% frente a +14,2% de mantener siempre renta variable.</li></ul></div></div>
+  <div class="not-do reveal"><h3>Qué hay que tener claro</h3><ul><li>La estrategia no predice: reacciona a una señal mensual que llega con retraso.</li><li>Su caída máxima (-19,3%) ha sido ligeramente mayor que la de mantener solo renta variable (-17,9%) en este periodo.</li><li>Los resultados de esta página son de 2018 en adelante; un periodo más largo podría dar conclusiones distintas.</li></ul></div>
+</div></section>
+
+<section class="section alt" id="replicar" aria-labelledby="rep-title"><div class="container narrow">
+  <div class="sec-head reveal"><span class="eyebrow">Cómo replicarla</span><h2 id="rep-title">Muy pocos movimientos al año</h2><p>Solo rota hacia renta fija cuando el sistema detecta un mercado bajista relevante.</p></div>
+  <ol class="steps">
+    <li class="step reveal"><span class="step-n" aria-hidden="true">1</span><div><h3>Te suscribes al servicio</h3><p>Accedes a todas las estrategias activas y a sus actualizaciones mensuales.</p></div></li>
+    <li class="step reveal"><span class="step-n" aria-hidden="true">2</span><div><h3>Recibes un email el día 1 de cada mes</h3><p>Con la posición actual y los posibles cambios.</p></div></li>
+    <li class="step reveal"><span class="step-n" aria-hidden="true">3</span><div><h3>Haces el traspaso en tu banco o plataforma</h3><p>Entre el plan de renta variable y el de renta fija, solo cuando haya señal.</p></div></li>
+    <li class="step reveal"><span class="step-n" aria-hidden="true">4</span><div><h3>Mantienes hasta la siguiente revisión</h3><p>Sin necesidad de seguimiento constante.</p></div></li></ol>
+</div></section>
+
+<section class="section" id="comportamiento" aria-labelledby="comp-title"><div class="container narrow">
+  <div class="sec-head reveal"><span class="eyebrow">Comentario</span><h2 id="comp-title">Comportamiento en 2026 (hasta septiembre)</h2></div>
+  <div class="prose reveal"><p>HORIZONTE acumula un <strong>+17,6%</strong> en lo que va de año. Empezó posicionada en renta variable, tuvo un inicio algo dubitativo (-1,4% en febrero y -2,9% en marzo) y recuperó fuerza en abril (+10,0%) y mayo (+6,4%) junto al mercado americano. En los últimos meses ha vuelto a subir, con +2,4% en agosto y +2,6% en septiembre. La señal de renta variable está activa desde junio de 2025.</p></div>
+  <details class="more reveal"><summary>Comportamiento en 2025</summary><div class="prose"><p>2025 terminó con un <strong>+17,4%</strong>. La estrategia pasó a renta fija entre marzo y mayo y protegió parcialmente la cartera durante la volatilidad de esos meses; después volvió a renta variable en junio.</p></div></details>
+</div></section>
+<section class="section" id="faq" aria-labelledby="faq-title"><div class="container narrow">
+  <div class="sec-head reveal"><span class="eyebrow">Preguntas frecuentes</span><h2 id="faq-title">Sobre HORIZONTE</h2></div>
+  <div class="faq" id="faqList"></div>
+  <p class="fineprint centered reveal" style="margin-top:1.5rem">Cómo se calculan las cifras: rentabilidades en euros, precios de los planes de pensiones, sin comisiones ni impuestos. Más detalle en la <a href="../index.html#metodologia" style="text-decoration:underline">metodología</a>.</p></div></section>
+<figure class="name-note container narrow reveal" style="margin:0 auto 2.5rem"><blockquote>«Cada estrategia tiene un nombre con significado. HORIZONTE es la estrategia que dedico a gestionar el plan de pensiones con el horizonte fijado en la jubilación.»</blockquote></figure>
+<section class="section alt tight" aria-labelledby="otras-title"><div class="container"><h2 id="otras-title" class="small-h reveal">Otras estrategias</h2><ul class="others reveal"><li><a href="../cartera-permanente-conservadora-roca/index.html"><b>ROCA</b><span>Cartera permanente conservadora</span></a></li><li><a href="../cartera-inversion-crecimiento-impulso/index.html"><b>IMPULSO</b><span>Cartera permanente de crecimiento</span></a></li><li><a href="../inversion-tactica-geda/index.html"><b>GEDA</b><span>Inversión táctica con momentum</span></a></li><li><a href="../inversion-tematica-gen-z/index.html"><b>GEN-Z</b><span>Inversión temática</span></a></li><li><a href="../inversion-criptomonedas-crypto/index.html"><b>CRYPTO</b><span>Criptomonedas</span></a></li></ul></div></section>
+<section class="section" id="suscripcion" aria-labelledby="sub-title"><div class="container"><div class="cta reveal cta-simple"><span class="offer">EMPIEZA GRATIS · 3 MESES</span><h2 id="sub-title">Compruébalo en directo, sin compromiso</h2>
+  <p style="font-size:var(--fs-lg)">Si no sabes si esta estrategia es para ti, la mejor forma de comprobarlo es verla funcionar. Suscríbete, mira el informe del mes, replica las posiciones si te convence, o no hagas nada.</p>
+  <div class="cta-row" style="justify-content:center"><a href="../index.html#suscripcion" class="btn btn-primary magnetic">Quiero empezar gratis <svg class="icon"><use href="#i-arrow"/></svg></a><a href="mailto:info@tuamigoinversor.com" class="btn btn-ghost">Escríbeme: info@tuamigoinversor.com</a></div></div></div></section>
 </main>
 
-<!-- =========================== PIE =========================== -->
+
 <footer class="site-footer">
   <div class="container">
     <div class="foot-grid">
       <div>
-        <a href="../index.html" class="logo" style="margin-bottom:1rem"><span class="logo-mark" aria-hidden="true">TA</span>Tu Amigo Inversor</a>
+        <a href="../index.html" class="logo" style="margin-bottom:1rem"><img class="logo-mark" src="../assets/img/logo-tai.jpg" width="40" height="40" alt="">Tu Amigo Inversor</a>
         <p>Comparto las estrategias que utilizo para gestionar mi propio dinero, basadas en reglas claras y sin predicciones.</p>
         <p style="margin-top:.8rem"><a href="mailto:info@tuamigoinversor.com">info@tuamigoinversor.com</a></p>
       </div>
       <nav aria-label="Carteras permanentes"><h2>Cartera permanente</h2><ul><li><a href="../cartera-permanente-conservadora-roca/index.html">ROCA</a></li><li><a href="../cartera-inversion-crecimiento-impulso/index.html">IMPULSO</a></li><li><a href="../plan-pensiones-moderado-horizonte/index.html">HORIZONTE</a></li></ul></nav>
       <nav aria-label="Asignación táctica"><h2>Asignación táctica</h2><ul><li><a href="../inversion-tactica-geda/index.html">GEDA</a></li><li><a href="../inversion-tematica-gen-z/index.html">GEN-Z</a></li><li><a href="../inversion-criptomonedas-crypto/index.html">CRYPTO</a></li></ul></nav>
       <nav aria-label="Herramientas y proyecto"><h2>Herramientas</h2><ul><li><a href="../index.html#test" data-quiz>Test de perfil</a></li><li><a href="../comparador/index.html">Comparador</a></li><li><a href="../simulador/index.html">Simulador</a></li><li><a href="../metodologia/index.html">Metodología</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../sobre-mi/index.html">Sobre mí</a></li></ul></nav>
-      <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="#">Aviso legal <span class="ph">[PLACEHOLDER]</span></a></li><li><a href="#">Política de privacidad <span class="ph">[PLACEHOLDER]</span></a></li><li><a href="#" id="cookieSettings">Configurar cookies</a></li></ul></nav>
+      <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="../aviso-legal/index.html">Aviso legal</a></li><li><a href="../privacidad/index.html">Política de privacidad</a></li><li><a href="#" id="cookieSettings">Configurar cookies</a></li></ul></nav>
     </div>
     <div class="legal">
       <p><strong>Aviso:</strong> la información publicada en esta web tiene carácter meramente informativo y no constituye asesoramiento financiero ni una recomendación personalizada de inversión. Las inversiones conllevan riesgo y pueden implicar la pérdida total o parcial del capital. Las rentabilidades pasadas no garantizan rentabilidades futuras. Cada inversor debe realizar su propio análisis y tomar decisiones en función de su situación personal.</p>
@@ -278,14 +367,13 @@
 </footer>
 
 <!-- Test de perfil (ventana emergente) -->
-<script>window.FICHA={"id":"HORIZONTE","color":"#7c3aed","months":{"2018":[2.03,-1.0,-4.81,-0.14,-1.0,0.96,2.58,3.68,0.63,-4.41,0.17,0.27],"2019":[0.44,3.99,2.74,3.62,-5.05,0.95,5.28,-2.13,2.7,-0.59,5.06,0.78],"2020":[1.49,-9.34,-1.68,0.08,0.91,0.78,0.35,5.93,-1.47,-2.59,7.38,0.63],"2021":[1.13,3.14,6.71,2.51,-1.02,5.1,2.25,3.53,-2.17,5.92,0.45,4.84],"2022":[-3.99,-1.32,-1.46,-3.58,-0.83,-1.0,2.83,-2.46,-2.61,0.21,0.82,-7.45],"2023":[1.34,-0.8,1.38,0.72,3.8,3.09,1.12,-0.01,-2.29,0.72,1.62,2.71],"2024":[5.23,4.98,3.2,-2.81,2.8,5.38,-0.4,0.9,0.7,1.17,8.5,-0.85],"2025":[3.36,-2.36,-0.47,1.26,0.05,2.71,5.81,-1.98,3.24,5.81,-0.25,-0.62],"2026":[0.13,-1.43,-2.89,10.04,6.4,1.52,-1.76,2.42,2.6]},"realFrom":null,"scale":10,"scaleNeg":8,"pos":{"labels":["2018-1","2018-2","2018-3","2018-4","2018-5","2018-6","2018-7","2018-8","2018-9","2018-10","2018-11","2018-12","2019-1","2019-2","2019-3","2019-4","2019-5","2019-6","2019-7","2019-8","2019-9","2019-10","2019-11","2019-12","2020-1","2020-2","2020-3","2020-4","2020-5","2020-6","2020-7","2020-8","2020-9","2020-10","2020-11","2020-12","2021-1","2021-2","2021-3","2021-4","2021-5","2021-6","2021-7","2021-8","2021-9","2021-10","2021-11","2021-12","2022-1","2022-2","2022-3","2022-4","2022-5","2022-6","2022-7","2022-8","2022-9","2022-10","2022-11","2022-12","2023-1","2023-2","2023-3","2023-4","2023-5","2023-6","2023-7","2023-8","2023-9","2023-10","2023-11","2023-12","2024-1","2024-2","2024-3","2024-4","2024-5","2024-6","2024-7","2024-8","2024-9","2024-10","2024-11","2024-12","2025-1","2025-2","2025-3","2025-4","2025-5","2025-6","2025-7","2025-8","2025-9","2025-10","2025-11","2025-12","2026-1","2026-2","2026-3","2026-4","2026-5","2026-6","2026-7","2026-8","2026-9"],"blocks":["Posición"],"stints":[[0,"Renta variable",0,2],[0,"Renta fija",3,4],[0,"Renta variable",5,9],[0,"Renta fija",10,12],[0,"Renta variable",13,16],[0,"Renta fija",17,17],[0,"Renta variable",18,25],[0,"Renta fija",26,28],[0,"Renta variable",29,48],[0,"Renta fija",49,50],[0,"Renta variable",51,51],[0,"Renta fija",52,54],[0,"Renta variable",55,55],[0,"Renta fija",56,58],[0,"Renta variable",59,59],[0,"Renta fija",60,60],[0,"Renta variable",61,68],[0,"Renta fija",69,70],[0,"Renta variable",71,85],[0,"Renta variable",89,104],[0,"Renta fija",86,88]]},"faq":[["¿Cada cuánto se revisa?","Una vez al mes. Solo cuando se produce una señal clara se realiza el traspaso y los suscriptores reciben la notificación correspondiente."],["¿Qué planes utilizas?","Gestiono esta parte de mi cartera en Openbank con el plan Santander Renta Variable USA y el plan Santander Renta Fija. Cualquier entidad con planes equivalentes sirve para replicarla."],["¿Qué ocurre con el rendimiento fiscal de los traspasos?","Los traspasos entre planes de pensiones no tributan, por eso la estrategia es eficiente fiscalmente y está pensada para este tipo de producto."],["¿Tiene riesgo?","Sí. Aunque la posibilidad de rotar a renta fija reduce la volatilidad frente a mantener siempre renta variable, su caída máxima histórica ha sido del -19,3%."]]};</script>
 <div class="modal" id="quizModal" aria-hidden="true">
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
     <button class="icon-btn modal-close" type="button" aria-label="Cerrar test"><svg class="icon"><use href="#i-x"/></svg></button>
     <div class="modal-content">
       <span class="eyebrow">Test de perfil</span>
       <h2 id="quizTitle" style="font-size:var(--fs-xl);margin:.3rem 0 .4rem">¿Qué estrategia encaja contigo?</h2>
-      <p style="color:var(--muted);margin-bottom:1.4rem">Cinco preguntas, un minuto. Te propongo una estrategia o una combinación orientativa.</p>
+      <p style="color:var(--muted);margin-bottom:1.4rem">Diez preguntas, unos 3 minutos. Te explico tu perfil y qué estrategias encajan con él.</p>
       <div class="quiz" id="quiz" aria-live="polite"></div>
     </div>
   </div>
@@ -303,5 +391,106 @@
 
 <button class="icon-btn to-top" id="toTop" type="button" aria-label="Volver arriba"><svg class="icon"><use href="#i-up"/></svg></button>
 <div class="sticky-cta" id="stickyCta"><small><strong>3 meses gratis</strong><br>Acceso a las 6 estrategias</small><a href="../index.html#suscripcion" class="btn btn-primary btn-sm">Empezar</a></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+'use strict';
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const alpha=(hex,a)=>{const n=parseInt(hex.slice(1),16);return `rgba(${n>>16},${(n>>8)&255},${n&255},${a})`};
+const hasChart=typeof window.Chart!=='undefined';
+const fmt=(v,d=1)=>v.toLocaleString('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d});
+const pc=(v,d=1)=>(v>0?'+':'')+fmt(v,d)+'%';
+
+/* ---- Datos: rentabilidades mensuales de GEDA (%) · fuente: resumen_estrategias.xlsx, datos a 30-sep-2026 ---- */
+const GEDA={"2018":[2.03,-1.0,-4.81,-0.14,-1.0,0.96,2.58,3.68,0.63,-4.41,0.17,0.27],"2019":[0.44,3.99,2.74,3.62,-5.05,0.95,5.28,-2.13,2.7,-0.59,5.06,0.78],"2020":[1.49,-9.34,-1.68,0.08,0.91,0.78,0.35,5.93,-1.47,-2.59,7.38,0.63],"2021":[1.13,3.14,6.71,2.51,-1.02,5.1,2.25,3.53,-2.17,5.92,0.45,4.84],"2022":[-3.99,-1.32,-1.46,-3.58,-0.83,-1.0,2.83,-2.46,-2.61,0.21,0.82,-7.45],"2023":[1.34,-0.8,1.38,0.72,3.8,3.09,1.12,-0.01,-2.29,0.72,1.62,2.71],"2024":[5.23,4.98,3.2,-2.81,2.8,5.38,-0.4,0.9,0.7,1.17,8.5,-0.85],"2025":[3.36,-2.36,-0.47,1.26,0.05,2.71,5.81,-1.98,3.24,5.81,-0.25,-0.62],"2026":[0.13,-1.43,-2.89,10.04,6.4,1.52,-1.76,2.42,2.6]};
+/* Primer año con dinero real. Poner null para ocultar la distinción simulado/real. */
+const REAL_FROM=null;
+const REALNOTE="<div class=\"callout\"><svg class=\"icon\"><use href=\"#i-alert\"/></svg><p><strong>*2026 incluye solo enero–septiembre.</strong> Los resultados corresponden a la estrategia aplicada desde 2018 sobre un capital real.</p></div>";
+const POS={"labels":["2018-1","2018-2","2018-3","2018-4","2018-5","2018-6","2018-7","2018-8","2018-9","2018-10","2018-11","2018-12","2019-1","2019-2","2019-3","2019-4","2019-5","2019-6","2019-7","2019-8","2019-9","2019-10","2019-11","2019-12","2020-1","2020-2","2020-3","2020-4","2020-5","2020-6","2020-7","2020-8","2020-9","2020-10","2020-11","2020-12","2021-1","2021-2","2021-3","2021-4","2021-5","2021-6","2021-7","2021-8","2021-9","2021-10","2021-11","2021-12","2022-1","2022-2","2022-3","2022-4","2022-5","2022-6","2022-7","2022-8","2022-9","2022-10","2022-11","2022-12","2023-1","2023-2","2023-3","2023-4","2023-5","2023-6","2023-7","2023-8","2023-9","2023-10","2023-11","2023-12","2024-1","2024-2","2024-3","2024-4","2024-5","2024-6","2024-7","2024-8","2024-9","2024-10","2024-11","2024-12","2025-1","2025-2","2025-3","2025-4","2025-5","2025-6","2025-7","2025-8","2025-9","2025-10","2025-11","2025-12","2026-1","2026-2","2026-3","2026-4","2026-5","2026-6","2026-7","2026-8","2026-9"],"stints":[[0,"RV",0,2],[0,"RF",3,4],[0,"RV",5,9],[0,"RF",10,12],[0,"RV",13,16],[0,"RF",17,17],[0,"RV",18,25],[0,"RF",26,28],[0,"RV",29,48],[0,"RF",49,50],[0,"RV",51,51],[0,"RF",52,54],[0,"RV",55,55],[0,"RF",56,58],[0,"RV",59,59],[0,"RF",60,60],[0,"RV",61,68],[0,"RF",69,70],[0,"RV",71,85],[0,"RF",86,88],[0,"RV",89,104]],"blocks":["Plan en el que está invertida la cartera"],"lanes":[1],"colors":{"RV":"var(--c-geda)","RF":"#64748b"}};
+const MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+
+/* ---- Tema: el cambio de modo lo gestiona tai.js; aquí solo se repintan los gráficos ---- */
+$('#themeToggle').addEventListener('click',()=>themeCharts());
+
+/* ---- Gráfico: evolución acumulada real, escala logarítmica ---- */
+const charts={};
+function defaults(){if(!hasChart)return;Chart.defaults.font.family="Inter, system-ui, sans-serif";Chart.defaults.color=css('--muted');Chart.defaults.borderColor=css('--line');Chart.defaults.animation.duration=reduced?0:900}
+const tip=()=>({backgroundColor:css('--surface'),titleColor:css('--text'),bodyColor:css('--text'),borderColor:css('--line-2'),borderWidth:1,padding:10,cornerRadius:10,boxPadding:4});
+function series(){
+  const labels=['dic '+(+Object.keys(GEDA)[0]-1)],values=[100],rets=[null];let v=100;
+  Object.keys(GEDA).forEach(y=>GEDA[y].forEach((r,i)=>{v*=1+r/100;labels.push(MES[i]+' '+y);values.push(+v.toFixed(2));rets.push(r)}));
+  let p=-Infinity;const peaks=values.map(x=>p=Math.max(p,x));return{labels,values,peaks,rets};
+}
+let COLOR=css('--c-geda');const negFill=al=>`rgba(${css('--neg-rgb')},${al})`;
+if(hasChart){
+  defaults();const d=series();
+  charts.g=new Chart($('#gedaChart'),{type:'line',
+    data:{labels:d.labels,datasets:[
+      {label:'Máximo previo',data:d.peaks,borderWidth:0,pointRadius:0,fill:false,borderColor:'transparent'},
+      {label:'Zona de caída',data:d.values,borderWidth:0,pointRadius:0,borderColor:'transparent',backgroundColor:negFill(.45),fill:{target:0,above:'rgba(0,0,0,0)',below:negFill(.28)}},
+      {label:'Evolución acumulada (base 100)',data:d.values,borderColor:COLOR,borderWidth:2.25,tension:0,pointHoverRadius:5,
+        pointRadius:c=>c.dataIndex===c.dataset.data.length-1?4:0,pointBackgroundColor:COLOR,fill:'start',
+        backgroundColor:c=>{const a=c.chart.chartArea;if(!a)return alpha(COLOR,.15);const g=c.chart.ctx.createLinearGradient(0,a.top,0,a.bottom);g.addColorStop(0,alpha(COLOR,.35));g.addColorStop(1,alpha(COLOR,0));return g}}]},
+    options:{responsive:true,maintainAspectRatio:false,layout:{padding:{right:8}},interaction:{mode:'index',intersect:false},
+      scales:{x:{display:true,grid:{display:false},ticks:{autoSkip:false,maxRotation:0,font:{size:11},callback:function(v){const l=this.getLabelForValue(v);if(!l.startsWith('ene'))return '';const yr=+l.slice(-4);return yr%2===0?String(yr):''}}},
+        y:{type:'logarithmic',grid:{color:alpha('#8899bb',.12)},afterBuildTicks:ax=>{const n=[10,20,50,100,200,500,1000,2000,5000,10000];ax.ticks=ax.ticks.filter(t=>n.includes(Math.round(t.value)))},ticks:{callback:v=>fmt(v,0)}}},
+      plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:10,boxHeight:10,usePointStyle:true,filter:i=>i.datasetIndex!==0}},
+        tooltip:{...tip(),filter:i=>i.datasetIndex===2,callbacks:{title:c=>c[0].label,label:c=>' Valor: '+fmt(c.parsed.y),
+          afterLabel:c=>{const i=c.dataIndex,r=d.rets[i],pk=d.peaks[i],o=[];if(r!==null)o.push(' Mes: '+pc(r,2));const cur=c.parsed.y/pk-1;if(cur<-0.0005)o.push(' Desde máximo: '+fmt(cur*100)+'%');return o}}}}}});
+}
+function themeCharts(){renderHeat();if(!hasChart)return;COLOR=css('--c-geda');defaults();
+  if(charts.g){const ds=charts.g.data.datasets;ds[2].borderColor=COLOR;ds[2].pointBackgroundColor=COLOR;ds[1].backgroundColor=negFill(.45);ds[1].fill={target:0,above:'rgba(0,0,0,0)',below:negFill(.28)}}Object.values(charts).forEach(c=>{Object.assign(c.options.plugins.tooltip,tip());Object.values(c.options.scales).forEach(s=>{if(s.ticks)s.ticks.color=css('--muted')});c.options.plugins.legend.labels.color=css('--muted');c.update('none')})}
+
+/* ---- Mapa de calor mensual ---- */
+function renderHeat(){
+  const t=$('#heat');let h='<thead><tr><th scope="col" style="text-align:left;padding-left:.8rem">Año</th>'+MES.map(m=>`<th scope="col">${m}</th>`).join('')+'<th scope="col">Año</th></tr></thead><tbody>';
+  const pr=css('--pos-rgb'),nr=css('--neg-rgb');
+  const color=v=>v>=0?`rgba(${pr},${Math.min(.6,.08+v/25*.52).toFixed(2)})`:`rgba(${nr},${Math.min(.65,.1+Math.abs(v)/12*.55).toFixed(2)})`;
+  Object.keys(GEDA).forEach(y=>{
+    const r=GEDA[y],yr=(r.reduce((a,x)=>a*(1+x/100),1)-1)*100;
+    const tag=REAL_FROM===null?'':(+y>=REAL_FROM?'<span class="tag-s real">Real</span>':'<span class="tag-s sim">Simulado</span>');
+    h+=`<tr><th scope="row">${y}${y==='2026'?'*':''}${tag}</th>`+MES.map((m,i)=>i<r.length?`<td class="mono" style="background:${color(r[i])}">${fmt(Math.abs(r[i])<0.05?0:r[i],1)}</td>`:'<td></td>').join('')+`<td class="mono yr" style="background:${color(yr/4)}">${pc(yr)}</td></tr>`;
+  });
+  t.innerHTML=h+'</tbody>';
+  $('#realNote').innerHTML=REALNOTE;
+}
+renderHeat();
+
+
+/* ---- Línea de tiempo de posiciones ---- */
+(function(){
+  const root=$('#timeline');if(!root||!POS)return;
+  const n=POS.labels.length;root.style.setProperty('--n',n);
+  const fit=Math.floor((root.parentElement.clientWidth-34)/n*10)/10;root.style.setProperty('--pm',(fit>=8?fit:9)+'px');
+  const mname=i=>{const [y,m]=POS.labels[i].split('-');return MES[m-1]+' '+y};
+  const h0=+css('--tl-h0'),hr=+css('--tl-hr'),ts=css('--tl-s'),tlum=css('--tl-l');
+  const color=t=>{if(POS.colors&&POS.colors[t])return POS.colors[t];let h=0;for(const c of t)h=(h*31+c.charCodeAt(0))%360;return `hsl(${h0+h%hr} ${ts}% ${tlum}%)`};
+  let html='<div class="tl-axis">';
+  POS.labels.forEach((l,i)=>{const [y,m]=l.split('-');if(+m===1)html+=`<span style="left:calc(${i} * var(--pm))">${y}</span>`});
+  html+='</div>';
+  POS.blocks.forEach((name,k)=>{
+    const st=POS.stints.filter(s=>s[0]===k).sort((x,y)=>x[2]-y[2]);
+    const nl=(POS.lanes&&POS.lanes[k])||(k===0?1:2);const lanes=Array(nl).fill(-1),place=[];
+    st.forEach(s=>{let L=lanes.findIndex(e=>e<s[2]);if(L<0)L=0;lanes[L]=s[3];place.push([s,L])});
+    html+=`<div class="tl-row"><h4>${name}</h4><div class="tl-track" style="--lanes:${nl}">`;
+    place.forEach(([s,L])=>{const len=s[3]-s[2]+1;const lab=len>=3?s[1]:'';
+      html+=`<div class="tl-bar" style="left:calc(${s[2]} * var(--pm));width:calc(${len} * var(--pm) - 1px);top:${L*26}px;background:${color(s[1])}" title="${s[1]} · ${mname(s[2])} – ${mname(s[3])} (${len} ${len===1?'mes':'meses'})">${lab}</div>`});
+    html+='</div></div>';
+  });
+  root.innerHTML=html;
+  const w=root.parentElement;requestAnimationFrame(()=>{if(innerWidth<760)w.scrollLeft=w.scrollWidth});
+})();
+
+/* ---- FAQ ---- */
+const FAQ=[["¿Cuántos traspasos hace al año?", "En los 8,8 años analizados ha habido 20 cambios de señal, unos 2,3 al año, aunque no se reparten por igual: 2022 tuvo 6. Cada uno implica un traspaso entre planes de pensiones."], ["¿Qué regla usa exactamente?", "Compara el cierre mensual del S&P 500 con su media móvil ponderada de 150 sesiones. Por encima, se invierte todo en el plan de renta variable americana; por debajo, todo en el plan de renta fija. Se revisa una vez al mes."], ["¿Qué planes utilizo?", "Actualmente utilizo en Openbank el P.P. Santander Renta Variable USA y el P.P. Santander Renta Fija. Cualquier entidad con planes equivalentes puede servir. Si tienes dudas sobre qué alternativa usar, escríbeme."], ["¿Puede perder más que mantener renta variable?", "Sí. En 2022 perdió un 19,3%, frente a un 12,0% de mantener siempre el plan de renta variable, y su caída máxima es del -19,3%. Son datos pasados."], ["¿Es asesoramiento financiero?", "No. La información es meramente informativa y no constituye asesoramiento financiero ni una recomendación personalizada. Cada inversor debe hacer su propio análisis y decidir según su situación personal."]];
+$('#faqList').innerHTML=FAQ.map((f,i)=>`<div class="qa reveal in"><h3><button type="button" aria-expanded="false" aria-controls="fa${i}" id="fq${i}">${f[0]}<svg class="icon"><use href="#i-plus"/></svg></button></h3><div class="ans" id="fa${i}" role="region" aria-labelledby="fq${i}"><div><p>${f[1]}</p></div></div></div>`).join('');
+$$('.qa button').forEach(b=>b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);b.closest('.qa').classList.toggle('open',o)}));
+
+if(window.TAI&&TAI.initForm)TAI.initForm();
+});
+
+</script>
 </body>
 </html>
