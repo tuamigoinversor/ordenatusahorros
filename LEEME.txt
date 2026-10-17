@@ -1,5 +1,14 @@
-TU AMIGO INVERSOR · WEB V13
+TU AMIGO INVERSOR · WEB V15
 ===========================
+
+CAMBIOS V15
+  - Perfiles unificados en toda la web y en el test: Conservador (ROCA), Moderado (IMPULSO y HORIZONTE), Agresivo (GEDA), Muy agresivo (GEN-Z), Especulativo (CRYPTO).
+    "Perfil tolerante" desaparece (IMPULSO es ahora "Perfil moderado").
+  - Test: 5 niveles de perfil (<=18, <=26, <=31, <=36, >36 puntos de 40). Encajan las estrategias de nivel igual o inferior al del cliente;
+    las inferiores salen con la nota "su rentabilidad potencial es inferior a la que buscas". Quedan fuera las de nivel superior
+    y las que no cumplen sus condiciones (HORIZONTE con menos de 5 años; GEDA/GEN-Z/CRYPTO según la pérdida que acepta).
+  - Metodología: eliminada la mención al "perfil radar" del comparador (ya no existe).
+
 
 CAMBIOS V13 (+ ajustes finales)
   - Imagen nueva de IMPULSO, precio en la FAQ (30 €/semestre o 50 €/año) y Brevo como proveedor de correo en la política de privacidad.

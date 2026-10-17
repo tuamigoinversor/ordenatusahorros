@@ -690,3 +690,4 @@ table.cmp-table td .more{margin-top:0;justify-content:center}
 .fit-no{margin:0 0 0 1.1rem;display:grid;gap:.35rem;font-size:var(--fs-sm);color:var(--muted);list-style:disc}
 @media (max-width:520px){.q-areas{grid-template-columns:1fr 1fr 1fr;font-size:.8rem}}
 .fit-list{margin-bottom:.9rem}
+.fit-card .fit-note{color:var(--warn)!important;font-weight:600}

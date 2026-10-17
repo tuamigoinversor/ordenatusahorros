@@ -20,12 +20,12 @@ T.STRATEGIES = [
    feats:['Baja volatilidad','Diversificación','Rebalanceo semestral'], avg:7.5, dd:-9.2, y25:5.6, y26:4.7,
    img:IMG('roca'), alt:'Cima rocosa con montañas nevadas al amanecer, símbolo de solidez y calma',
    url:BASE+'cartera-permanente-conservadora-roca/index.html'},
-  {id:'IMPULSO',  slug:'impulso',  type:'permanente', profile:'Perfil tolerante',    color:'#10b981', risk:2, review:'Semestral',
+  {id:'IMPULSO',  slug:'impulso',  type:'permanente', profile:'Perfil moderado',     color:'#10b981', risk:2, review:'Semestral',
    desc:'Cartera permanente de crecimiento moderado que combina estabilidad y exposición a mercado.',
    feats:['Riesgo medio','Elimina renta fija','Rebalanceo semestral'], avg:13.6, dd:-16.5, y25:22.6, y26:8.2,
    img:IMG('impulso'), alt:'Carretera junto al mar al atardecer con estelas de luz, símbolo de avance constante',
    url:BASE+'cartera-inversion-crecimiento-impulso/index.html'},
-  {id:'HORIZONTE',slug:'horizonte',type:'permanente', profile:'Plan de pensiones',   color:'#7c3aed', risk:2, review:'Semestral',
+  {id:'HORIZONTE',slug:'horizonte',type:'permanente', profile:'Perfil moderado',     color:'#7c3aed', risk:2, review:'Semestral',
    desc:'Enfoque a largo plazo orientado a la acumulación de capital con reglas simples y consistentes.',
    feats:['Muy largo plazo','Baja rotación','Simplicidad operativa'], avg:12.1, dd:-19.3, y25:17.4, y26:17.6,
    img:IMG('horizonte'), alt:'Piscina infinita frente al mar al amanecer, símbolo de largo plazo',
@@ -196,13 +196,16 @@ function renderQuiz() {
 }
 
 /* ---- Resultado: perfil + explicación en lenguaje natural + estrategias que encajan (sin porcentajes) ---- */
-const PROFILES = ['Conservador', 'Moderado', 'Dinámico', 'Agresivo'];
+const PROFILES = ['Conservador', 'Moderado', 'Agresivo', 'Muy agresivo', 'Especulativo'];
 const PROFILE_TXT = [
   'priorizas proteger tu dinero frente a hacerlo crecer. Aceptas rentabilidades más modestas a cambio de ver pocas caídas.',
   'buscas un equilibrio entre proteger tu dinero y hacerlo crecer. Aceptas algunas caídas temporales a cambio de una rentabilidad algo mayor.',
   'buscas hacer crecer tu dinero y aceptas caídas importantes por el camino, siempre que tengas tiempo para recuperarte.',
-  'priorizas el crecimiento por encima de todo y aceptas pérdidas elevadas y largos periodos de caída.'
+  'buscas un crecimiento alto y aceptas caídas muy profundas y periodos largos en pérdidas.',
+  'priorizas el crecimiento por encima de todo y aceptas pérdidas muy elevadas, que en algún caso podrían ser de la mayor parte del dinero invertido.'
 ];
+/* Nivel de riesgo de cada estrategia: coincide con el "Perfil" que se muestra en su ficha y en el informe mensual */
+const LV = {'ROCA': 0, 'IMPULSO': 1, 'HORIZONTE': 1, 'GEDA': 2, 'GEN-Z': 3, 'CRYPTO': 4};
 const STRAT_WHY = {
   'ROCA': 'Cartera permanente diversificada pensada para proteger el capital. Es la que menos ha caído en su historia.',
   'IMPULSO': 'Cartera permanente con más peso en bolsa y oro que ROCA: busca más crecimiento con caídas todavía contenidas.',
@@ -217,7 +220,7 @@ function evaluate() {
   const p = answers.map((i, k) => QUIZ[k].p[i]);            // puntos
   const sum = (x, y) => p.slice(x, y).reduce((u, v) => u + v, 0);
   const cap = sum(0, 3), con = sum(3, 6), tol = sum(6, 10), tot = cap + con + tol;
-  const base = tot <= 18 ? 0 : tot <= 26 ? 1 : tot <= 34 ? 2 : 3;
+  const base = tot <= 18 ? 0 : tot <= 26 ? 1 : tot <= 31 ? 2 : tot <= 36 ? 3 : 4;
   // Reglas de prudencia: el perfil final no puede superar estos límites
   const caps = [
     [a[0] === 'a', 0, 'vas a necesitar este dinero en menos de 2 años y, en plazos tan cortos, una caída puede no dar tiempo a recuperarse'],
@@ -234,23 +237,18 @@ function evaluate() {
   if (tol / 4 - cap / 3 > 1) warn.push('Tu disposición a asumir riesgo es mayor que lo que tu situación actual permite. Conviene que lo tengas presente antes de invertir.');
   if (cap / 3 - tol / 4 > 1) warn.push('Tu situación te permitiría asumir más riesgo del que te resulta cómodo. Prevalece lo que te resulta cómodo: invertir de forma que puedas dormir tranquilo es lo que te permitirá mantener el plan.');
   if (p[6] <= 2 && a[8] === 'd') warn.push('Has dicho que aceptarías perder un 30% o más, pero que ante una caída del 20% venderías. Piensa cuál de las dos reacciones sería la real: es lo que más importa cuando llegan las caídas.');
-  // Estrategias que encajan
-  const fit = [];
-  if (final === 0) fit.push('ROCA');
-  if (final === 1) fit.push('ROCA', 'IMPULSO', 'HORIZONTE');
-  if (final === 2) fit.push('IMPULSO', 'HORIZONTE', 'GEDA');
-  if (final === 3) fit.push('HORIZONTE', 'GEDA', 'GEN-Z', 'CRYPTO');
-  const out = [], why = {};
-  fit.forEach(id => {
-    if (id === 'HORIZONTE' && (a[0] === 'a' || a[0] === 'b')) { out.push([id, 'es un plan de pensiones y tu dinero lo necesitarás en menos de 5 años']); return; }
-    if (id === 'GEDA' && a[8] < 'c') { out.push([id, 'sus caídas históricas se acercan al 20% y has dicho que aceptarías menos']); return; }
-    if (id === 'GEN-Z' && a[8] < 'c') { out.push([id, 'sus caídas históricas superan el 40% y has dicho que aceptarías menos']); return; }
-    if (id === 'CRYPTO' && a[8] !== 'd') { out.push([id, 'sus caídas históricas llegan al 73% y has dicho que aceptarías menos']); return; }
-    why[id] = 1;
+  // Estrategias: encajan las de nivel igual o inferior al tuyo (las inferiores con la observación de que rentarán menos de lo que buscas)
+  const ok = [], personal = [], higher = [];
+  Object.keys(LV).forEach(id => {
+    if (LV[id] > final) { higher.push(id); return; }
+    if (id === 'HORIZONTE' && (a[0] === 'a' || a[0] === 'b')) { personal.push([id, 'es un plan de pensiones y vas a necesitar el dinero en menos de 5 años']); return; }
+    if (id === 'GEDA' && a[8] < 'c') { personal.push([id, 'sus caídas históricas se acercan al 20% y has dicho que aceptarías menos']); return; }
+    if (id === 'GEN-Z' && a[8] < 'c') { personal.push([id, 'sus caídas históricas superan el 40% y has dicho que aceptarías menos']); return; }
+    if (id === 'CRYPTO' && a[8] !== 'd') { personal.push([id, 'sus caídas históricas llegan al 73% y has dicho que aceptarías menos']); return; }
+    ok.push(id);
   });
-  const ok = fit.filter(id => why[id]);
-  const notFit = T.STRATEGIES.map(s => s.id).filter(id => !ok.includes(id));
-  return { cap, con, tol, tot, base, final, reasons, warn, ok, left: out, notFit, a };
+  ok.sort((x, y) => LV[y] - LV[x]);
+  return { cap, con, tol, tot, base, final, reasons, warn, ok, personal, higher, a };
 }
 function renderResult() {
   const r = evaluate();
@@ -264,14 +262,14 @@ function renderResult() {
   let final = '';
   if (r.final < r.base) final = `Aun así, tu perfil final es <strong>${PROFILES[r.final]}</strong> porque ${r.reasons.join(', y porque ')}. No es un juicio sobre ti: es una regla de prudencia, ya que el riesgo que conviene asumir depende no solo de cuánto riesgo te sientes capaz de aceptar, sino también de lo que tu situación te permite. Si cambian tus circunstancias, puedes repetir el test.`;
   else final = `Tu perfil final coincide con esa puntuación: <strong>${PROFILES[r.final]}</strong>.`;
-  const card = id => { const s = T.byId(id); return `<li class="fit-card" style="--c:${s.color}"><div><strong><i style="background:${s.color}"></i>${id}</strong> <span class="fit-tag">${s.profile}</span></div><p>${STRAT_WHY[id]}</p><p class="fit-dd">Mayor caída histórica: <b class="mono neg">${T.pct(s.dd)}</b> · <a href="${s.url}">Ver ficha</a></p></li>`; };
+  const card = id => { const s = T.byId(id); const lower = LV[id] < r.final;
+    return `<li class="fit-card" style="--c:${s.color}"><div><strong><i style="background:${s.color}"></i>${id}</strong> <span class="fit-tag">${s.profile}</span></div><p>${STRAT_WHY[id]}</p>${lower ? `<p class="fit-note">Encaja, pero su rentabilidad potencial es inferior a la que buscas con tu perfil.</p>` : ''}<p class="fit-dd">Mayor caída histórica: <b class="mono neg">${T.pct(s.dd)}</b> · <a href="${s.url}">Ver ficha</a></p></li>`; };
   const cmpUrl = `${BASE}comparador/index.html?s=${r.ok.map(encodeURIComponent).join(',')}`;
-  const noFit = r.left.length || r.notFit.length;
-  const worst = Math.max(...r.notFit.map(id => Math.abs(T.byId(id).dd)), 0);
-  let excl = '';
-  if (r.left.length) excl += r.left.map(([id, m]) => `<li><strong>${id}</strong>: ${m}.</li>`).join('');
-  const rest = r.notFit.filter(id => !r.left.some(l => l[0] === id));
-  if (rest.length) excl += `<li><strong>${rest.join(', ')}</strong>: asumen más riesgo del que encaja con tu perfil (caídas históricas de hasta el ${String(worst).replace('.', ',')}%).</li>`;
+  let excl = r.personal.map(([id, m]) => `<li><strong>${id}</strong>: ${m}.</li>`).join('');
+  if (r.higher.length) {
+    const worst = Math.max(...r.higher.map(id => Math.abs(T.byId(id).dd)));
+    excl += `<li><strong>${r.higher.join(', ')}</strong>: ${r.higher.length > 1 ? 'tienen un perfil de riesgo más alto' : 'tiene un perfil de riesgo más alto'} que el tuyo (caídas históricas de hasta el ${String(worst).replace('.', ',')}%).</li>`;
+  }
   quizEl.innerHTML = `<div class="q-result long">
     <div class="q-progress" aria-hidden="true"><div style="width:100%"></div></div>
     <span class="eyebrow">Tu resultado</span>
@@ -287,7 +285,7 @@ function renderResult() {
     <h4>Estrategias que encajan con tu perfil</h4>
     <ul class="fit-list">${r.ok.map(card).join('')}</ul>
     <p class="q-hint">Puedes quedarte con una o combinar varias: cuántas y en qué medida es una decisión tuya. <a href="${BASE}aprende/combinar-estrategias-inversion/index.html">Cómo combinar las estrategias</a>.</p>
-    ${noFit ? `<h4>Y las que, por ahora, no encajan</h4><ul class="fit-no">${excl}</ul>` : ''}
+    ${excl ? `<h4>Y las que, por ahora, no encajan</h4><ul class="fit-no">${excl}</ul>` : ''}
     <div class="cta-row" style="margin-top:1.4rem">
       <a class="btn btn-primary" href="${cmpUrl}">Comparar mis estrategias</a>
       <button type="button" class="btn btn-ghost" id="qRetry"><svg class="icon"><use href="#i-refresh"/></svg>Repetir test</button>
