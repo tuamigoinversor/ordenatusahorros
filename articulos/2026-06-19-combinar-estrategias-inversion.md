@@ -82,7 +82,7 @@ Esto no es una recomendación personalizada — es la lógica que yo mismo sigo 
 - **Perfil conservador**: ROCA como núcleo principal, con una porción pequeña de IMPULSO o GEDA como complemento de crecimiento.
 - **Perfil moderado**: IMPULSO como base, combinado con GEDA como aporte táctico, manteniendo el núcleo permanente como la mayoría de la cartera.
 - **Perfil agresivo**: GEDA y GEN-Z como motor principal, con CRYPTO como satélite muy acotado — nunca como pieza central, por su drawdown de -73%.
-- **HORIZONTE**: funciona como vehículo aparte, normalmente complementario a cualquiera de los perfiles anteriores por su tratamiento fiscal específico, no exclusivo de ninguno.
+- **HORIZONTE (plan de pensiones)**: funciona como vehículo aparte, normalmente complementario a cualquiera de los perfiles anteriores por su tratamiento fiscal específico, no exclusivo de ninguno.
 
 ## La regla de oro: que el drawdown combinado sea uno que puedas aguantar
 

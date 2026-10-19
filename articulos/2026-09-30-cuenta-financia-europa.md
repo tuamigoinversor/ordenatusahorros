@@ -1,18 +1,24 @@
 ---
-title: "Cuenta Financia Europa ya es una realidad: una nueva cuenta para invertir con ventajas fiscales"
-fecha: 2026-09-30
+title: "Cuenta Financia Europa: qué es, qué ventajas fiscales tiene y cuándo podrá contratarse"
+fecha: 2026-10-18
 categoria: "Brokers"
-resumen: "La Cuenta Financia Europa ya es una realidad. El Gobierno ha aprobado esta nueva cuenta de ahorro e inversión, diseñada para canalizar parte del ahorro de los inversores hacia los mercados europeos y…"
+resumen: "La Cuenta de Ahorro e Inversión Financia Europa ya tiene norma en vigor, pero todavía no puede contratarse y sigue pendiente de convalidación en el Congreso. Te explico cómo funciona, qué ventajas fiscales ofrece y qué falta por conocer."
 imagen: "assets/img/posts/cuenta-financia-europa.webp"
 ---
 
-La **Cuenta Financia Europa** ya es una realidad. El Gobierno ha aprobado esta nueva cuenta de ahorro e inversión, diseñada para canalizar parte del ahorro de los inversores hacia los mercados europeos y ofrecer determinadas ventajas fiscales.
+La **Cuenta de Ahorro e Inversión Financia Europa** es un nuevo producto pensado para canalizar parte del ahorro de los particulares hacia los mercados europeos con un tratamiento fiscal favorable. Pero conviene precisar en qué punto está: **la norma está en vigor, todavía está pendiente de convalidación en el Congreso y la cuenta aún no puede contratarse.**
 
-La nueva **Cuenta de Ahorro e Inversión Financia Europa** permitirá invertir en determinados valores y fondos europeos, con un límite general de 150.000 euros de aportaciones pendientes de recuperar.
+*Artículo publicado el 30 de septiembre de 2026 y actualizado el 18 de octubre de 2026, porque la situación normativa ha cambiado desde entonces.*
 
-Su principal atractivo es que las ganancias generadas dentro de la cuenta podrán mantenerse diferidas fiscalmente mientras permanezcan dentro de ella. Además, las aportaciones que cumplan los requisitos de permanencia durante más de cinco años podrán beneficiarse de ventajas fiscales adicionales.
+## En qué punto está: tres estados distintos
 
-Pero ¿cómo funciona exactamente y qué podremos comprar dentro de esta nueva cuenta?
+Para no confundirnos, conviene separar tres cosas:
+
+1. **Aprobación de la norma.** La cuenta se incluyó primero en el **Real Decreto-ley 26/2026**, publicado en el BOE el 30 de septiembre. Ese decreto no superó la convalidación del Congreso y dejó de estar vigente.
+2. **Entrada en vigor.** El Gobierno aprobó después el **Real Decreto-ley 29/2026, de 6 de octubre**, que vuelve a regular la cuenta. Está en vigor, pero **se someterá de nuevo a convalidación**.
+3. **Comercialización.** Aunque la norma esté en vigor, **la cuenta todavía no puede ofrecerse ni contratarse**. Hace falta una orden ministerial que desarrolle las obligaciones de información tributaria y, para los fondos y ETF, que la CNMV ponga en marcha el registro de IIC elegibles.
+
+Por tanto, **todo lo que sigue describe lo que dice la norma actual y puede cambiar** si el Congreso no la convalida o si se modifica su desarrollo.
 
 <figure class="imagen">
 <img src="/assets/uploads/2026/09/image-1024x683.png" />
@@ -20,108 +26,70 @@ Pero ¿cómo funciona exactamente y qué podremos comprar dentro de esta nueva c
 
 ## ¿Cómo funciona?
 
-La cuenta permitirá mantener determinados valores y fondos de inversión.
+- Cada contribuyente podrá tener **una sola cuenta** a su nombre, y no podrá transmitirla.
+- Las aportaciones se hacen **solo en dinero**, con un límite de **150.000 euros de aportaciones pendientes de recuperar**.
+- Se articula en una **subcuenta de valores** y una **subcuenta de efectivo**, vinculadas a una cuenta de contrapartida. El efectivo dentro de la cuenta no puede superar los **1.500 €**.
+- Pueden ofrecerla **entidades de crédito** y **empresas de servicios de inversión**.
+- No se puede operar con **apalancamiento**: la entidad no puede conceder créditos para invertir dentro de la cuenta.
 
-El límite general será de **150.000 euros de aportaciones pendientes de recuperar**.
+## ¿Cuál es la ventaja fiscal?
 
-La principal ventaja fiscal es que las ganancias o pérdidas derivadas de las inversiones no se incorporarán a la declaración de la renta hasta que se produzca una disposición de la cuenta.
+La ventaja principal es el **diferimiento**: las ganancias y pérdidas derivadas de vender activos dentro de la cuenta **no se integran en la declaración de la renta hasta que se dispone del dinero**. Esto permite, por ejemplo, vender una inversión con ganancias y reinvertir en otro activo elegible **sin tributar de inmediato por esa plusvalía**.
 
-Esto permite, por ejemplo, vender una inversión con ganancias y reinvertir ese dinero en otro activo elegible **sin generar inmediatamente la tributación de esa plusvalía**.
+Dos matices importantes:
 
-Para un inversor que realiza rebalanceos periódicos, puede ser una ventaja importante.
+- **Los dividendos y otros rendimientos del capital mobiliario quedan, en general, fuera de ese diferimiento**: tributan cuando se perciben.
+- El diferimiento no elimina el impuesto: lo retrasa hasta que se dispone de los fondos (salvo la parte exenta que veremos ahora).
 
 ### ¿Y si mantenemos la inversión más de 5 años?
 
-Aquí aparece un segundo incentivo.
+Para las ganancias correspondientes a aportaciones mantenidas **más de cinco años**:
 
-Para las ganancias correspondientes a aportaciones mantenidas durante más de cinco años:
+- los primeros **10.000 € de ganancias** quedan exentos al 100 % (acumulado por contribuyente);
+- y sobre la parte que exceda de esa cifra queda exento **el 20 %**.
 
-- los primeros **10.000 € de ganancias** pueden quedar excluidos de gravamen;
-- y sobre la parte restante se establece una **exclusión del 20 %**.
-
-No se trata de una bonificación del 20 % sobre el impuesto a pagar, sino de una exclusión de parte de la ganancia de la tributación.
+No es una bonificación del 20 % sobre la cuota, sino una **exclusión de parte de la ganancia**. Y como la exención total tiene un tope de 10.000 €, algunos analistas señalan que el atractivo real de la cuenta está sobre todo en el diferimiento.
 
 ------------------------------------------------------------------------
 
-# ¿Qué podemos comprar?
+## ¿Qué podemos comprar?
 
-Aquí está probablemente la parte más importante.
+La norma establece una **lista cerrada de activos elegibles**:
 
-La cuenta permitirá invertir en determinadas **acciones europeas** y en fondos de inversión y ETF que cumplan los requisitos establecidos por la normativa.
+1. **Acciones** admitidas a negociación en mercados regulados o sistemas multilaterales de negociación, emitidas por sociedades de la UE o del EEE. Quedan excluidas las SOCIMI.
+2. **Participaciones de IIC, incluidos ETF**, que estén inscritas en el **Registro de IIC elegibles de la CNMV**. Entre otros requisitos, deben tener al menos el **70 % de su cartera vinculada al EEE**, el **50 % en renta variable** y el **35 % en renta variable computable como EEE**. Quedan excluidas las SICAV, y no se admiten derivados.
 
-En el caso de las IIC, deberán cumplir, entre otros requisitos:
+Algunos de estos requisitos podrán concretarse por vía reglamentaria. Y si un activo deja de ser elegible, habrá un plazo para subsanarlo; si no se subsana, tendrá que venderse.
 
-**70 % de exposición al Espacio Económico Europeo**,  
-**50 % de renta variable**,  
-y **35 % de renta variable computable como EEE**.
+Por tanto, **no podremos elegir cualquier ETF o fondo europeo**: habrá que esperar al registro de la CNMV.
 
-Por tanto, no podremos simplemente elegir cualquier ETF o fondo europeo.
+## ¿Qué ocurre con una cartera global?
 
-Será necesario comprobar cuáles aparecen finalmente en el **Registro de IIC elegibles de la CNMV**.
-
-------------------------------------------------------------------------
-
-# ¿Qué ocurre con una cartera global?
-
-Aquí está una de las limitaciones de Financia Europa.
-
-Un fondo tradicional que invierta principalmente en Estados Unidos, como muchos productos indexados al S&P 500 o al MSCI World, difícilmente podrá cumplir los requisitos geográficos exigidos.
-
-Pero habrá que esperar al listado definitivo para saber exactamente qué fondos podrán utilizarse.
-
-Y esto también afecta a nuestras propias estrategias.
+Un fondo tradicional que invierta principalmente en Estados Unidos, como muchos productos indexados al S&P 500 o al MSCI World, **difícilmente podrá cumplir** los requisitos geográficos. Habrá que esperar al listado definitivo para saberlo con certeza.
 
 ### ¿Podrían entrar acciones de GEDA?
 
-**A priori, algunas de las acciones europeas que actualmente forman parte de GEDA podrían ser candidatas para esta cuenta**, ya que la normativa permite determinadas acciones de compañías europeas cotizadas.
+A priori, algunas de las **acciones europeas** que actualmente forman parte de GEDA podrían ser candidatas, ya que la norma permite acciones de sociedades de la UE o del EEE cotizadas en mercados regulados. **Pero no podemos dar una lista definitiva** hasta que se concreten los requisitos y se pueda comprobar cada activo, y la norma todavía está pendiente de convalidación.
 
-Pero todavía no podemos dar una lista definitiva.
+## También podremos cambiar de entidad
 
-Habrá que esperar a conocer los activos que finalmente sean considerados elegibles y, en el caso de los fondos y ETF, el registro correspondiente de la CNMV.
+La cuenta podrá **traspasarse íntegramente a otra entidad**, conservando la antigüedad fiscal y sin que el traspaso cuente como disposición ni como nueva aportación. Solo podrá hacerse **un traspaso por año natural**. Será un dato relevante cuando comparemos las condiciones de bancos y brókeres.
 
-Esto puede abrir una posibilidad interesante para quienes quieran utilizar Financia Europa como complemento de una cartera más diversificada.
+## Una nota sobre el seguro SIALP Financia Europa
 
-------------------------------------------------------------------------
+La misma norma crea una modalidad de seguro de ahorro a largo plazo, con primas de hasta **10.000 € al año** y rendimientos exentos si no se dispone del capital antes de cinco años. Es un producto distinto de la cuenta, con otras reglas, y no entra en este análisis.
 
-# También podremos cambiar de entidad
+## ¿Qué podemos concluir por ahora?
 
-Otra característica interesante es que la cuenta podrá trasladarse a otra entidad financiera.
+Financia Europa introduce una idea interesante: **invertir a largo plazo en determinados activos europeos y poder hacer cambios dentro de la cuenta sin tributar inmediatamente por cada plusvalía.**
 
-La movilización de los activos y del efectivo no se considera una disposición ni una nueva aportación y permite conservar la antigüedad de las aportaciones.
+Pero todavía quedan incógnitas importantes:
 
-Esto será relevante a la hora de comparar las condiciones que ofrezcan bancos y brókeres.
+- si el Congreso convalidará la norma tal y como está;
+- cuándo se publicará la orden ministerial y se abrirá el registro de IIC elegibles;
+- qué acciones, fondos y ETF serán finalmente elegibles;
+- qué entidades ofrecerán la cuenta y con qué costes.
 
-------------------------------------------------------------------------
+Por eso, **ahora mismo lo sensato es conocer bien cómo funciona y esperar a que se concrete la oferta**. Cuando tengamos el listado definitivo, analizaré qué productos pueden tener sentido y qué parte de una cartera diversificada podría aprovechar realmente estas ventajas.
 
-# ¿Cuándo podremos abrirla?
-
-Aunque el Real Decreto-ley ya ha entrado en vigor, **la cuenta todavía no puede comercializarse ni contratarse**.
-
-La norma establece que será necesaria una orden ministerial que desarrolle las obligaciones de información tributaria antes de que las entidades puedan comenzar a comercializarla.
-
-Además, la CNMV tendrá que poner en marcha el registro de IIC elegibles.
-
-Por tanto, todavía tendremos que esperar para conocer la oferta real.
-
-------------------------------------------------------------------------
-
-# ¿Qué puede aportar al inversor?
-
-Financia Europa introduce una idea interesante:
-
-**invertir a largo plazo en determinados activos europeos y poder realizar cambios dentro de la cuenta sin tener que tributar inmediatamente por cada plusvalía.**
-
-Para un inversor que mantiene una cartera durante muchos años y realiza rebalanceos, ese diferimiento fiscal puede tener un efecto relevante sobre la capitalización de la inversión.
-
-Pero todavía quedan varias incógnitas:
-
-- qué acciones serán aceptadas;
-- qué fondos y ETF aparecerán en el registro;
-- qué entidades ofrecerán la cuenta;
-- y cuáles serán sus costes.
-
-Por eso, **ahora mismo lo interesante es conocer bien el funcionamiento y esperar a que se concrete la oferta**.
-
-Cuando tengamos el listado definitivo, podremos analizar qué productos pueden tener sentido y, sobre todo, **qué parte de una cartera diversificada podría aprovechar realmente las ventajas de Financia Europa**.
-
-*Artículo informativo y divulgativo. Las condiciones fiscales dependen de la normativa vigente y de las circunstancias particulares de cada inversor.*
+*Artículo informativo y divulgativo, basado en la normativa vigente a fecha de actualización y en los análisis de PwC Tax & Legal (octubre de 2026) y Finreg360 (octubre de 2026). No constituye asesoramiento fiscal ni financiero: las condiciones dependen de la normativa y de las circunstancias de cada inversor.*

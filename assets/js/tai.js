@@ -16,37 +16,39 @@ Object.assign(T, { $, $$, BASE });
 const IMG = id => ({ src: `${BASE}assets/img/estrategias/${id}-card.webp` });
 T.STRATEGIES = [
   {id:'ROCA',     slug:'roca',     type:'permanente', profile:'Perfil conservador',  color:'#0ea5e9', risk:1, review:'Semestral',
-   desc:'Cartera permanente conservadora diseñada para proteger el capital en cualquier entorno de mercado.',
+   desc:'Cartera permanente conservadora pensada para buscar una rentabilidad estable con baja volatilidad, sin eliminar el riesgo de pérdidas.',
    feats:['Baja volatilidad','Diversificación','Rebalanceo semestral'], avg:7.5, dd:-9.2, y25:5.6, y26:4.7,
    img:IMG('roca'), alt:'Cima rocosa con montañas nevadas al amanecer, símbolo de solidez y calma',
    url:BASE+'cartera-permanente-conservadora-roca/index.html'},
   {id:'IMPULSO',  slug:'impulso',  type:'permanente', profile:'Perfil moderado',     color:'#10b981', risk:2, review:'Semestral',
    desc:'Cartera permanente de crecimiento moderado que combina estabilidad y exposición a mercado.',
-   feats:['Riesgo medio','Elimina renta fija','Rebalanceo semestral'], avg:13.6, dd:-16.5, y25:22.6, y26:8.2,
+   feats:['Riesgo medio','Elimina renta fija','Rebalanceo semestral'], avg:13.7, dd:-16.5, y25:22.6, y26:8.2,
    img:IMG('impulso'), alt:'Carretera junto al mar al atardecer con estelas de luz, símbolo de avance constante',
    url:BASE+'cartera-inversion-crecimiento-impulso/index.html'},
-  {id:'HORIZONTE',slug:'horizonte',type:'permanente', profile:'Perfil moderado',     color:'#7c3aed', risk:2, review:'Semestral',
-   desc:'Enfoque a largo plazo orientado a la acumulación de capital con reglas simples y consistentes.',
-   feats:['Muy largo plazo','Baja rotación','Simplicidad operativa'], avg:12.1, dd:-19.3, y25:17.4, y26:17.6,
+  {id:'HORIZONTE',slug:'horizonte',type:'tactica',    profile:'Perfil moderado',     color:'#7c3aed', risk:2, review:'Mensual', note:'Plan de pensiones',
+   desc:'Plan de pensiones que alterna entre renta variable americana y renta fija según una señal mensual, con reglas simples y consistentes.',
+   feats:['Muy largo plazo','Baja rotación','Simplicidad operativa'], avg:12.2, dd:-19.3, y25:17.4, y26:17.6,
    img:IMG('horizonte'), alt:'Piscina infinita frente al mar al amanecer, símbolo de largo plazo',
    url:BASE+'plan-pensiones-moderado-horizonte/index.html'},
   {id:'GEDA',     slug:'geda',     type:'tactica',    profile:'Perfil agresivo',     color:'#f59e00', risk:4, review:'Mensual',
-   desc:'Estrategia táctica de inversión momentum que rota entre activos buscando maximizar la rentabilidad.',
+   desc:'Estrategia táctica de momentum que rota entre activos para capturar las tendencias más fuertes del mercado.',
    feats:['Alta rotación','Señales cuantitativas','Enfoque dinámico'], avg:40.3, dd:-19.6, y25:56.6, y26:100.2,
    img:IMG('geda'), alt:'Pantallas con gráficos de cotización sobre un escritorio, símbolo del análisis de tendencias',
    url:BASE+'inversion-tactica-geda/index.html'},
   {id:'GEN-Z',    slug:'genz',     type:'tactica',    profile:'Perfil muy agresivo', color:'#ec4899', risk:5, review:'Mensual',
-   desc:'Inversión temática en sectores disruptivos y tendencias de futuro con alto potencial de crecimiento.',
-   feats:['Alta volatilidad','Temáticas innovadoras','Largo plazo'], avg:68.1, dd:-44.9, y25:159.2, y26:16.2,
+   desc:'Inversión temática en sectores disruptivos y tendencias de futuro, con alta volatilidad y mayor riesgo.',
+   feats:['Alta volatilidad','Temáticas innovadoras','Largo plazo'], avg:68.8, dd:-44.9, y25:159.2, y26:16.2,
    img:IMG('genz'), alt:'Placa de circuitos electrónicos vista de cerca, símbolo de tecnología disruptiva',
    url:BASE+'inversion-tematica-gen-z/index.html'},
   {id:'CRYPTO',   slug:'crypto',   type:'tactica',    profile:'Perfil especulativo', color:'#ef4444', risk:5, review:'Mensual',
    desc:'Estrategia de alto riesgo en criptomonedas, con fuerte volatilidad y potencial de revalorización.',
-   feats:['Volatilidad extrema','Ciclos de mercado','Alto riesgo'], avg:44.5, dd:-73, y25:-23.6, y26:20.8,
+   feats:['Volatilidad extrema','Ciclos de mercado','Alto riesgo'], avg:44.1, dd:-73, y25:-23.6, y26:20.8,
    img:IMG('crypto'), alt:'Moneda dorada de Bitcoin frente a gráficos de mercado, símbolo del mundo cripto',
    url:BASE+'inversion-criptomonedas-crypto/index.html'}
 ];
 T.byId = id => T.STRATEGIES.find(s => s.id === id);
+/* Nombre para mostrar: HORIZONTE siempre se identifica como plan de pensiones */
+T.label = id => id === 'HORIZONTE' ? 'HORIZONTE (plan de pensiones)' : id;
 
 /* ---------- 2. UTILIDADES ---------- */
 T.reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -112,6 +114,13 @@ const onScroll = () => {
 addEventListener('scroll', onScroll, {passive:true}); onScroll();
 toTop.addEventListener('click', () => { scrollTo({top:0, behavior:reduced ? 'auto' : 'smooth'}); $('#main').focus({preventScroll:true}); });
 
+/* Menú desplegable «Recursos» */
+$$('.sub-toggle').forEach(b => { const li = b.closest('.has-sub');
+  b.addEventListener('click', e => { e.stopPropagation(); const o = li.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+  li.addEventListener('mouseenter', () => b.setAttribute('aria-expanded', 'true'));
+  li.addEventListener('mouseleave', () => { if (!li.classList.contains('open')) b.setAttribute('aria-expanded', 'false'); }); });
+document.addEventListener('click', e => { $$('.has-sub.open').forEach(li => { if (!li.contains(e.target)) { li.classList.remove('open'); li.querySelector('.sub-toggle').setAttribute('aria-expanded', 'false'); } }); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') $$('.has-sub.open').forEach(li => { li.classList.remove('open'); li.querySelector('.sub-toggle').setAttribute('aria-expanded', 'false'); }); });
 const burger = $('#burger'), mm = $('#mobileMenu');
 burger.addEventListener('click', () => { const o = mm.classList.toggle('open'); burger.setAttribute('aria-expanded', o); burger.setAttribute('aria-label', o ? 'Cerrar menú' : 'Abrir menú'); });
 $$('#mobileMenu a').forEach(a => a.addEventListener('click', () => { mm.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }));
@@ -263,9 +272,9 @@ function renderResult() {
   if (r.final < r.base) final = `Aun así, tu perfil final es <strong>${PROFILES[r.final]}</strong> porque ${r.reasons.join(', y porque ')}. No es un juicio sobre ti: es una regla de prudencia, ya que el riesgo que conviene asumir depende no solo de cuánto riesgo te sientes capaz de aceptar, sino también de lo que tu situación te permite. Si cambian tus circunstancias, puedes repetir el test.`;
   else final = `Tu perfil final coincide con esa puntuación: <strong>${PROFILES[r.final]}</strong>.`;
   const card = id => { const s = T.byId(id); const lower = LV[id] < r.final;
-    return `<li class="fit-card" style="--c:${s.color}"><div><strong><i style="background:${s.color}"></i>${id}</strong> <span class="fit-tag">${s.profile}</span></div><p>${STRAT_WHY[id]}</p>${lower ? `<p class="fit-note">Encaja, pero su rentabilidad potencial es inferior a la que buscas con tu perfil.</p>` : ''}<p class="fit-dd">Mayor caída histórica: <b class="mono neg">${T.pct(s.dd)}</b> · <a href="${s.url}">Ver ficha</a></p></li>`; };
+    return `<li class="fit-card" style="--c:${s.color}"><div><strong><i style="background:${s.color}"></i>${T.label(id)}</strong> <span class="fit-tag">${s.profile}</span></div><p>${STRAT_WHY[id]}</p>${lower ? `<p class="fit-note">Encaja, pero su rentabilidad potencial es inferior a la que buscas con tu perfil.</p>` : ''}<p class="fit-dd">Mayor caída histórica: <b class="mono neg">${T.pct(s.dd)}</b> · <a href="${s.url}">Ver ficha</a></p></li>`; };
   const cmpUrl = `${BASE}comparador/index.html?s=${r.ok.map(encodeURIComponent).join(',')}`;
-  let excl = r.personal.map(([id, m]) => `<li><strong>${id}</strong>: ${m}.</li>`).join('');
+  let excl = r.personal.map(([id, m]) => `<li><strong>${T.label(id)}</strong>: ${m}.</li>`).join('');
   if (r.higher.length) {
     const worst = Math.max(...r.higher.map(id => Math.abs(T.byId(id).dd)));
     excl += `<li><strong>${r.higher.join(', ')}</strong>: ${r.higher.length > 1 ? 'tienen un perfil de riesgo más alto' : 'tiene un perfil de riesgo más alto'} que el tuyo (caídas históricas de hasta el ${String(worst).replace('.', ',')}%).</li>`;
@@ -284,13 +293,13 @@ function renderResult() {
     ${r.warn.length ? `<div class="q-warn"><strong>A tener en cuenta</strong>${r.warn.map(w => `<p>${w}</p>`).join('')}</div>` : ''}
     <h4>Estrategias que encajan con tu perfil</h4>
     <ul class="fit-list">${r.ok.map(card).join('')}</ul>
-    <p class="q-hint">Puedes quedarte con una o combinar varias: cuántas y en qué medida es una decisión tuya. <a href="${BASE}aprende/combinar-estrategias-inversion/index.html">Cómo combinar las estrategias</a>.</p>
+    <p class="q-hint">Puedes quedarte con una o combinar varias: cuántas y en qué medida es una decisión tuya. <a href="${BASE}combinar-estrategias/index.html">Cómo combinar las estrategias</a> · <a href="${BASE}ejemplo-practico/index.html">Ver un ejemplo práctico</a>.</p>
     ${excl ? `<h4>Y las que, por ahora, no encajan</h4><ul class="fit-no">${excl}</ul>` : ''}
     <div class="cta-row" style="margin-top:1.4rem">
       <a class="btn btn-primary" href="${cmpUrl}">Comparar mis estrategias</a>
       <button type="button" class="btn btn-ghost" id="qRetry"><svg class="icon"><use href="#i-refresh"/></svg>Repetir test</button>
     </div>
-    <p style="margin-top:1rem;font-size:var(--fs-sm)"><a class="more" href="${$('#suscripcion') ? '#suscripcion' : BASE + 'index.html#suscripcion'}" data-close>Probar gratis hasta final de año <svg class="icon"><use href="#i-arrow"/></svg></a></p>
+    <p style="margin-top:1rem;font-size:var(--fs-sm)"><a class="more" href="${$('#suscripcion') ? '#suscripcion' : BASE + 'index.html#suscripcion'}" data-close>Empieza gratis <svg class="icon"><use href="#i-arrow"/></svg></a></p>
     <p class="fineprint">Resultado orientativo y educativo, calculado en tu navegador (tus respuestas no se envían a ningún sitio). No es un test de idoneidad regulado (MiFID) ni asesoramiento financiero personalizado. Las rentabilidades pasadas no garantizan rentabilidades futuras.</p>
   </div>`;
   $('#qRetry').addEventListener('click', () => { answers.fill(null); qi = 0; renderQuiz(); $('.q-opt', quizEl).focus(); });
@@ -319,45 +328,7 @@ T.renderFaq = function (el, list) {
   $$('.qa button', el).forEach(b => b.addEventListener('click', () => { const o = b.getAttribute('aria-expanded') !== 'true'; b.setAttribute('aria-expanded', o); b.closest('.qa').classList.toggle('open', o); }));
 };
 
-/* ---------- 11. FORMULARIO DE SUSCRIPCIÓN (solo si la página lo tiene) ---------- */
-T.initForm = function () {
-  const form = $('#subForm'); if (!form) return;
-  const fName = $('#fName'), fEmail = $('#fEmail'), fConsent = $('#fConsent');
-  const rules = {
-    fName: v => v.trim().length >= 2 ? '' : 'Introduce tu nombre (mínimo 2 caracteres).',
-    fEmail: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Introduce un correo electrónico válido.'
-  };
-  function validate(el) {
-    const msg = rules[el.id](el.value);
-    $('#e' + el.id.slice(1)).textContent = msg; el.setAttribute('aria-invalid', !!msg); el.classList.toggle('valid', !msg); return !msg;
-  }
-  [fName, fEmail].forEach(el => { el.addEventListener('input', () => { if (el.value) validate(el); }); el.addEventListener('blur', () => validate(el)); });
-  fConsent.addEventListener('change', () => $('#eConsent').textContent = '');
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const ok = [validate(fName), validate(fEmail)].every(Boolean);
-    if (!fConsent.checked) { $('#eConsent').textContent = 'Necesito tu consentimiento para enviarte el informe.'; }
-    if (!ok || !fConsent.checked) { (form.querySelector('[aria-invalid="true"]') || fConsent).focus(); return; }
-    const btn = $('#fBtn'), st = $('#fStatus');
-    btn.classList.add('loading'); btn.disabled = true; $('#fBtnTxt').textContent = 'Enviando…'; st.className = 'form-status'; st.textContent = '';
-    try {
-      /* ===== CONECTAR PROVEEDOR DE EMAIL =====
-         BREVO (recomendado: usar un endpoint propio/serverless para NO exponer la API key):
-           await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},
-             body:JSON.stringify({email:fEmail.value,attributes:{FIRSTNAME:fName.value},listIds:[ID_LISTA]})});
-           // El endpoint llama a https://api.brevo.com/v3/contacts con la cabecera 'api-key'.
-         MAILCHIMP: sustituye este bloque por el <form action> del formulario embebido de Mailchimp
-           (https://<dc>.list-manage.com/subscribe/post?u=XXXX&id=YYYY) o llama a tu endpoint que use /3.0/lists/{list_id}/members.
-         ======================================== */
-      await new Promise(r => setTimeout(r, 1200)); // Simulación: NO envía datos
-      st.classList.add('ok'); st.textContent = '¡Listo! Revisa tu correo para confirmar la suscripción.'; form.reset(); $$('.valid', form).forEach(x => x.classList.remove('valid'));
-    } catch (err) {
-      st.classList.add('ko'); st.textContent = 'No he podido completar la suscripción. Inténtalo de nuevo o escríbeme a info@tuamigoinversor.com.';
-    } finally {
-      btn.classList.remove('loading'); btn.disabled = false; $('#fBtnTxt').textContent = 'Quiero empezar gratis';
-    }
-  });
-};
+/* ---------- 11. FORMULARIO DE SUSCRIPCIÓN: ahora es el formulario embebido de Brevo (iframe en index.html) ---------- */
 
 /* ---------- 12. COOKIES (RGPD) ---------- */
 const ck = $('#cookie');

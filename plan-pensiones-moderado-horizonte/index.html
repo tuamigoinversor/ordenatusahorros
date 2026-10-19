@@ -198,13 +198,22 @@ table.cmp-wide tr.tot td,table.cmp-wide tr.tot th{font-weight:800;border-top:2px
   <nav class="container nav" aria-label="Navegación principal">
     <a href="../index.html" class="logo" aria-label="Tu Amigo Inversor, inicio"><img class="logo-mark" src="../assets/img/logo-tai.jpg" width="40" height="40" alt="">Tu Amigo Inversor</a>
     <ul class="nav-links">
-      <li><a href="../index.html#estrategias" aria-current="page">Estrategias</a></li>
-      <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
-      <li><a href="../index.html#test" data-quiz>Test de perfil</a></li>
-      <li><a href="../comparador/index.html">Comparador</a></li>
-      <li><a href="../simulador/index.html">Simulador</a></li>
-      <li><a href="../metodologia/index.html">Metodología</a></li>
+      <li><a href="../index.html#estrategias">Estrategias</a></li>
+      <li class="has-sub"><button type="button" class="sub-toggle" aria-expanded="false" aria-haspopup="true">Empieza aquí <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></button>
+        <ul class="sub">
+          <li><a href="../empieza-aqui/index.html">Paso 1 · Empieza aquí</a></li>
+          <li><a href="../ejemplo-practico/index.html">Paso 2 · Ejemplo práctico</a></li>
+          <li><a href="../combinar-estrategias/index.html">Paso 3 · Combinar estrategias</a></li>
+        </ul></li>
+      <li class="has-sub"><button type="button" class="sub-toggle" aria-expanded="false" aria-haspopup="true">Recursos <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></button>
+        <ul class="sub">
+          <li><a href="../index.html#test" data-quiz>Test de perfil</a></li>
+          <li><a href="../comparador/index.html">Comparador</a></li>
+          <li><a href="../metodologia/index.html">Metodología</a></li>
+          <li><a href="../glosario/index.html">Glosario</a></li>
+        </ul></li>
       <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
     </ul>
     <div class="nav-actions">
       <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar a modo claro">
@@ -216,13 +225,16 @@ table.cmp-wide tr.tot td,table.cmp-wide tr.tot th{font-weight:800;border-top:2px
   </nav>
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="../index.html#estrategias" aria-current="page">Estrategias</a></li>
-      <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
+      <li><a href="../index.html#estrategias">Estrategias</a></li>
+      <li><a href="../empieza-aqui/index.html">Paso 1 · Empieza aquí</a></li>
+      <li><a href="../ejemplo-practico/index.html">Paso 2 · Ejemplo práctico</a></li>
+      <li><a href="../combinar-estrategias/index.html">Paso 3 · Combinar estrategias</a></li>
       <li><a href="../index.html#test" data-quiz>Test de perfil</a></li>
       <li><a href="../comparador/index.html">Comparador</a></li>
-      <li><a href="../simulador/index.html">Simulador</a></li>
       <li><a href="../metodologia/index.html">Metodología</a></li>
+      <li><a href="../glosario/index.html">Glosario</a></li>
       <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../sobre-mi/index.html">Sobre mí</a></li>
       <li><a href="../index.html#suscripcion" class="btn btn-primary" style="margin-top:.5rem">Empieza gratis</a></li>
     </ul>
   </div>
@@ -233,7 +245,7 @@ table.cmp-wide tr.tot td,table.cmp-wide tr.tot th{font-weight:800;border-top:2px
   <div class="container hero-grid">
     <div class="reveal">
       <nav class="crumbs" aria-label="Migas de pan"><a href="../index.html">Inicio</a><span aria-hidden="true">/</span><a href="../index.html#estrategias">Estrategias</a><span aria-hidden="true">/</span><span aria-current="page">HORIZONTE</span></nav>
-      <p class="badge"><span class="live" aria-hidden="true"></span>Plan de pensiones · Perfil moderado · Revisión mensual</p>
+      <p class="badge"><span class="live" aria-hidden="true"></span>Asignación táctica · Plan de pensiones · Perfil moderado · Revisión mensual</p>
       <h1 id="hero-title">HORIZONTE</h1>
       <p class="kicker">Plan de pensiones con un riesgo moderado</p>
       <p class="lead">Una estrategia pensada para planes de pensiones: toda la cartera alterna entre un plan de renta variable americana y un plan de renta fija según la tendencia principal del mercado, con reglas simples y muy pocos movimientos.</p>
@@ -255,8 +267,8 @@ table.cmp-wide tr.tot td,table.cmp-wide tr.tot th{font-weight:800;border-top:2px
 <aside class="data-notice" aria-label="Frecuencia de actualización de los datos">
   <div class="container"><div class="data-notice-in">
     <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
-    <p><strong>Los datos de esta web se actualizan con el cierre de cada trimestre.</strong> Si quieres recibir las posiciones de cada mes puntualmente el día 1, suscríbete y las tendrás en tu correo.</p>
-    <a class="btn btn-primary btn-sm" href="../index.html#suscripcion">Suscríbete gratis</a>
+    <p><strong>Las rentabilidades de esta web llegan hasta el cierre del último trimestre (30 sep 2026).</strong> El informe mensual, con las posiciones actualizadas de cada estrategia, lo recibes el día 1: suscríbete para no perdértelo.</p>
+    <a class="btn btn-primary btn-sm" href="../index.html#suscripcion">Empieza gratis</a>
   </div></div>
 </aside>
 
@@ -318,6 +330,15 @@ table.cmp-wide tr.tot td,table.cmp-wide tr.tot th{font-weight:800;border-top:2px
     <div class="fit-col yes"><h3><svg class="icon"><use href="#i-check"/></svg>Donde suele funcionar mejor</h3><ul><li>Tendencias alcistas largas: en 2021 (+37,1%) y 2024 (+32,2%) rindió lo mismo que mantener la renta variable.</li><li>Caídas largas y claras: en 2025 pasó a renta fija de marzo a mayo y terminó con un +17,4%, frente a un +6,2% de mantener la renta variable.</li><li>Reglas simples y objetivas, que reducen el estrés emocional.</li></ul></div>
     <div class="fit-col no"><h3><svg class="icon"><use href="#i-x"/></svg>Donde suele sufrir</h3><ul><li>Mercados laterales o con giros rápidos: en 2022 hubo 6 cambios de señal y la estrategia perdió un 19,3%, frente a un 12,0% de mantener la renta variable y un 12,2% de mantener la renta fija.</li><li>Señales tardías: en 12 de los 23 meses en renta fija, la renta variable subió más de un 2%.</li><li>La renta fija no siempre protege: en 2022 cayó casi lo mismo que la renta variable.</li><li>Menos rentabilidad: +12,2% frente a +14,2% de mantener siempre renta variable.</li></ul></div></div>
   <div class="not-do reveal"><h3>Qué hay que tener claro</h3><ul><li>La estrategia no predice: reacciona a una señal mensual que llega con retraso.</li><li>Su caída máxima (-19,3%) ha sido ligeramente mayor que la de mantener solo renta variable (-17,9%) en este periodo.</li><li>Los resultados de esta página son de 2018 en adelante; un periodo más largo podría dar conclusiones distintas.</li></ul></div>
+    <div class="risk-ex reveal"><h3>Qué significa la caída máxima en euros</h3>
+      <p>Ejemplo ilustrativo con 5.000 €: la caída máxima histórica de HORIZONTE ha sido del <strong>−19,3%</strong>.</p>
+      <div class="risk-ex-grid">
+        <div><small>Inversión inicial</small><b class="mono">5.000 €</b></div>
+        <div><small>Tras una caída del −19,3%</small><b class="mono neg">4.035 €</b></div>
+        <div><small>Subida necesaria para volver a 5.000 €</small><b class="mono">+23,9%</b></div>
+      </div>
+      <p class="risk-ex-note">Es una ilustración, no una previsión: la caída máxima histórica no es un límite y las caídas futuras pueden ser mayores. Sin comisiones ni impuestos. Consulta en el historial qué años son reales y cuáles simulados.</p>
+    </div>
 </div></section>
 
 <section class="section alt" id="replicar" aria-labelledby="rep-title"><div class="container narrow">
@@ -337,12 +358,12 @@ table.cmp-wide tr.tot td,table.cmp-wide tr.tot th{font-weight:800;border-top:2px
 <section class="section" id="faq" aria-labelledby="faq-title"><div class="container narrow">
   <div class="sec-head reveal"><span class="eyebrow">Preguntas frecuentes</span><h2 id="faq-title">Sobre HORIZONTE</h2></div>
   <div class="faq" id="faqList"></div>
-  <p class="fineprint centered reveal" style="margin-top:1.5rem">Cómo se calculan las cifras: rentabilidades en euros, precios de los planes de pensiones, sin comisiones ni impuestos. Más detalle en la <a href="../index.html#metodologia" style="text-decoration:underline">metodología</a>.</p></div></section>
+  <p class="fineprint centered reveal" style="margin-top:1.5rem">Cómo se calculan las cifras: rentabilidades en euros, precios de los planes de pensiones, sin comisiones ni impuestos. Más detalle en la <a href="../metodologia/index.html" style="text-decoration:underline">metodología</a>.</p></div></section>
 <figure class="name-note container narrow reveal" style="margin:0 auto 2.5rem"><blockquote>«Cada estrategia tiene un nombre con significado. HORIZONTE es la estrategia que dedico a gestionar el plan de pensiones con el horizonte fijado en la jubilación.»</blockquote></figure>
 <section class="section alt tight" aria-labelledby="otras-title"><div class="container"><h2 id="otras-title" class="small-h reveal">Otras estrategias</h2><ul class="others reveal"><li><a href="../cartera-permanente-conservadora-roca/index.html"><b>ROCA</b><span>Cartera permanente conservadora</span></a></li><li><a href="../cartera-inversion-crecimiento-impulso/index.html"><b>IMPULSO</b><span>Cartera permanente de crecimiento</span></a></li><li><a href="../inversion-tactica-geda/index.html"><b>GEDA</b><span>Inversión táctica con momentum</span></a></li><li><a href="../inversion-tematica-gen-z/index.html"><b>GEN-Z</b><span>Inversión temática</span></a></li><li><a href="../inversion-criptomonedas-crypto/index.html"><b>CRYPTO</b><span>Criptomonedas</span></a></li></ul></div></section>
-<section class="section" id="suscripcion" aria-labelledby="sub-title"><div class="container"><div class="cta reveal cta-simple"><span class="offer">GRATIS HASTA FINAL DE AÑO</span><h2 id="sub-title">Compruébalo en directo, sin compromiso</h2>
-  <p style="font-size:var(--fs-lg)">Si no sabes si esta estrategia es para ti, la mejor forma de comprobarlo es verla funcionar. Suscríbete, mira el informe del mes, replica las posiciones si te convence, o no hagas nada.</p>
-  <div class="cta-row" style="justify-content:center"><a href="../index.html#suscripcion" class="btn btn-primary magnetic">Quiero empezar gratis <svg class="icon"><use href="#i-arrow"/></svg></a><a href="mailto:info@tuamigoinversor.com" class="btn btn-ghost">Escríbeme: info@tuamigoinversor.com</a></div></div></div></section>
+<section class="section" id="suscripcion" aria-labelledby="sub-title"><div class="container"><div class="cta reveal cta-simple"><span class="offer">EMPIEZA GRATIS</span><h2 id="sub-title">Compruébalo en directo, sin compromiso</h2>
+  <p style="font-size:var(--fs-lg)">Empieza gratis, consulta el informe del mes y descubre cómo funciona esta estrategia. Si decides seguirla, aplica las posiciones desde tu propio bróker; si no, no tienes que hacer nada.</p>
+  <div class="cta-row" style="justify-content:center"><a href="../index.html#suscripcion" class="btn btn-primary magnetic">Empieza gratis <svg class="icon"><use href="#i-arrow"/></svg></a><a href="mailto:info@tuamigoinversor.com" class="btn btn-ghost">Escríbeme: info@tuamigoinversor.com</a></div></div></div></section>
 </main>
 
 
@@ -354,9 +375,9 @@ table.cmp-wide tr.tot td,table.cmp-wide tr.tot th{font-weight:800;border-top:2px
         <p>Comparto las estrategias que utilizo para gestionar mi propio dinero, basadas en reglas claras y sin predicciones.</p>
         <p style="margin-top:.8rem"><a href="mailto:info@tuamigoinversor.com">info@tuamigoinversor.com</a></p>
       </div>
-      <nav aria-label="Carteras permanentes"><h2>Cartera permanente</h2><ul><li><a href="../cartera-permanente-conservadora-roca/index.html">ROCA</a></li><li><a href="../cartera-inversion-crecimiento-impulso/index.html">IMPULSO</a></li><li><a href="../plan-pensiones-moderado-horizonte/index.html">HORIZONTE</a></li></ul></nav>
-      <nav aria-label="Asignación táctica"><h2>Asignación táctica</h2><ul><li><a href="../inversion-tactica-geda/index.html">GEDA</a></li><li><a href="../inversion-tematica-gen-z/index.html">GEN-Z</a></li><li><a href="../inversion-criptomonedas-crypto/index.html">CRYPTO</a></li></ul></nav>
-      <nav aria-label="Herramientas y proyecto"><h2>Herramientas</h2><ul><li><a href="../index.html#test" data-quiz>Test de perfil</a></li><li><a href="../comparador/index.html">Comparador</a></li><li><a href="../simulador/index.html">Simulador</a></li><li><a href="../metodologia/index.html">Metodología</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../sobre-mi/index.html">Sobre mí</a></li></ul></nav>
+      <nav aria-label="Carteras permanentes"><h2>Cartera permanente</h2><ul><li><a href="../cartera-permanente-conservadora-roca/index.html">ROCA</a></li><li><a href="../cartera-inversion-crecimiento-impulso/index.html">IMPULSO</a></li></ul></nav>
+      <nav aria-label="Asignación táctica"><h2>Asignación táctica</h2><ul><li><a href="../inversion-tactica-geda/index.html">GEDA</a></li><li><a href="../inversion-tematica-gen-z/index.html">GEN-Z</a></li><li><a href="../inversion-criptomonedas-crypto/index.html">CRYPTO</a></li><li><a href="../plan-pensiones-moderado-horizonte/index.html">HORIZONTE <small class="pp">plan de pensiones</small></a></li></ul></nav>
+      <nav aria-label="Herramientas y proyecto"><h2>Herramientas</h2><ul><li><a href="../empieza-aqui/index.html">Paso 1 · Empieza aquí</a></li><li><a href="../ejemplo-practico/index.html">Paso 2 · Ejemplo práctico</a></li><li><a href="../combinar-estrategias/index.html">Paso 3 · Combinar estrategias</a></li><li><a href="../index.html#test" data-quiz>Test de perfil</a></li><li><a href="../comparador/index.html">Comparador</a></li><li><a href="../metodologia/index.html">Metodología</a></li><li><a href="../glosario/index.html">Glosario</a></li><li><a href="../blog/index.html">Blog</a></li><li><a href="../sobre-mi/index.html">Sobre mí</a></li></ul></nav>
       <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="../aviso-legal/index.html">Aviso legal</a></li><li><a href="../privacidad/index.html">Política de privacidad</a></li><li><a href="#" id="cookieSettings">Configurar cookies</a></li></ul></nav>
     </div>
     <div class="legal">
@@ -390,7 +411,7 @@ table.cmp-wide tr.tot td,table.cmp-wide tr.tot th{font-weight:800;border-top:2px
 </div>
 
 <button class="icon-btn to-top" id="toTop" type="button" aria-label="Volver arriba"><svg class="icon"><use href="#i-up"/></svg></button>
-<div class="sticky-cta" id="stickyCta"><small><strong>Gratis hasta final de año</strong><br>Acceso a las 6 estrategias</small><a href="../index.html#suscripcion" class="btn btn-primary btn-sm">Empezar</a></div>
+<div class="sticky-cta" id="stickyCta"><small><strong>Empieza gratis</strong><br>Acceso a las 6 estrategias</small><a href="../index.html#suscripcion" class="btn btn-primary btn-sm">Empezar</a></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {

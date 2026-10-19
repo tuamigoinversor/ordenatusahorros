@@ -26,7 +26,7 @@ try { const q = new URLSearchParams(location.search).get('s'); if (q) hl = q.spl
 const SECTIONS = [
   ['Perfil', [
     ['Perfil', s => s.profile],
-    ['Tipo', s => TIPO[s.type]],
+    ['Tipo', s => TIPO[s.type] + (s.note ? ' · ' + s.note.toLowerCase() : '')],
     ['Nivel de riesgo', s => s.risk + ' / 5'],
     ['Revisión', s => s.review],
     ['Datos desde', s => R[s.id].desde]
@@ -51,7 +51,7 @@ const SECTIONS = [
 ];
 
 const cols = STRATEGIES;
-const head = `<thead><tr><th scope="col">Métrica</th>${cols.map(s => `<th scope="col" class="${hl.includes(s.id) ? 'hl' : ''}" style="--c:${s.color}"><span class="sw" style="background:${s.color}"></span>${s.id}</th>`).join('')}</tr></thead>`;
+const head = `<thead><tr><th scope="col">Métrica</th>${cols.map(s => `<th scope="col" class="${hl.includes(s.id) ? 'hl' : ''}" style="--c:${s.color}"><span class="sw" style="background:${s.color}"></span>${s.id}${s.note ? `<br><span class="pp">${s.note.toLowerCase()}</span>` : ''}</th>`).join('')}</tr></thead>`;
 let body = '';
 SECTIONS.forEach(([title, rows]) => {
   body += `<tbody><tr class="grp"><th scope="colgroup" colspan="${cols.length + 1}">${title}</th></tr>`;

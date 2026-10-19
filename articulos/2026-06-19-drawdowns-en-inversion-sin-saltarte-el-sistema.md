@@ -161,7 +161,7 @@ La pregunta correcta es:
 
 **«¿Ha cambiado la señal del sistema?»**
 
-Si la respuesta es no, no hay nada que decidir.
+Si la respuesta es no, el plan no te pide ninguna acción. Aun así, conviene revisar con criterio si ha aparecido un error operativo, un cambio en los datos o un cambio en tu situación personal que justifique replantearte algo.
 
 Si la respuesta es sí, el informe mensual te lo indicará.
 
@@ -197,9 +197,9 @@ Si decidiste seguir una estrategia sistemática, confía en el proceso que elegi
 
 ## Conclusión
 
-La mayoría de los inversores no abandonan una estrategia porque deje de funcionar.
+Muchos inversores no abandonan una estrategia porque deje de funcionar.
 
-La abandonan porque funciona exactamente como estaba previsto y descubren que no estaban preparados para soportarlo.
+La abandonan porque se comporta como estaba previsto y descubren que no estaban preparados para soportarlo.
 
 Antes de invertir, estudia la rentabilidad esperada.
 

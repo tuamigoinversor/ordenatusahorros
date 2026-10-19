@@ -21,7 +21,7 @@ Ese enfoque tiene nombre: **momentum investing**.
 En este artículo quiero explicarte:
 
 - Qué son las estrategias momentum
-- Por qué funcionan (también a nivel académico)
+- Por qué podrían funcionar (también a nivel académico)
 - Qué inversores influyeron más en mi forma de aplicarlas
 
 ------------------------------------------------------------------------
@@ -32,7 +32,7 @@ En este artículo quiero explicarte:
 
 ## Qué es una estrategia momentum
 
-El momentum es uno de los factores más estudiados y robustos de la historia de los mercados financieros. La idea es muy simple:
+El momentum es uno de los factores más estudiados en la literatura académica sobre los mercados financieros. La idea es muy simple:
 
 > Los activos que lo han hecho bien en el pasado reciente tienden a seguir haciéndolo bien en el futuro cercano.
 
@@ -53,14 +53,14 @@ Esto se puede aplicar a:
 
 ## La base académica del momentum
 
-Aunque hoy suene intuitivo, el momentum está ampliamente respaldado por estudios académicos.
+Aunque hoy suene intuitivo, cuenta con un amplio respaldo académico. Eso no significa que funcione siempre: tiene periodos malos y sus resultados dependen del mercado y del periodo analizado.
 
 Uno de los más citados es:
 
 **“Returns to Buying Winners and Selling Losers”**  
 Jegadeesh y Titman (1993)
 
-Este paper demostró que comprar los activos más fuertes y evitar los más débiles generaba rentabilidades superiores de forma consistente.
+Este paper encontró que, en el periodo analizado, comprar los activos más fuertes y evitar los más débiles generó rentabilidades superiores.
 
 Desde entonces, el momentum se considera uno de los factores clásicos junto a:
 
@@ -73,12 +73,12 @@ Incluso fondos cuantitativos y hedge funds institucionales lo utilizan.
 
 ------------------------------------------------------------------------
 
-## Por qué funciona el momentum
+## Por qué podría funcionar el momentum
 
 La gran pregunta siempre es:  
 Si todo el mundo lo conoce… ¿por qué sigue funcionando?
 
-Principalmente por dos motivos:
+Las explicaciones más habituales son dos:
 
 ### 1. Psicología humana
 
@@ -88,13 +88,13 @@ El ser humano está programado para:
 - Vender caro
 - Ir contra la masa
 
-Pero el mercado premia justo lo contrario:
+Pero, según esta explicación, el mercado ha tendido a recompensar justo lo contrario:
 
 - Comprar fortaleza
 - Dejar correr ganancias
 - Cortar pérdidas rápido
 
-El momentum explota ese sesgo conductual.
+Según esta teoría, el momentum aprovecha ese sesgo conductual.
 
 ------------------------------------------------------------------------
 
@@ -109,7 +109,7 @@ Cuando un activo empieza a subir:
 - Aparece cobertura mediática
 - Se activa el FOMO
 
-Todo eso genera persistencia.
+Todo eso puede generar persistencia.
 
 ------------------------------------------------------------------------
 
@@ -197,7 +197,7 @@ Combina:
 Su libro *Dual Momentum Investing* es especialmente potente porque:
 
 - Simplifica mucho el modelo
-- Reduce drawdowns
+- Busca reducir los drawdowns
 - Es muy replicable
 
 De aquí salen muchas estrategias tipo:

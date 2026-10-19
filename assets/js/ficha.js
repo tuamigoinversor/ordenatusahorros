@@ -88,5 +88,4 @@ $('#themeToggle').addEventListener('click', () => {
 
 /* ---- FAQ ---- */
 if (F.faq && $('#faqList')) T.renderFaq($('#faqList'), F.faq);
-T.initForm();
 })();

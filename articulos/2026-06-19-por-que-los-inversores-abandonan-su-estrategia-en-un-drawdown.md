@@ -30,7 +30,7 @@ Tres mecanismos psicológicos trabajan en tu contra exactamente en el peor momen
 - **Aversión a la pérdida**: psicológicamente, perder duele más de lo que gustaría ganar la misma cantidad. Por eso una caída del -15% se siente mucho más intensa que una subida previa del +15%, aunque sean simétricas sobre el papel.
 - **Pérdida de confianza en el sistema**: cuanto más dura la caída, más fácil es empezar a dudar de las reglas que antes te parecían sólidas. Y la duda, en un sistema cuantitativo, es el primer paso hacia el abandono.
 
-## El ciclo que se repite siempre
+## Un ciclo que se repite con frecuencia
 
 Esto pasa con una regularidad casi matemática. Si llevas tiempo invirtiendo, probablemente ya lo has vivido:
 

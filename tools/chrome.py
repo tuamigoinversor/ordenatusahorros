@@ -46,22 +46,29 @@ def head(title, desc, base, scripts, og_title=None, ld=''):
 ''' % dict(base=base, title=title, desc=desc, og=og_title or title, scripts=scripts_html, ld=ld)
 
 
-def nav_links(base, home, current):
+def nav_links(base, home, current, mobile=False):
+    """Menú unificado: Estrategias · Empieza aquí ▾ (3 pasos) · Recursos ▾ · Blog · Sobre mí (en móvil, lista plana)."""
     def a(anchor):
         return ('#%s' % anchor) if home else ('%sindex.html#%s' % (base, anchor))
-    items = [
-        ('estrategias', a('estrategias'), 'Estrategias', ''),
-        ('sobre-mi', base + 'sobre-mi/index.html', 'Sobre mí', ''),
-        ('test', a('test'), 'Test de perfil', ' data-quiz'),
-        ('comparador', base + 'comparador/index.html', 'Comparador', ''),
-        ('simulador', base + 'simulador/index.html', 'Simulador', ''),
-        ('metodologia', base + 'metodologia/index.html', 'Metodología', ''),
-        ('blog', base + 'blog/index.html', 'Blog', ''),
-    ]
-    out = []
-    for key, href, label, extra in items:
+    P = lambda p: base + p + '/index.html'
+    est = ('estrategias', a('estrategias'), 'Estrategias', '')
+    pasos = [('paso1', P('empieza-aqui'), 'Paso 1 · Empieza aquí', ''), ('paso2', P('ejemplo-practico'), 'Paso 2 · Ejemplo práctico', ''),
+             ('paso3', P('combinar-estrategias'), 'Paso 3 · Combinar estrategias', '')]
+    recursos = [('test', a('test'), 'Test de perfil', ' data-quiz'), ('comparador', P('comparador'), 'Comparador', ''),
+                ('metodologia', P('metodologia'), 'Metodología', ''), ('glosario', P('glosario'), 'Glosario', '')]
+    tail = [('blog', P('blog'), 'Blog', ''), ('sobre-mi', P('sobre-mi'), 'Sobre mí', '')]
+    def li(it):
+        key, href, label, extra = it
         cur = ' aria-current="page"' if key == current else ''
-        out.append('      <li><a href="%s"%s%s>%s</a></li>' % (href, extra, cur, label))
+        return '      <li><a href="%s"%s%s>%s</a></li>' % (href, extra, cur, label)
+    def drop(label, items):
+        has_cur = any(i[0] == current for i in items)
+        subs = '\n'.join('          ' + li(i).strip() for i in items)
+        return '      <li class="has-sub%s"><button type="button" class="sub-toggle" aria-expanded="false" aria-haspopup="true">%s <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></button>\n        <ul class="sub">\n%s\n        </ul></li>' % (' cur' if has_cur else '', label, subs)
+    if mobile:
+        out = [li(est)] + [li(i) for i in pasos] + [li(i) for i in recursos] + [li(i) for i in tail]
+    else:
+        out = [li(est), drop('Empieza aquí', pasos), drop('Recursos', recursos)] + [li(i) for i in tail]
     return '\n'.join(out)
 
 
@@ -69,6 +76,7 @@ def body_open(base, home, current):
     sub = '#suscripcion' if home else base + 'index.html#suscripcion'
     logo = '#main' if home else base + 'index.html'
     links = nav_links(base, home, current)
+    links_m = nav_links(base, home, current, mobile=True)
     return '''<body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -93,12 +101,12 @@ def body_open(base, home, current):
   </nav>
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-%(links)s
+%(links_m)s
       <li><a href="%(sub)s" class="btn btn-primary" style="margin-top:.5rem">Empieza gratis</a></li>
     </ul>
   </div>
 </header>
-''' % dict(sprite=SPRITE, logo=logo, links=links, sub=sub, base=base)
+''' % dict(sprite=SPRITE, logo=logo, links=links, links_m=links_m, sub=sub, base=base)
 
 
 def footer_and_floating(base, home):
@@ -114,9 +122,9 @@ def footer_and_floating(base, home):
         <p>Comparto las estrategias que utilizo para gestionar mi propio dinero, basadas en reglas claras y sin predicciones.</p>
         <p style="margin-top:.8rem"><a href="mailto:info@tuamigoinversor.com">info@tuamigoinversor.com</a></p>
       </div>
-      <nav aria-label="Carteras permanentes"><h2>Cartera permanente</h2><ul><li><a href="%(base)scartera-permanente-conservadora-roca/index.html">ROCA</a></li><li><a href="%(base)scartera-inversion-crecimiento-impulso/index.html">IMPULSO</a></li><li><a href="%(base)splan-pensiones-moderado-horizonte/index.html">HORIZONTE</a></li></ul></nav>
-      <nav aria-label="Asignación táctica"><h2>Asignación táctica</h2><ul><li><a href="%(base)sinversion-tactica-geda/index.html">GEDA</a></li><li><a href="%(base)sinversion-tematica-gen-z/index.html">GEN-Z</a></li><li><a href="%(base)sinversion-criptomonedas-crypto/index.html">CRYPTO</a></li></ul></nav>
-      <nav aria-label="Herramientas y proyecto"><h2>Herramientas</h2><ul><li><a href="%(test)s" data-quiz>Test de perfil</a></li><li><a href="%(base)scomparador/index.html">Comparador</a></li><li><a href="%(base)ssimulador/index.html">Simulador</a></li><li><a href="%(base)smetodologia/index.html">Metodología</a></li><li><a href="%(base)sblog/index.html">Blog</a></li><li><a href="%(base)ssobre-mi/index.html">Sobre mí</a></li></ul></nav>
+      <nav aria-label="Carteras permanentes"><h2>Cartera permanente</h2><ul><li><a href="%(base)scartera-permanente-conservadora-roca/index.html">ROCA</a></li><li><a href="%(base)scartera-inversion-crecimiento-impulso/index.html">IMPULSO</a></li></ul></nav>
+      <nav aria-label="Asignación táctica"><h2>Asignación táctica</h2><ul><li><a href="%(base)sinversion-tactica-geda/index.html">GEDA</a></li><li><a href="%(base)sinversion-tematica-gen-z/index.html">GEN-Z</a></li><li><a href="%(base)sinversion-criptomonedas-crypto/index.html">CRYPTO</a></li><li><a href="%(base)splan-pensiones-moderado-horizonte/index.html">HORIZONTE <small class="pp">plan de pensiones</small></a></li></ul></nav>
+      <nav aria-label="Herramientas y proyecto"><h2>Herramientas</h2><ul><li><a href="%(base)sempieza-aqui/index.html">Paso 1 · Empieza aquí</a></li><li><a href="%(base)sejemplo-practico/index.html">Paso 2 · Ejemplo práctico</a></li><li><a href="%(base)scombinar-estrategias/index.html">Paso 3 · Combinar estrategias</a></li><li><a href="%(test)s" data-quiz>Test de perfil</a></li><li><a href="%(base)scomparador/index.html">Comparador</a></li><li><a href="%(base)smetodologia/index.html">Metodología</a></li><li><a href="%(base)sglosario/index.html">Glosario</a></li><li><a href="%(base)sblog/index.html">Blog</a></li><li><a href="%(base)ssobre-mi/index.html">Sobre mí</a></li></ul></nav>
       <nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="%(base)saviso-legal/index.html">Aviso legal</a></li><li><a href="%(base)sprivacidad/index.html">Política de privacidad</a></li><li><a href="#" id="cookieSettings">Configurar cookies</a></li></ul></nav>
     </div>
     <div class="legal">
@@ -150,7 +158,7 @@ def footer_and_floating(base, home):
 </div>
 
 <button class="icon-btn to-top" id="toTop" type="button" aria-label="Volver arriba"><svg class="icon"><use href="#i-up"/></svg></button>
-<div class="sticky-cta" id="stickyCta"><small><strong>Gratis hasta final de año</strong><br>Acceso a las 6 estrategias</small><a href="%(sub)s" class="btn btn-primary btn-sm">Empezar</a></div>
+<div class="sticky-cta" id="stickyCta"><small><strong>Empieza gratis</strong><br>Acceso a las 6 estrategias</small><a href="%(sub)s" class="btn btn-primary btn-sm">Empezar</a></div>
 </body>
 </html>
 ''' % dict(base=base, logo=('#main' if home else base + 'index.html'), test=test, sub=sub, sobre=SOBRE_MI)

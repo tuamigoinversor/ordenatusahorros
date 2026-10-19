@@ -1,5 +1,41 @@
-TU AMIGO INVERSOR · WEB V16
+TU AMIGO INVERSOR · WEB V24
 ===========================
+
+CAMBIOS V24 (sobre la V23)
+  - Home: nuevo orden = Hero · Quién soy · Estrategias · «Si eres nuevo aquí + Cómo funciona» (un solo bloque: tres pasos + funcionamiento mes a mes) · Herramientas · Blog · FAQ · Suscripción.
+  - Las tres páginas de inicio son ahora Paso 1 (Empieza aquí), Paso 2 (Ejemplo práctico) y Paso 3 (Combinar estrategias): indicador de pasos bajo el título y bloque «Siguiente» al final.
+    En el menú superior forman el desplegable «Empieza aquí»; «Recursos» agrupa Test, Comparador, Metodología y Glosario. Se genera desde tools/chrome.py.
+  - Política: ya no hay fecha. Todos los botones/enlaces dicen «Empieza gratis». Textos nuevos (home, FAQ, datos estructurados): empezar es gratis; en el futuro será de pago con cuota mínima prevista de 5 €/mes
+    (30 € por semestre o 50 € al año con descuento), aviso con 3 meses de antelación, sin pagos automáticos y con alta explícita. Los «6 meses gratis» van en el formulario de Brevo (no se mencionan en la web).
+  - Formulario de Brevo: iframe de 610 px de alto (el doble).
+  - Combinar estrategias: se quitan las viñetas «Los periodos son distintos» y «Hay años simulados»; el ejemplo ROCA + CRYPTO se sustituye por GEDA 60 % + GEN-Z 30 % + CRYPTO 10 %.
+  - Espaciado: guía, artículos, textos legales y fichas comparten ahora interlineado 1,75 y las mismas separaciones entre párrafos, listas y títulos (bloque «V24» al final de site.css).
+
+CAMBIOS V23 (sobre la V22)
+  - Formulario de suscripción: sustituido el formulario simulado por el iframe de Brevo (sibforms). Se elimina el código de simulación de tai.js (initForm).
+  - Home: orden de las cajas «Por dónde empezar» = Empieza aquí -> Ejemplo práctico -> Combina estrategias; texto del hero que explica qué recibe el suscriptor y que no hay que operar cada mes;
+    tarjeta duplicada «Combinar y simular» eliminada de Herramientas; nota bajo las tarjetas que explica que HORIZONTE es un plan de pensiones (traspasos entre planes).
+  - Informe de ejemplo: nota de actualización fechada sobre el Real Decreto-ley 26/2026 (no convalidado) y el 29/2026, con enlace al artículo del blog.
+  - Simulador: aviso visible junto a los controles. Ficha de GEDA: el botón «Ver posiciones del mes» (ancla inexistente) apunta ahora al informe de ejemplo.
+  - Nuevo tools/check_site.py: comprueba enlaces/anclas, título, meta descripción, noindex y que las rentabilidades medias de tai.js coincidan con las fichas. Ejecútalo antes de publicar.
+  - AL LANZAR: quitar noindex de las 30 páginas y el Disallow de robots.txt, crear sitemap.xml, aviso legal con NIF y domicilio.
+
+CAMBIOS V22 (sobre la V21)
+  - Menú unificado en las 30 páginas (se genera desde tools/chrome.py): Estrategias · Empieza aquí · Combinar estrategias · Recursos (desplegable: Ejemplo práctico,
+    Test de perfil, Comparador, Metodología, Glosario) · Blog · Sobre mí. En móvil, lista plana. El pie también es el mismo en todas las páginas.
+  - Home: nuevo bloque «Por dónde empezar» antes de «Quién soy» con tres cajas destacadas (Empieza aquí, Combina estrategias, Ejemplo práctico).
+    Bajo la tabla de las 6 estrategias del hero hay un enlace al Comparador. La herramienta «Simulador» pasa a «Combinar y simular».
+  - HORIZONTE: es un PLAN DE PENSIONES y se cataloga como ASIGNACIÓN TÁCTICA (antes «cartera permanente»), con revisión mensual (como indica su ficha).
+    Aparece siempre con la etiqueta «plan de pensiones» (home, tarjetas, comparador, test, informe de ejemplo, glosario, pie...). Datos en tools/ y assets/js/tai.js: campo note:'Plan de pensiones'.
+    Los textos de frecuencia dicen ahora: tácticas (GEDA, GEN-Z, CRYPTO y HORIZONTE) = mensual; carteras permanentes (ROCA e IMPULSO) = semestral.
+  - Combinar estrategias: ejemplos nuevos IMPULSO + GEDA (50/50) e IMPULSO + GEDA + GEN-Z (30/40/30); se mantienen ROCA + CRYPTO y ROCA + IMPULSO (50/50).
+    La herramienta «Compón tu mezcla» tiene un deslizador de peso por estrategia (los pesos se normalizan a 100 %) y cada ejemplo tiene un botón «Probar esta mezcla en la herramienta».
+  - El simulador de interés compuesto está integrado en Combinar estrategias (#simulador) como gráfica adicional, con la mezcla y los pesos elegidos.
+    /simulador/ queda como redirección a esa sección (puedes borrar la carpeta cuando quieras); assets/js/simulador.js eliminado.
+  - Ejemplo práctico: enlaces a los posts del blog sobre elegir bróker (mejores-brokers-espana-2026, que-brokers-utilizo) y sobre combinar estrategias (combinar-estrategias-inversion).
+  - Las fichas apuntaban a ../index.html#metodologia (ya no existe en la home): ahora enlazan a /metodologia/.
+  - Pendiente conocido (anterior): el botón «Ver posiciones del mes» de la ficha de GEDA apunta a #posiciones, que no existe en esa página.
+
 
 CAMBIOS V16
   - Oferta: ya no hay "3 meses gratis". Todo es gratis hasta el 31 de diciembre de 2026; después 30 EUR/semestre o 50 EUR/año
@@ -63,3 +99,46 @@ PENDIENTE ANTES DE PUBLICAR DE VERDAD
   - Aviso legal y privacidad: añadir NIF y domicilio (busca "AÑADIR AQUÍ" en aviso-legal/ y privacidad/) y revisarlos con un abogado.
   - Conectar el formulario de suscripción (hoy simula el envío).
   - La imagen del tipo de cambio es pequeña (547x365): conviene una de 1200x800.
+
+
+=== CAMBIOS V17 (sobre la V16) ===
+- Home: nuevo hero (propuesta de valor y matiz sobre disponibilidad de activos/costes segun bróker), CTA "Accede gratis hasta el 31 de diciembre", nota bajo los botones y fecha visible junto a la tabla.
+- Estrategias: titulo "Seis estrategias de inversión, seis formas de aplicar un sistema" y descripcion sin promesas absolutas (se mantienen filtros, tarjetas y fichas).
+- Cómo funciona: H2 "Cómo seguir las estrategias mes a mes", bloque "Reglas claras. Revisión mensual. Tú decides." y paso 4 reescrito.
+- Herramientas: textos descriptivos (el simulador aclara que es hipotético).
+- Blog (home y pagina /blog/): encabezado "Aprende a entender y aplicar las estrategias de inversión".
+- Suscripcion: "Conoce las estrategias antes de decidir", precios y fecha reescritos; el CTA del test ya no menciona "final de año".
+- Aviso de actualizacion (10 paginas): "Las rentabilidades llegan hasta el cierre del último trimestre (30 sep 2026). El informe mensual ... lo recibes el día 1". La fecha "30 sep 2026" esta escrita a mano: actualizala cada trimestre en las 10 paginas (buscar "data-notice") y en el hero (rp-note).
+
+
+=== CAMBIOS V18 (revision "como cliente") ===
+- Frecuencia: FAQ "¿Tengo que operar todos los meses?" y paso 2 de "Cómo funciona" (tacticas = mensual; permanentes = semestral).
+- Real vs simulado: asterisco en "Rent. anual media" de GEDA, GEN-Z, IMPULSO y CRYPTO + nota bajo las tarjetas + FAQ "¿Las rentabilidades son reales?". Los años (GEDA 2016-2020, GEN-Z 2020-2023, IMPULSO 2016-2017, CRYPTO 2018-2022) salen de REAL_FROM/REALNOTE de cada ficha: si cambian, actualiza la nota (index.html, clase cards-note) y la FAQ (assets/js/home.js).
+- Riesgo junto a la tabla del hero (caida maxima -9,2% ROCA a -73% CRYPTO; valores de tai.js).
+- Hero: "Sin asesoramiento personalizado" junto al certificado MiFID II.
+- FAQ ampliada (7 preguntas) y FAQPage JSON-LD sincronizado.
+- Una sola etiqueta para suscribirse: "Suscríbete gratis" (menu, botones, formulario, fichas, blog). Fecha de oferta siempre "31 de diciembre".
+- Fichas: cierre sin "es para ti". Descripciones de ROCA, GEDA y GEN-Z sin promesas absolutas.
+- Informe de ejemplo: aclaracion de que es un informe ya publicado como ejemplo.
+- Suscripcion: "solo nombre y correo, sin datos de pago" (cierto con el formulario actual; revisar si se conecta un cobro).
+
+
+=== CAMBIOS V19 ===
+- El informe de /informe-ejemplo/ es un ejemplo fijo (octubre 2026) y no se actualizara: la pagina lo dice y explica que, para conocer las posiciones de cada mes, hay que suscribirse. Etiquetas "Informe de ejemplo" en el hero.
+- Precios: el servicio de pago aun no esta disponible; se avisara a los suscriptores con suficiente antelacion. Los 30 EUR/semestre y 50 EUR/año figuran como "precio previsto" (home, FAQ y datos estructurados). Pendiente: confirmar o quitar estos importes.
+
+
+=== CAMBIOS V20 (rondas 1 y 2) ===
+- Articulos: matizadas frases categoricas en momentum, drawdowns y abandono (ver cambios_articulos_ronda1.md). Articulo de la Cuenta Financia Europa reescrito con el estado normativo actual (RDL 29/2026 pendiente de convalidacion; sin comercializacion).
+- Nuevas paginas: /empieza-aqui/ (guia de entrada) y /glosario/, enlazadas desde el pie (chrome.py y todas las paginas). Enlace a la guia desde "Cómo funciona" en la home.
+- Fichas: bloque "Qué significa la caída máxima en euros" (ejemplo con 5.000 EUR) en las 6 fichas. Usa la caida maxima de tai.js (campo dd). Si cambia dd, hay que recalcular ese bloque a mano (4.020 = 5.000 x (1 - 0,196); subida necesaria = 1/(1 - caida) - 1).
+- La tabla de "Empieza aquí" repite revision, caida maxima e historial simulado de cada estrategia: actualizar tambien cuando cambien.
+- Pendiente de tu revision: el informe de ejemplo cita el RDL 26/2026 (derogado).
+
+
+=== CAMBIOS V21 ===
+- NUEVA /ejemplo-practico/: cinco personajes (Carlos, Marta, Daniel, Laura, Alex), uno por perfil del test, con los resultados verificados en el test real; caso completo de Marta con IMPULSO (10.000 EUR invertidos + 3.000 EUR para reforzar la reserva) y bloque de Daniel con GEDA (14.000 EUR = 7 posiciones de 2.000). Mantiene los productos de la ficha de IMPULSO y cita su aviso de "alternativas equivalentes". Incluye "No tengo ningun acuerdo comercial ni de afiliacion con ningun broker" (confirmado por el autor).
+- NUEVA /combinar-estrategias/: explica que rentabilidad, volatilidad y caida maxima de una mezcla no son la suma ni la media de las partes y que interviene la correlacion. Tres ejemplos con datos reales, matriz de correlaciones y herramienta "Compón tu mezcla" (pesos iguales, rebalanceo mensual, periodo comun). Los numeros se verificaron contra un calculo independiente.
+- Datos de la herramienta: assets/js/series.js, GENERADO por tools/build_series.py a partir de las rentabilidades mensuales de las 6 fichas (const GEDA={...}). Cada vez que actualices los datos de las fichas, ejecuta: python tools/build_series.py. Los textos de los ejemplos se recalculan solos.
+- Glosario: nuevo termino "Correlacion". Enlaces nuevos en el pie, "Empieza aqui", home y resultado del test.
+- (Resuelto en V23) IMPULSO: la tabla del informe ya es 40/30/30 como la ficha; el 15/10/15 que se veía es la composición de ROCA. Rentabilidades medias de tai.js alineadas con las fichas (IMPULSO 13,7; HORIZONTE 12,2; GEN-Z 68,8; CRYPTO 44,1).

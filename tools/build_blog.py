@@ -105,8 +105,8 @@ def write(rel, content):
 
 
 def cta_band(base):
-    return '''<div class="cta-band reveal" style="margin-top:2.5rem"><div><h2>¿Quieres ver las estrategias en directo?</h2><p>Es gratis hasta final de año: recibes el informe el día 1 de cada mes, ves las posiciones y decides. Sin compromiso.</p></div>
-<div class="cta-row"><a href="%sindex.html#suscripcion" class="btn btn-primary magnetic">Empezar gratis %s</a></div></div>''' % (base, ARROW)
+    return '''<div class="cta-band reveal" style="margin-top:2.5rem"><div><h2>¿Quieres ver las estrategias en directo?</h2><p>Empieza gratis: recibes el informe el día 1 de cada mes, ves las posiciones y decides. Sin compromiso.</p></div>
+<div class="cta-row"><a href="%sindex.html#suscripcion" class="btn btn-primary magnetic">Empieza gratis %s</a></div></div>''' % (base, ARROW)
 
 
 def build_post(p, posts):
@@ -152,14 +152,14 @@ document.querySelectorAll('.filters .chip').forEach(function(b){b.addEventListen
   document.querySelectorAll('.filters .chip').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
   document.querySelectorAll('.post').forEach(function(p){p.hidden=!(b.dataset.f==='all'||p.dataset.cat===b.dataset.f)});});});
 </script>'''
-    page = (C.head('Blog de inversión | Tu Amigo Inversor', 'Artículos para entender los sistemas, gestionar las caídas y no abandonar la estrategia en el peor momento.', base, ['tai.js'], og_title='Blog de inversión · Tu Amigo Inversor')
+    page = (C.head('Blog de inversión | Tu Amigo Inversor', 'Artículos sobre inversión sistemática, gestión del riesgo y funcionamiento de los mercados para comprender mejor las estrategias y mantener una visión realista de sus resultados.', base, ['tai.js'], og_title='Blog de inversión · Tu Amigo Inversor')
             + C.body_open(base, False, 'blog') + '''
 <main id="main" tabindex="-1">
 <section class="page-hero" aria-labelledby="page-title"><div class="container">
   <nav class="crumbs" aria-label="Migas de pan"><a href="../index.html">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Blog</span></nav>
   <span class="eyebrow">Blog</span>
-  <h1 id="page-title">La disciplina es tu mayor ventaja</h1>
-  <p class="lead">Artículos para entender los sistemas, gestionar las caídas y no abandonar la estrategia en el peor momento.</p>
+  <h1 id="page-title">Aprende a entender y aplicar las estrategias de inversión</h1>
+  <p class="lead">Artículos sobre inversión sistemática, gestión del riesgo y funcionamiento de los mercados para comprender mejor las estrategias y mantener una visión realista de sus resultados.</p>
 </div></section>
 <section class="page-body" aria-label="Artículos"><div class="container">
 %s
