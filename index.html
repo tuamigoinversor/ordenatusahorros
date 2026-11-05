@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ordena tus ahorros</title>
+<meta name="description" content="No necesitas convertirte en inversor para gestionar mejor tus ahorros. Una sesión individual para entender tu situación, ordenar tu dinero por plazos y decidir tú. Sin venderte productos.">
+<link rel="canonical" href="https://ordenatusahorros.com/">
+<meta property="og:title" content="Ordena tus ahorros">
+<meta property="og:description" content="Tienes ahorros. ¿Sabes si están bien organizados? Una sesión para ordenarlos y decidir con criterio.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ordenatusahorros.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='18' width='8' height='12' rx='1.5' fill='%231d6b52'/%3E%3Crect x='12' y='11' width='8' height='19' rx='1.5' fill='%231d6b52'/%3E%3Crect x='22' y='3' width='8' height='27' rx='1.5' fill='%23f2c94c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="envoltura">
+    <a class="logo" href="#inicio" aria-label="Ordena tus ahorros, inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="18" width="8" height="12" rx="1.5" fill="var(--verde)"/><rect x="12" y="11" width="8" height="19" rx="1.5" fill="var(--verde)"/><rect x="22" y="3" width="8" height="27" rx="1.5" fill="var(--rotulador)"/></svg>
+      Ordena tus ahorros
+    </a>
+    <button class="menu-movil" id="menu-movil" type="button" aria-expanded="false" aria-controls="nav-principal">Menú</button>
+    <nav class="nav" id="nav-principal" aria-label="Principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#casos">Casos</a>
+      <a href="#calculadora">Calculadora</a>
+      <a href="#sesion">La sesión</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a class="boton" href="#reservar">Reservar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="envoltura">
+      <div>
+        <span class="eyebrow">Formación financiera · Sesión individual de 1 hora</span>
+        <h1>Tienes ahorros. ¿Sabes si están <span class="marca">bien organizados</span>?</h1>
+        <p class="entrada">No necesitas convertirte en inversor para gestionar mejor tus ahorros. En una sesión individual te ayudo a entender tu situación, separar tu dinero según cuándo lo vas a necesitar y conocer las alternativas que tienes. Al final decides tú. Sin tecnicismos, sin venderte productos y sin comisiones de bancos ni gestoras.</p>
+        <div class="acciones">
+          <a class="boton" href="#reservar">Quiero ordenar mis ahorros</a>
+          <a class="boton secundario" href="#como-funciona">Cómo funciona</a>
+        </div>
+        <p class="nota">Precio de lanzamiento: 100 € las 10 primeras sesiones. Después, 150 €.</p>
+      </div>
+
+      <aside class="ficha-hero" aria-label="Ejemplo de coste del dinero parado">
+        <div class="titulo-ficha"><span>Lo que cuesta no decidir</span><span>10 años</span></div>
+        <div class="fila"><span>Ahorros</span><span>100.000 €</span></div>
+        <div class="fila"><span>Dónde están</span><span>cuenta al 0 %</span></div>
+        <div class="fila"><span>Inflación supuesta</span><span>2 % al año</span></div>
+        <div class="total">
+          <span class="num" id="hero-perdida">−17.965 €</span>
+          <p>de poder de compra. Seguirás teniendo 100.000 €, pero comprarán lo que hoy compran <span class="cifra" id="hero-real">82.035 €</span>.</p>
+          <a class="ir" href="#calculadora">Haz el cálculo con tus cifras →</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SITUACIONES -->
+  <section id="para-quien" style="padding-top: 24px;">
+    <div class="envoltura">
+      <div class="cabeza">
+        <span class="eyebrow">¿Te suena?</span>
+        <h2>Tienes dinero ahorrado. Pero ¿sabes si está bien organizado?</h2>
+        <p>Para quien ha juntado ahorros y nunca ha invertido, tengas 10.000 € o 300.000 €. El método es el mismo. Lo que cambia es cuánto te juegas por no hacer nada.</p>
+      </div>
+      <ul class="situaciones">
+        <li><span class="n">01</span><span>Renuevas un depósito cada pocos meses porque no sabes qué otra cosa hacer.</span></li>
+        <li><span class="n">02</span><span>Tu banco te ofrece fondos y no sabes si son buenos, caros o adecuados para ti.</span></li>
+        <li><span class="n">03</span><span>Te da miedo equivocarte, porque es mucho dinero y te ha costado años ahorrarlo.</span></li>
+        <li><span class="n">04</span><span>No sabes cuánto deberías tener a mano por si surge algo y cuánto podría trabajar a largo plazo.</span></li>
+        <li><span class="n">05</span><span>Has conseguido ahorrar una cantidad importante, pero no sabes cómo repartirla entre seguridad, disponibilidad y crecimiento.</span></li>
+        <li><span class="n">06</span><span>Sabes que deberías dedicarle tiempo a tus finanzas, pero siempre hay algo más urgente y lo vas dejando para más adelante.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section class="metodo" id="como-funciona">
+    <div class="envoltura">
+      <div class="cabeza">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2>Primero conoces tu dinero. Después lo ordenas.</h2>
+        <p>El método tiene dos fases. La idea de fondo es sencilla: cada euro tiene un plazo, y el plazo decide qué tipo de producto tiene sentido. Y no todo el dinero tiene que buscar rentabilidad: una parte está para darte tranquilidad y estar disponible cuando la necesites.</p>
+      </div>
+
+      <div class="fases">
+        <div class="fase">
+          <span class="letra">Conoce</span>
+          <p>Dónde estás hoy, con tus números.</p>
+          <ol>
+            <li>Cuánto entra y cuánto sale cada mes.</li>
+            <li>Qué tienes y qué debes: tu patrimonio neto.</li>
+            <li>Cuánto colchón necesitas para dormir tranquilo.</li>
+          </ol>
+        </div>
+        <div class="fase">
+          <span class="letra">Ordena</span>
+          <p>Qué hace cada parte de tu dinero.</p>
+          <ol>
+            <li>Separar los ahorros por plazos y objetivos.</li>
+            <li>Entender qué bloque encaja con cada plazo y qué caídas puede tener.</li>
+            <li>Decidir tú el reparto y apuntarlo en tu propio Excel.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="cajas" aria-label="Esquema: tres cajas de dinero según el plazo">
+        <svg viewBox="0 0 1000 300" role="img" aria-labelledby="cajas-t">
+          <title id="cajas-t">Tres cajas de dinero: menos de 1 año, de 1 a 5 años y más de 5 años</title>
+          <line x1="20" y1="262" x2="980" y2="262" stroke="currentColor" stroke-opacity=".45" stroke-width="1.5"/>
+          <g font-family="IBM Plex Mono, monospace" font-size="15" fill="currentColor" fill-opacity=".7">
+            <text x="20" y="290">Hoy</text>
+            <text x="330" y="290" text-anchor="middle">1 año</text>
+            <text x="660" y="290" text-anchor="middle">5 años</text>
+            <text x="980" y="290" text-anchor="end">Más adelante</text>
+          </g>
+          <g stroke="currentColor" stroke-opacity=".45"><line x1="330" y1="256" x2="330" y2="268"/><line x1="660" y1="256" x2="660" y2="268"/></g>
+
+          <rect x="40" y="168" width="260" height="84" rx="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="370" y="104" width="260" height="148" rx="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="700" y="28" width="260" height="224" rx="6" fill="var(--rotulador)" fill-opacity=".14" stroke="var(--rotulador)" stroke-width="2"/>
+
+          <g font-family="Bricolage Grotesque, sans-serif" fill="currentColor">
+            <text x="60" y="200" font-size="20" font-weight="700">Caja 1 · Seguridad</text>
+            <text x="60" y="230" font-size="16" fill-opacity=".8">Colchón y monetario</text>
+            <text x="390" y="136" font-size="20" font-weight="700">Caja 2 · Proteger</text>
+            <text x="390" y="166" font-size="16" fill-opacity=".8">Renta fija a corto</text>
+            <text x="390" y="190" font-size="16" fill-opacity=".8">y medio plazo</text>
+            <text x="720" y="60" font-size="20" font-weight="700" fill="var(--rotulador)">Caja 3 · Crecer</text>
+            <text x="720" y="90" font-size="16" fill-opacity=".8">Renta variable</text>
+            <text x="720" y="114" font-size="16" fill-opacity=".8">indexada y diversificada</text>
+          </g>
+        </svg>
+        <p class="pie">Esquema orientativo. Cuánto va a cada caja depende de tu vida, no de una plantilla: eso es lo que trabajamos en la sesión.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUES -->
+  <section id="bloques">
+    <div class="envoltura">
+      <div class="cabeza">
+        <span class="eyebrow">Los bloques</span>
+        <h2>Cinco bloques para empezar</h2>
+        <p>Antes de elegir un producto hay que saber para qué sirve cada tipo. Estos son los bloques con los que trabajamos en la sesión, de menos a más riesgo.</p>
+      </div>
+      <div class="contenedor-tabla">
+        <table class="tabla-bloques">
+          <thead>
+            <tr><th scope="col">Bloque</th><th scope="col">Función</th><th scope="col">Para qué sirve</th><th scope="col">Plazo orientativo</th><th scope="col">Riesgo</th><th scope="col">Ejemplos de vehículo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Colchón</td><td class="funcion">Disponibilidad inmediata</td><td>Imprevistos y gastos del día a día. Tiene que estar disponible siempre.</td><td class="cifra">Siempre</td><td><span class="puntos" aria-label="Riesgo 1 de 5"><i class="lleno"></i><i></i><i></i><i></i><i></i></span></td><td>Cuenta remunerada, depósito corto</td></tr>
+            <tr><td>Monetario</td><td class="funcion">Estabilidad y liquidez</td><td>Dinero que vas a usar pronto o que espera una decisión. Busca no perder, no ganar mucho.</td><td class="cifra">&lt; 1 año</td><td><span class="puntos" aria-label="Riesgo 1 de 5"><i class="lleno"></i><i></i><i></i><i></i><i></i></span></td><td>Fondo monetario, Letras del Tesoro</td></tr>
+            <tr><td>Renta fija corto</td><td class="funcion">Proteger con algo más de rentabilidad</td><td>Intentar ganar algo más que la inflación con oscilaciones pequeñas.</td><td class="cifra">1–3 años</td><td><span class="puntos" aria-label="Riesgo 2 de 5"><i class="lleno"></i><i class="lleno"></i><i></i><i></i><i></i></span></td><td>Fondo de renta fija a corto plazo</td></tr>
+            <tr><td>Renta fija medio</td><td class="funcion">Rentabilidad y diversificación</td><td>Más rentabilidad que el corto plazo a cambio de años malos ocasionales.</td><td class="cifra">3–5 años</td><td><span class="puntos" aria-label="Riesgo 3 de 5"><i class="lleno"></i><i class="lleno"></i><i class="lleno"></i><i></i><i></i></span></td><td>Fondo de renta fija flexible o de crédito</td></tr>
+            <tr><td>Renta variable indexada</td><td class="funcion">Crecimiento a largo plazo</td><td>Hacer crecer el dinero a largo plazo. Puede caer mucho en un mal año.</td><td class="cifra">&gt; 5 años</td><td><span class="puntos" aria-label="Riesgo 4 de 5"><i class="lleno"></i><i class="lleno"></i><i class="lleno"></i><i class="lleno"></i><i></i></span></td><td>Fondo indexado a la bolsa mundial</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="nota-tabla">Información general, igual para todo el mundo. Los plazos son orientativos: además del plazo cuentan la estabilidad de tus ingresos, tus deudas y cuánta caída puedes soportar sin pasarlo mal. En la sesión verás datos reales de cada bloque: rentabilidad, caídas máximas y cuánto tardaron en recuperarse.</p>
+    </div>
+  </section>
+
+
+  <!-- CASOS DE EJEMPLO (generado con herramientas/casos.py; supuestos por bloque en ese archivo) -->
+  <section id="casos" style="padding-top: 24px;">
+    <div class="envoltura">
+      <div class="cabeza">
+        <span class="eyebrow">Casos de ejemplo</span>
+        <h2>Seis personas, seis maneras de ordenar el dinero</h2>
+        <p>De 10.000 € a 250.000 €, de 18 a 67 años. Son personas inventadas, para que veas cómo funciona el método: el reparto sale de sus plazos, no de una plantilla. No son una recomendación para ti.</p>
+      </div>
+      <div class="leyenda" aria-hidden="true"><span><i class="c1"></i>Colchón</span><span><i class="c2"></i>Monetario</span><span><i class="c3"></i>Renta fija corto</span><span><i class="c4"></i>Renta fija medio</span><span><i class="c5"></i>Renta variable indexada</span></div>
+      <div class="casos">
+        <article class="caso">
+          <header><h3>Hugo</h3><span class="cifra">18 años · 10.000 €</span></header>
+          <p class="situacion">Ha juntado 10.000 € con trabajos de verano y regalos de la familia. Estudia, vive con sus padres y puede apartar unos 50 € al mes. Si no tuviera el apoyo de sus padres o quisiera gastar parte pronto, su reparto sería muy distinto.</p>
+          <div class="barra-reparto" role="img" aria-label="Reparto de Hugo"><span class="c1" style="width:10.00%" title="Colchón 10 %"></span><span class="c5" style="width:90.00%" title="Renta variable indexada 90 %"></span></div>
+          <table class="reparto"><tbody><tr><td><div class="et"><i class="c1"></i><span>Colchón<span class="motivo">Por si surge algo: vive con sus padres</span></span></div></td><td class="num por">10 %</td><td class="num">1.000 €</td></tr><tr><td><div class="et"><i class="c5"></i><span>Renta variable indexada<span class="motivo">Tiene décadas por delante</span></span></div></td><td class="num por">90 %</td><td class="num">9.000 €</td></tr></tbody></table>
+          <div class="esperar">
+            <div><small>Rentabilidad media esperada</small><b class="provisional">6,5 %</b><small>al año, a largo plazo</small><span class="etiqueta-prov">dato provisional</span></div>
+            <div><small>Caída posible en un mal año</small><b class="provisional">−32 %</b><small>unos 3.200 €</small><span class="etiqueta-prov">dato provisional</span></div>
+          </div>
+          <p class="pregunta">¿Y si dentro de 2 años quieres pagarte un máster?</p>
+        </article>
+        <article class="caso">
+          <header><h3>Lucía</h3><span class="cifra">29 años · 50.000 €</span></header>
+          <p class="situacion">Tiene 50.000 € en la cuenta y ahorra unos 500 € al mes. Vive de alquiler y quiere comprar piso dentro de 4 o 5 años.</p>
+          <div class="barra-reparto" role="img" aria-label="Reparto de Lucía"><span class="c1" style="width:16.00%" title="Colchón 16 %"></span><span class="c4" style="width:34.00%" title="Renta fija medio 34 %"></span><span class="c5" style="width:50.00%" title="Renta variable indexada 50 %"></span></div>
+          <table class="reparto"><tbody><tr><td><div class="et"><i class="c1"></i><span>Colchón<span class="motivo">Unos 5 meses de gastos</span></span></div></td><td class="num por">16 %</td><td class="num">8.000 €</td></tr><tr><td><div class="et"><i class="c4"></i><span>Renta fija medio<span class="motivo">Parte de la entrada del piso</span></span></div></td><td class="num por">34 %</td><td class="num">17.000 €</td></tr><tr><td><div class="et"><i class="c5"></i><span>Renta variable indexada<span class="motivo">Largo plazo, más lo que ahorra cada mes</span></span></div></td><td class="num por">50 %</td><td class="num">25.000 €</td></tr></tbody></table>
+          <div class="esperar">
+            <div><small>Rentabilidad media esperada</small><b class="provisional">5,1 %</b><small>al año, a largo plazo</small><span class="etiqueta-prov">dato provisional</span></div>
+            <div><small>Caída posible en un mal año</small><b class="provisional">−20 %</b><small>unos 10.000 €</small><span class="etiqueta-prov">dato provisional</span></div>
+          </div>
+          <p class="pregunta">¿Y si el piso se adelanta a dentro de 2 años?</p>
+        </article>
+        <article class="caso">
+          <header><h3>Pedro</h3><span class="cifra">35 años · 100.000 €</span></header>
+          <p class="situacion">Ha heredado 100.000 €. Quiere dar la entrada de un piso dentro de 2 años y nunca ha invertido.</p>
+          <div class="barra-reparto" role="img" aria-label="Reparto de Pedro"><span class="c1" style="width:10.00%" title="Colchón 10 %"></span><span class="c3" style="width:40.00%" title="Renta fija corto 40 %"></span><span class="c5" style="width:50.00%" title="Renta variable indexada 50 %"></span></div>
+          <table class="reparto"><tbody><tr><td><div class="et"><i class="c1"></i><span>Colchón<span class="motivo">Unos 5 meses de gastos</span></span></div></td><td class="num por">10 %</td><td class="num">10.000 €</td></tr><tr><td><div class="et"><i class="c3"></i><span>Renta fija corto<span class="motivo">La entrada del piso</span></span></div></td><td class="num por">40 %</td><td class="num">40.000 €</td></tr><tr><td><div class="et"><i class="c5"></i><span>Renta variable indexada<span class="motivo">Lo que no necesita en años</span></span></div></td><td class="num por">50 %</td><td class="num">50.000 €</td></tr></tbody></table>
+          <div class="esperar">
+            <div><small>Rentabilidad media esperada</small><b class="provisional">4,8 %</b><small>al año, a largo plazo</small><span class="etiqueta-prov">dato provisional</span></div>
+            <div><small>Caída posible en un mal año</small><b class="provisional">−19 %</b><small>unos 19.000 €</small><span class="etiqueta-prov">dato provisional</span></div>
+          </div>
+          <p class="pregunta">¿Y si no sabes todavía cuándo comprarás casa?</p>
+        </article>
+        <article class="caso">
+          <header><h3>Luis y Ana</h3><span class="cifra">42 años · 120.000 €</span></header>
+          <p class="situacion">Tienen 120.000 € en la cuenta. Sus dos hijos empezarán la universidad dentro de 8 a 10 años. No piensan cambiar de casa.</p>
+          <div class="barra-reparto" role="img" aria-label="Reparto de Luis y Ana"><span class="c1" style="width:10.00%" title="Colchón 10 %"></span><span class="c4" style="width:20.00%" title="Renta fija medio 20 %"></span><span class="c5" style="width:70.00%" title="Renta variable indexada 70 %"></span></div>
+          <table class="reparto"><tbody><tr><td><div class="et"><i class="c1"></i><span>Colchón<span class="motivo">Unos 4 meses de gastos</span></span></div></td><td class="num por">10 %</td><td class="num">12.000 €</td></tr><tr><td><div class="et"><i class="c4"></i><span>Renta fija medio<span class="motivo">Primeros cursos de universidad</span></span></div></td><td class="num por">20 %</td><td class="num">24.000 €</td></tr><tr><td><div class="et"><i class="c5"></i><span>Renta variable indexada<span class="motivo">Largo plazo: más de 8 años</span></span></div></td><td class="num por">70 %</td><td class="num">84.000 €</td></tr></tbody></table>
+          <div class="esperar">
+            <div><small>Rentabilidad media esperada</small><b class="provisional">5,9 %</b><small>al año, a largo plazo</small><span class="etiqueta-prov">dato provisional</span></div>
+            <div><small>Caída posible en un mal año</small><b class="provisional">−26 %</b><small>unos 31.000 €</small><span class="etiqueta-prov">dato provisional</span></div>
+          </div>
+          <p class="pregunta">¿Y si en tu caso hay una reforma a la vista?</p>
+        </article>
+        <article class="caso">
+          <header><h3>Carmen</h3><span class="cifra">58 años · 180.000 €</span></header>
+          <p class="situacion">Tiene 180.000 € en depósitos. Se jubila dentro de 6 años y quiere cambiar de coche en unos 2. Gasta unos 2.500 € al mes.</p>
+          <div class="barra-reparto" role="img" aria-label="Reparto de Carmen"><span class="c1" style="width:10.00%" title="Colchón 10 %"></span><span class="c3" style="width:15.00%" title="Renta fija corto 15 %"></span><span class="c4" style="width:35.00%" title="Renta fija medio 35 %"></span><span class="c5" style="width:40.00%" title="Renta variable indexada 40 %"></span></div>
+          <table class="reparto"><tbody><tr><td><div class="et"><i class="c1"></i><span>Colchón<span class="motivo">Unos 7 meses de gastos</span></span></div></td><td class="num por">10 %</td><td class="num">18.000 €</td></tr><tr><td><div class="et"><i class="c3"></i><span>Renta fija corto<span class="motivo">El coche, dentro de 2 años</span></span></div></td><td class="num por">15 %</td><td class="num">27.000 €</td></tr><tr><td><div class="et"><i class="c4"></i><span>Renta fija medio<span class="motivo">Lo que usará al jubilarse</span></span></div></td><td class="num por">35 %</td><td class="num">63.000 €</td></tr><tr><td><div class="et"><i class="c5"></i><span>Renta variable indexada<span class="motivo">Lo que no tocará en más de 10 años</span></span></div></td><td class="num por">40 %</td><td class="num">72.000 €</td></tr></tbody></table>
+          <div class="esperar">
+            <div><small>Rentabilidad media esperada</small><b class="provisional">4,8 %</b><small>al año, a largo plazo</small><span class="etiqueta-prov">dato provisional</span></div>
+            <div><small>Caída posible en un mal año</small><b class="provisional">−17 %</b><small>unos 31.000 €</small><span class="etiqueta-prov">dato provisional</span></div>
+          </div>
+          <p class="pregunta">¿Y si tu jubilación está a 3 años y no a 6?</p>
+        </article>
+        <article class="caso">
+          <header><h3>Rosa</h3><span class="cifra">67 años · 250.000 €</span></header>
+          <p class="situacion">Jubilada, con 250.000 € entre depósitos y fondos del banco. Quiere sacar unos 500 € al mes para complementar la pensión.</p>
+          <div class="barra-reparto" role="img" aria-label="Reparto de Rosa"><span class="c1" style="width:10.00%" title="Colchón 10 %"></span><span class="c2" style="width:10.00%" title="Monetario 10 %"></span><span class="c3" style="width:20.00%" title="Renta fija corto 20 %"></span><span class="c4" style="width:30.00%" title="Renta fija medio 30 %"></span><span class="c5" style="width:30.00%" title="Renta variable indexada 30 %"></span></div>
+          <table class="reparto"><tbody><tr><td><div class="et"><i class="c1"></i><span>Colchón<span class="motivo">Imprevistos</span></span></div></td><td class="num por">10 %</td><td class="num">25.000 €</td></tr><tr><td><div class="et"><i class="c2"></i><span>Monetario<span class="motivo">Unos 4 años de complemento a mano</span></span></div></td><td class="num por">10 %</td><td class="num">25.000 €</td></tr><tr><td><div class="et"><i class="c3"></i><span>Renta fija corto<span class="motivo">Los siguientes años de complemento</span></span></div></td><td class="num por">20 %</td><td class="num">50.000 €</td></tr><tr><td><div class="et"><i class="c4"></i><span>Renta fija medio<span class="motivo">Medio plazo</span></span></div></td><td class="num por">30 %</td><td class="num">75.000 €</td></tr><tr><td><div class="et"><i class="c5"></i><span>Renta variable indexada<span class="motivo">Lo que puede esperar más de 10 años</span></span></div></td><td class="num por">30 %</td><td class="num">75.000 €</td></tr></tbody></table>
+          <div class="esperar">
+            <div><small>Rentabilidad media esperada</small><b class="provisional">4,2 %</b><small>al año, a largo plazo</small><span class="etiqueta-prov">dato provisional</span></div>
+            <div><small>Caída posible en un mal año</small><b class="provisional">−14 %</b><small>unos 34.000 €</small><span class="etiqueta-prov">dato provisional</span></div>
+          </div>
+          <p class="pregunta">¿Cuánto podrías sacar al mes sin que se agote?</p>
+        </article>
+      </div>
+      <p class="nota-tabla">Cifras orientativas. Las rentabilidades no están garantizadas y los años malos llegan sin avisar. En la sesión hacemos este mismo ejercicio con tu situación.</p>
+    </div>
+  </section>
+  <!-- CALCULADORA -->
+  <section id="calculadora" style="padding-top: 24px;">
+    <div class="envoltura">
+      <div class="cabeza">
+        <span class="eyebrow">Calculadora</span>
+        <h2>¿Cuánto te cuesta no hacer nada?</h2>
+        <p>Compara cómo está tu dinero ahora con otra opción. Todo se mide en euros de hoy, es decir, descontando la inflación.</p>
+      </div>
+
+      <div class="calc">
+        <form class="panel campos" id="form-calc" novalidate>
+          <div class="dos">
+            <div class="campo">
+              <label for="c-capital">Ahorros</label>
+              <div class="entrada"><input id="c-capital" type="number" inputmode="decimal" min="0" step="1000" value="100000"><span class="unidad">€</span></div>
+            </div>
+            <div class="campo">
+              <label for="c-anios">Plazo</label>
+              <div class="entrada"><input id="c-anios" type="number" inputmode="numeric" min="1" max="50" step="1" value="10"><span class="unidad">años</span></div>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="c-inflacion">Inflación media supuesta</label>
+            <div class="entrada"><input id="c-inflacion" type="number" inputmode="decimal" step="0.1" value="2"><span class="unidad">% anual</span></div>
+            <span class="ayuda">El objetivo del Banco Central Europeo es el 2 %. Puedes probar con otras cifras.</span>
+          </div>
+
+          <span class="grupo-titulo">A · Como lo tienes ahora</span>
+          <div class="dos">
+            <div class="campo">
+              <label for="c-a-rent">Rentabilidad</label>
+              <div class="entrada"><input id="c-a-rent" type="number" inputmode="decimal" step="0.1" value="0"><span class="unidad">% anual</span></div>
+            </div>
+            <div class="campo">
+              <label for="c-a-com">Comisiones</label>
+              <div class="entrada"><input id="c-a-com" type="number" inputmode="decimal" step="0.1" min="0" value="0"><span class="unidad">% anual</span></div>
+            </div>
+          </div>
+
+          <span class="grupo-titulo">B · Otra opción</span>
+          <div class="dos">
+            <div class="campo">
+              <label for="c-b-rent">Rentabilidad</label>
+              <div class="entrada"><input id="c-b-rent" type="number" inputmode="decimal" step="0.1" value="2"><span class="unidad">% anual</span></div>
+            </div>
+            <div class="campo">
+              <label for="c-b-com">Comisiones</label>
+              <div class="entrada"><input id="c-b-com" type="number" inputmode="decimal" step="0.1" min="0" value="0.2"><span class="unidad">% anual</span></div>
+            </div>
+          </div>
+          <span class="ayuda">Los valores de B son un ejemplo, no una previsión. Pon los de tu banco o los del producto que estés mirando.</span>
+        </form>
+
+        <div class="resultados" aria-live="polite">
+          <div class="escenarios">
+            <div class="escenario">
+              <h3>A · Como lo tienes ahora</h3>
+              <div class="linea-r"><span>Tendrás</span><span id="r-a-nom">—</span></div>
+              <div class="linea-r"><span>En euros de hoy</span><span id="r-a-real">—</span></div>
+              <div class="linea-r"><span>Poder de compra</span><span id="r-a-dif">—</span></div>
+            </div>
+            <div class="escenario">
+              <h3>B · Otra opción</h3>
+              <div class="linea-r"><span>Tendrás</span><span id="r-b-nom">—</span></div>
+              <div class="linea-r"><span>En euros de hoy</span><span id="r-b-real">—</span></div>
+              <div class="linea-r"><span>Poder de compra</span><span id="r-b-dif">—</span></div>
+            </div>
+          </div>
+
+          <div class="diferencia">
+            <span class="eyebrow" style="margin-bottom:6px">Diferencia entre B y A</span>
+            <span class="num" id="r-diferencia">—</span>
+            <p id="r-frase">—</p>
+            <div class="barras" aria-hidden="true">
+              <div class="barra ref"><span>Lo que tienes hoy</span><div class="pista"><div class="relleno" id="b-ref"></div></div></div>
+              <div class="barra"><span>A en euros de hoy</span><div class="pista"><div class="relleno" id="b-a"></div></div></div>
+              <div class="barra alt"><span>B en euros de hoy</span><div class="pista"><div class="relleno" id="b-b"></div></div></div>
+            </div>
+          </div>
+          <p class="aviso-calc">Cálculo simplificado: rentabilidad y comisiones constantes cada año, sin impuestos. Las comisiones se restan de la rentabilidad, que es como funcionan en un fondo: se descuentan cada día de su valor. La realidad nunca va en línea recta, y las opciones con más rentabilidad también pueden tener años negativos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESIÓN -->
+  <section id="sesion">
+    <div class="envoltura">
+      <div class="cabeza">
+        <span class="eyebrow">La sesión</span>
+        <h2>Sal de la sesión con tus ahorros ordenados y una hoja de ruta</h2>
+        <p>Una hora por videollamada, con tus números. Antes me envías un formulario corto para no perder tiempo con lo básico.</p>
+      </div>
+
+      <div class="sesion-grid">
+        <ol class="pasos">
+          <li><span class="min">Antes</span><div><h3>Formulario previo</h3><p>Ingresos, gastos, ahorro y lo que te gustaría conseguir, con plazos.</p></div></li>
+          <li><span class="min">15 min</span><div><h3>Conoce tu punto de partida</h3><p>Flujo de caja, patrimonio neto y tamaño de tu colchón, con tus cifras.</p></div></li>
+          <li><span class="min">15 min</span><div><h3>Separa tu dinero por plazos</h3><p>Qué necesitas en menos de un año, entre uno y cinco, y a partir de cinco.</p></div></li>
+          <li><span class="min">20 min</span><div><h3>Entiende cada bloque</h3><p>Qué suele rendir, qué caídas ha tenido y cuánto tardó en recuperarse. Con datos.</p></div></li>
+          <li><span class="min">10 min</span><div><h3>Decides y lo apuntas</h3><p>Escribes en tu Excel qué bloque usas para cada plazo y cuánto. Te llevas también un resumen de lo que has decidido.</p></div></li>
+        </ol>
+
+        <aside class="precio" aria-label="Precio de la sesión">
+          <span class="eyebrow">Precio de lanzamiento</span>
+          <div class="importe cifra">100 €</div>
+          <div class="antes">Solo las 10 primeras sesiones. Después, 150 €.</div>
+          <p class="te-llevas">Qué te llevas</p>
+          <ul>
+            <li>Una visión clara de tu situación financiera</li>
+            <li>Cuánto colchón necesitas</li>
+            <li>Tu dinero separado por plazos y objetivos</li>
+            <li>Las alternativas de cada bloque, explicadas con datos</li>
+            <li>Tu Excel para controlar tu patrimonio</li>
+            <li>Un resumen escrito de lo que has decidido</li>
+          </ul>
+          <p class="formato">60 minutos por videollamada · formulario previo</p>
+          <a class="boton" href="#reservar">Reservar mi sesión</a>
+        </aside>
+      </div>
+
+      <div class="limites">
+        <div class="limite">
+          <h3>Lo que sí hacemos</h3>
+          <ul>
+            <li>Ordenar tus ingresos, gastos y patrimonio</li>
+            <li>Calcular tu colchón</li>
+            <li>Separar tu dinero por plazos y objetivos</li>
+            <li>Explicar cada bloque con datos reales</li>
+            <li>Enseñarte a leer la ficha de un fondo</li>
+          </ul>
+        </div>
+        <div class="limite no">
+          <h3>Lo que no hacemos</h3>
+          <ul>
+            <li>Decirte qué fondo o qué acción comprar</li>
+            <li>Gestionar tu dinero ni operar por ti</li>
+            <li>Revisar tu cartera para decirte qué vender</li>
+            <li>Venderte productos ni cobrar comisiones de terceros</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi" style="padding-top: 24px;">
+    <div class="envoltura sobre">
+      <div class="retrato" role="img" aria-label="Foto de Josema García (pendiente)">JG</div>
+      <div class="texto">
+        <span class="eyebrow">Sobre mí</span>
+        <h2>Soy Josema, profesor y ahorrador como tú</h2>
+        <p>Soy profesor de matemáticas. Mi trabajo de cada día es explicar cosas que parecen difíciles hasta que dejan de serlo. Eso mismo hago con el dinero.</p>
+        <p>Desde 2017 organizo e invierto mi propio patrimonio con reglas claras, y lo comparto en <a href="https://tuamigoinversor.com/">TuAmigoInversor</a>. Allí he comprobado que mucha gente tiene capacidad de ahorro pero no sabe qué hacer con lo que ha acumulado. Unos lo tienen todo en depósitos por miedo a equivocarse. Otros han contratado productos que no terminan de entender.</p>
+        <p>Mi intención no es convertirte en inversor ni decirte qué producto comprar. Quiero ayudarte a entender tu situación, conocer las alternativas y ordenar tus ahorros con criterio.</p>
+        <p>Tengo la certificación MiFID II en asesoramiento en materia de inversión de la Universidad Carlos III de Madrid, en el programa desarrollado con MyInvestor, reconocida por la CNMV. Acredita conocimientos; no es una autorización para asesorar, y no ejerzo como asesor. No trabajo para ningún banco ni gestora y no gano nada con lo que decidas comprar.</p>
+        <div class="datos"><span>Profesor de matemáticas</span><span>Certificación MiFID II · UC3M</span><span>Creador de TuAmigoInversor</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS -->
+  <section id="preguntas" style="padding-top: 24px;">
+    <div class="envoltura">
+      <div class="cabeza">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2>Lo que suele preguntarse antes de reservar</h2>
+      </div>
+      <div class="preguntas">
+        <details><summary>¿Me vas a decir qué fondo comprar?</summary><p>No. Te enseño para qué sirve cada tipo de producto y cómo leer su ficha. La decisión de qué comprar es tuya, y sales de la sesión con criterio para tomarla.</p></details>
+        <details><summary>¿Necesito saber algo de inversión?</summary><p>No. La sesión está pensada para quien parte de cero. Si ya sabes algo, iremos más rápido.</p></details>
+        <details><summary>¿Para cuánto dinero tiene sentido?</summary><p>Para cualquier cantidad. Con mucho dinero, la sesión se paga sola con lo que dejas de perder en comisiones o en inflación. Con poco, lo que ganas es aprender pronto a ordenar tu dinero, y eso te sirve el resto de tu vida.</p></details>
+        <details><summary>¿Cobras comisiones de bancos o gestoras?</summary><p>No. Solo cobro la sesión. No gano nada con el producto que elijas.</p></details>
+        <details><summary>Ya tengo fondos contratados con mi banco. ¿Me sirve la sesión?</summary><p>Sí. Aprenderás a leer lo que ya tienes: a qué bloque pertenece cada producto, cuánto te cuesta al año y qué riesgo tiene. Con eso decides tú si lo mantienes o lo cambias.</p></details>
+        <details><summary>¿Cómo es la sesión?</summary><p>Una videollamada de 60 minutos. Antes rellenas un formulario corto y después te llevas tu Excel y un resumen escrito de lo que has decidido.</p></details>
+        <details><summary>¿Qué haces con mis datos?</summary><p>Los uso solo para preparar y hacer tu sesión. No los cedo a nadie y los borro cuando terminamos. Lo tienes explicado en la <a href="privacidad.html">política de privacidad</a>.</p></details>
+        <details><summary>¿Y si después quiero ir más allá?</summary><p>En <a href="https://tuamigoinversor.com/">TuAmigoInversor</a> comparto estrategias de inversión más avanzadas. No forman parte de esta sesión, y no hace falta seguirlas para ordenar tus ahorros.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVA -->
+  <section class="reserva" id="reservar">
+    <div class="envoltura reserva-grid">
+      <div class="cabeza" style="margin-bottom:0">
+        <span class="eyebrow">Reservar</span>
+        <h2>Reserva tu sesión</h2>
+        <p>Cuéntame un poco tu situación. Quedan plazas al precio de lanzamiento de 100 €.</p>
+        <ol class="despues">
+          <li>Te contesto en un par de días laborables con fechas disponibles.</li>
+          <li>Eliges día y hora y haces el pago para confirmar la plaza.</li>
+          <li>Te envío el formulario previo y tu Excel.</li>
+          <li>Hacemos la sesión por videollamada y después recibes tu resumen.</li>
+        </ol>
+        <p>También puedes escribirme directamente a <span class="correo-texto" id="correo-visible">hola@ordenatusahorros.com</span>.</p>
+      </div>
+      <form class="form-reserva" id="form-reserva" novalidate>
+        <label for="r-nombre">Nombre<input id="r-nombre" name="nombre" type="text" autocomplete="name" required></label>
+        <label for="r-email">Correo electrónico<input id="r-email" name="email" type="email" autocomplete="email" required></label>
+        <label for="r-ahorro">Ahorros aproximados
+          <select id="r-ahorro" name="ahorro">
+            <option value="">Prefiero no decirlo</option>
+            <option>Menos de 50.000 €</option>
+            <option>Entre 50.000 y 100.000 €</option>
+            <option>Entre 100.000 y 250.000 €</option>
+            <option>Más de 250.000 €</option>
+          </select>
+        </label>
+        <label for="r-mensaje">¿Qué te gustaría resolver?<textarea id="r-mensaje" name="mensaje" rows="3"></textarea></label>
+        <label class="check" for="r-privacidad"><input id="r-privacidad" type="checkbox" required><span>He leído la <a href="privacidad.html">política de privacidad</a> y acepto que uses estos datos para contactarme.</span></label>
+        <button class="boton" type="submit">Enviar solicitud por correo</button>
+        <p class="estado" id="r-estado" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-web">
+  <div class="envoltura">
+    <div class="enlaces">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="https://tuamigoinversor.com/">TuAmigoInversor</a>
+    </div>
+    <p>Ordena tus ahorros ofrece formación financiera. Su contenido y sus sesiones no constituyen asesoramiento en materia de inversión ni recomendaciones personalizadas sobre instrumentos financieros. Cada persona decide sus inversiones bajo su responsabilidad. Las rentabilidades pasadas no garantizan rentabilidades futuras.</p>
+    <p class="cifra">© 2026 Ordena tus ahorros</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var EMAIL = "hola@ordenatusahorros.com";
+  // Separador de miles con punto también en cifras de 4 dígitos (1.944 €)
+  function miles(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+
+  function euros(x, conSigno) {
+    var r = Math.round(x);
+    var s = miles(Math.abs(r)) + " €";
+    if (!conSigno) return (r < 0 ? "−" : "") + s;
+    return (r > 0 ? "+" : r < 0 ? "−" : "") + s;
+  }
+  function num(id, def) {
+    var v = parseFloat(String(document.getElementById(id).value).replace(",", "."));
+    return isFinite(v) ? v : def;
+  }
+
+  // Valor final nominal y en euros de hoy
+  function proyectar(capital, anios, rent, com, infl) {
+    var nominal = capital * Math.pow(1 + (rent - com) / 100, anios);
+    var real = nominal / Math.pow(1 + infl / 100, anios);
+    return { nominal: nominal, real: real };
+  }
+
+  function calcular() {
+    var capital = Math.max(0, num("c-capital", 0));
+    var anios = Math.min(50, Math.max(1, Math.round(num("c-anios", 10))));
+    var infl = num("c-inflacion", 2);
+    var a = proyectar(capital, anios, num("c-a-rent", 0), num("c-a-com", 0), infl);
+    var b = proyectar(capital, anios, num("c-b-rent", 0), num("c-b-com", 0), infl);
+
+    set("r-a-nom", euros(a.nominal));
+    set("r-a-real", euros(a.real));
+    set("r-a-dif", euros(a.real - capital, true));
+    set("r-b-nom", euros(b.nominal));
+    set("r-b-real", euros(b.real));
+    set("r-b-dif", euros(b.real - capital, true));
+
+    var d = b.real - a.real;
+    set("r-diferencia", euros(d, true));
+    var plazo = anios === 1 ? "1 año" : anios + " años";
+    var frase;
+    if (Math.abs(d) < 1) frase = "Con estas cifras, las dos opciones acaban igual.";
+    else if (d > 0) frase = "Es lo que B conservaría de más en poder de compra frente a A al cabo de " + plazo + ".";
+    else frase = "Con estas cifras, B acabaría con menos poder de compra que A al cabo de " + plazo + ". Mira sus comisiones.";
+    set("r-frase", frase);
+
+    var max = Math.max(capital, a.real, b.real, 1);
+    width("b-ref", capital / max);
+    width("b-a", a.real / max);
+    width("b-b", b.real / max);
+  }
+  function set(id, t) { document.getElementById(id).textContent = t; }
+  function width(id, f) { document.getElementById(id).style.width = Math.max(0, Math.min(1, f)) * 100 + "%"; }
+
+  // Ejemplo del inicio con la misma fórmula
+  var ej = proyectar(100000, 10, 0, 0, 2);
+  set("hero-perdida", euros(ej.real - 100000, true));
+  set("hero-real", euros(ej.real));
+
+  var form = document.getElementById("form-calc");
+  form.addEventListener("input", calcular);
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+  calcular();
+
+  // Menú en móvil
+  var bm = document.getElementById("menu-movil"), nav = document.getElementById("nav-principal");
+  bm.addEventListener("click", function () {
+    var abierto = nav.classList.toggle("abierto");
+    bm.setAttribute("aria-expanded", abierto ? "true" : "false");
+  });
+  nav.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") { nav.classList.remove("abierto"); bm.setAttribute("aria-expanded", "false"); }
+  });
+
+  // Reserva: prepara un correo con los datos (la web no guarda nada)
+  var reserva = document.getElementById("form-reserva");
+  reserva.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var estado = document.getElementById("r-estado");
+    var nombre = document.getElementById("r-nombre").value.trim();
+    var email = document.getElementById("r-email").value.trim();
+    var ok = document.getElementById("r-privacidad").checked;
+    if (!nombre || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      estado.textContent = "Escribe tu nombre y un correo válido para poder contestarte.";
+      return;
+    }
+    if (!ok) { estado.textContent = "Para enviarlo, marca la casilla de privacidad."; return; }
+    var cuerpo = "Nombre: " + nombre + "\nCorreo: " + email +
+      "\nAhorros aproximados: " + (document.getElementById("r-ahorro").value || "Prefiero no decirlo") +
+      "\n\nQué me gustaría resolver:\n" + document.getElementById("r-mensaje").value.trim();
+    var url = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Reserva de sesión · " + nombre) + "&body=" + encodeURIComponent(cuerpo);
+    estado.textContent = "Se abrirá tu programa de correo con el mensaje preparado. Si no se abre, escríbeme a " + EMAIL + ".";
+    window.location.href = url;
+  });
+})();
+</script>
+</body>
+</html>

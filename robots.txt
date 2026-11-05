@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ordenatusahorros.com/sitemap.xml
