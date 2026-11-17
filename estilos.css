@@ -1,22 +1,31 @@
-/* Ordena tus ahorros — hoja de estilos
-   Idea de diseño: cuaderno de cuentas. Papel con cuadrícula suave, tinta verde oscura,
-   cifras en monoespaciada y un único toque de rotulador amarillo para lo que importa. */
+/* Tipografías alojadas en este mismo sitio (Source Serif 4, Figtree e IBM Plex Mono, licencia OFL). Sin peticiones a Google. */
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:600;font-display:swap;src:url('fuentes/source-serif-4-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:700;font-display:swap;src:url('fuentes/source-serif-4-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url('fuentes/figtree-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:500;font-display:swap;src:url('fuentes/figtree-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url('fuentes/figtree-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fuentes/ibm-plex-mono-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* Ordena tus ahorros — hoja de estilos (v7)
+   Idea de diseño: tranquilo y legible para quien no ha invertido nunca. Blanco verdoso, tinta verde
+   oscura, titulares en serif, texto grande y un único toque ámbar para lo que importa. */
 :root {
-  --papel: #f3f5f1;
-  --papel-2: #e8ece5;
-  --tinta: #14231f;
-  --tinta-suave: #4b5a55;
-  --verde: #1d6b52;
-  --rotulador: #f2c94c;
-  --linea: #cdd5cd;
-  --tarjeta: #fbfcfa;
+  --papel: #F2F6F3;
+  --papel-2: #E4ECE7;
+  --tinta: #12281F;
+  --tinta-suave: #44584E;
+  --verde: #0F6B52;
+  --rotulador: #F2B544;
+  --linea: #D3DED7;
+  --tarjeta: #FFFFFF;
+  --noche: #12281F;
+  --noche-suave: #D5E4DB;
 
-  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
-  --f-texto: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-texto: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-cifra: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   --ancho: 1120px;
-  --radio: 6px;
+  --radio: 10px;
   color-scheme: light;
 }
 
@@ -53,10 +62,6 @@ body {
   margin: 0;
   overflow-x: clip;
   background-color: var(--papel);
-  background-image:
-    linear-gradient(var(--papel-2) 1px, transparent 1px),
-    linear-gradient(90deg, var(--papel-2) 1px, transparent 1px);
-  background-size: 28px 28px;
   color: var(--tinta);
   font-family: var(--f-texto);
   font-size: 1.125rem;
@@ -334,3 +339,105 @@ section { padding: 88px 0; }
 :root[data-theme="dark"] .nav a.boton { color: #0f1a16; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .nav a.boton { color: #0f1a16; } }
 .sobre .subtitulo-sobre { font-family: var(--f-display); font-weight: 600; font-size: 1.2rem; color: var(--verde); margin-top: -6px; }
+
+
+/* ===================== v7 · diseño nuevo ===================== */
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.012em; }
+h1 { line-height: 1.05; }
+.logo { font-weight: 700; }
+.nav { font-family: var(--f-texto); font-weight: 500; }
+.boton { font-family: var(--f-texto); border-radius: 8px; }
+.eyebrow { font-weight: 500; }
+:root[data-theme="dark"] { --noche: #0B1712; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --noche: #0B1712; } }
+
+/* Hero: la cifra, en grande, sobre verde noche */
+.ficha-hero { background: var(--noche); color: #fff; border: 0; border-radius: 14px; box-shadow: none; padding: clamp(26px, 4vw, 42px); display: grid; gap: 16px; }
+.ficha-hero .intro-cifra { margin: 0; font-size: 1.1rem; color: var(--noche-suave); }
+.ficha-hero .gran-cifra { font-family: var(--f-display); font-weight: 700; font-size: clamp(2.7rem, 5.6vw, 4.3rem); line-height: 1; white-space: nowrap; color: #F2B544; font-variant-numeric: tabular-nums; }
+.ficha-hero .barras-hero { display: grid; gap: 6px; }
+.ficha-hero .barras-hero i { display: block; height: 14px; border-radius: 4px; background: #3A5246; }
+.ficha-hero .barras-hero i + i { background: #F2B544; width: 82%; }
+.ficha-hero .pie-cifra { margin: 0; font-size: 1rem; color: var(--noche-suave); }
+.ficha-hero .pie-cifra .cifra { color: #fff; }
+.ficha-hero .ir { color: #fff; margin-top: 0; font-family: var(--f-texto); font-weight: 600; }
+
+/* Dos formatos */
+.formatos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: 24px; align-items: stretch; margin-bottom: 44px; }
+.formato-card { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 12px; padding: 30px; display: flex; flex-direction: column; gap: 14px; }
+.formato-card.principal { border: 2px solid var(--verde); }
+.formato-card h3 { font-size: 1.75rem; }
+.formato-card .detalle { margin: 0; color: var(--tinta-suave); font-size: 1.05rem; }
+.formato-card .importe { font-family: var(--f-display); font-weight: 700; font-size: 3rem; line-height: 1; }
+.formato-card .importe small { font-family: var(--f-texto); font-weight: 500; font-size: 1rem; color: var(--tinta-suave); }
+.formato-card ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; font-size: 1.02rem; }
+.formato-card .boton { margin-top: auto; justify-content: center; }
+.formato-card .boton.secundario { background: transparent; }
+.sesion-detalle { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start; }
+@media (max-width: 900px) { .sesion-detalle { grid-template-columns: 1fr; } }
+.te-llevas-caja { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 12px; padding: 26px; }
+.te-llevas-caja h3 { font-size: 1.25rem; margin-bottom: 12px; }
+.te-llevas-caja ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; font-size: 1.02rem; }
+.subtitulo-bloque { font-size: 1.35rem; margin: 0 0 14px; }
+
+/* Plantilla gratuita */
+.plantilla { padding: 24px 0 72px; }
+.plantilla-caja { background: var(--rotulador); color: #12281F; border-radius: 14px; padding: clamp(26px, 4vw, 42px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 28px; align-items: center; }
+.plantilla-caja h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); line-height: 1.12; }
+.plantilla-caja p { margin: 10px 0 0; font-size: 1.05rem; }
+.plantilla-caja .boton { background: #12281F; color: #fff; border-color: #12281F; justify-content: center; }
+.plantilla-caja .nota-plantilla { font-size: .95rem; }
+.plantilla-caja a:focus-visible { outline-color: #12281F; }
+
+
+/* ===== v10 ===== */
+img.retrato { width: 100%; height: auto; object-fit: cover; display: block; padding: 0; }
+.llamada { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between; background: var(--tarjeta); border: 1.5px solid var(--tinta); border-radius: var(--radio); padding: 22px 26px; }
+.llamada p { margin: 0; font-size: 1.08rem; max-width: 46ch; }
+.intro-ejemplo { color: var(--tinta-suave); max-width: 70ch; margin: -8px 0 22px; }
+.entregables { display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; align-items: start; margin-bottom: 56px; }
+@media (max-width: 900px) { .entregables { grid-template-columns: 1fr; } }
+.hoja { margin: 0; background: var(--tarjeta); border: 1.5px solid var(--tinta); border-radius: var(--radio); overflow-x: auto; }
+.hoja figcaption { font-family: var(--f-cifra); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; padding: 12px 16px; border-bottom: 1px solid var(--linea); color: var(--verde); }
+.hoja table { width: 100%; border-collapse: collapse; font-size: .97rem; min-width: 560px; }
+.hoja th, .hoja td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+.hoja th { font-family: var(--f-cifra); font-size: .76rem; text-transform: uppercase; letter-spacing: .04em; color: var(--tinta-suave); font-weight: 600; }
+.hoja .num { text-align: right; font-family: var(--f-cifra); white-space: nowrap; }
+.hoja tr.total td { font-weight: 600; border-bottom: 0; }
+.resumen-ej { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: var(--radio); padding: 22px 24px; }
+.resumen-ej h4 { margin: 0 0 12px; font-family: var(--f-display); font-size: 1.15rem; }
+.resumen-ej ul { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; }
+.opiniones { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 56px; }
+.opiniones blockquote { margin: 0; background: var(--tarjeta); border-left: 4px solid var(--rotulador); padding: 20px 22px; border-radius: 0 var(--radio) var(--radio) 0; }
+.opiniones footer { margin-top: 10px; font-family: var(--f-cifra); font-size: .82rem; color: var(--tinta-suave); }
+.form-plantilla { display: grid; gap: 12px; }
+.form-plantilla label { display: grid; gap: 6px; font-weight: 600; font-size: .95rem; }
+.form-plantilla input[type=email] { font: inherit; padding: 12px 14px; border: 1.5px solid #12281F; border-radius: 8px; background: #fff; color: #12281F; }
+.form-plantilla .check { grid-template-columns: auto 1fr; align-items: start; gap: 10px; font-weight: 400; font-size: .88rem; }
+.form-plantilla .boton { background: #12281F; color: #fff; justify-self: start; }
+.copia { display: grid; gap: 10px; margin-top: 6px; }
+.copia textarea { font: inherit; font-size: .9rem; width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--linea); }
+.lecturas { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.lectura { display: grid; gap: 10px; align-content: start; background: var(--tarjeta); border: 1.5px solid var(--tinta); border-radius: var(--radio); padding: 24px; text-decoration: none; color: inherit; }
+.lectura h3 { font-family: var(--f-display); font-size: 1.22rem; line-height: 1.2; margin: 0; }
+.lectura p { margin: 0; color: var(--tinta-suave); font-size: .98rem; }
+.lectura .ir { color: var(--verde); font-weight: 600; }
+.lectura:hover { box-shadow: 4px 4px 0 var(--rotulador); }
+.articulo { max-width: 72ch; margin: 0 auto; display: grid; gap: 18px; }
+.articulo h1 { font-family: var(--f-display); font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.08; margin: 0; }
+.articulo h2 { font-family: var(--f-display); font-size: 1.55rem; line-height: 1.2; margin: 22px 0 0; }
+.articulo h3 { font-size: 1.15rem; margin: 10px 0 0; }
+.articulo p, .articulo li { font-size: 1.08rem; line-height: 1.65; }
+.articulo ul, .articulo ol { padding-left: 1.3em; display: grid; gap: 8px; margin: 0; }
+.articulo a { color: var(--verde); }
+.articulo .tabla-scroll { overflow-x: auto; }
+.articulo table { border-collapse: collapse; width: 100%; min-width: 640px; background: var(--tarjeta); border: 1.5px solid var(--tinta); font-size: .95rem; }
+.articulo th, .articulo td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+.articulo thead th { font-family: var(--f-cifra); font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+.articulo .firma { font-family: var(--f-cifra); font-size: .85rem; color: var(--tinta-suave); }
+.articulo .aviso { font-size: .92rem; color: var(--tinta-suave); border-top: 1px solid var(--linea); padding-top: 16px; }
+.migas { font-family: var(--f-cifra); font-size: .82rem; color: var(--tinta-suave); }
+.migas a { color: inherit; }
+.nav-art { display: flex; align-items: center; gap: 18px; }
+.nav-art a:not(.boton) { color: inherit; text-decoration: none; font-weight: 500; }
+.form-plantilla a { color: #12281F; }
