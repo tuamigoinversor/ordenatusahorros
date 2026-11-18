@@ -444,3 +444,17 @@ img.retrato { width: 100%; height: auto; object-fit: cover; display: block; padd
 .pensiones { margin-top: 28px; background: var(--tarjeta); border: 1.5px solid var(--tinta); border-left: 6px solid var(--rotulador); border-radius: var(--radio); padding: 22px 26px; display: grid; gap: 10px; max-width: 900px; }
 .pensiones h3 { margin: 0; font-family: var(--f-display); font-size: 1.3rem; }
 .pensiones p { margin: 0; }
+
+/* tabla de bloques: columnas ajustadas para que «Para qué sirve» tenga más sitio */
+.tabla-bloques { table-layout: fixed; min-width: 900px; }
+.tabla-bloques th, .tabla-bloques td { padding: 13px 14px; font-size: .95rem; line-height: 1.45; }
+.tabla-bloques th { font-size: .76rem; line-height: 1.3; }
+.tabla-bloques td:first-child { white-space: normal; font-size: 1rem; line-height: 1.25; }
+.tabla-bloques td.funcion { font-size: .88rem; line-height: 1.3; }
+.tabla-bloques td.cifra { white-space: nowrap; }
+.tabla-bloques col.c-bloque { width: 15%; }
+.tabla-bloques col.c-funcion { width: 14%; }
+.tabla-bloques col.c-para { width: 38%; }
+.tabla-bloques col.c-plazo { width: 9%; }
+.tabla-bloques col.c-riesgo { width: 9%; }
+.tabla-bloques col.c-ejemplos { width: 15%; }
