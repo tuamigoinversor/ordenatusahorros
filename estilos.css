@@ -458,3 +458,7 @@ img.retrato { width: 100%; height: auto; object-fit: cover; display: block; padd
 .tabla-bloques col.c-plazo { width: 9%; }
 .tabla-bloques col.c-riesgo { width: 9%; }
 .tabla-bloques col.c-ejemplos { width: 15%; }
+
+/* v11: precio de lanzamiento y línea de confianza */
+.hero .nota.confianza { margin-top: 6px; color: var(--tinta); }
+.formato-card .promo { margin-top: 6px; font-size: .9rem; }
