@@ -26,7 +26,8 @@
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#casos">Casos</a>
       <a href="#calculadora">Calculadora</a>
-      <a href="#sesion">Sesión y directos</a>
+      <a href="#sesion">Sesión</a>
+      <a href="#gratis">Empieza gratis</a>
       <a href="#sobre-mi">Sobre mí</a>
       <a href="articulos/">Artículos</a>
       <a class="boton" href="#reservar">Reservar</a>
@@ -45,9 +46,9 @@
         <p class="entrada">Para quien lleva años ahorrando y lo tiene en cuentas y depósitos porque no sabe qué otra cosa hacer. Te enseño a entender tu situación, a separar tu dinero según cuándo lo vas a necesitar y a conocer las alternativas. Al final decides tú. Sin tecnicismos, sin venderte productos y sin comisiones de bancos ni gestoras.</p>
         <div class="acciones">
           <a class="boton" href="#reservar">Quiero ordenar mis ahorros</a>
-          <a class="boton secundario" href="#como-funciona">Cómo funciona</a>
+          <a class="boton secundario" href="#gratis">Empieza gratis</a>
         </div>
-        <p class="nota">Sesión individual: 100 € (precio de lanzamiento hasta el 31 de enero de 2027; después, 150 €). Directos de divulgación gratuitos desde diciembre: <a href="#directos">te aviso por correo</a>.</p>
+        <p class="nota">Sesión individual: 100 € (precio de lanzamiento hasta el 31 de enero de 2027; después, 150 €). La plantilla de Excel y los directos de divulgación son gratis.</p>
         <p class="nota confianza">Ingeniero · Profesor · Certificación MiFID II en asesoramiento (UC3M)</p>
       </div>
 
@@ -260,7 +261,7 @@
       </div>
       <p class="nota-tabla">Repartos de ejemplo, no recomendaciones. Cuanta más renta variable lleva un reparto, más puede caer en un mal año. En la sesión hacemos este mismo ejercicio con tu situación y vemos los datos de cada bloque.</p>
       <div class="llamada">
-        <p><strong>¿Te has visto en alguno?</strong> En la sesión hacemos este mismo ejercicio con tus plazos y tus cifras.</p>
+        <p><strong>¿Te has visto en alguno?</strong> En la sesión hacemos este mismo ejercicio con tus plazos y tus cifras. Si prefieres empezar por tu cuenta, <a href="#plantilla">te mando gratis la plantilla</a>.</p>
         <a class="boton" href="#reservar" data-reserva="sesion">Reservar mi sesión</a>
       </div>
     </div>
@@ -385,7 +386,7 @@
             <li>Tú propones temas y preguntas en el chat</li>
             <li>No entro en la situación de nadie: con tus números se trabaja en la sesión individual</li>
           </ul>
-          <a class="boton secundario" href="#directos">Avisadme del próximo directo</a>
+          <a class="boton secundario" href="#directos">Avísame del próximo directo</a>
         </article>
       </div>
 
@@ -468,42 +469,34 @@
     </div>
   </section>
 
-  <!-- DIRECTOS -->
-  <section class="directos" id="directos">
+  <!-- EMPIEZA GRATIS: plantilla y aviso de directos -->
+  <section class="gratis" id="gratis">
     <div class="envoltura">
-      <div class="directos-caja">
-        <div>
-          <span class="eyebrow">Directos gratuitos</span>
-          <h2>Te aviso del próximo directo</h2>
-          <p>Déjame tu correo y te escribo antes de cada directo con la fecha, la hora y el tema. Y si hay algo que te gustaría que explicara, dímelo: los temas salen de lo que me pedís.</p>
+      <div class="cabeza">
+        <span class="eyebrow">Gratis</span>
+        <h2>¿Todavía no quieres reservar? Empieza gratis.</h2>
+        <p>Dos formas de empezar sin pagar nada. Puedes apuntarte a las dos.</p>
+      </div>
+      <div class="gratis-grid">
+        <div class="gratis-card amarilla" id="plantilla">
+          <h3>Calcula tu colchón</h3>
+          <p>Te envío gratis la plantilla de Excel de la fase Conoce: ingresos, gastos y el colchón que te corresponde.</p>
+          <form class="form-plantilla" id="form-plantilla" novalidate>
+            <label for="p-email">Tu correo electrónico<input id="p-email" name="email" type="email" autocomplete="email" required></label>
+            <label class="check" for="p-privacidad"><input id="p-privacidad" type="checkbox" required><span>He leído la <a href="privacidad.html">política de privacidad</a>. Usa mi correo solo para enviarme la plantilla.</span></label>
+            <button class="boton" type="submit">Envíame la plantilla</button>
+            <p class="estado" id="p-estado" role="status"></p>
+          </form>
         </div>
-        <div>
+        <div class="gratis-card" id="directos">
+          <h3>Te aviso de los directos</h3>
+          <p>Te escribo antes de cada directo con la fecha, la hora y el tema. Si no puedes conectarte, te mando el enlace a la grabación. Y si hay algo que te gustaría que explicara, dímelo: los temas salen de lo que me pedís.</p>
           <form class="form-plantilla" id="form-directos" novalidate>
             <label for="d-email">Tu correo electrónico<input id="d-email" name="email" type="email" autocomplete="email" required></label>
             <label for="d-tema"><span>¿De qué te gustaría que hablara? <span class="opcional">(opcional)</span></span><textarea id="d-tema" name="tema" rows="3" placeholder="Por ejemplo: cómo funcionan los fondos indexados"></textarea></label>
             <label class="check" for="d-privacidad"><input id="d-privacidad" type="checkbox" required><span>He leído la <a href="privacidad.html">política de privacidad</a>. Usa mi correo solo para avisarme de los directos. Me puedo dar de baja cuando quiera.</span></label>
-            <button class="boton" type="submit">Avisadme</button>
+            <button class="boton" type="submit">Avísame del próximo directo</button>
             <p class="estado" id="d-estado" role="status"></p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLANTILLA -->
-  <section class="plantilla" id="plantilla">
-    <div class="envoltura">
-      <div class="plantilla-caja">
-        <div>
-          <h2>¿Todavía no lo tienes claro? Empieza por calcular tu colchón.</h2>
-          <p>Te envío gratis la plantilla de Excel de la fase Conoce: ingresos, gastos y el colchón que te corresponde.</p>
-        </div>
-        <div>
-          <form class="form-plantilla" id="form-plantilla" novalidate>
-            <label for="p-email">Tu correo electrónico<input id="p-email" name="email" type="email" autocomplete="email" required></label>
-            <label class="check" for="p-privacidad"><input id="p-privacidad" type="checkbox" required><span>He leído la <a href="privacidad.html">política de privacidad</a>. Usa mi correo solo para enviarme la plantilla.</span></label>
-            <button class="boton" type="submit">Enviadme la plantilla</button>
-            <p class="estado" id="p-estado" role="status"></p>
           </form>
         </div>
       </div>
