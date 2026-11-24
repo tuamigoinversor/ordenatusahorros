@@ -462,3 +462,4 @@ img.retrato { width: 100%; height: auto; object-fit: cover; display: block; padd
 /* v11: precio de lanzamiento y línea de confianza */
 .hero .nota.confianza { margin-top: 6px; color: var(--tinta); }
 .formato-card .promo { margin-top: 6px; font-size: .9rem; }
+.sobre .texto h3.subtitulo-sobre { margin-top: 12px; }
