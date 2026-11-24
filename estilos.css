@@ -463,3 +463,11 @@ img.retrato { width: 100%; height: auto; object-fit: cover; display: block; padd
 .hero .nota.confianza { margin-top: 6px; color: var(--tinta); }
 .formato-card .promo { margin-top: 6px; font-size: .9rem; }
 .sobre .texto h3.subtitulo-sobre { margin-top: 12px; }
+
+/* Directos: aviso por correo */
+.directos { padding: 24px 0 24px; }
+.directos-caja { background: var(--tarjeta); border: 1.5px solid #12281F; border-radius: 14px; padding: clamp(26px, 4vw, 42px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 28px; align-items: center; }
+.directos-caja h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); line-height: 1.12; margin-top: 6px; }
+.directos-caja p { margin: 10px 0 0; font-size: 1.05rem; }
+.form-plantilla textarea { font: inherit; padding: 12px 14px; border: 1.5px solid #12281F; border-radius: 8px; background: #fff; color: #12281F; resize: vertical; }
+.form-plantilla .opcional { font-weight: 400; color: var(--tinta-suave); }
